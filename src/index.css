@@ -109,13 +109,6 @@ img { display: block; max-width: 100%; }
 /* ── Hero ── */
 .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px; position: relative; }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 18px; border-radius: var(--r-pill);
-  background: var(--cream); font-size: 12px; font-weight: 700; color: var(--text-2);
-  margin-bottom: 28px;
-}
-.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.5); } }
 .hero h1 {
   font-family: var(--font-head);
@@ -129,6 +122,13 @@ img { display: block; max-width: 100%; }
 }
 .hero h1 .accent { color: var(--red); }
 .hero-body { font-size: clamp(17px, 1.4vw, 20px); color: var(--text-2); line-height: 1.65; max-width: 460px; margin-bottom: 36px; }
+.hero-cities { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+.hero-city-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 20px; border-radius: var(--r-pill);
+  background: var(--dark); color: #fff;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+}
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-video {
   position: relative; aspect-ratio: 4/3; border-radius: var(--r-xl);
