@@ -16,10 +16,6 @@ export default function Reviews() {
         {/* GHL Widget Placeholder — replace div below with GHL embed script */}
         <div className="reviews-widget rv rv-d2">
           <div className="reviews-placeholder">
-            <div className="rp-stars">
-              {'★★★★★'.split('').map((s, i) => <span key={i} className="rp-star">{s}</span>)}
-            </div>
-            <p className="rp-rating">5.0 on Google</p>
             <div className="rp-cards">
               {[
                 { name: 'David D.', text: 'Incredible results. Our Google presence went from invisible to dominant in 3 months.' },

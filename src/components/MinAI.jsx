@@ -21,7 +21,7 @@ export default function MinAI() {
             <path d="M4 10C60 3,120 12,180 6C220 3,260 9,296 5" stroke="var(--red)" strokeWidth="3" strokeLinecap="round" fill="none"/>
           </svg>
         </h2>
-        <p className="minai-subtitle rv rv-d1">Every 100Bold client gets MinAI — our AI platform — from day one. No extra cost.</p>
+        <p className="minai-subtitle rv rv-d1">Every 100Bold client gets MinAI — our AI platform — from day one.<br/><span className="accent">No extra cost.</span></p>
 
         <div className="minai-card rv rv-d2">
           <div className="minai-glow"></div>
