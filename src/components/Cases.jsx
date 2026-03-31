@@ -3,43 +3,33 @@ const cases = [
     title: 'LT Commercial',
     desc: 'Dominated local SEO, turning search visibility into a predictable revenue engine.',
     img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
-    metric: '+215%',
-    metricLabel: 'Call Volume',
-    tags: ['SEO', 'GBP'],
+    metric: '+215%', metricLabel: 'Call Volume', tags: ['SEO', 'GBP'],
   },
   {
     title: 'T98 Rehab',
     desc: 'Built founder authority on LinkedIn, generating high-ticket leads in healthcare.',
     img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
-    metric: '1.2M+',
-    metricLabel: 'Content Views',
-    tags: ['LinkedIn', 'Content'],
+    metric: '1.2M+', metricLabel: 'Content Views', tags: ['LinkedIn', 'Content'],
   },
   {
     title: 'Bee Construction',
     desc: 'Zero to dominant — top-3 local ranking and review machine in 6 months.',
     img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800',
-    metric: '47',
-    metricLabel: '5-Star Reviews',
-    tags: ['GBP', 'Reviews'],
+    metric: '47', metricLabel: '5-Star Reviews', tags: ['GBP', 'Reviews'],
   },
 ]
 
 export default function Cases() {
   return (
-    <section className="cases section-gap" id="work">
+    <section className="cases" id="work">
       <div className="mx">
         <div className="cases-head">
           <h2 className="rv">Proven <span className="accent">Results.</span></h2>
-          <button className="btn btn-text rv rv-d1">
-            View All
-            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </button>
+          <button className="btn btn-text rv rv-d1">View All <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
         </div>
-
         <div className="cases-grid">
           {cases.map((c, i) => (
-            <div key={c.title} className={`case-card rv ${i === 1 ? 'rv-d1' : i === 2 ? 'rv-d2' : ''}`}>
+            <div key={c.title} className={`case-card rv${i === 1 ? ' rv-d1' : i === 2 ? ' rv-d2' : ''}`}>
               <div className="case-thumb">
                 <img src={c.img} alt={c.title} />
                 <div className="case-metric">
@@ -47,18 +37,13 @@ export default function Cases() {
                   <div className="case-metric-label">{c.metricLabel}</div>
                 </div>
                 <div className="case-tags-row">
-                  {c.tags.map((tag) => (
-                    <span key={tag} className="case-tag-pill">{tag}</span>
-                  ))}
+                  {c.tags.map((tag) => <span key={tag} className="case-tag-pill">{tag}</span>)}
                 </div>
               </div>
               <div className="case-body">
                 <h3>{c.title}</h3>
                 <p>{c.desc}</p>
-                <a href="#" className="btn btn-text" style={{ fontSize: 12 }}>
-                  Case Study
-                  <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </a>
+                <a href="#" className="btn btn-text" style={{ fontSize: 12 }}>Case Study <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
               </div>
             </div>
           ))}

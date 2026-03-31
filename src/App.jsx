@@ -1,4 +1,4 @@
-import { useReveal } from './hooks/useReveal'
+import { useEffect } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import LogoBar from './components/LogoBar'
@@ -10,10 +10,21 @@ import CTA from './components/CTA'
 import Footer from './components/Footer'
 
 function App() {
-  const revealRef = useReveal()
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((x) => {
+          if (x.isIntersecting) x.target.classList.add('vis')
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }
+    )
+    document.querySelectorAll('.rv').forEach((el) => obs.observe(el))
+    return () => obs.disconnect()
+  }, [])
 
   return (
-    <div ref={revealRef}>
+    <>
       <Nav />
       <Hero />
       <LogoBar />
@@ -23,7 +34,7 @@ function App() {
       <SocialProof />
       <CTA />
       <Footer />
-    </div>
+    </>
   )
 }
 
