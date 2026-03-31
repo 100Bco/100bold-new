@@ -51,8 +51,7 @@ export default function Hero() {
               <path d="M24 4L27 20L44 17L29 28L38 44L24 32L10 44L19 28L4 17L21 20Z" stroke="var(--red)" strokeWidth="2" strokeLinejoin="round" fill="none"/>
             </svg>
             <div className="hero-video">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200" alt="100Bold Showreel" />
-              <div className="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <iframe src="https://fast.wistia.net/embed/iframe/clfoknzq7j?seo=true&videoFoam=true" title="100Bold Showreel" allow="autoplay; fullscreen" allowFullScreen style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',border:0}}></iframe>
             </div>
           </div>
         </div>
