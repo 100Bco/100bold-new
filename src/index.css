@@ -149,10 +149,12 @@ img { display: block; max-width: 100%; }
 
 /* ── Logo Bar ── */
 .logo-bar { padding: 56px 0; background: var(--dark); position: relative; overflow: hidden; }
-.logo-bar p {
-  text-align: center; font-size: 12px; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 36px;
+.logo-bar-heading {
+  font-family: var(--font-head); font-size: clamp(44px, 5vw, 72px);
+  line-height: .9; text-transform: uppercase; color: #fff;
+  text-align: center; margin-bottom: 36px;
 }
+.logo-bar-heading .accent { color: var(--red); }
 
 /* Marquee */
 .marquee-wrap { overflow: hidden; width: 100%; }

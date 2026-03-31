@@ -15,7 +15,7 @@ export default function LogoBar() {
   return (
     <section className="logo-bar">
       <div className="mx">
-        <p className="rv">Trusted by $5M+ Service Businesses</p>
+        <h2 className="logo-bar-heading rv">Trusted <span className="accent">Partners.</span></h2>
       </div>
       <div className="marquee-wrap rv rv-d1">
         <div className="marquee-track">
