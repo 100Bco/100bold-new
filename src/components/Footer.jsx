@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="mx">
         <div className="footer-compact">
           <a href="#" className="footer-logo-link">
-            <img src="/logo.svg" alt="100Bold" className="footer-logo-img" />
+            <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="footer-logo-img" />
           </a>
           <div className="footer-nav">
             <a href="#services">Playbook</a>

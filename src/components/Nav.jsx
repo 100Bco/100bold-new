@@ -13,7 +13,7 @@ export default function Nav() {
     <div className={`nav-wrap${scrolled ? ' scrolled' : ''}`} id="navWrap">
       <nav className="nav">
         <a href="#">
-          <img src="/logo.svg" alt="100Bold" className="nav-logo" />
+          <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="nav-logo" />
         </a>
         <div className="nav-links">
           <a href="#services">Playbook</a>
