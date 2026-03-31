@@ -1,8 +1,8 @@
 const services = [
-  { title: 'GBP Domination', desc: 'Own every local search. Full optimization, review funnels, social content.' },
-  { title: 'LinkedIn CEO Authority', desc: 'Strategy, ghostwriting, engagement, and network growth.' },
-  { title: 'Social Media Content', desc: 'Facebook, Instagram, TikTok, Threads — designed to convert.' },
-  { title: 'Paid Ads', desc: 'Google and Meta layered on organic foundation.' },
+  { title: 'GBP Domination', desc: 'Optimize your Google Business Profile to rank top in local search, driving high-intent leads directly to your calendar.' },
+  { title: 'LinkedIn CEO Authority', desc: 'Position your leadership as industry titans. We craft compelling narratives that build trust and generate premium B2B pipelines.' },
+  { title: 'Social Media Content', desc: 'Stop posting into the void. We create high-converting content engines across Meta, Linkedin, Instagram, TikTok, and many more.' },
+  { title: 'Paid Ads', desc: 'Data-driven campaigns across Meta and Google that turn ad spend into measurable, scalable revenue with ruthless efficiency.' },
 ]
 
 export default function Services() {
@@ -29,7 +29,6 @@ export default function Services() {
               <div className="srv-caption-body">From GBP to LinkedIn authority — the output machine in action.</div>
             </div>
             <div>
-              <div className="srv-list-label">Types of Work</div>
               {services.map((srv) => (
                 <div key={srv.title} className="srv-item">
                   <h3>{srv.title}</h3>
