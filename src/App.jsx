@@ -1,48 +1,52 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Nav from './components/Nav'
-import Hero from './components/Hero'
-import LogoBar from './components/LogoBar'
-import Services from './components/Services'
-import MinAI from './components/MinAI'
-import Cases from './components/Cases'
-import SocialProof from './components/SocialProof'
-import CTA from './components/CTA'
 import Footer from './components/Footer'
 import WaveDivider from './components/WaveDivider'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import IndustriesPage from './pages/IndustriesPage'
+import ServicesPage from './pages/ServicesPage'
+import WorkPage from './pages/WorkPage'
+import MinAIPage from './pages/MinAIPage'
 
-function App() {
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
+function RevealObserver() {
+  const { pathname } = useLocation()
   useEffect(() => {
     const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((x) => {
-          if (x.isIntersecting) x.target.classList.add('vis')
-        })
-      },
+      (entries) => entries.forEach((x) => { if (x.isIntersecting) x.target.classList.add('vis') }),
       { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }
     )
     document.querySelectorAll('.rv').forEach((el) => obs.observe(el))
     return () => obs.disconnect()
-  }, [])
+  }, [pathname])
+  return null
+}
 
+function App() {
   return (
-    <>
+    <BrowserRouter>
+      <ScrollToTop />
+      <RevealObserver />
       <Nav />
-      <Hero />
-      <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
-      <LogoBar />
-      <WaveDivider from="#1A1816" to="#FEFCF9" variant="curve" />
-      <Services />
-      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="slant" />
-      <MinAI />
-      <WaveDivider from="#F7F3ED" to="#1A1816" variant="wave" />
-      <Cases />
-      <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
-      <SocialProof />
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
-      <CTA />
-      <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/minai" element={<MinAIPage />} />
+      </Routes>
+      <WaveDivider from="var(--white)" to="#1A1816" variant="wave" />
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
