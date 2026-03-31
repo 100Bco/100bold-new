@@ -1,0 +1,34 @@
+import Hero from '../components/Hero'
+import LogoBar from '../components/LogoBar'
+import WhyUs from '../components/WhyUs'
+import IndustriesPreview from '../components/IndustriesPreview'
+import Services from '../components/Services'
+import MinAI from '../components/MinAI'
+import Cases from '../components/Cases'
+import Reviews from '../components/Reviews'
+import CTA from '../components/CTA'
+import WaveDivider from '../components/WaveDivider'
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
+      <LogoBar />
+      <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
+      <WhyUs />
+      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
+      <IndustriesPreview />
+      <WaveDivider from="#FEFCF9" to="#FEFCF9" variant="slant" />
+      <Services />
+      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="slant" />
+      <MinAI />
+      <WaveDivider from="#F7F3ED" to="#1A1816" variant="wave" />
+      <Cases />
+      <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
+      <Reviews />
+      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
+      <CTA />
+    </>
+  )
+}

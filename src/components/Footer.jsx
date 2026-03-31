@@ -1,15 +1,19 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="mx">
         <div className="footer-compact">
-          <a href="#" className="footer-logo-link">
+          <Link to="/" className="footer-logo-link">
             <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="footer-logo-img" />
-          </a>
+          </Link>
           <div className="footer-nav">
-            <a href="#services">Playbook</a>
-            <a href="#minai">MinAI</a>
-            <a href="#work">Work</a>
+            <Link to="/about">About</Link>
+            <Link to="/industries">Industries</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/work">Work</Link>
+            <Link to="/minai">MinAI</Link>
             <span className="footer-sep"></span>
             <a href="#">LinkedIn</a>
             <a href="#">Twitter</a>
