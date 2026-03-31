@@ -20,7 +20,11 @@ export default function MinAIPage() {
 
       {/* Features */}
       <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
-      <section style={{background: 'var(--dark)', color: '#fff', padding: 'var(--gap) 0'}}>
+      <section style={{background: 'var(--dark)', color: '#fff', padding: 'var(--gap) 0', position: 'relative'}}>
+        {/* Zigzag - white on dark */}
+        <svg className="deco" style={{top: '8%', left: '4%', width: 80, height: 40, opacity: .1}} viewBox="0 0 80 40" fill="none">
+          <path d="M4 36L16 4L28 36L40 4L52 36L64 4L76 36" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        </svg>
         <div className="mx">
           <h2 className="rv" style={{fontFamily: 'var(--font-head)', fontSize: 'clamp(36px, 4vw, 56px)', textTransform: 'uppercase', marginBottom: 48, color: '#fff'}}>
             What MinAI <span className="accent">Does.</span>
@@ -39,7 +43,11 @@ export default function MinAIPage() {
 
       {/* Pricing */}
       <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
-      <section style={{background: 'var(--cream)', padding: 'var(--gap) 0'}}>
+      <section style={{background: 'var(--cream)', padding: 'var(--gap) 0', position: 'relative'}}>
+        {/* Spiral path */}
+        <svg className="deco" style={{top: '10%', right: '5%', width: 65, height: 65, opacity: .07}} viewBox="0 0 65 65" fill="none">
+          <path d="M32 32C32 28,36 26,39 29C42 32,40 37,36 38C30 39,26 34,27 29C28 22,35 18,41 21C48 24,50 35,44 41C38 48,25 48,20 41C14 32,18 17,29 13" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" fill="none"/>
+        </svg>
         <div className="mx">
           <h2 className="rv" style={{fontFamily: 'var(--font-head)', fontSize: 'clamp(36px, 4vw, 56px)', textTransform: 'uppercase', marginBottom: 12}}>
             MinAI <span className="accent">Pricing.</span>

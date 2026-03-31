@@ -62,7 +62,18 @@ export default function WorkPage() {
       </section>
 
       <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="wave" />
-      <section className="work-list">
+      <section className="work-list" style={{position: 'relative'}}>
+        {/* Arrow swoosh */}
+        <svg className="deco" style={{top: '3%', left: '4%', width: 85, height: 45, opacity: .08}} viewBox="0 0 85 45" fill="none">
+          <path d="M5 38C20 8,48 3,76 18" stroke="var(--red)" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+          <path d="M66 8L78 18L64 24" stroke="var(--red)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        </svg>
+        {/* Concentric rings */}
+        <svg className="deco" style={{bottom: '5%', right: '5%', width: 65, height: 65, opacity: .07}} viewBox="0 0 65 65" fill="none">
+          <circle cx="32.5" cy="32.5" r="10" stroke="var(--red)" strokeWidth="1.5"/>
+          <circle cx="32.5" cy="32.5" r="20" stroke="var(--red)" strokeWidth="1.5"/>
+          <circle cx="32.5" cy="32.5" r="30" stroke="var(--red)" strokeWidth="1.5"/>
+        </svg>
         <div className="mx">
           <div className="work-grid">
             {cases.map((c, i) => (

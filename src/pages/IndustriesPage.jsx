@@ -57,7 +57,17 @@ export default function IndustriesPage() {
       </section>
 
       <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="wave" />
-      <section className="ind-list">
+      <section className="ind-list" style={{position: 'relative'}}>
+        {/* Spiral path */}
+        <svg className="deco" style={{top: '5%', right: '4%', width: 70, height: 70, opacity: .07}} viewBox="0 0 70 70" fill="none">
+          <path d="M35 35C35 30,40 28,43 31C46 34,44 40,39 41C33 42,28 37,29 31C30 23,38 19,44 22C52 26,54 38,48 45C41 53,27 53,22 44C16 33,20 18,32 14" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" fill="none"/>
+        </svg>
+        {/* Triangle cluster */}
+        <svg className="deco" style={{bottom: '8%', left: '3%', width: 55, height: 55, opacity: .08}} viewBox="0 0 55 55" fill="none">
+          <path d="M18 45L28 25L38 45Z" stroke="var(--red)" strokeWidth="2" fill="none"/>
+          <path d="M8 50L16 36L24 50Z" stroke="var(--red)" strokeWidth="1.5" fill="none"/>
+          <path d="M30 50L38 36L46 50Z" stroke="var(--red)" strokeWidth="1.5" fill="none"/>
+        </svg>
         <div className="mx">
           {industries.map((ind, i) => (
             <div key={ind.name} className={`ind-item rv${i > 0 ? ` rv-d${Math.min(i, 3)}` : ''}`}>

@@ -3,7 +3,11 @@ import WaveDivider from '../components/WaveDivider'
 export default function ServicesPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero" style={{position: 'relative'}}>
+        {/* Dot grid */}
+        <svg className="deco" style={{top: '20%', left: '4%', width: 55, height: 55, opacity: .07}} viewBox="0 0 55 55" fill="none">
+          {[0,1,2,3,4].flatMap(r => [0,1,2,3,4].map(c => <circle key={`${r}${c}`} cx={5+c*11} cy={5+r*11} r="2" fill="var(--red)"/>))}
+        </svg>
         <div className="mx">
           <h1 className="rv vis">Two Products.<br/><span className="accent">Zero Fluff.</span></h1>
           <p className="page-hero-body rv vis rv-d2">We offer two distinct, standalone products. Each stands on its own value. No bundle discounts. Just results.</p>
@@ -12,7 +16,11 @@ export default function ServicesPage() {
 
       {/* GBP Domination */}
       <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
-      <section className="svc-detail" style={{background: 'var(--dark)', color: '#fff', padding: 'var(--gap) 0'}}>
+      <section className="svc-detail" style={{background: 'var(--dark)', color: '#fff', padding: 'var(--gap) 0', position: 'relative'}}>
+        {/* Cross/plus - white on dark */}
+        <svg className="deco" style={{top: '8%', right: '6%', width: 50, height: 50, opacity: .1}} viewBox="0 0 50 50" fill="none">
+          <path d="M25 5v40M5 25h40" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"/>
+        </svg>
         <div className="mx">
           <h2 className="svc-title rv">GBP <span className="accent">Domination.</span></h2>
           <p className="svc-intro rv rv-d2">We treat your Google Business Profile like an active marketing channel — because it is. For most local service businesses, GBP is the single most important digital asset they own.</p>
@@ -66,7 +74,12 @@ export default function ServicesPage() {
 
       {/* LinkedIn CEO Authority */}
       <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
-      <section className="svc-detail" style={{background: 'var(--cream)', padding: 'var(--gap) 0'}}>
+      <section className="svc-detail" style={{background: 'var(--cream)', padding: 'var(--gap) 0', position: 'relative'}}>
+        {/* Diamond shapes */}
+        <svg className="deco" style={{bottom: '15%', left: '4%', width: 55, height: 55, opacity: .08}} viewBox="0 0 55 55" fill="none">
+          <path d="M27.5 5L50 27.5L27.5 50L5 27.5Z" stroke="var(--red)" strokeWidth="2" fill="none"/>
+          <path d="M27.5 15L40 27.5L27.5 40L15 27.5Z" stroke="var(--red)" strokeWidth="1.5" fill="none"/>
+        </svg>
         <div className="mx">
           <h2 className="svc-title rv" style={{color: 'var(--dark)'}}>LinkedIn CEO <span className="accent">Authority.</span></h2>
           <p className="svc-intro rv rv-d2" style={{color: 'var(--text-2)'}}>This is a highly selective program. We hand-pick the CEOs and founders we work with. We take over the LinkedIn profile completely.</p>
