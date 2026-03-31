@@ -670,7 +670,7 @@ img { display: block; max-width: 100%; }
   transition: all .4s;
 }
 .minai-feat-card:hover { border-color: var(--red); transform: translateY(-3px); }
-.minai-feat-icon { font-size: 28px; display: block; margin-bottom: 14px; }
+.minai-feat-icon { display: block; margin-bottom: 14px; color: var(--red); }
 .minai-feat-card h3 { font-family: var(--font-head); font-size: 24px; text-transform: uppercase; color: #fff; margin-bottom: 8px; }
 .minai-feat-card p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.6; }
 

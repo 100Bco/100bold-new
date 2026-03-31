@@ -1,11 +1,17 @@
 import WaveDivider from '../components/WaveDivider'
 
+const ChatIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+const PhoneIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+const StarIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+const GridIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+const RefreshIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+
 const features = [
-  { icon: '💬', name: 'AI Chatbot', desc: 'Installed on website and socials. Trained on your business data. Answers FAQs, qualifies leads, books appointments 24/7.' },
-  { icon: '📞', name: 'Voice AI Receptionist', desc: 'Answers inbound calls automatically. Handles lead qualification. Works at 4 AM on weekends.' },
-  { icon: '⭐', name: '5-Star Review Funnel', desc: 'Automated SMS + email sequences that request reviews from past customers on autopilot.' },
-  { icon: '📊', name: 'CRM + Unified Inbox', desc: 'All leads from web, phone, and social flow into one place. Nothing falls through the cracks.' },
-  { icon: '🔄', name: 'Database Reactivation', desc: 'Re-engage dormant past clients. Most businesses are sitting on thousands of untouched contacts.' },
+  { icon: <ChatIcon />, name: 'AI Chatbot', desc: 'Installed on website and socials. Trained on your business data. Answers FAQs, qualifies leads, books appointments 24/7.' },
+  { icon: <PhoneIcon />, name: 'Voice AI Receptionist', desc: 'Answers inbound calls automatically. Handles lead qualification. Works at 4 AM on weekends.' },
+  { icon: <StarIcon />, name: '5-Star Review Funnel', desc: 'Automated SMS + email sequences that request reviews from past customers on autopilot.' },
+  { icon: <GridIcon />, name: 'CRM + Unified Inbox', desc: 'All leads from web, phone, and social flow into one place. Nothing falls through the cracks.' },
+  { icon: <RefreshIcon />, name: 'Database Reactivation', desc: 'Re-engage dormant past clients. Most businesses are sitting on thousands of untouched contacts.' },
 ]
 
 export default function MinAIPage() {
