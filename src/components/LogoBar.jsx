@@ -5,6 +5,7 @@ const logos = [
   { src: '/Asset 1@10x.png', alt: 'Dang Law Group' },
   { src: '/Bee Logo.png', alt: 'Bee Construction' },
   { src: '/GAACC-logo-400x400-1.webp', alt: 'GAACC' },
+  { src: '/100B - TACH NEN -1.png', alt: '100B Beyond Borders' },
 ]
 
 export default function LogoBar() {
