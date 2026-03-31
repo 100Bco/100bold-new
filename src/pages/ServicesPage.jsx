@@ -5,8 +5,7 @@ export default function ServicesPage() {
     <>
       <section className="page-hero">
         <div className="mx">
-          <div className="section-label rv vis">Services</div>
-          <h1 className="rv vis rv-d1">Two Products.<br/><span className="accent">Zero Fluff.</span></h1>
+          <h1 className="rv vis">Two Products.<br/><span className="accent">Zero Fluff.</span></h1>
           <p className="page-hero-body rv vis rv-d2">We offer two distinct, standalone products. Each stands on its own value. No bundle discounts. Just results.</p>
         </div>
       </section>
@@ -15,8 +14,7 @@ export default function ServicesPage() {
       <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
       <section className="svc-detail" style={{background: 'var(--dark)', color: '#fff', padding: 'var(--gap) 0'}}>
         <div className="mx">
-          <div className="section-label rv" style={{color: 'rgba(255,255,255,.35)'}}>Product 1</div>
-          <h2 className="svc-title rv rv-d1">GBP <span className="accent">Domination.</span></h2>
+          <h2 className="svc-title rv">GBP <span className="accent">Domination.</span></h2>
           <p className="svc-intro rv rv-d2">We treat your Google Business Profile like an active marketing channel — because it is. For most local service businesses, GBP is the single most important digital asset they own.</p>
 
           <div className="tier-grid rv rv-d2">
@@ -70,8 +68,7 @@ export default function ServicesPage() {
       <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
       <section className="svc-detail" style={{background: 'var(--cream)', padding: 'var(--gap) 0'}}>
         <div className="mx">
-          <div className="section-label rv">Product 2</div>
-          <h2 className="svc-title rv rv-d1" style={{color: 'var(--dark)'}}>LinkedIn CEO <span className="accent">Authority.</span></h2>
+          <h2 className="svc-title rv" style={{color: 'var(--dark)'}}>LinkedIn CEO <span className="accent">Authority.</span></h2>
           <p className="svc-intro rv rv-d2" style={{color: 'var(--text-2)'}}>This is a highly selective program. We hand-pick the CEOs and founders we work with. We take over the LinkedIn profile completely.</p>
 
           <div className="lnk-details rv rv-d2">

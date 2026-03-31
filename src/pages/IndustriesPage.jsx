@@ -51,8 +51,7 @@ export default function IndustriesPage() {
     <>
       <section className="page-hero">
         <div className="mx">
-          <div className="section-label rv vis">Industries</div>
-          <h1 className="rv vis rv-d1">We Only Work in Industries<br/>We've <span className="accent">Operated In.</span></h1>
+          <h1 className="rv vis">We Only Work in Industries<br/>We've <span className="accent">Operated In.</span></h1>
           <p className="page-hero-body rv vis rv-d2">We know your pain points because we've lived them. Our founding team has owned and operated businesses in real estate, construction, local services, and technology.</p>
         </div>
       </section>

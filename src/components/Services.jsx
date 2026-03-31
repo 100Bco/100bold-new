@@ -9,8 +9,7 @@ export default function Services() {
   return (
     <section className="services-section" id="services">
       <div className="mx">
-        <div className="section-label rv">What We Do</div>
-        <div className="services-heading rv rv-d1">
+        <div className="services-heading rv">
           Here's how we build your <span className="accent">Growth Machine.</span>
         </div>
         <div className="srv-block rv rv-d2">

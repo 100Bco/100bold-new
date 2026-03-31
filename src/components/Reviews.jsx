@@ -2,8 +2,7 @@ export default function Reviews() {
   return (
     <section className="reviews-section">
       <div className="mx">
-        <div className="section-label rv">What Clients Say</div>
-        <h2 className="reviews-heading rv rv-d1">5-Star <span className="accent">Reviews.</span></h2>
+        <h2 className="reviews-heading rv">5-Star <span className="accent">Reviews.</span></h2>
         <p className="reviews-sub rv rv-d2">Real reviews from real clients on Google.</p>
 
         {/* GHL Widget Placeholder — replace div below with GHL embed script */}

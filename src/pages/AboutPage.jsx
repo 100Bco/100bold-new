@@ -6,8 +6,7 @@ export default function AboutPage() {
       {/* Page Hero */}
       <section className="page-hero">
         <div className="mx">
-          <div className="section-label rv vis">About Us</div>
-          <h1 className="rv vis rv-d1">We Are <span className="accent">Operators.</span><br/>Not Marketers.</h1>
+          <h1 className="rv vis">We Are <span className="accent">Operators.</span><br/>Not Marketers.</h1>
           <p className="page-hero-body rv vis rv-d2">100Bold is a growth agency for established Texas service businesses and founders. We are not a traditional marketing agency. We are operators who have built and run businesses in the exact industries we serve.</p>
         </div>
       </section>
@@ -16,7 +15,6 @@ export default function AboutPage() {
       <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
       <section className="about-advantages">
         <div className="mx">
-          <div className="section-label rv" style={{color: 'rgba(255,255,255,.35)'}}>The Three Unfair Advantages</div>
           <div className="adv-grid">
             <div className="adv-card rv">
               <div className="adv-num">01</div>

@@ -13,8 +13,7 @@ export default function IndustriesPreview() {
   return (
     <section className="industries-preview">
       <div className="mx">
-        <div className="section-label rv">Who We Work With</div>
-        <div className="ip-head rv rv-d1">
+        <div className="ip-head rv">
           <h2>Built for <span className="accent">$5M+ Service</span> Businesses.</h2>
           <p>We only work in industries our founding team has operated in. We know your pain points because we've lived them.</p>
         </div>
