@@ -243,21 +243,50 @@ img { display: block; max-width: 100%; }
 .minai-feat h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
 .minai-feat h4 svg { width: 14px; height: 14px; color: var(--red); }
 .minai-feat p { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
-.minai-visual { position: relative; z-index: 2; display: flex; justify-content: center; }
+.minai-visual { position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; }
 
-/* ── Orb ── */
-.orb-wrap { position: relative; width: clamp(220px, 20vw, 340px); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
-.orb-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.06); }
-.orb-ring:nth-child(1) { inset: 0; }
-.orb-ring:nth-child(2) { inset: 14%; }
-.orb-ring:nth-child(3) { inset: 28%; }
-.orb-core { width: 32%; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; z-index: 2; }
-.orb-core svg { width: 28px; height: 28px; color: var(--red); }
-.orb-float { position: absolute; z-index: 10; padding: 9px 16px; border-radius: 16px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 6px; box-shadow: 0 10px 28px rgba(0,0,0,.25); animation: float 4s ease-in-out infinite; }
-.orb-float.green { top: 8%; right: -8%; background: #fff; color: var(--dark); border-radius: 16px 16px 16px 4px; }
-.orb-float.green .fdot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
-.orb-float.red-f { bottom: 14%; left: -8%; background: var(--red); color: #fff; border-radius: 16px 16px 4px 16px; animation-delay: -2s; }
-.orb-float.red-f svg { width: 13px; height: 13px; }
+/* ── 3D Stack ── */
+.minai-3d-stack { position: relative; width: clamp(240px, 22vw, 360px); height: clamp(260px, 24vw, 380px); perspective: 800px; }
+.minai-3d-card {
+  position: absolute; border-radius: 18px; padding: 20px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(8px); transition: transform .4s ease;
+}
+.minai-3d-back {
+  width: 80%; height: 55%; top: 0; left: 10%;
+  transform: rotateX(8deg) rotateY(-4deg) translateZ(-40px);
+}
+.minai-3d-bar { height: 8px; border-radius: 4px; background: rgba(255,255,255,.1); margin-bottom: 10px; }
+.minai-3d-bar.short { width: 60%; }
+.minai-3d-mid {
+  width: 75%; height: 50%; top: 20%; left: 18%;
+  transform: rotateX(6deg) rotateY(-3deg) translateZ(-10px);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+}
+.minai-3d-chart { display: flex; align-items: flex-end; gap: 8px; height: 60%; width: 70%; }
+.minai-3d-col { flex: 1; background: rgba(255,255,255,.12); border-radius: 4px 4px 0 0; transition: height .5s ease; }
+.minai-3d-col.accent { background: var(--red); }
+.minai-3d-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,.3); margin-top: 8px; }
+.minai-3d-front {
+  width: 52%; height: 45%; bottom: 0; left: 0;
+  transform: rotateX(4deg) rotateY(-6deg) translateZ(20px);
+  background: rgba(200,16,46,.15); border-color: rgba(200,16,46,.25);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.minai-3d-front .minai-3d-icon svg { width: 28px; height: 28px; color: var(--red); }
+.minai-3d-stat { font-family: var(--font-head); font-size: 36px; color: var(--red); line-height: 1; margin-top: 4px; }
+.minai-3d-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,.4); }
+
+.minai-float-badge {
+  position: absolute; z-index: 10; padding: 9px 16px; border-radius: 16px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  display: flex; align-items: center; gap: 6px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.25); animation: float 4s ease-in-out infinite;
+}
+.minai-fb-green { top: 6%; right: -6%; background: #fff; color: var(--dark); border-radius: 16px 16px 16px 4px; }
+.minai-fb-green .fdot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
+.minai-fb-red { bottom: 10%; left: -6%; background: var(--red); color: #fff; border-radius: 16px 16px 4px 16px; animation-delay: -2s; }
+.minai-fb-red svg { width: 13px; height: 13px; }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 /* ── Cases ── */
