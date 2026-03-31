@@ -230,6 +230,7 @@ img { display: block; max-width: 100%; }
 }
 .minai-headline .accent { color: var(--red); }
 .minai-subtitle { font-size: 17px; color: var(--text-2); line-height: 1.6; max-width: 560px; margin-bottom: 40px; }
+.minai-subtitle .accent { color: var(--red); font-weight: 700; }
 .minai-card {
   background: var(--dark); border-radius: var(--r-xl);
   padding: clamp(32px, 4vw, 56px);
