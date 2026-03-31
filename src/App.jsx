@@ -8,6 +8,7 @@ import Cases from './components/Cases'
 import SocialProof from './components/SocialProof'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import WaveDivider from './components/WaveDivider'
 
 function App() {
   useEffect(() => {
@@ -27,12 +28,19 @@ function App() {
     <>
       <Nav />
       <Hero />
+      <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
       <LogoBar />
+      <WaveDivider from="#1A1816" to="#FEFCF9" variant="curve" />
       <Services />
+      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="slant" />
       <MinAI />
+      <WaveDivider from="#F7F3ED" to="#1A1816" variant="wave" />
       <Cases />
+      <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
       <SocialProof />
+      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
       <CTA />
+      <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
       <Footer />
     </>
   )
