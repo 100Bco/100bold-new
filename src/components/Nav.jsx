@@ -17,6 +17,7 @@ export default function Nav() {
           <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="nav-logo" />
         </Link>
         <div className="nav-links">
+          <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/industries">Industries</Link>
           <Link to="/services">Services</Link>
