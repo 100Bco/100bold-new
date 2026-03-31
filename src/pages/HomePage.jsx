@@ -15,11 +15,11 @@ export default function HomePage() {
       <Hero />
       <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
       <LogoBar />
-      <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
+      <WaveDivider from="#1A1816" to="#FEFCF9" variant="curve" />
       <WhyUs />
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
+      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="slant" />
       <IndustriesPreview />
-      <WaveDivider from="#FEFCF9" to="#FEFCF9" variant="slant" />
+      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="wave" />
       <Services />
       <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="slant" />
       <MinAI />

@@ -10,7 +10,7 @@ const PinIcon = () => (
   </svg>
 )
 
-const cities = ['Austin', 'Dallas', 'San Antonio', 'Houston']
+const cities = ['Austin', 'Dallas', 'San Antonio']
 
 export default function Hero() {
   return (

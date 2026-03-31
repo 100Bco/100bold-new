@@ -2,10 +2,17 @@ import { Link } from 'react-router-dom'
 
 export default function WhyUs() {
   return (
-    <section className="why-us">
+    <section className="why-us" style={{position: 'relative'}}>
+      {/* Decorative illustrations */}
+      <svg className="deco" style={{top: '10%', right: '5%', width: 80, height: 80, opacity: .1}} viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="40" r="32" stroke="var(--red)" strokeWidth="2" strokeDasharray="6 8"/>
+      </svg>
+      <svg className="deco" style={{bottom: '15%', left: '3%', width: 60, height: 60, opacity: .08}} viewBox="0 0 60 60" fill="none">
+        <path d="M30 5L33 24L52 21L37 32L44 50L30 38L16 50L23 32L8 21L27 24Z" stroke="var(--red)" strokeWidth="2" strokeLinejoin="round"/>
+      </svg>
       <div className="mx">
         <h2 className="why-us-heading rv">We Are <span className="accent">Operators.</span> Not Marketers.</h2>
-        <p className="why-us-sub rv rv-d2">Our founding team has owned and operated businesses in the exact industries we serve. We know your pain points because we've lived them.</p>
+        <p className="why-us-sub rv rv-d2">Our founding team has owned and operated businesses in the exact industries we serve.<br/><br/>We know your pain points because we've lived them.</p>
         <div className="why-grid rv rv-d2">
           <div className="why-card">
             <div className="why-num">01</div>
