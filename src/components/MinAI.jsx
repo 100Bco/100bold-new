@@ -4,13 +4,12 @@ export default function MinAI() {
   return (
     <section className="minai" id="minai" style={{position: 'relative'}}>
       <div className="mx">
-        {/* Headline outside box */}
-        <h2 className="minai-headline rv">Embed <span className="accent">MinAI.</span> Automate Growth.</h2>
-        <p className="minai-subtitle rv rv-d1">Every 100Bold client gets MinAI — our AI platform — from day one.<br/><span className="accent">No extra cost.</span></p>
-
         <div className="minai-card rv rv-d2">
           <div className="minai-glow"></div>
           <div className="minai-content">
+            <h2 className="minai-headline">Embed <span className="accent">MinAI.</span><br/>Automate Growth.</h2>
+            <p className="minai-subtitle">Every 100Bold client gets MinAI — our AI platform — from day one.<br/><span className="accent">No extra cost.</span></p>
+
             <div className="minai-features">
               <div className="minai-feat">
                 <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> AI Chatbot</h4>
@@ -35,7 +34,6 @@ export default function MinAI() {
             </button>
           </div>
 
-          {/* Right Graphic */}
           <div className="minai-visual">
             <MinAIGraphic />
           </div>
