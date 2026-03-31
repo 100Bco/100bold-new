@@ -23,6 +23,7 @@ export default function Nav() {
           <Link to="/services">Services</Link>
           <Link to="/work">Work</Link>
           <Link to="/minai">MinAI</Link>
+          <a href="https://portfolio.100bold.co/" target="_blank" rel="noopener noreferrer">Our Portfolio</a>
         </div>
         <button className="nav-cta">Contact</button>
       </nav>
