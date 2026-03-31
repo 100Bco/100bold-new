@@ -147,17 +147,36 @@ img { display: block; max-width: 100%; }
 .play-btn svg { width: 26px; height: 26px; color: #fff; margin-left: 3px; }
 
 /* ── Logo Bar ── */
-.logo-bar { padding: 56px 0; background: var(--dark); position: relative; }
+.logo-bar { padding: 56px 0; background: var(--dark); position: relative; overflow: hidden; }
 .logo-bar p {
   text-align: center; font-size: 12px; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 28px;
+  letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 36px;
 }
-.logo-bar-row { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(20px, 4vw, 48px); align-items: center; }
-.logo-item {
-  font-family: var(--font-head); font-size: clamp(18px, 1.8vw, 26px);
-  color: #fff; opacity: .3; transition: all .4s; text-transform: uppercase; cursor: default;
+
+/* Marquee */
+.marquee-wrap { overflow: hidden; width: 100%; }
+.marquee-track {
+  display: flex; align-items: center; gap: clamp(40px, 6vw, 80px);
+  width: max-content;
+  animation: marquee 30s linear infinite;
 }
-.logo-item:hover { opacity: .8; color: var(--red); }
+.marquee-item {
+  flex-shrink: 0;
+  height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
+.marquee-item img {
+  height: 44px; width: auto; max-width: 160px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: .45;
+  transition: opacity .4s;
+}
+.marquee-item img:hover { opacity: .8; }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 /* ── Services ── */
 .services-section { padding: var(--gap) 0; position: relative; background: var(--white); }
@@ -311,7 +330,7 @@ img { display: block; max-width: 100%; }
   flex-wrap: wrap; gap: 24px;
 }
 .footer-logo-link { display: block; }
-.footer-logo-img { height: 40px; width: auto; filter: brightness(0) invert(1); }
+.footer-logo-img { height: 36px; width: auto; filter: brightness(10); }
 .footer-nav { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 .footer-nav a {
   font-size: 13px; font-weight: 700; color: rgba(255,255,255,.45);
