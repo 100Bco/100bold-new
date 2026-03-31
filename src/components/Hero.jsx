@@ -42,7 +42,7 @@ export default function Hero() {
               ))}
             </div>
             <div className="hero-ctas rv vis rv-d3">
-              <button className="btn btn-dark">Apply Now <ArrowIcon /></button>
+              <button className="btn btn-red">Contact Now <ArrowIcon /></button>
               <a href="#services" className="btn btn-outline">View Playbook</a>
             </div>
           </div>

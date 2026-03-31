@@ -63,6 +63,7 @@ img { display: block; max-width: 100%; }
 .btn-dark:hover { background: var(--red); transform: translateY(-2px); }
 .btn-red { padding: 16px 36px; background: var(--red); color: #fff; }
 .btn-red:hover { background: var(--dark); transform: translateY(-2px); }
+.btn-red:active { background: #fff; color: var(--dark); transform: translateY(0); }
 .btn-white { padding: 16px 36px; background: #fff; color: var(--dark); }
 .btn-white:hover { background: var(--dark); color: #fff; transform: translateY(-2px); }
 .btn-outline { padding: 16px 36px; background: transparent; color: var(--dark); border: 2px solid var(--border); }

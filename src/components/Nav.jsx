@@ -24,7 +24,7 @@ export default function Nav() {
           <Link to="/work">Work</Link>
           <Link to="/minai">MinAI</Link>
         </div>
-        <button className="nav-cta">Apply</button>
+        <button className="nav-cta">Contact</button>
       </nav>
     </div>
   )

@@ -11,7 +11,7 @@ export default function CTA() {
             {[0,1,2,3].flatMap(r => [0,1,2,3].map(c => <circle key={`${r}${c}`} cx={8+c*16} cy={8+r*16} r="3" fill="#fff"/>))}
           </svg>
           <h2>Ready to build your<br/>Growth Machine?</h2>
-          <button className="btn btn-white">Apply Now <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
+          <button className="btn btn-white">Contact Now <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
         </div>
       </div>
     </section>
