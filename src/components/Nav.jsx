@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const isActive = (path) => location.pathname === path
 
   return (
     <div className={`nav-wrap${scrolled ? ' scrolled' : ''}`}>
@@ -17,15 +20,17 @@ export default function Nav() {
           <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="nav-logo" />
         </Link>
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/industries">Industries</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/work">Work</Link>
-          <Link to="/minai">MinAI</Link>
-          <a href="https://portfolio.100bold.co/" target="_blank" rel="noopener noreferrer">Our Portfolio</a>
+          <Link to="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
+          <Link to="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
+          <Link to="/industries" className={isActive('/industries') ? 'nav-active' : ''}>Industries</Link>
+          <Link to="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
+          <Link to="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
+          <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
         </div>
-        <button className="nav-cta">Contact</button>
+        <div className="nav-btns">
+          <a href="https://portfolio.100bold.co/" target="_blank" rel="noopener noreferrer" className="nav-portfolio">Our Portfolio</a>
+          <button className="nav-cta">Contact</button>
+        </div>
       </nav>
     </div>
   )

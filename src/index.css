@@ -98,8 +98,21 @@ img { display: block; max-width: 100%; }
 }
 .nav-logo { height: 32px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 28px; }
-.nav-links a { font-size: 15px; font-weight: 700; color: var(--text-2); transition: color .3s; }
+.nav-links a { font-size: 15px; font-weight: 700; color: var(--text-2); transition: color .3s; position: relative; }
 .nav-links a:hover { color: var(--red); }
+.nav-links a.nav-active { color: var(--red); }
+.nav-links a.nav-active::after {
+  content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+  width: 6px; height: 6px; background: var(--red); border-radius: 50%;
+}
+.nav-btns { display: flex; align-items: center; gap: 10px; }
+.nav-portfolio {
+  padding: 9px 22px; background: transparent; color: var(--dark);
+  border-radius: var(--r-pill); font-size: 13px; font-weight: 700;
+  border: 1px solid var(--border); cursor: pointer; transition: all .3s;
+  text-decoration: none;
+}
+.nav-portfolio:hover { border-color: var(--red); color: var(--red); }
 .nav-cta {
   padding: 9px 22px; background: var(--red); color: #fff;
   border-radius: var(--r-pill); font-size: 13px; font-weight: 700;
