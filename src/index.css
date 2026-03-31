@@ -191,36 +191,32 @@ img { display: block; max-width: 100%; }
   margin-bottom: 32px; max-width: 650px; position: relative;
 }
 .services-heading .accent { color: var(--red); }
-.srv-block {
-  background: var(--red-block); border-radius: var(--r-xl);
-  padding: clamp(32px, 4vw, 64px); position: relative; overflow: hidden;
+/* Services compact list */
+.srv-compact { }
+.srv-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  cursor: default; transition: all .3s;
+  border-radius: 12px;
 }
-.srv-block-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 4vw, 64px); align-items: center; }
-.srv-video {
-  aspect-ratio: 4/3; border-radius: var(--r-lg); overflow: hidden;
-  position: relative; box-shadow: 0 20px 60px rgba(0,0,0,.15); cursor: pointer;
+.srv-row:first-child { border-top: 1px solid var(--border); }
+.srv-row:hover {
+  background: var(--red); border-color: transparent;
+  border-radius: 12px; transform: translateX(4px);
 }
-.srv-video img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
-.srv-video:hover img { transform: scale(1.04); }
-.srv-play {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,.95);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 28px rgba(0,0,0,.12); transition: transform .3s;
+.srv-row:hover + .srv-row { border-top-color: transparent; }
+.srv-row h3 {
+  font-family: var(--font-head); font-size: clamp(28px, 2.5vw, 40px);
+  color: var(--dark); text-transform: uppercase; line-height: .95;
+  transition: color .3s; white-space: nowrap;
 }
-.srv-video:hover .srv-play { transform: translate(-50%,-50%) scale(1.1); }
-.srv-play svg { width: 22px; height: 22px; color: var(--dark); margin-left: 2px; }
-.srv-caption { margin-top: 16px; font-size: 14px; font-weight: 700; color: #fff; }
-.srv-caption-body { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.6; margin-top: 4px; }
-.srv-list-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 24px; }
-.srv-item { padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,.1); cursor: pointer; transition: all .3s; }
-.srv-item:first-child { border-top: 2px solid rgba(255,255,255,.1); }
-.srv-item:hover { padding-left: 12px; }
-.srv-item h3 { font-family: var(--font-head); font-size: clamp(32px, 3vw, 48px); color: #fff; text-transform: uppercase; line-height: .95; transition: color .3s; }
-.srv-item p { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 4px; line-height: 1.5; max-height: 0; overflow: hidden; transition: all .4s; opacity: 0; }
-.srv-item:hover p { max-height: 60px; opacity: 1; margin-top: 8px; }
-.srv-item .srv-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; opacity: 0; transition: all .3s; transform: translateX(-8px); font-size: 12px; font-weight: 700; color: rgba(255,255,255,.7); letter-spacing: 1px; text-transform: uppercase; }
-.srv-item:hover .srv-arrow { opacity: 1; transform: translateX(0); }
+.srv-row:hover h3 { color: #fff; }
+.srv-row p {
+  font-size: 14px; color: var(--text-2); line-height: 1.5;
+  text-align: right; max-width: 340px; transition: color .3s;
+}
+.srv-row:hover p { color: rgba(255,255,255,.7); }
 
 /* ── MinAI ── */
 .minai { padding: var(--gap) 0; position: relative; background: var(--cream); }
@@ -580,7 +576,8 @@ img { display: block; max-width: 100%; }
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-video { max-width: 520px; }
-  .srv-block-inner { grid-template-columns: 1fr; }
+  .srv-row { flex-direction: column; align-items: flex-start; }
+  .srv-row p { text-align: left; max-width: none; }
   .minai-card { grid-template-columns: 1fr; }
   .cases-grid { grid-template-columns: 1fr; max-width: 440px; }
   .li-grid { grid-template-columns: 1fr; max-width: 440px; }
