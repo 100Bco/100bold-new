@@ -58,7 +58,7 @@ export default function MinAIPage() {
             <div className="minai-price-card rv rv-d1">
               <div className="tier-label">Included with 100Bold</div>
               <h3>The Essentials</h3>
-              <div className="tier-price" style={{color: 'var(--dark)'}}>$297<span>/month</span></div>
+              <div className="tier-price" style={{color: 'var(--dark)', display: 'none'}}>$297<span>/month</span></div>
               <ul className="tier-list" style={{color: 'var(--text-2)'}}>
                 <li>AI Chatbot</li>
                 <li>Missed call text-back</li>
@@ -69,7 +69,7 @@ export default function MinAIPage() {
             <div className="minai-price-card tier-featured rv rv-d2">
               <div className="tier-label">Upgrade</div>
               <h3>The Growth Machine</h3>
-              <div className="tier-price">$497<span>/month + setup</span></div>
+              <div className="tier-price" style={{display: 'none'}}>$497<span>/month + setup</span></div>
               <ul className="tier-list">
                 <li>Everything in Essentials</li>
                 <li>Website builder + funnels</li>

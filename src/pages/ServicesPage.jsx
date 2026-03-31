@@ -29,7 +29,7 @@ export default function ServicesPage() {
             <div className="tier-card">
               <div className="tier-label">Tier 1</div>
               <h3>GBP Domination</h3>
-              <div className="tier-price">$4,000<span>/month</span></div>
+              <div className="tier-price" style={{display: 'none'}}>$4,000<span>/month</span></div>
               <ul className="tier-list">
                 <li>Full GBP profile optimization</li>
                 <li>Weekly content posted to GBP</li>
@@ -45,7 +45,7 @@ export default function ServicesPage() {
             <div className="tier-card tier-featured">
               <div className="tier-label">Tier 2</div>
               <h3>GBP + Social Content</h3>
-              <div className="tier-price">$6,500–7,000<span>/month</span></div>
+              <div className="tier-price" style={{display: 'none'}}>$6,500–7,000<span>/month</span></div>
               <ul className="tier-list">
                 <li>Everything in Tier 1</li>
                 <li>Reviews transformed into short-form video</li>
@@ -59,7 +59,7 @@ export default function ServicesPage() {
             <div className="tier-card">
               <div className="tier-label">Tier 3</div>
               <h3>Paid Ads</h3>
-              <div className="tier-price">Custom</div>
+              <div className="tier-price" style={{display: 'none'}}>Custom</div>
               <ul className="tier-list">
                 <li>Google Ads and/or Meta Ads</li>
                 <li>Layered on organic foundation only</li>
@@ -96,7 +96,7 @@ export default function ServicesPage() {
               </div>
               <div className="lnk-item">
                 <h4>Pricing</h4>
-                <p>$4,000–$5,000/month. No long-term contract required.</p>
+                <p>Contact us for pricing. No long-term contract required.</p>
               </div>
               <div className="lnk-item">
                 <h4>Why It Works</h4>
