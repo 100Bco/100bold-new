@@ -1,5 +1,6 @@
 import Hero from '../components/Hero'
 import LogoBar from '../components/LogoBar'
+import WhyUs from '../components/WhyUs'
 import IndustriesPreview from '../components/IndustriesPreview'
 import Services from '../components/Services'
 import MinAI from '../components/MinAI'
@@ -13,7 +14,9 @@ export default function HomePage() {
       <Hero />
       <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
       <LogoBar />
-      <WaveDivider from="#1A1816" to="#FEFCF9" variant="curve" />
+      <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
+      <WhyUs />
+      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
       <IndustriesPreview />
       <WaveDivider from="#FEFCF9" to="#FEFCF9" variant="slant" />
       <Services />
