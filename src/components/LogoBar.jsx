@@ -3,7 +3,7 @@ const logos = [
   { src: '/Logo Miami Vice.png', alt: 'Miami Vice' },
   { src: '/t98-rehab-red-logo-400x299.png', alt: 'T98 Rehab' },
   { src: '/Asset 1@10x.png', alt: 'Dang Law Group' },
-  { src: '/Logo Bee.jpg', alt: 'Bee Construction' },
+  { src: '/Bee Logo.png', alt: 'Bee Construction' },
   { src: '/GAACC-logo-400x400-1.webp', alt: 'GAACC' },
 ]
 
