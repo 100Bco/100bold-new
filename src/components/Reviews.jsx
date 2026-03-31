@@ -1,6 +1,14 @@
 export default function Reviews() {
   return (
-    <section className="reviews-section">
+    <section className="reviews-section" style={{position: 'relative'}}>
+      {/* Cross/plus pattern */}
+      <svg className="deco" style={{top: '12%', left: '5%', width: 50, height: 50, opacity: .08}} viewBox="0 0 50 50" fill="none">
+        <path d="M25 8v34M8 25h34" stroke="var(--red)" strokeWidth="2.5" strokeLinecap="round"/>
+      </svg>
+      {/* Dot grid */}
+      <svg className="deco" style={{bottom: '10%', right: '4%', width: 70, height: 70, opacity: .06}} viewBox="0 0 70 70" fill="none">
+        {[0,1,2,3,4,5].flatMap(r => [0,1,2,3,4,5].map(c => <circle key={`${r}${c}`} cx={5+c*12} cy={5+r*12} r="2" fill="var(--red)"/>))}
+      </svg>
       <div className="mx">
         <h2 className="reviews-heading rv">5-Star <span className="accent">Reviews.</span></h2>
         <p className="reviews-sub rv rv-d2">Real reviews from real clients on Google.</p>

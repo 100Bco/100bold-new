@@ -1,6 +1,18 @@
 export default function MinAI() {
   return (
-    <section className="minai" id="minai">
+    <section className="minai" id="minai" style={{position: 'relative'}}>
+      {/* Concentric rings */}
+      <svg className="deco" style={{top: '10%', right: '4%', width: 80, height: 80, opacity: .08}} viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="40" r="12" stroke="var(--red)" strokeWidth="1.5"/>
+        <circle cx="40" cy="40" r="24" stroke="var(--red)" strokeWidth="1.5"/>
+        <circle cx="40" cy="40" r="36" stroke="var(--red)" strokeWidth="1.5"/>
+      </svg>
+      {/* Triangle cluster */}
+      <svg className="deco" style={{bottom: '15%', left: '3%', width: 60, height: 60, opacity: .07}} viewBox="0 0 60 60" fill="none">
+        <path d="M20 45L30 25L40 45Z" stroke="var(--red)" strokeWidth="2" fill="none"/>
+        <path d="M10 55L20 38L30 55Z" stroke="var(--red)" strokeWidth="1.5" fill="none"/>
+        <path d="M30 55L40 38L50 55Z" stroke="var(--red)" strokeWidth="1.5" fill="none"/>
+      </svg>
       <div className="mx">
         {/* Headline outside box */}
         <h2 className="minai-headline rv">Your 24/7 <span className="accent">Growth Engine.</span><br/>Powered by MinAI.</h2>

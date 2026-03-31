@@ -21,6 +21,10 @@ export default function Hero() {
       <svg className="deco" style={{ bottom: '12%', left: '2%', width: 100, height: 100, opacity: .08 }} viewBox="0 0 100 100" fill="none">
         <circle cx="50" cy="50" r="40" stroke="var(--red)" strokeWidth="2" strokeDasharray="6 8" fill="none"/>
       </svg>
+      {/* Dot grid */}
+      <svg className="deco" style={{ bottom: '35%', right: '12%', width: 60, height: 60, opacity: .07 }} viewBox="0 0 60 60" fill="none">
+        {[0,1,2,3,4].flatMap(r => [0,1,2,3,4].map(c => <circle key={`${r}${c}`} cx={6+c*12} cy={6+r*12} r="2" fill="var(--red)"/>))}
+      </svg>
       <div className="mx">
         <div className="hero-grid">
           <div>

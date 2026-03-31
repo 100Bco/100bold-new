@@ -42,6 +42,11 @@ export default function IndustriesPreview() {
       <svg className="deco" style={{bottom: '10%', right: '6%', width: 50, height: 50, opacity: .1}} viewBox="0 0 50 50" fill="none">
         <rect x="5" y="5" width="40" height="40" rx="8" stroke="var(--red)" strokeWidth="2" strokeDasharray="5 7"/>
       </svg>
+      {/* Cross/plus shapes */}
+      <svg className="deco" style={{top: '50%', left: '7%', width: 45, height: 45, opacity: .08}} viewBox="0 0 45 45" fill="none">
+        <path d="M22.5 5v35M5 22.5h35" stroke="var(--red)" strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M12 12l21 21M33 12L12 33" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" opacity=".5"/>
+      </svg>
       <div className="mx">
         <div className="ip-head rv">
           <h2>Built for <span className="accent">$5M+ Service</span> Businesses.</h2>
