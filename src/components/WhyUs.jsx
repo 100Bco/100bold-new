@@ -4,8 +4,7 @@ export default function WhyUs() {
   return (
     <section className="why-us">
       <div className="mx">
-        <div className="section-label rv">Why 100Bold</div>
-        <h2 className="why-us-heading rv rv-d1">We Are <span className="accent">Operators.</span> Not Marketers.</h2>
+        <h2 className="why-us-heading rv">We Are <span className="accent">Operators.</span> Not Marketers.</h2>
         <p className="why-us-sub rv rv-d2">Our founding team has owned and operated businesses in the exact industries we serve. We know your pain points because we've lived them.</p>
         <div className="why-grid rv rv-d2">
           <div className="why-card">
