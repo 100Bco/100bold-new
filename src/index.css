@@ -240,9 +240,9 @@ img { display: block; max-width: 100%; }
 }
 .minai-content { position: relative; z-index: 2; }
 .minai-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
-.minai-feat h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.minai-feat h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
 .minai-feat h4 svg { width: 14px; height: 14px; color: var(--red); }
-.minai-feat p { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.minai-feat p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.5; }
 .minai-visual { position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; }
 
 /* ── 3D Stack ── */
@@ -307,7 +307,7 @@ img { display: block; max-width: 100%; }
 .case-tag-pill { padding: 4px 12px; border-radius: var(--r-pill); background: rgba(255,255,255,.15); backdrop-filter: blur(8px); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; }
 .case-body { padding: 20px 24px 24px; }
 .case-body h3 { font-family: var(--font-head); font-size: 28px; color: #fff; text-transform: uppercase; line-height: 1; margin-bottom: 8px; }
-.case-body p { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.55; margin-bottom: 14px; }
+.case-body p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.55; margin-bottom: 14px; }
 
 /* ── Social Proof ── */
 .social-proof { padding: var(--gap) 0; position: relative; background: var(--cream); }
@@ -323,7 +323,7 @@ img { display: block; max-width: 100%; }
 .li-name { font-size: 14px; font-weight: 700; color: var(--dark); line-height: 1.3; }
 .li-title { font-size: 11px; color: var(--text-3); margin-top: 1px; }
 .li-icon { margin-left: auto; width: 18px; height: 18px; color: #0A66C2; opacity: .4; flex-shrink: 0; }
-.li-body { font-size: 13px; color: var(--text-2); line-height: 1.65; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.li-body { font-size: 14px; color: var(--text-2); line-height: 1.65; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .li-reactions { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border); }
 .li-reactions-left { display: flex; align-items: center; gap: 4px; }
 .li-emoji { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; margin-right: -3px; border: 2px solid var(--card); }
@@ -454,7 +454,7 @@ img { display: block; max-width: 100%; }
 .ip-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.06); border-color: var(--red); }
 .ip-icon { display: flex; justify-content: center; margin-bottom: 10px; }
 .ip-card h3 { font-family: var(--font-head); font-size: 22px; text-transform: uppercase; color: var(--dark); margin-bottom: 4px; }
-.ip-card p { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.ip-card p { font-size: 14px; color: var(--text-2); line-height: 1.5; }
 .ip-cta { text-align: center; }
 
 /* ── About Page ── */
@@ -520,7 +520,7 @@ img { display: block; max-width: 100%; }
 .tier-featured .tier-price { color: #fff; }
 .tier-price span { font-family: var(--font-body); font-size: 14px; font-weight: 700; opacity: .5; }
 .tier-list { list-style: none; padding: 0; margin-bottom: 20px; }
-.tier-list li { font-size: 13px; color: rgba(255,255,255,.6); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.06); line-height: 1.5; }
+.tier-list li { font-size: 14px; color: rgba(255,255,255,.6); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.06); line-height: 1.5; }
 .tier-featured .tier-list li { color: rgba(255,255,255,.8); border-color: rgba(255,255,255,.15); }
 .tier-best { font-size: 12px; color: rgba(255,255,255,.35); font-style: italic; line-height: 1.5; }
 .tier-featured .tier-best { color: rgba(255,255,255,.6); }
@@ -551,7 +551,7 @@ img { display: block; max-width: 100%; }
 .minai-feat-card:hover { border-color: var(--red); transform: translateY(-3px); }
 .minai-feat-icon { font-size: 28px; display: block; margin-bottom: 14px; }
 .minai-feat-card h3 { font-family: var(--font-head); font-size: 24px; text-transform: uppercase; color: #fff; margin-bottom: 8px; }
-.minai-feat-card p { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.6; }
+.minai-feat-card p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.6; }
 
 .minai-pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 700px; }
 .minai-price-card {
