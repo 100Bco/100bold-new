@@ -5,6 +5,7 @@ import IndustriesPreview from '../components/IndustriesPreview'
 import Services from '../components/Services'
 import MinAI from '../components/MinAI'
 import Cases from '../components/Cases'
+import Reviews from '../components/Reviews'
 import CTA from '../components/CTA'
 import WaveDivider from '../components/WaveDivider'
 
@@ -24,7 +25,9 @@ export default function HomePage() {
       <MinAI />
       <WaveDivider from="#F7F3ED" to="#1A1816" variant="wave" />
       <Cases />
-      <WaveDivider from="#1A1816" to="#FEFCF9" variant="curve" />
+      <WaveDivider from="#1A1816" to="#F7F3ED" variant="curve" />
+      <Reviews />
+      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
       <CTA />
     </>
   )
