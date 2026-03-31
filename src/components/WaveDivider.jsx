@@ -5,8 +5,8 @@ export default function WaveDivider({ from, to, flip = false, variant = 'wave' }
     height: 'clamp(48px, 6vw, 100px)',
     background: from,
     position: 'relative',
-    marginTop: -1,
-    marginBottom: -1,
+    marginTop: -2,
+    marginBottom: -2,
   }
 
   if (variant === 'wave') {
