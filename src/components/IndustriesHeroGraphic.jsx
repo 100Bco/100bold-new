@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 
 const industries = [
-  { name: 'Contractors', lottie: '/repair-tools-red.json', pos: { top: '2%', left: '35%' } },
-  { name: 'HVAC', lottie: '/power-red.json', pos: { top: '18%', right: '2%' } },
-  { name: 'Real Estate', lottie: '/building-red.json', pos: { top: '55%', right: '0%' } },
-  { name: 'Law', lottie: '/law-red.json', pos: { bottom: '2%', left: '55%' } },
-  { name: 'Rehab', lottie: '/wheelchair-insurance-red.json', pos: { bottom: '15%', left: '5%' } },
-  { name: 'Plumbing', lottie: '/hourse-red.json', pos: { top: '25%', left: '0%' } },
+  { name: 'Contractors', lottie: '/repair-tools-red.json', angle: 270 },
+  { name: 'HVAC', lottie: '/power-red.json', angle: 330 },
+  { name: 'Real Estate', lottie: '/building-red.json', angle: 30 },
+  { name: 'Law', lottie: '/law-red.json', angle: 90 },
+  { name: 'Rehab', lottie: '/wheelchair-insurance-red.json', angle: 150 },
+  { name: 'Plumbing', lottie: '/hourse-red.json', angle: 210 },
 ]
+
+const cx = 250, cy = 210, radius = 165
 
 function LottieSmall({ src }) {
   const ref = useRef(null)
@@ -23,37 +25,56 @@ function LottieSmall({ src }) {
     }).catch(() => {})
     return () => { if (anim) anim.destroy() }
   }, [src])
-  return <div ref={ref} style={{width: 32, height: 32}} />
+  return <div ref={ref} style={{width: 28, height: 28, flexShrink: 0}} />
 }
 
 export default function IndustriesHeroGraphic() {
+  const nodePositions = industries.map(ind => {
+    const rad = (ind.angle * Math.PI) / 180
+    return { x: cx + radius * Math.cos(rad), y: cy + radius * Math.sin(rad) }
+  })
+
   return (
     <div style={{position:'relative',width:'100%',height:'100%',minHeight:420,display:'flex',alignItems:'center',justifyContent:'center'}}>
 
       {/* Dashed orbit */}
       <motion.svg
         animate={{rotate:[0,360]}}
-        transition={{duration:40,repeat:Infinity,ease:'linear'}}
-        style={{position:'absolute',top:'50%',left:'50%',marginTop:-170,marginLeft:-170,pointerEvents:'none',overflow:'visible',opacity:.2}}
-        width="340" height="340" viewBox="0 0 340 340"
+        transition={{duration:45,repeat:Infinity,ease:'linear'}}
+        style={{position:'absolute',top:'50%',left:'50%',marginTop:-175,marginLeft:-175,pointerEvents:'none',overflow:'visible',opacity:.2}}
+        width="350" height="350" viewBox="0 0 350 350"
       >
-        <circle cx="170" cy="170" r="155" stroke="#E31837" strokeWidth="1.5" fill="none" strokeDasharray="8 8"/>
+        <circle cx="175" cy="175" r="165" stroke="#E31837" strokeWidth="1.5" fill="none" strokeDasharray="8 8"/>
       </motion.svg>
-      <motion.svg
-        animate={{rotate:[360,0]}}
-        transition={{duration:55,repeat:Infinity,ease:'linear'}}
-        style={{position:'absolute',top:'50%',left:'50%',marginTop:-195,marginLeft:-195,pointerEvents:'none',overflow:'visible',opacity:.15}}
-        width="390" height="390" viewBox="0 0 390 390"
-      >
-        <circle cx="195" cy="195" r="185" stroke="#888" strokeWidth="1" fill="none" strokeDasharray="5 7"/>
-      </motion.svg>
+
+      {/* Connecting lines from nodes to center */}
+      <svg style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',pointerEvents:'none',zIndex:1,overflow:'visible'}} viewBox="0 0 500 420">
+        <defs>
+          <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6" fill="rgba(227,24,55,.3)" />
+          </marker>
+        </defs>
+        {nodePositions.map((pos, i) => {
+          const dx = cx - pos.x, dy = cy - pos.y
+          const len = Math.sqrt(dx*dx + dy*dy)
+          const endX = pos.x + dx * ((len - 55) / len)
+          const endY = pos.y + dy * ((len - 55) / len)
+          return (
+            <line key={i}
+              x1={pos.x} y1={pos.y} x2={endX} y2={endY}
+              stroke="rgba(227,24,55,.2)" strokeWidth="1.5" strokeDasharray="6 4"
+              markerEnd="url(#arrowRed)"
+            />
+          )
+        })}
+      </svg>
 
       {/* Central node */}
       <motion.div
         initial={{rotate: 45}}
-        animate={{y:[-8,8,-8], rotate: 45}}
+        animate={{y:[-6,6,-6], rotate: 45}}
         transition={{duration:5,repeat:Infinity,ease:'easeInOut'}}
-        style={{position:'relative',zIndex:20,width:110,height:110,background:'#1C1A1A',borderRadius:24,boxShadow:'0 16px 40px rgba(0,0,0,.2), 0 0 50px rgba(227,24,55,.06)',display:'flex',alignItems:'center',justifyContent:'center',border:'1px solid rgba(255,255,255,.08)'}}
+        style={{position:'absolute',top:'50%',left:'50%',marginTop:-55,marginLeft:-55,zIndex:20,width:110,height:110,background:'#1C1A1A',borderRadius:24,boxShadow:'0 16px 40px rgba(0,0,0,.2), 0 0 50px rgba(227,24,55,.06)',display:'flex',alignItems:'center',justifyContent:'center',border:'1px solid rgba(255,255,255,.08)'}}
       >
         <div style={{transform:'rotate(-45deg)',display:'flex',flexDirection:'column',alignItems:'center'}}>
           <span style={{fontFamily:'var(--font-head)',fontSize:28,color:'var(--red)',lineHeight:1}}>$5M+</span>
@@ -61,53 +82,37 @@ export default function IndustriesHeroGraphic() {
         </div>
       </motion.div>
 
-      {/* Industry nodes */}
-      {industries.map((ind, i) => (
-        <motion.div
-          key={ind.name}
-          animate={{
-            y: [-(8 + i * 2), (8 + i * 2), -(8 + i * 2)],
-            x: [i % 2 === 0 ? -4 : 4, i % 2 === 0 ? 4 : -4, i % 2 === 0 ? -4 : 4],
-          }}
-          transition={{duration: 5 + i * 0.5, repeat: Infinity, ease:'easeInOut', delay: i * 0.3}}
-          style={{
-            position:'absolute', ...ind.pos, zIndex: 10,
-            background:'#fff', padding:'10px 14px', borderRadius:16,
-            boxShadow:'0 8px 24px rgba(0,0,0,.08)',
-            border:'1px solid #f3f4f6',
-            display:'flex', alignItems:'center', gap:8,
-          }}
-        >
-          <LottieSmall src={ind.lottie} />
-          <span style={{fontSize:11,fontWeight:700,color:'var(--dark)',letterSpacing:.5}}>{ind.name}</span>
-        </motion.div>
-      ))}
+      {/* Industry nodes - fixed positions on circle, subtle scale pulse */}
+      {industries.map((ind, i) => {
+        const pos = nodePositions[i]
+        return (
+          <motion.div
+            key={ind.name}
+            animate={{scale:[1, 1.05, 1]}}
+            transition={{duration: 3, repeat: Infinity, ease:'easeInOut', delay: i * 0.5}}
+            style={{
+              position:'absolute',
+              top: `${(pos.y / 420) * 100}%`,
+              left: `${(pos.x / 500) * 100}%`,
+              transform: 'translate(-50%, -50%)',
+              zIndex: 10,
+              background:'#fff', padding:'8px 14px', borderRadius:14,
+              boxShadow:'0 6px 20px rgba(0,0,0,.07)',
+              border:'1px solid #f3f4f6',
+              display:'flex', alignItems:'center', gap:8,
+            }}
+          >
+            <LottieSmall src={ind.lottie} />
+            <span style={{fontSize:12,fontWeight:700,color:'var(--dark)',whiteSpace:'nowrap'}}>{ind.name}</span>
+          </motion.div>
+        )
+      })}
 
-      {/* Connecting lines */}
-      <svg style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none',zIndex:0,overflow:'visible'}} viewBox="0 0 500 420">
-        {/* Lines from each node position toward center */}
-        {[
-          'M 250 30 L 260 180',
-          'M 430 115 L 280 195',
-          'M 440 280 L 285 220',
-          'M 330 385 L 270 235',
-          'M 80 340 L 240 230',
-          'M 60 150 L 235 195',
-        ].map((d, i) => (
-          <motion.path
-            key={i} d={d}
-            stroke="rgba(227,24,55,.2)" strokeWidth="1.5" fill="none" strokeDasharray="4 4"
-            initial={{pathLength:0}} animate={{pathLength:1}}
-            transition={{duration:2+i*0.3,repeat:Infinity,ease:'easeInOut',delay:i*0.4}}
-          />
-        ))}
-      </svg>
-
-      {/* Floating badge */}
+      {/* Badge */}
       <motion.div
-        animate={{y:[-6,6,-6]}}
+        animate={{y:[-4,4,-4]}}
         transition={{duration:4,repeat:Infinity,ease:'easeInOut'}}
-        style={{position:'absolute',bottom:'5%',right:'15%',zIndex:30,background:'var(--red)',color:'#fff',fontSize:11,fontWeight:700,letterSpacing:2,textTransform:'uppercase',padding:'6px 16px',borderRadius:20,boxShadow:'0 8px 20px rgba(200,16,46,.3)'}}
+        style={{position:'absolute',bottom:'3%',right:'12%',zIndex:30,background:'var(--red)',color:'#fff',fontSize:11,fontWeight:700,letterSpacing:2,textTransform:'uppercase',padding:'6px 16px',borderRadius:20,boxShadow:'0 8px 20px rgba(200,16,46,.3)'}}
       >
         6 Industries
       </motion.div>
