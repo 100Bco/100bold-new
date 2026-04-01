@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion'
-import { useRef, useEffect } from 'react'
+import { motion } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 
+// Giữ nguyên data và lottie files của bạn
 const industries = [
   { name: 'Contractors', lottie: '/repair-tools-red.json', angle: 270 },
   { name: 'HVAC', lottie: '/power-red.json', angle: 330 },
@@ -8,114 +9,271 @@ const industries = [
   { name: 'Law', lottie: '/law-red.json', angle: 90 },
   { name: 'Rehab', lottie: '/wheelchair-insurance-red.json', angle: 150 },
   { name: 'Plumbing', lottie: '/hourse-red.json', angle: 210 },
-]
+];
 
-const cx = 250, cy = 210, radius = 165
-
+// Giữ nguyên component render Lottie của bạn
 function LottieSmall({ src }) {
-  const ref = useRef(null)
+  const ref = useRef(null);
   useEffect(() => {
-    let anim
+    let anim;
     import('lottie-web/build/player/lottie_light').then(lottie => {
-      if (!ref.current) return
+      if (!ref.current) return;
       anim = lottie.default.loadAnimation({
         container: ref.current, renderer: 'svg',
         loop: true, autoplay: true, path: src,
-      })
-    }).catch(() => {})
-    return () => { if (anim) anim.destroy() }
-  }, [src])
-  return <div ref={ref} style={{width: 28, height: 28, flexShrink: 0}} />
+      });
+    }).catch(() => {});
+    return () => { if (anim) anim.destroy(); };
+  }, [src]);
+  return <div ref={ref} style={{ width: 28, height: 28, flexShrink: 0 }} />;
 }
 
 export default function IndustriesHeroGraphic() {
-  const nodePositions = industries.map(ind => {
-    const rad = (ind.angle * Math.PI) / 180
-    return { x: cx + radius * Math.cos(rad), y: cy + radius * Math.sin(rad) }
-  })
+  const radius = 160;
+  const cx = 200;
+  const cy = 200;
 
   return (
-    <div style={{position:'relative',width:'100%',height:'100%',minHeight:420,display:'flex',alignItems:'center',justifyContent:'center'}}>
+    <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '100%',
+      minHeight: 420,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 16,
+      transform: 'scale(0.9)', // Thu nhỏ một chút trên màn hình nhỏ, bạn có thể dùng media query nếu cần
+    }}>
+      <div style={{
+        position: 'relative',
+        width: 400,
+        height: 400,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
 
-      {/* Dashed orbit */}
-      <motion.svg
-        animate={{rotate:[0,360]}}
-        transition={{duration:45,repeat:Infinity,ease:'linear'}}
-        style={{position:'absolute',top:'50%',left:'50%',marginTop:-175,marginLeft:-175,pointerEvents:'none',overflow:'visible',opacity:.2}}
-        width="350" height="350" viewBox="0 0 350 350"
-      >
-        <circle cx="175" cy="175" r="165" stroke="#E31837" strokeWidth="1.5" fill="none" strokeDasharray="8 8"/>
-      </motion.svg>
+        {/* SVG Rings and Lines */}
+        <svg 
+          style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            width: '100%', height: '100%',
+            pointerEvents: 'none',
+            zIndex: 0
+          }} 
+          viewBox="0 0 400 400"
+        >
+          {/* Vòng tròn ngoài */}
+          <motion.circle
+            cx={cx} cy={cy} r={radius}
+            stroke="#E5E7EB" strokeWidth="1.5" strokeDasharray="6 6" fill="none"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+            style={{ transformOrigin: 'center' }}
+          />
+          {/* Vòng tròn trong */}
+          <motion.circle
+            cx={cx} cy={cy} r={radius - 60}
+            stroke="#F3F4F6" strokeWidth="1.5" strokeDasharray="4 4" fill="none"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            style={{ transformOrigin: 'center' }}
+          />
 
-      {/* Connecting lines from nodes to center */}
-      <svg style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',pointerEvents:'none',zIndex:1,overflow:'visible'}} viewBox="0 0 500 420">
-        <defs>
-          <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <path d="M0,0 L8,3 L0,6" fill="rgba(227,24,55,.3)" />
-          </marker>
-        </defs>
-        {nodePositions.map((pos, i) => {
-          const dx = cx - pos.x, dy = cy - pos.y
-          const len = Math.sqrt(dx*dx + dy*dy)
-          const endX = pos.x + dx * ((len - 55) / len)
-          const endY = pos.y + dy * ((len - 55) / len)
+          {/* Các đường line kết nối và hạt dữ liệu chạy */}
+          {industries.map((node, i) => {
+            const rad = (node.angle * Math.PI) / 180;
+            const x2 = cx + Math.cos(rad) * radius;
+            const y2 = cy + Math.sin(rad) * radius;
+            return (
+              <g key={`connection-${i}`}>
+                {/* Đường line mờ cố định */}
+                <motion.line
+                  x1={cx} y1={cy} x2={x2} y2={y2}
+                  stroke="#E5E7EB" strokeWidth="1.5" opacity="0.6"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, delay: i * 0.1, ease: "easeOut" }}
+                />
+                
+                {/* Đường đứt nét chạy */}
+                <motion.line
+                  x1={cx} y1={cy} x2={x2} y2={y2}
+                  stroke="#E31837" strokeWidth="1.5" strokeDasharray="4 8"
+                  initial={{ opacity: 0 }}
+                  animate={{ strokeDashoffset: [0, -24], opacity: 0.5 }}
+                  transition={{ 
+                    strokeDashoffset: { duration: 1.5, repeat: Infinity, ease: "linear" },
+                    opacity: { duration: 1, delay: 1.5 }
+                  }}
+                />
+
+                {/* Hạt dữ liệu (Particle) di chuyển */}
+                <motion.circle
+                  r="3"
+                  fill="#E31837"
+                  style={{ filter: 'drop-shadow(0 0 4px rgba(227,24,55,0.8))' }}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    cx: [cx, x2],
+                    cy: [cy, y2],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{ duration: 2.5, repeat: Infinity, delay: 1.5 + i * 0.3, ease: "easeInOut" }}
+                />
+              </g>
+            );
+          })}
+        </svg>
+
+        {/* Khối hình thoi trung tâm (Màu đỏ, chữ trắng) */}
+        <motion.div
+          initial={{ scale: 0, rotate: 0 }}
+          animate={{ scale: 1, rotate: 45 }}
+          transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+          style={{
+            position: 'absolute',
+            zIndex: 20,
+            width: 144, // 36 * 4
+            height: 144,
+            backgroundColor: '#E31837',
+            borderRadius: 40, // 2.5rem
+            boxShadow: '0 20px 50px rgba(227,24,55,0.3)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transform: 'rotate(-45deg)'
+          }}>
+            <span style={{
+              fontSize: 36, // 4xl
+              fontWeight: 'bold',
+              color: 'white',
+              lineHeight: 1
+            }}>$5M+</span>
+            <span style={{
+              fontSize: 10,
+              fontWeight: 'bold',
+              color: 'rgba(255, 255, 255, 0.9)',
+              letterSpacing: '0.1em', // tracking-widest
+              textTransform: 'uppercase',
+              marginTop: 8,
+              textAlign: 'center',
+              lineHeight: 1.25
+            }}>
+              Service<br/>Biz
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Các thẻ ngành nghề (Pills) */}
+        {industries.map((node, i) => {
+          const rad = (node.angle * Math.PI) / 180;
+          const x = Math.cos(rad) * radius;
+          const y = Math.sin(rad) * radius;
+
           return (
-            <line key={i}
-              x1={pos.x} y1={pos.y} x2={endX} y2={endY}
-              stroke="rgba(227,24,55,.2)" strokeWidth="1.5" strokeDasharray="6 4"
-              markerEnd="url(#arrowRed)"
-            />
-          )
+            <motion.div
+              key={node.name}
+              style={{
+                position: 'absolute',
+                zIndex: 30,
+                left: '50%',
+                top: '50%',
+              }}
+              initial={{ x: '-50%', y: '-50%', opacity: 0, scale: 0.5 }}
+              animate={{
+                x: `calc(-50% + ${x}px)`,
+                y: `calc(-50% + ${y}px)`,
+                opacity: 1,
+                scale: 1
+              }}
+              transition={{ duration: 0.8, delay: 0.4 + i * 0.1, type: "spring", stiffness: 60 }}
+            >
+              <motion.div 
+                animate={{ y: [-4, 4, -4] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 12, // gap-3
+                  backgroundColor: 'white',
+                  padding: '10px 16px', // py-2.5 px-4
+                  borderRadius: 16, // 2xl
+                  boxShadow: '0 8px 25px rgba(0,0,0,0.06)',
+                  border: '1px solid #F3F4F6', // gray-100
+                  whiteSpace: 'nowrap',
+                  cursor: 'default',
+                  transition: 'all 0.3s ease'
+                }}
+                // Inline hover effect simulation (React doesn't support :hover in inline styles natively without extra libraries, 
+                // but this static style looks rất gần với bản Tailwind)
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#FECACA'; // red-200
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(227,24,55,0.15)';
+                  e.currentTarget.children[0].style.backgroundColor = '#FEE2E2'; // red-100
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = '#F3F4F6';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.06)';
+                  e.currentTarget.children[0].style.backgroundColor = '#FEF2F2'; // red-50
+                }}
+              >
+                {/* Vòng tròn bọc Lottie */}
+                <div style={{
+                  width: 36, // w-9
+                  height: 36, // h-9
+                  borderRadius: '50%',
+                  backgroundColor: '#FEF2F2', // red-50
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'background-color 0.3s ease'
+                }}>
+                  <LottieSmall src={node.lottie} />
+                </div>
+                <span style={{
+                  fontSize: 13,
+                  fontWeight: 'bold',
+                  color: '#1F2937' // gray-800
+                }}>{node.name}</span>
+              </motion.div>
+            </motion.div>
+          );
         })}
-      </svg>
 
-      {/* Central node */}
-      <motion.div
-        initial={{rotate: 45}}
-        animate={{y:[-6,6,-6], rotate: 45}}
-        transition={{duration:5,repeat:Infinity,ease:'easeInOut'}}
-        style={{position:'absolute',top:'50%',left:'50%',marginTop:-55,marginLeft:-55,zIndex:20,width:110,height:110,background:'#1C1A1A',borderRadius:24,boxShadow:'0 16px 40px rgba(0,0,0,.2), 0 0 50px rgba(227,24,55,.06)',display:'flex',alignItems:'center',justifyContent:'center',border:'1px solid rgba(255,255,255,.08)'}}
-      >
-        <div style={{transform:'rotate(-45deg)',display:'flex',flexDirection:'column',alignItems:'center'}}>
-          <span style={{fontFamily:'var(--font-head)',fontSize:28,color:'var(--red)',lineHeight:1}}>$5M+</span>
-          <span style={{color:'rgba(255,255,255,.6)',fontWeight:700,fontSize:9,letterSpacing:2,textTransform:'uppercase',marginTop:4}}>Service Biz</span>
-        </div>
-      </motion.div>
+        {/* Badge "6 Industries" */}
+        <motion.div
+          animate={{y:[-4,4,-4]}}
+          transition={{duration:4,repeat:Infinity,ease:'easeInOut'}}
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            right: -32, // md:-right-8
+            zIndex: 30,
+            backgroundColor: '#E31837',
+            color: 'white',
+            fontSize: 11,
+            fontWeight: 'bold',
+            letterSpacing: 2,
+            textTransform: 'uppercase',
+            padding: '6px 16px',
+            borderRadius: 9999, // full
+            boxShadow: '0 8px 20px rgba(200,16,46,0.3)'
+          }}
+        >
+          6 Industries
+        </motion.div>
 
-      {/* Industry nodes - fixed positions on circle, subtle scale pulse */}
-      {industries.map((ind, i) => {
-        const pos = nodePositions[i]
-        return (
-          <motion.div
-            key={ind.name}
-            animate={{scale:[1, 1.05, 1]}}
-            transition={{duration: 3, repeat: Infinity, ease:'easeInOut', delay: i * 0.5}}
-            style={{
-              position:'absolute',
-              top: `${(pos.y / 420) * 100}%`,
-              left: `${(pos.x / 500) * 100}%`,
-              transform: 'translate(-50%, -50%)',
-              zIndex: 10,
-              background:'#fff', padding:'8px 14px', borderRadius:14,
-              boxShadow:'0 6px 20px rgba(0,0,0,.07)',
-              border:'1px solid #f3f4f6',
-              display:'flex', alignItems:'center', gap:8,
-            }}
-          >
-            <LottieSmall src={ind.lottie} />
-            <span style={{fontSize:12,fontWeight:700,color:'var(--dark)',whiteSpace:'nowrap'}}>{ind.name}</span>
-          </motion.div>
-        )
-      })}
-
-      {/* Badge */}
-      <motion.div
-        animate={{y:[-4,4,-4]}}
-        transition={{duration:4,repeat:Infinity,ease:'easeInOut'}}
-        style={{position:'absolute',bottom:'3%',right:'12%',zIndex:30,background:'var(--red)',color:'#fff',fontSize:11,fontWeight:700,letterSpacing:2,textTransform:'uppercase',padding:'6px 16px',borderRadius:20,boxShadow:'0 8px 20px rgba(200,16,46,.3)'}}
-      >
-        6 Industries
-      </motion.div>
+      </div>
     </div>
-  )
+  );
 }
