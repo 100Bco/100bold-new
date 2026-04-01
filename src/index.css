@@ -696,7 +696,7 @@ img { display: block; max-width: 100%; }
 
 /* ── Work Page ── */
 .work-list { background: var(--cream); padding: var(--gap) 0; }
-.work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .work-card { background: var(--card); border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border); transition: all .4s; }
 .work-card:hover { transform: translateY(-4px); box-shadow: 0 20px 56px rgba(0,0,0,.07); }
 .work-card-body { padding: 24px; }
