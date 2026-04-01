@@ -7,15 +7,23 @@ export default function ServicesHeroGraphic() {
       {/* Background glow */}
       <div style={{position:'absolute',width:240,height:240,background:'radial-gradient(circle,rgba(227,24,55,.06) 0%,transparent 70%)',top:'50%',left:'50%',transform:'translate(-50%,-50%)',borderRadius:'50%'}} />
 
-      {/* Dashed orbit circles - native SVG animation (no Tailwind needed) */}
-      <svg style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',pointerEvents:'none',overflow:'visible',opacity:.25}} width="500" height="500" viewBox="0 0 500 500">
-        <circle cx="250" cy="250" r="140" stroke="#E31837" strokeWidth="1.5" fill="none" strokeDasharray="8 8">
-          <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="30s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="250" cy="250" r="210" stroke="#999" strokeWidth="1" fill="none" strokeDasharray="6 8">
-          <animateTransform attributeName="transform" type="rotate" from="360 250 250" to="0 250 250" dur="45s" repeatCount="indefinite"/>
-        </circle>
-      </svg>
+      {/* Dashed orbit circles - floating around */}
+      <motion.svg
+        animate={{x:[-30,20,-10,30,-30], y:[-20,15,25,-15,-20], rotate:[0,360]}}
+        transition={{x:{duration:8,repeat:Infinity,ease:'easeInOut'}, y:{duration:6,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:20,repeat:Infinity,ease:'linear'}}}
+        style={{position:'absolute',top:'50%',left:'50%',marginTop:-160,marginLeft:-160,pointerEvents:'none',overflow:'visible',opacity:.2}}
+        width="320" height="320" viewBox="0 0 320 320"
+      >
+        <circle cx="160" cy="160" r="140" stroke="#E31837" strokeWidth="1.5" fill="none" strokeDasharray="8 8"/>
+      </motion.svg>
+      <motion.svg
+        animate={{x:[25,-20,15,-25,25], y:[15,-25,-10,20,15], rotate:[360,0]}}
+        transition={{x:{duration:10,repeat:Infinity,ease:'easeInOut'}, y:{duration:7.5,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:30,repeat:Infinity,ease:'linear'}}}
+        style={{position:'absolute',top:'50%',left:'50%',marginTop:-220,marginLeft:-220,pointerEvents:'none',overflow:'visible',opacity:.15}}
+        width="440" height="440" viewBox="0 0 440 440"
+      >
+        <circle cx="220" cy="220" r="210" stroke="#999" strokeWidth="1" fill="none" strokeDasharray="6 8"/>
+      </motion.svg>
 
       {/* Central Hub - Diamond */}
       <motion.div
