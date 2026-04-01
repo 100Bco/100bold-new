@@ -1,18 +1,21 @@
 import WaveDivider from '../components/WaveDivider'
+import AboutHeroGraphic from '../components/AboutHeroGraphic'
 
 export default function AboutPage() {
   return (
     <>
       {/* Page Hero */}
       <section className="page-hero" style={{position: 'relative'}}>
-        {/* Arrow swoosh */}
-        <svg className="deco" style={{top: '18%', right: '6%', width: 80, height: 45, opacity: .09}} viewBox="0 0 80 45" fill="none">
-          <path d="M5 35C18 8,45 3,72 18" stroke="var(--red)" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-          <path d="M62 8L74 18L60 24" stroke="var(--red)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-        </svg>
         <div className="mx">
-          <h1 className="rv vis">We Are <span className="accent">Operators.</span><br/>Not Marketers.</h1>
-          <p className="page-hero-body rv vis rv-d2">We are operators who have built and run businesses in the exact industries we serve.</p>
+          <div className="about-hero-grid">
+            <div>
+              <h1 className="rv vis">We Are <span className="accent">Operators.</span><br/>Not Marketers.</h1>
+              <p className="page-hero-body rv vis rv-d2">We are operators who have built and run businesses in the exact industries we serve.</p>
+            </div>
+            <div className="about-hero-visual rv vis rv-d2">
+              <AboutHeroGraphic />
+            </div>
+          </div>
         </div>
       </section>
 
