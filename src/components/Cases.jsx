@@ -1,21 +1,21 @@
 const cases = [
   {
-    title: 'LT Commercial',
-    desc: 'Dominated local SEO, turning search visibility into a predictable revenue engine.',
+    title: 'LT Commercial Group',
+    desc: "Creative content that keeps Austin's top commercial real estate group top of mind.",
     img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
-    metric: '+215%', metricLabel: 'Call Volume', tags: ['SEO', 'GBP'],
+    metric: '6,000+', metricLabel: 'Business Leaders Reached', tags: ['Content', 'GBP'],
   },
   {
-    title: 'T98 Rehab',
-    desc: 'Built founder authority on LinkedIn, generating high-ticket leads in healthcare.',
-    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
-    metric: '1.2M+', metricLabel: 'Content Views', tags: ['LinkedIn', 'Content'],
+    title: 'Lezlie Tram',
+    desc: 'Turned an already-active LinkedIn into a magnet. Consistent content and real engagement.',
+    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
+    metric: '2.5X', metricLabel: 'LinkedIn Growth', tags: ['LinkedIn', 'CEO Authority'],
   },
   {
-    title: 'Bee Construction',
-    desc: 'Zero to dominant — top-3 local ranking and review machine in 6 months.',
-    img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800',
-    metric: '47', metricLabel: '5-Star Reviews', tags: ['GBP', 'Reviews'],
+    title: 'Dacy Business Park',
+    desc: 'Built digital presence from scratch. Sold-out launch event and immediate lease inquiries.',
+    img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
+    metric: '100', metricLabel: 'Attendees. 3 Leads in 24h', tags: ['Website', 'GBP', 'Events'],
   },
 ]
 
@@ -34,7 +34,7 @@ export default function Cases() {
       <div className="mx">
         <div className="cases-head">
           <h2 className="rv">Proven <span className="accent">Results.</span></h2>
-          <button className="btn btn-text rv rv-d1">View All <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
+          <a href="/work" className="btn btn-text rv rv-d1">View All <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
         </div>
         <div className="cases-grid">
           {cases.map((c, i) => (
