@@ -61,8 +61,7 @@ export default function Nav() {
               <div className="nav-dropdown">
                 {industryLinks.map(ind => (
                   <Link key={ind.path} to={ind.path} className="nav-dropdown-item">
-                    <NavLottie src={ind.lottie} />
-                    <span>{ind.name}</span>
+                    {ind.name}
                   </Link>
                 ))}
               </div>
