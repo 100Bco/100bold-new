@@ -20,7 +20,7 @@ export default function MinAIPage() {
       <section className="page-hero">
         <div className="mx">
           <h1 className="rv vis">Meet <span className="accent">MinAI.</span><br/>The Engine Behind 100Bold.</h1>
-          <p className="page-hero-body rv vis rv-d2">MinAI is our sister company and the technology infrastructure behind every client engagement. A founder-built platform with experience scaling to over 1,000,000 users.</p>
+          <p className="page-hero-body rv vis rv-d2">MinAI is the technology engine behind every 100Bold engagement. Founder-built, scaled to 1M+ users.</p>
         </div>
       </section>
 

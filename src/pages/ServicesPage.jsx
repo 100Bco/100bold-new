@@ -23,7 +23,7 @@ export default function ServicesPage() {
         </svg>
         <div className="mx">
           <h2 className="svc-title rv">GBP <span className="accent">Domination.</span></h2>
-          <p className="svc-intro rv rv-d2">We treat your Google Business Profile like an active marketing channel — because it is. For most local service businesses, GBP is the single most important digital asset they own.</p>
+          <p className="svc-intro rv rv-d2">Your Google Business Profile is your most important digital asset. We treat it like one.</p>
 
           <div className="tier-grid rv rv-d2">
             <div className="tier-card">
@@ -82,7 +82,7 @@ export default function ServicesPage() {
         </svg>
         <div className="mx">
           <h2 className="svc-title rv" style={{color: 'var(--dark)'}}>LinkedIn CEO <span className="accent">Authority.</span></h2>
-          <p className="svc-intro rv rv-d2" style={{color: 'var(--text-2)'}}>This is a highly selective program. We hand-pick the CEOs and founders we work with. We take over the LinkedIn profile completely.</p>
+          <p className="svc-intro rv rv-d2" style={{color: 'var(--text-2)'}}>We hand-pick the CEOs we work with and take over LinkedIn completely.</p>
 
           <div className="lnk-details rv rv-d2">
             <div className="lnk-detail-grid">
@@ -92,7 +92,7 @@ export default function ServicesPage() {
               </div>
               <div className="lnk-item">
                 <h4>Full Scope</h4>
-                <p>Content strategy, writing, posting, engagement, and network growth. Fully hands-off.</p>
+                <p>Strategy, writing, posting, engagement, network growth. Fully hands-off.</p>
               </div>
               <div className="lnk-item">
                 <h4>Pricing</h4>
@@ -100,7 +100,7 @@ export default function ServicesPage() {
               </div>
               <div className="lnk-item">
                 <h4>Why It Works</h4>
-                <p>We manage multiple CEO profiles across complementary industries. Cross-amplification accelerates growth for every account.</p>
+                <p>Multiple CEO profiles across complementary industries. Cross-amplification accelerates growth.</p>
               </div>
             </div>
           </div>

@@ -12,7 +12,7 @@ export default function AboutPage() {
         </svg>
         <div className="mx">
           <h1 className="rv vis">We Are <span className="accent">Operators.</span><br/>Not Marketers.</h1>
-          <p className="page-hero-body rv vis rv-d2">100Bold is a growth agency for established Texas service businesses and founders. We are not a traditional marketing agency. We are operators who have built and run businesses in the exact industries we serve.</p>
+          <p className="page-hero-body rv vis rv-d2">We are operators who have built and run businesses in the exact industries we serve. Not a traditional marketing agency.</p>
         </div>
       </section>
 
@@ -30,17 +30,17 @@ export default function AboutPage() {
             <div className="adv-card rv">
               <div className="adv-num">01</div>
               <h3>Operator Credibility</h3>
-              <p>We have built businesses in real estate, construction, and local services. When we sit across from a GC or a PI law firm or a property developer, we speak their language — not marketing language.</p>
+              <p>We've built businesses in your industry. We speak your language — not marketing language.</p>
             </div>
             <div className="adv-card rv rv-d1">
               <div className="adv-num">02</div>
               <h3>The Austin Network</h3>
-              <p>6,000+ Austin business professionals in our active network. Active in GAACC, organized events with 100+ business owners and city officials. Your growth is powered by a real community.</p>
+              <p>6,000+ Austin business professionals in our network. Active in GAACC with events of 100+ business leaders.</p>
             </div>
             <div className="adv-card rv rv-d2">
               <div className="adv-num">03</div>
               <h3>GBP + LinkedIn System</h3>
-              <p>Our services are productized and systematized. A proven playbook that works for any local service business, delivering consistently at scale without the back-and-forth that slows most agencies down.</p>
+              <p>Proven playbooks that deliver consistently at scale. No back-and-forth.</p>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function AboutPage() {
         </svg>
         <div className="mx">
           <h2 className="rv">The 100Bold <span className="accent">Ecosystem.</span></h2>
-          <p className="about-eco-body rv rv-d1">100Bold Agency is the client-facing brand. MinAI is the technology engine behind every engagement. Together, they form a complete growth infrastructure — from search dominance to AI-powered lead capture.</p>
+          <p className="about-eco-body rv rv-d1">100Bold is the agency. MinAI is the technology engine. Together — complete growth infrastructure.</p>
           <div className="eco-stats rv rv-d2">
             <div className="eco-stat">
               <div className="eco-stat-num">6,000+</div>
@@ -84,23 +84,23 @@ export default function AboutPage() {
       <section className="about-network">
         <div className="mx">
           <h2 className="rv">The Austin <span className="accent">Network.</span></h2>
-          <p className="about-net-body rv rv-d1">Our clients don't just get marketing. They get access. When your business grows inside the 100Bold ecosystem, you are surrounded by other leaders in complementary industries. The referrals and partnerships happen naturally.</p>
+          <p className="about-net-body rv rv-d1">Our clients get access — not just marketing. Surrounded by leaders in complementary industries, referrals happen naturally.</p>
           <div className="net-features rv rv-d2">
             <div className="net-feat">
               <h4>GAACC Involvement</h4>
-              <p>Active in Greater Austin Asian Chamber of Commerce including Asia trade mission coordination.</p>
+              <p>Active in Greater Austin Asian Chamber of Commerce.</p>
             </div>
             <div className="net-feat">
               <h4>Community Events</h4>
-              <p>Dacy Business Park open house brought 100+ business owners, industry leaders, and city officials. Covered by local press.</p>
+              <p>100+ business owners and city officials at our events. Covered by local press.</p>
             </div>
             <div className="net-feat">
               <h4>Founder Introductions</h4>
-              <p>Our founding team personally makes introductions to other founders, business owners, and business leaders in Austin.</p>
+              <p>Personal introductions to founders and business leaders in Austin.</p>
             </div>
             <div className="net-feat">
               <h4>Cross-Referrals</h4>
-              <p>Clients in complementary industries — GCs, developers, subs, property managers — refer naturally within the ecosystem.</p>
+              <p>GCs, developers, subs, property managers — cross-referrals happen naturally.</p>
             </div>
           </div>
         </div>

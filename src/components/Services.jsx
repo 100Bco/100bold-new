@@ -1,8 +1,8 @@
 const services = [
-  { title: 'GBP Domination', desc: 'Optimize your Google Business Profile to rank top in local search, driving high-intent leads directly to your calendar.' },
-  { title: 'LinkedIn CEO Authority', desc: 'Position your leadership as industry titans. We craft compelling narratives that build trust and generate premium B2B pipelines.' },
-  { title: 'Social Media Content', desc: 'Stop posting into the void. We create high-converting content engines across Meta, Linkedin, Instagram, TikTok, and many more.' },
-  { title: 'Paid Ads', desc: 'Data-driven campaigns across Meta and Google that turn ad spend into measurable, scalable revenue with ruthless efficiency.' },
+  { title: 'GBP Domination', desc: 'Rank top in local search. Drive high-intent leads directly to your calendar.' },
+  { title: 'LinkedIn CEO Authority', desc: 'Position you as an industry titan. Build trust and generate premium B2B pipelines.' },
+  { title: 'Social Media Content', desc: 'High-converting content across Meta, LinkedIn, Instagram, TikTok, and more.' },
+  { title: 'Paid Ads', desc: 'Meta and Google campaigns that turn ad spend into scalable revenue.' },
 ]
 
 export default function Services() {
