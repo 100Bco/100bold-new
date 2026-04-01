@@ -6,42 +6,42 @@ const industries = [
     name: 'Local Service Contractors',
     examples: 'HVAC, Plumbing, Electrical, Roofing, Solar, Painting, Pest Control',
     want: 'More calls, more jobs, less marketing complexity',
-    message: 'We take over your Google presence completely. More reviews, more visibility, more calls — without you touching it.',
+    message: 'We take over your Google presence. More reviews, more calls — hands-off.',
     services: ['GBP Domination', 'Review Engine', 'Social Content'],
   },
   {
     name: 'General Contractors & Construction',
     examples: 'Commercial GCs, Residential Builders, Construction Firms',
     want: 'Consistent project pipeline and industry credibility',
-    message: 'We dominate local search and build your digital authority so the right projects find you.',
+    message: 'Dominate local search so the right projects find you.',
     services: ['GBP Domination', 'LinkedIn CEO Authority', 'Network Access'],
   },
   {
     name: 'Real Estate Developers',
     examples: 'Residential & Commercial Developers, Property Managers',
     want: 'Credibility and deal flow from the right relationships',
-    message: 'We build your digital authority and put you in front of the people that matter in Austin.',
+    message: 'Digital authority that puts you in front of the people that matter.',
     services: ['LinkedIn CEO Authority', 'GBP Domination', 'Network Access'],
   },
   {
     name: 'Personal Injury Law Firms',
     examples: 'PI Attorneys, Trial Lawyers',
     want: 'Signed cases before competitors answer the phone',
-    message: 'We build the review engine and lead funnel. Voice AI answers every call. You get warm leads, not cold ones.',
+    message: 'Review engine + lead funnel. Voice AI answers every call. Warm leads only.',
     services: ['GBP Domination', 'Paid Ads', 'MinAI Voice AI'],
   },
   {
     name: 'PI Chiropractors & Rehab Clinics',
     examples: 'Personal Injury Chiropractors, Rehabilitation Centers',
     want: 'More PI referrals, stronger GBP presence',
-    message: 'We dominate your Google profile and generate the reviews that make attorneys refer to you first.',
+    message: 'Dominate Google and generate reviews that make attorneys refer you first.',
     services: ['GBP Domination', 'Review Engine', 'Social Content'],
   },
   {
     name: 'Import/Export & Trade',
     examples: 'Construction Materials, International Trade Businesses',
     want: 'Market presence and digital credibility in a niche space',
-    message: 'We know import/export because we\'ve done it. We build the digital presence that sets you apart.',
+    message: 'We\'ve done import/export ourselves. We build the presence that sets you apart.',
     services: ['LinkedIn CEO Authority', 'GBP Domination'],
   },
 ]
@@ -52,7 +52,7 @@ export default function IndustriesPage() {
       <section className="page-hero">
         <div className="mx">
           <h1 className="rv vis">We Only Work in Industries<br/>We've <span className="accent">Operated In.</span></h1>
-          <p className="page-hero-body rv vis rv-d2">We know your pain points because we've lived them. Our founding team has owned and operated businesses in real estate, construction, local services, and technology.</p>
+          <p className="page-hero-body rv vis rv-d2">We know your pain points because we've lived them.</p>
         </div>
       </section>
 

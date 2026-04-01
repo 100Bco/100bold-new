@@ -23,17 +23,17 @@ export default function WhyUs() {
           <div className="why-card">
             <div className="why-num">01</div>
             <h3>Operator Credibility</h3>
-            <p>We've built businesses in real estate, construction, and local services. We speak your language — not marketing language.</p>
+            <p>We've built businesses in your industry. We speak your language — not marketing language.</p>
           </div>
           <div className="why-card">
             <div className="why-num">02</div>
             <h3>The Austin Network</h3>
-            <p>6,000+ business professionals. GAACC involvement. Events with 100+ leaders. Your growth is powered by a real community.</p>
+            <p>6,000+ business professionals. GAACC involvement. Events with 100+ leaders.</p>
           </div>
           <div className="why-card">
             <div className="why-num">03</div>
             <h3>GBP + LinkedIn System</h3>
-            <p>Productized, systematized playbooks that deliver consistently at scale. No back-and-forth. Just results.</p>
+            <p>Proven playbooks that deliver consistently at scale. No back-and-forth.</p>
           </div>
         </div>
         <div className="why-cta rv rv-d3">

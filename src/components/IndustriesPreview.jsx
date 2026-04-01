@@ -50,7 +50,7 @@ export default function IndustriesPreview() {
       <div className="mx">
         <div className="ip-head rv">
           <h2>Built for <span className="accent">$5M+ Service</span> Businesses.</h2>
-          <p>We only work in industries our founding team has operated in.<br/>We know your pain points because we've lived them.</p>
+          <p>We only work in industries we've operated in. We know your pain points firsthand.</p>
         </div>
         <div className="ip-grid rv rv-d1">
           {industries.map((ind) => (
