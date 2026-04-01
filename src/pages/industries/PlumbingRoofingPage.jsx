@@ -1,73 +1,48 @@
-import { Link } from 'react-router-dom'
-import WaveDivider from '../../components/WaveDivider'
-import { useRef, useEffect } from 'react'
-
-function LottieIcon({ src }) {
-  const ref = useRef(null)
-  useEffect(() => {
-    let anim
-    import('lottie-web/build/player/lottie_light').then(lottie => {
-      if (!ref.current) return
-      anim = lottie.default.loadAnimation({
-        container: ref.current, renderer: 'svg',
-        loop: true, autoplay: true, path: src,
-      })
-    }).catch(() => {})
-    return () => { if (anim) anim.destroy() }
-  }, [src])
-  return <div ref={ref} style={{width: 64, height: 64}} />
-}
+import IndustryPageTemplate from './IndustryPageTemplate'
 
 export default function PlumbingRoofingPage() {
-  return (
-    <>
-      <section className="page-hero">
-        <div className="mx">
-          <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:24}}>
-            <LottieIcon src="/hourse-red.json" />
-            <div>
-              <h1 className="rv vis" style={{marginBottom:0}}>Plumbing, Roofing & <span className="accent">Trades.</span></h1>
-              <p style={{fontSize:17,color:'var(--text-3)',marginTop:8}}>Plumbers, Roofers, HVAC Specialists, Electricians</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  const data = {
+    label: 'PLUMBERS, ROOFERS, ELECTRICIANS',
+    headline: <>Own Every Local Search<br/>In <span className="accent">Your City.</span></>,
+    subtitle: "When a pipe bursts at midnight or a roof leaks after a storm, homeowners search Google — not Facebook. Be the first name they find.",
+    stats: [
+      { num: '#1', label: 'Local Search Position' },
+      { num: '85%', label: 'Fewer Missed Calls' },
+      { num: '5-Star', label: 'Review Machine' },
+    ],
+    painPoints: [
+      'Competitors with fewer jobs rank above you on Google',
+      "You're too busy on job sites to answer every call",
+      'No system to ask happy customers for reviews',
+      'Wasting money on ads without organic foundation',
+    ],
+    solutionIntro: 'We own your local search so every emergency call comes to you.',
+    solutions: [
+      {
+        title: 'GBP Domination',
+        desc: "Every field optimized, weekly content posted, every review replied to. When someone searches 'plumber near me' — you're first.",
+        iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
+      },
+      {
+        title: 'Review Engine',
+        desc: 'Automated SMS campaigns after every job. QR codes for your field crews. Reviews pour in without you asking.',
+        iconPath: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+      },
+      {
+        title: 'AI Call Response',
+        desc: 'MinAI answers every call and text instantly — even at midnight. Qualifies leads and books appointments while you work.',
+        iconPath: '<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>',
+      },
+      {
+        title: 'Paid Ads Layer',
+        desc: 'Once organic is solid, we layer Google Ads on top. Lower cost-per-click because your organic ranking does the heavy lifting.',
+        iconPath: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+      },
+    ],
+    services: ['GBP Domination', 'Review Engine', 'Paid Ads', 'MinAI'],
+    shortName: 'Plumbing & Roofing',
+    ctaIndustry: 'plumbing & roofing',
+  }
 
-      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="wave" />
-      <section style={{background:'var(--cream)',padding:'var(--gap) 0'}}>
-        <div className="mx">
-          <div style={{maxWidth:800}}>
-            <div className="rv" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:24}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What You Want</div>
-              <p style={{fontSize:20,color:'var(--dark)',fontWeight:600,lineHeight:1.5}}>Own every local search in your area</p>
-            </div>
-            <div className="rv rv-d1" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:40}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What We Do</div>
-              <p style={{fontSize:20,color:'var(--text-2)',fontStyle:'italic',lineHeight:1.6}}>"When someone in your city searches for what you do, they find you first. Every time."</p>
-            </div>
-            <div className="rv rv-d2" style={{display:'flex',gap:10,flexWrap:'wrap',marginBottom:48}}>
-              {['GBP Domination','Review Engine','Paid Ads'].map(s => (
-                <span key={s} style={{background:'var(--red)',color:'#fff',fontSize:12,fontWeight:700,letterSpacing:1,textTransform:'uppercase',padding:'8px 18px',borderRadius:200}}>{s}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
-      <section style={{padding:'60px 0',textAlign:'center'}}>
-        <div className="mx">
-          <h2 className="rv" style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',textTransform:'uppercase',marginBottom:24}}>
-            Ready to <span className="accent">dominate?</span>
-          </h2>
-          <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
-            <Link to="/industries" className="btn btn-outline rv rv-d1">All Industries</Link>
-            <button className="btn btn-red rv rv-d2">Contact Now
-              <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </button>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+  return <IndustryPageTemplate data={data} />
 }
