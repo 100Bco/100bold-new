@@ -12,7 +12,7 @@ export default function AboutPage() {
         </svg>
         <div className="mx">
           <h1 className="rv vis">We Are <span className="accent">Operators.</span><br/>Not Marketers.</h1>
-          <p className="page-hero-body rv vis rv-d2">We are operators who have built and run businesses in the exact industries we serve. Not a traditional marketing agency.</p>
+          <p className="page-hero-body rv vis rv-d2">We are operators who have built and run businesses in the exact industries we serve.</p>
         </div>
       </section>
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <div className="adv-card rv">
               <div className="adv-num">01</div>
               <h3>Operator Credibility</h3>
-              <p>We've built businesses in your industry. We speak your language — not marketing language.</p>
+              <p>We've built businesses in your industry. We speak your language.</p>
             </div>
             <div className="adv-card rv rv-d1">
               <div className="adv-num">02</div>
@@ -40,7 +40,7 @@ export default function AboutPage() {
             <div className="adv-card rv rv-d2">
               <div className="adv-num">03</div>
               <h3>GBP + LinkedIn System</h3>
-              <p>Proven playbooks that deliver consistently at scale. No back-and-forth.</p>
+              <p>Proven playbooks that deliver consistently at scale.</p>
             </div>
           </div>
         </div>
@@ -64,12 +64,12 @@ export default function AboutPage() {
             <div className="eco-stat eco-stat-wide">
               <div className="eco-stat-num">Growth-Focused</div>
               <div className="eco-stat-label" style={{fontWeight: 700, fontSize: 16, marginBottom: 4}}>Founders</div>
-              <div className="eco-stat-label">Ambitious leaders ready to scale bold</div>
+              <div className="eco-stat-label" style={{display:'none'}}></div>
             </div>
             <div className="eco-stat eco-stat-wide">
               <div className="eco-stat-num">Proven</div>
               <div className="eco-stat-label" style={{fontWeight: 700, fontSize: 16, marginBottom: 4}}>Industries</div>
-              <div className="eco-stat-label">Real Estate, Services, Construction, Manufacturing, Import-Export, and more</div>
+              <div className="eco-stat-label" style={{display:'none'}}></div>
             </div>
             <div className="eco-stat">
               <div className="eco-stat-num">$5M+</div>
