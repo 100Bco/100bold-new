@@ -1,73 +1,48 @@
-import { Link } from 'react-router-dom'
-import WaveDivider from '../../components/WaveDivider'
-import { useRef, useEffect } from 'react'
-
-function LottieIcon({ src }) {
-  const ref = useRef(null)
-  useEffect(() => {
-    let anim
-    import('lottie-web/build/player/lottie_light').then(lottie => {
-      if (!ref.current) return
-      anim = lottie.default.loadAnimation({
-        container: ref.current, renderer: 'svg',
-        loop: true, autoplay: true, path: src,
-      })
-    }).catch(() => {})
-    return () => { if (anim) anim.destroy() }
-  }, [src])
-  return <div ref={ref} style={{width: 64, height: 64}} />
-}
+import IndustryPageTemplate from './IndustryPageTemplate'
 
 export default function ConstructionPage() {
-  return (
-    <>
-      <section className="page-hero">
-        <div className="mx">
-          <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:24}}>
-            <LottieIcon src="/repair-tools-red.json" />
-            <div>
-              <h1 className="rv vis" style={{marginBottom:0}}>General Contractors & <span className="accent">Construction.</span></h1>
-              <p style={{fontSize:17,color:'var(--text-3)',marginTop:8}}>Commercial GCs, Residential Builders, Construction Firms</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  const data = {
+    label: 'GENERAL CONTRACTORS, BUILDERS, CONSTRUCTION',
+    headline: <>Build Your Reputation<br/>As Fast As You <span className="accent">Build Projects.</span></>,
+    subtitle: "You win jobs through relationships and reputation. But if your digital presence doesn't match the quality of your work, you're invisible to the next generation of decision makers.",
+    stats: [
+      { num: 'Top 3', label: 'Local Search Ranking' },
+      { num: '6,000+', label: 'Austin Business Network' },
+      { num: '100%', label: 'Hands-Off Management' },
+    ],
+    painPoints: [
+      'Your best work is invisible online',
+      'Competitors with worse track records outrank you on Google',
+      'No time to manage social media or chase reviews',
+      "Missing out on projects because developers can't find you",
+    ],
+    solutionIntro: 'We build your digital authority so the right projects find you.',
+    solutions: [
+      {
+        title: 'GBP Domination',
+        desc: 'Complete Google Business Profile takeover. Weekly content, review management, and local SEO that puts you in front of developers and property owners.',
+        iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
+      },
+      {
+        title: 'LinkedIn CEO Authority',
+        desc: 'We position you as the go-to GC in Austin. Strategy, ghostwriting, and network growth — fully hands-off.',
+        iconPath: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
+      },
+      {
+        title: 'Network Access',
+        desc: 'Join 6,000+ Austin business professionals. GCs, developers, architects, and subs all connected. Referrals happen naturally.',
+        iconPath: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
+      },
+      {
+        title: 'Review Engine',
+        desc: 'Automated review collection from past clients. Build the online reputation that matches the quality of your work.',
+        iconPath: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+      },
+    ],
+    services: ['GBP Domination', 'LinkedIn CEO Authority', 'Network Access', 'Review Engine'],
+    shortName: 'Construction',
+    ctaIndustry: 'construction',
+  }
 
-      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="wave" />
-      <section style={{background:'var(--cream)',padding:'var(--gap) 0'}}>
-        <div className="mx">
-          <div style={{maxWidth:800}}>
-            <div className="rv" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:24}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What You Want</div>
-              <p style={{fontSize:20,color:'var(--dark)',fontWeight:600,lineHeight:1.5}}>Consistent project pipeline and industry credibility</p>
-            </div>
-            <div className="rv rv-d1" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:40}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What We Do</div>
-              <p style={{fontSize:20,color:'var(--text-2)',fontStyle:'italic',lineHeight:1.6}}>"We dominate local search so the right projects find you. Your digital authority becomes your competitive edge."</p>
-            </div>
-            <div className="rv rv-d2" style={{display:'flex',gap:10,flexWrap:'wrap',marginBottom:48}}>
-              {['GBP Domination','LinkedIn CEO Authority','Network Access'].map(s => (
-                <span key={s} style={{background:'var(--red)',color:'#fff',fontSize:12,fontWeight:700,letterSpacing:1,textTransform:'uppercase',padding:'8px 18px',borderRadius:200}}>{s}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
-      <section style={{padding:'60px 0',textAlign:'center'}}>
-        <div className="mx">
-          <h2 className="rv" style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',textTransform:'uppercase',marginBottom:24}}>
-            Ready to <span className="accent">dominate?</span>
-          </h2>
-          <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
-            <Link to="/industries" className="btn btn-outline rv rv-d1">All Industries</Link>
-            <button className="btn btn-red rv rv-d2">Contact Now
-              <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </button>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+  return <IndustryPageTemplate data={data} />
 }

@@ -1,73 +1,48 @@
-import { Link } from 'react-router-dom'
-import WaveDivider from '../../components/WaveDivider'
-import { useRef, useEffect } from 'react'
-
-function LottieIcon({ src }) {
-  const ref = useRef(null)
-  useEffect(() => {
-    let anim
-    import('lottie-web/build/player/lottie_light').then(lottie => {
-      if (!ref.current) return
-      anim = lottie.default.loadAnimation({
-        container: ref.current, renderer: 'svg',
-        loop: true, autoplay: true, path: src,
-      })
-    }).catch(() => {})
-    return () => { if (anim) anim.destroy() }
-  }, [src])
-  return <div ref={ref} style={{width: 64, height: 64}} />
-}
+import IndustryPageTemplate from './IndustryPageTemplate'
 
 export default function RealEstatePage() {
-  return (
-    <>
-      <section className="page-hero">
-        <div className="mx">
-          <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:24}}>
-            <LottieIcon src="/building-red.json" />
-            <div>
-              <h1 className="rv vis" style={{marginBottom:0}}>Real Estate <span className="accent">Developers.</span></h1>
-              <p style={{fontSize:17,color:'var(--text-3)',marginTop:8}}>Residential & Commercial Developers, Property Managers, Brokerages</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  const data = {
+    label: 'DEVELOPERS, PROPERTY MANAGERS, BROKERAGES',
+    headline: <>The Right Deals Find You<br/>When You <span className="accent">Own The Room.</span></>,
+    subtitle: "In Austin real estate, it's not about cold calling. It's about being the name everyone already knows before the deal hits the table.",
+    stats: [
+      { num: '2.5X', label: 'LinkedIn Growth' },
+      { num: '6,000+', label: 'Business Leader Network' },
+      { num: '100+', label: 'Event Attendees' },
+    ],
+    painPoints: [
+      'Relying on personal network without scaling it',
+      "No digital authority — investors can't find you online",
+      "Competitors are building LinkedIn presence while you're not",
+      "Missing deal flow from developers and partners you don't know yet",
+    ],
+    solutionIntro: 'We build your digital authority and put you in front of the people that matter.',
+    solutions: [
+      {
+        title: 'LinkedIn CEO Authority',
+        desc: 'We take over your LinkedIn completely. Content strategy, ghostwriting, engagement, and network growth. You get the credit, we do the work.',
+        iconPath: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
+      },
+      {
+        title: 'GBP Domination',
+        desc: 'Own local search for your market. When investors and partners search for commercial real estate in Austin, they find you.',
+        iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
+      },
+      {
+        title: 'Network Access',
+        desc: "100Bold's Austin network includes GCs, developers, architects, city officials, and business leaders. Introductions happen naturally.",
+        iconPath: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
+      },
+      {
+        title: 'Event Marketing',
+        desc: "From Dacy Business Park's sold-out launch to multi-industry networking events — we put you in the right rooms.",
+        iconPath: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+      },
+    ],
+    services: ['LinkedIn CEO Authority', 'GBP Domination', 'Network Access', 'Event Marketing'],
+    shortName: 'Real Estate',
+    ctaIndustry: 'real estate',
+  }
 
-      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="wave" />
-      <section style={{background:'var(--cream)',padding:'var(--gap) 0'}}>
-        <div className="mx">
-          <div style={{maxWidth:800}}>
-            <div className="rv" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:24}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What You Want</div>
-              <p style={{fontSize:20,color:'var(--dark)',fontWeight:600,lineHeight:1.5}}>Credibility and deal flow from the right relationships</p>
-            </div>
-            <div className="rv rv-d1" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:40}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What We Do</div>
-              <p style={{fontSize:20,color:'var(--text-2)',fontStyle:'italic',lineHeight:1.6}}>"We build your digital authority and put you in front of the people that matter. The deals come to you."</p>
-            </div>
-            <div className="rv rv-d2" style={{display:'flex',gap:10,flexWrap:'wrap',marginBottom:48}}>
-              {['LinkedIn CEO Authority','GBP Domination','Network Access'].map(s => (
-                <span key={s} style={{background:'var(--red)',color:'#fff',fontSize:12,fontWeight:700,letterSpacing:1,textTransform:'uppercase',padding:'8px 18px',borderRadius:200}}>{s}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
-      <section style={{padding:'60px 0',textAlign:'center'}}>
-        <div className="mx">
-          <h2 className="rv" style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',textTransform:'uppercase',marginBottom:24}}>
-            Ready to <span className="accent">dominate?</span>
-          </h2>
-          <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
-            <Link to="/industries" className="btn btn-outline rv rv-d1">All Industries</Link>
-            <button className="btn btn-red rv rv-d2">Contact Now
-              <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </button>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+  return <IndustryPageTemplate data={data} />
 }
