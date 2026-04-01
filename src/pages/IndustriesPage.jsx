@@ -1,5 +1,6 @@
 import WaveDivider from '../components/WaveDivider'
 import { Link } from 'react-router-dom'
+import IndustriesHeroGraphic from '../components/IndustriesHeroGraphic'
 
 const industries = [
   {
@@ -51,8 +52,15 @@ export default function IndustriesPage() {
     <>
       <section className="page-hero">
         <div className="mx">
-          <h1 className="rv vis">We Only Work in Industries<br/>We've <span className="accent">Operated In.</span></h1>
-          <p className="page-hero-body rv vis rv-d2">We know your pain points because we've lived them.</p>
+          <div className="about-hero-grid">
+            <div>
+              <h1 className="rv vis">We Only Work in Industries<br/>We've <span className="accent">Operated In.</span></h1>
+              <p className="page-hero-body rv vis rv-d2">We know your pain points because we've lived them.</p>
+            </div>
+            <div className="about-hero-visual rv vis rv-d2">
+              <IndustriesHeroGraphic />
+            </div>
+          </div>
         </div>
       </section>
 
