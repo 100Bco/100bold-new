@@ -573,6 +573,9 @@ img { display: block; max-width: 100%; }
 .about-hero-visual { min-height: 420px; }
 @keyframes about-ping { 75%,100% { transform: scale(2); opacity: 0; } }
 .about-ping { animation: about-ping 1s cubic-bezier(0,0,.2,1) infinite; }
+@keyframes srv-spin { to { transform: rotate(360deg); } }
+.srv-orbit-slow { animation: srv-spin 25s linear infinite; transform-origin: center; }
+.srv-orbit-rev { animation: srv-spin 35s linear infinite reverse; transform-origin: center; }
 .page-hero h1 {
   font-family: var(--font-head); font-size: clamp(48px, 6vw, 88px);
   line-height: .88; color: var(--dark); text-transform: uppercase;
