@@ -35,7 +35,7 @@ export default function IndustryPageTemplate({ data }) {
               </div>
             </div>
             {data.lottie && (
-              <div className="about-hero-visual rv vis rv-d2" style={{display:'flex',alignItems:'center',justifyContent:'center',opacity:.15}}>
+              <div className="about-hero-visual rv vis rv-d2" style={{display:'flex',alignItems:'center',justifyContent:'center',opacity:.5}}>
                 <HeroLottie src={data.lottie} />
               </div>
             )}
