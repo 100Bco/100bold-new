@@ -1,16 +1,20 @@
 import WaveDivider from '../components/WaveDivider'
+import ServicesHeroGraphic from '../components/ServicesHeroGraphic'
 
 export default function ServicesPage() {
   return (
     <>
       <section className="page-hero" style={{position: 'relative'}}>
-        {/* Dot grid */}
-        <svg className="deco" style={{top: '20%', left: '4%', width: 55, height: 55, opacity: .07}} viewBox="0 0 55 55" fill="none">
-          {[0,1,2,3,4].flatMap(r => [0,1,2,3,4].map(c => <circle key={`${r}${c}`} cx={5+c*11} cy={5+r*11} r="2" fill="var(--red)"/>))}
-        </svg>
         <div className="mx">
-          <h1 className="rv vis">Two Products.<br/><span className="accent">Zero Fluff.</span></h1>
-          <p className="page-hero-body rv vis rv-d2">We offer two distinct, standalone products. Each stands on its own value.</p>
+          <div className="about-hero-grid">
+            <div>
+              <h1 className="rv vis">Two Products.<br/><span className="accent">Zero Fluff.</span></h1>
+              <p className="page-hero-body rv vis rv-d2">We offer two distinct, standalone products. Each stands on its own value.</p>
+            </div>
+            <div className="about-hero-visual rv vis rv-d2">
+              <ServicesHeroGraphic />
+            </div>
+          </div>
         </div>
       </section>
 
