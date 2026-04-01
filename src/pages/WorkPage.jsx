@@ -1,4 +1,5 @@
 import WaveDivider from '../components/WaveDivider'
+import WorkHeroGraphic from '../components/WorkHeroGraphic'
 
 const activeCases = [
   {
@@ -123,8 +124,15 @@ export default function WorkPage() {
     <>
       <section className="page-hero">
         <div className="mx">
-          <h1 className="rv vis">Proven <span className="accent">Results.</span><br/>Real Clients.</h1>
-          <p className="page-hero-body rv vis rv-d2">Every result shown here is from a real client on our active roster.</p>
+          <div className="about-hero-grid">
+            <div>
+              <h1 className="rv vis">Proven <span className="accent">Results.</span><br/>Real Clients.</h1>
+              <p className="page-hero-body rv vis rv-d2">Every result shown here is from a real client on our active roster.</p>
+            </div>
+            <div className="about-hero-visual rv vis rv-d2">
+              <WorkHeroGraphic />
+            </div>
+          </div>
         </div>
       </section>
 
