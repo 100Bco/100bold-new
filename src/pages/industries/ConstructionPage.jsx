@@ -3,6 +3,7 @@ import IndustryPageTemplate from './IndustryPageTemplate'
 export default function ConstructionPage() {
   const data = {
     label: 'GENERAL CONTRACTORS, BUILDERS, CONSTRUCTION',
+    lottie: '/repair-tools-red.json',
     headline: <>Build Your Reputation<br/>As Fast As You <span className="accent">Build Projects.</span></>,
     subtitle: "You win jobs through relationships and reputation. But if your digital presence doesn't match the quality of your work, you're invisible to the next generation of decision makers.",
     stats: [
@@ -19,7 +20,7 @@ export default function ConstructionPage() {
     solutionIntro: 'We build your digital authority so the right projects find you.',
     solutions: [
       {
-        title: 'GBP Domination',
+        title: 'Google Domination',
         desc: 'Complete Google Business Profile takeover. Weekly content, review management, and local SEO that puts you in front of developers and property owners.',
         iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
       },
@@ -39,7 +40,7 @@ export default function ConstructionPage() {
         iconPath: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
       },
     ],
-    services: ['GBP Domination', 'LinkedIn CEO Authority', 'Network Access', 'Review Engine'],
+    services: ['Google Domination', 'LinkedIn CEO Authority', 'Network Access', 'Review Engine'],
     shortName: 'Construction',
     ctaIndustry: 'construction',
   }

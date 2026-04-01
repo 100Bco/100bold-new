@@ -3,6 +3,7 @@ import IndustryPageTemplate from './IndustryPageTemplate'
 export default function LawFirmsPage() {
   const data = {
     label: 'PERSONAL INJURY ATTORNEYS, TRIAL LAWYERS',
+    lottie: '/law-red.json',
     headline: <>Sign Cases Before<br/>Competitors <span className="accent">Answer The Phone.</span></>,
     subtitle: "When someone searches 'car accident lawyer near me' at 11 PM, the firm that responds first wins. That should be you — every single time.",
     stats: [
@@ -19,7 +20,7 @@ export default function LawFirmsPage() {
     solutionIntro: 'We build the review engine and lead funnel that signs cases while you sleep.',
     solutions: [
       {
-        title: 'GBP Domination',
+        title: 'Google Domination',
         desc: 'Dominate local search for PI in your market. Optimized profile, weekly content, and keyword-rich review responses.',
         iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
       },
@@ -39,7 +40,7 @@ export default function LawFirmsPage() {
         iconPath: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
       },
     ],
-    services: ['GBP Domination', 'Paid Ads', 'MinAI Voice AI', 'Review Engine'],
+    services: ['Google Domination', 'Paid Ads', 'MinAI Voice AI', 'Review Engine'],
     shortName: 'Law Firms',
     ctaIndustry: 'law firm',
   }

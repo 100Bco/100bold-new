@@ -3,6 +3,7 @@ import IndustryPageTemplate from './IndustryPageTemplate'
 export default function RealEstatePage() {
   const data = {
     label: 'DEVELOPERS, PROPERTY MANAGERS, BROKERAGES',
+    lottie: '/building-red.json',
     headline: <>The Right Deals Find You<br/>When You <span className="accent">Own The Room.</span></>,
     subtitle: "In Austin real estate, it's not about cold calling. It's about being the name everyone already knows before the deal hits the table.",
     stats: [
@@ -24,7 +25,7 @@ export default function RealEstatePage() {
         iconPath: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
       },
       {
-        title: 'GBP Domination',
+        title: 'Google Domination',
         desc: 'Own local search for your market. When investors and partners search for commercial real estate in Austin, they find you.',
         iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
       },
@@ -39,7 +40,7 @@ export default function RealEstatePage() {
         iconPath: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
       },
     ],
-    services: ['LinkedIn CEO Authority', 'GBP Domination', 'Network Access', 'Event Marketing'],
+    services: ['LinkedIn CEO Authority', 'Google Domination', 'Network Access', 'Event Marketing'],
     shortName: 'Real Estate',
     ctaIndustry: 'real estate',
   }

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useRef, useEffect } from 'react'
 
 const industryData = [
-  { name: 'General Contractors', desc: 'GBP domination for builders and GCs', lottie: '/repair-tools-red.json' },
+  { name: 'General Contractors', desc: 'Google domination for builders and GCs', lottie: '/repair-tools-red.json' },
   { name: 'HVAC / Electrical', desc: 'More calls, more jobs, less complexity', lottie: '/power-red.json' },
   { name: 'Real Estate', desc: 'Credibility and deal flow from the right relationships', lottie: '/building-red.json' },
   { name: 'PI Law Firms', desc: 'Signed cases before competitors answer the phone', lottie: '/law-red.json' },

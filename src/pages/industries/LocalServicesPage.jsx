@@ -3,6 +3,7 @@ import IndustryPageTemplate from './IndustryPageTemplate'
 export default function LocalServicesPage() {
   const data = {
     label: 'HVAC, ROOFING, PLUMBING, SOLAR',
+    lottie: '/power-red.json',
     headline: <>Stop Losing Jobs While<br/>You're On <span className="accent">The Job.</span></>,
     subtitle: "Your phone rings at 2 PM — you're on a roof. By the time you call back, they've already hired someone else. 100Bold makes sure that never happens again.",
     stats: [
@@ -19,7 +20,7 @@ export default function LocalServicesPage() {
     solutionIntro: 'A complete system built specifically for local service contractors.',
     solutions: [
       {
-        title: 'GBP Domination',
+        title: 'Google Domination',
         desc: 'We optimize every field, post weekly content, and reply to every review. You show up first when customers search.',
         iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
       },
@@ -39,7 +40,7 @@ export default function LocalServicesPage() {
         iconPath: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
       },
     ],
-    services: ['GBP Domination', 'Review Engine', 'Social Content', 'MinAI'],
+    services: ['Google Domination', 'Review Engine', 'Social Content', 'MinAI'],
     shortName: 'Local Service Contractors',
     ctaIndustry: 'local service',
   }

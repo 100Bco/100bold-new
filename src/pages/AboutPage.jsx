@@ -42,7 +42,7 @@ export default function AboutPage() {
             </div>
             <div className="adv-card rv rv-d2">
               <div className="adv-num">03</div>
-              <h3>GBP + LinkedIn System</h3>
+              <h3>Google + LinkedIn System</h3>
               <p>Proven playbooks that deliver consistently at scale.</p>
             </div>
           </div>

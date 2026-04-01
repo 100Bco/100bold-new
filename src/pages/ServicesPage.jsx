@@ -18,7 +18,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* GBP Domination */}
+      {/* Google Domination */}
       <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
       <section className="svc-detail" style={{background: 'var(--dark)', color: '#fff', padding: 'var(--gap) 0', position: 'relative'}}>
         {/* Cross/plus - white on dark */}
@@ -26,17 +26,17 @@ export default function ServicesPage() {
           <path d="M25 5v40M5 25h40" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"/>
         </svg>
         <div className="mx">
-          <h2 className="svc-title rv">GBP <span className="accent">Domination.</span></h2>
+          <h2 className="svc-title rv">Google <span className="accent">Domination.</span></h2>
           <p className="svc-intro rv rv-d2">Your Google Business Profile is your most important digital asset. We treat it like one.</p>
 
           <div className="tier-grid rv rv-d2">
             <div className="tier-card">
               <div className="tier-label">Tier 1</div>
-              <h3>GBP Domination</h3>
+              <h3>Google Domination</h3>
               <div className="tier-price" style={{display: 'none'}}>$4,000<span>/month</span></div>
               <ul className="tier-list">
-                <li>Full GBP profile optimization</li>
-                <li>Weekly content posted to GBP</li>
+                <li>Full Google profile optimization</li>
+                <li>Weekly content posted to Google</li>
                 <li>Review generation campaigns (SMS + email)</li>
                 <li>Every review replied to with keyword-rich responses</li>
                 <li>Monthly performance heat map</li>
@@ -48,7 +48,7 @@ export default function ServicesPage() {
 
             <div className="tier-card tier-featured">
               <div className="tier-label">Tier 2</div>
-              <h3>GBP + Social Content</h3>
+              <h3>Google + Social Content</h3>
               <div className="tier-price" style={{display: 'none'}}>$6,500–7,000<span>/month</span></div>
               <ul className="tier-list">
                 <li>Everything in Tier 1</li>

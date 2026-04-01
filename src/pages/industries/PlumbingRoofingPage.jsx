@@ -3,6 +3,7 @@ import IndustryPageTemplate from './IndustryPageTemplate'
 export default function PlumbingRoofingPage() {
   const data = {
     label: 'PLUMBERS, ROOFERS, ELECTRICIANS',
+    lottie: '/hourse-red.json',
     headline: <>Own Every Local Search<br/>In <span className="accent">Your City.</span></>,
     subtitle: "When a pipe bursts at midnight or a roof leaks after a storm, homeowners search Google — not Facebook. Be the first name they find.",
     stats: [
@@ -19,7 +20,7 @@ export default function PlumbingRoofingPage() {
     solutionIntro: 'We own your local search so every emergency call comes to you.',
     solutions: [
       {
-        title: 'GBP Domination',
+        title: 'Google Domination',
         desc: "Every field optimized, weekly content posted, every review replied to. When someone searches 'plumber near me' — you're first.",
         iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
       },
@@ -39,7 +40,7 @@ export default function PlumbingRoofingPage() {
         iconPath: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
       },
     ],
-    services: ['GBP Domination', 'Review Engine', 'Paid Ads', 'MinAI'],
+    services: ['Google Domination', 'Review Engine', 'Paid Ads', 'MinAI'],
     shortName: 'Plumbing & Roofing',
     ctaIndustry: 'plumbing & roofing',
   }
