@@ -7,19 +7,25 @@ export default function ServicesHeroGraphic() {
       {/* Background glow */}
       <div style={{position:'absolute',width:200,height:200,background:'radial-gradient(circle,rgba(227,24,55,.08) 0%,transparent 70%)',top:'50%',left:'50%',transform:'translate(-50%,-50%)',borderRadius:'50%'}} />
 
-      {/* Dashed orbit lines */}
-      <svg style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none',overflow:'visible'}} viewBox="0 0 500 400">
-        {/* Upper arc (red dashed) - Google to LinkedIn */}
-        <path d="M 100 120 Q 250 20 400 140" stroke="rgba(227,24,55,.2)" strokeWidth="1.5" fill="none" strokeDasharray="6 6" />
-        {/* Lower arc (gray dashed) - Instagram curve */}
-        <path d="M 80 350 Q 120 200 200 180" stroke="rgba(0,0,0,.12)" strokeWidth="1.5" fill="none" strokeDasharray="6 6" />
+      {/* Dashed orbit lines - using viewBox for proper rendering */}
+      <svg style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none',overflow:'visible',opacity:.3}} viewBox="0 0 500 400">
+        {/* Upper arc (red dashed) */}
+        <path d="M 80 120 Q 250 10 420 130" stroke="rgba(227,24,55,.5)" strokeWidth="1.5" fill="none" strokeDasharray="6 6" />
+        {/* Lower arc (gray dashed) */}
+        <path d="M 60 360 Q 100 200 220 180" stroke="rgba(0,0,0,.3)" strokeWidth="1.5" fill="none" strokeDasharray="6 6" />
+        {/* Connection lines to center */}
+        <line x1="130" y1="100" x2="250" y2="200" stroke="rgba(0,0,0,.15)" strokeWidth="1" strokeDasharray="4 4" />
+        <line x1="400" y1="110" x2="280" y2="200" stroke="rgba(0,0,0,.15)" strokeWidth="1" strokeDasharray="4 4" />
+        <line x1="140" y1="340" x2="240" y2="230" stroke="rgba(0,0,0,.15)" strokeWidth="1" strokeDasharray="4 4" />
+        <line x1="380" y1="290" x2="280" y2="220" stroke="rgba(0,0,0,.15)" strokeWidth="1" strokeDasharray="4 4" />
       </svg>
 
-      {/* Central Hub - Diamond */}
+      {/* Central Hub - Diamond (rotate managed by framer-motion) */}
       <motion.div
-        animate={{y:[-8,8,-8]}}
+        initial={{rotate: 45}}
+        animate={{y:[-10,10,-10], rotate: 45}}
         transition={{duration:5,repeat:Infinity,ease:'easeInOut'}}
-        style={{position:'absolute',top:'50%',left:'50%',marginTop:-72,marginLeft:-72,zIndex:20,width:144,height:144,background:'#1C1A1A',borderRadius:28,boxShadow:'0 20px 50px rgba(0,0,0,.2), 0 0 80px rgba(227,24,55,.08)',display:'flex',alignItems:'center',justifyContent:'center',transform:'rotate(45deg)'}}
+        style={{position:'absolute',top:'50%',left:'50%',marginTop:-72,marginLeft:-72,zIndex:20,width:144,height:144,background:'#1C1A1A',borderRadius:28,boxShadow:'0 20px 50px rgba(0,0,0,.2), 0 0 80px rgba(227,24,55,.08)',display:'flex',alignItems:'center',justifyContent:'center',border:'1px solid #333'}}
       >
         <div style={{transform:'rotate(-45deg)',display:'flex',flexDirection:'column',alignItems:'center'}}>
           <TrendingUp size={44} color="#E31837" style={{marginBottom:6}} />
@@ -29,7 +35,7 @@ export default function ServicesHeroGraphic() {
 
       {/* Google Card - top left */}
       <motion.div
-        animate={{y:[-10,10,-10],x:[-4,4,-4]}}
+        animate={{y:[-15,15,-15],x:[-5,5,-5],rotateZ:[-5,5,-5]}}
         transition={{duration:5.5,repeat:Infinity,ease:'easeInOut',delay:.2}}
         style={{position:'absolute',top:'12%',left:'8%',zIndex:30,background:'#fff',padding:'14px 20px',borderRadius:16,boxShadow:'0 12px 32px rgba(0,0,0,.08)',display:'flex',alignItems:'center',gap:12}}
       >
@@ -47,7 +53,7 @@ export default function ServicesHeroGraphic() {
 
       {/* LinkedIn - top right */}
       <motion.div
-        animate={{y:[8,-8,8],x:[4,-4,4]}}
+        animate={{y:[15,-15,15],x:[5,-5,5],rotateZ:[5,-5,5]}}
         transition={{duration:6.5,repeat:Infinity,ease:'easeInOut',delay:.5}}
         style={{position:'absolute',top:'10%',right:'5%',zIndex:10,background:'#0A66C2',padding:14,borderRadius:14,boxShadow:'0 12px 28px rgba(10,102,194,.25)'}}
       >
@@ -56,7 +62,7 @@ export default function ServicesHeroGraphic() {
 
       {/* Instagram - bottom left */}
       <motion.div
-        animate={{y:[-8,8,-8],x:[6,-6,6]}}
+        animate={{y:[-12,12,-12],x:[8,-8,8]}}
         transition={{duration:6,repeat:Infinity,ease:'easeInOut',delay:.8}}
         style={{position:'absolute',bottom:'12%',left:'22%',zIndex:30,background:'linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)',padding:14,borderRadius:14,boxShadow:'0 12px 28px rgba(220,39,67,.25)'}}
       >
