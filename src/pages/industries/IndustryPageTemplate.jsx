@@ -15,7 +15,7 @@ function HeroLottie({ src }) {
     }).catch(() => {})
     return () => { if (anim) anim.destroy() }
   }, [src])
-  return <div ref={ref} style={{width:'100%',maxWidth:280,height:280,margin:'0 auto'}} />
+  return <div ref={ref} style={{width:'100%',maxWidth:180,height:180,margin:'0 auto'}} />
 }
 
 export default function IndustryPageTemplate({ data }) {
@@ -24,7 +24,7 @@ export default function IndustryPageTemplate({ data }) {
       {/* Hero */}
       <section className="page-hero" style={{position:'relative'}}>
         <div className="mx">
-          <div className="about-hero-grid">
+          <div style={{display:'grid',gridTemplateColumns:'2fr 1fr',gap:48,alignItems:'center'}}>
             <div>
               <div style={{fontSize:12,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:16}}>{data.label}</div>
               <h1 className="rv vis" style={{maxWidth:650}}>{data.headline}</h1>
@@ -35,7 +35,7 @@ export default function IndustryPageTemplate({ data }) {
               </div>
             </div>
             {data.lottie && (
-              <div className="about-hero-visual rv vis rv-d2" style={{display:'flex',alignItems:'center',justifyContent:'center',opacity:.5}}>
+              <div className="rv vis rv-d2" style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
                 <HeroLottie src={data.lottie} />
               </div>
             )}
