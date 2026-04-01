@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import Lottie from 'lottie-react'
-import { useState, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 
 const industryData = [
   { name: 'General Contractors', desc: 'GBP domination for builders and GCs', lottie: '/building-red.json' },
@@ -12,12 +11,22 @@ const industryData = [
 ]
 
 function LottieIcon({ src }) {
-  const [data, setData] = useState(null)
+  const ref = useRef(null)
   useEffect(() => {
-    fetch(src).then(r => r.json()).then(setData).catch(() => {})
+    let anim
+    import('lottie-web/build/player/lottie_light').then(lottie => {
+      if (!ref.current) return
+      anim = lottie.default.loadAnimation({
+        container: ref.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: src,
+      })
+    }).catch(() => {})
+    return () => { if (anim) anim.destroy() }
   }, [src])
-  if (!data) return <div style={{width: 48, height: 48}} />
-  return <Lottie animationData={data} loop autoplay style={{width: 48, height: 48}} />
+  return <div ref={ref} style={{width: 48, height: 48}} />
 }
 
 export default function IndustriesPreview() {
