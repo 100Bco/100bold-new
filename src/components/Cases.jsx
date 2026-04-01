@@ -22,12 +22,10 @@ const cases = [
 export default function Cases() {
   return (
     <section className="cases" id="work" style={{position: 'relative'}}>
-      {/* Arrow swoosh - white stroke for dark bg */}
       <svg className="deco" style={{top: '6%', left: '4%', width: 90, height: 50, opacity: .1}} viewBox="0 0 90 50" fill="none">
         <path d="M5 40C20 10,50 5,80 20" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
         <path d="M70 10L82 20L68 26" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
       </svg>
-      {/* Diamond - white stroke */}
       <svg className="deco" style={{bottom: '8%', right: '5%', width: 50, height: 50, opacity: .08}} viewBox="0 0 50 50" fill="none">
         <path d="M25 5L45 25L25 45L5 25Z" stroke="#fff" strokeWidth="2" fill="none"/>
       </svg>
