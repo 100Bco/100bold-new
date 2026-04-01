@@ -1,73 +1,48 @@
-import { Link } from 'react-router-dom'
-import WaveDivider from '../../components/WaveDivider'
-import { useRef, useEffect } from 'react'
-
-function LottieIcon({ src }) {
-  const ref = useRef(null)
-  useEffect(() => {
-    let anim
-    import('lottie-web/build/player/lottie_light').then(lottie => {
-      if (!ref.current) return
-      anim = lottie.default.loadAnimation({
-        container: ref.current, renderer: 'svg',
-        loop: true, autoplay: true, path: src,
-      })
-    }).catch(() => {})
-    return () => { if (anim) anim.destroy() }
-  }, [src])
-  return <div ref={ref} style={{width: 64, height: 64}} />
-}
+import IndustryPageTemplate from './IndustryPageTemplate'
 
 export default function RehabChiroPage() {
-  return (
-    <>
-      <section className="page-hero">
-        <div className="mx">
-          <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:24}}>
-            <LottieIcon src="/wheelchair-insurance-red.json" />
-            <div>
-              <h1 className="rv vis" style={{marginBottom:0}}>PI Chiropractors & <span className="accent">Rehab Clinics.</span></h1>
-              <p style={{fontSize:17,color:'var(--text-3)',marginTop:8}}>Personal Injury Chiropractors, Rehabilitation Centers</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  const data = {
+    label: 'PI CHIROPRACTORS, REHABILITATION CENTERS',
+    headline: <>Get More Attorney<br/>Referrals <span className="accent">On Autopilot.</span></>,
+    subtitle: "Attorneys refer to clinics they trust — and trust starts with a dominant Google presence and 5-star reviews they can see themselves.",
+    stats: [
+      { num: '12 Hrs', label: 'First Lead Closed' },
+      { num: '47+', label: '5-Star Reviews Generated' },
+      { num: '3', label: 'Locations Scaling' },
+    ],
+    painPoints: [
+      "Attorneys don't know you exist",
+      'Your Google profile has fewer reviews than competitors',
+      'No system to collect reviews after every patient visit',
+      "Relying on word-of-mouth alone isn't scalable",
+    ],
+    solutionIntro: 'We dominate your Google profile so attorneys refer to you first.',
+    solutions: [
+      {
+        title: 'GBP Domination',
+        desc: "Full profile optimization, weekly posts, and local SEO. When attorneys search for PI chiropractors, you're the first name they see.",
+        iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
+      },
+      {
+        title: 'Review Engine',
+        desc: 'Automated review requests after every visit. Build the 5-star reputation that makes attorneys confident sending their clients to you.',
+        iconPath: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+      },
+      {
+        title: 'Social Content',
+        desc: 'Turn your best reviews and patient outcomes into scroll-stopping content across all platforms.',
+        iconPath: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+      },
+      {
+        title: 'MinAI Lead Capture',
+        desc: 'AI chatbot on your website qualifies leads 24/7. CRM keeps every referral organized and followed up.',
+        iconPath: '<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>',
+      },
+    ],
+    services: ['GBP Domination', 'Review Engine', 'Social Content', 'MinAI'],
+    shortName: 'Rehab & Chiro',
+    ctaIndustry: 'rehab clinic',
+  }
 
-      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="wave" />
-      <section style={{background:'var(--cream)',padding:'var(--gap) 0'}}>
-        <div className="mx">
-          <div style={{maxWidth:800}}>
-            <div className="rv" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:24}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What You Want</div>
-              <p style={{fontSize:20,color:'var(--dark)',fontWeight:600,lineHeight:1.5}}>More PI referrals, stronger GBP presence</p>
-            </div>
-            <div className="rv rv-d1" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:40}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What We Do</div>
-              <p style={{fontSize:20,color:'var(--text-2)',fontStyle:'italic',lineHeight:1.6}}>"We dominate your Google profile and generate the reviews that make attorneys refer to you first."</p>
-            </div>
-            <div className="rv rv-d2" style={{display:'flex',gap:10,flexWrap:'wrap',marginBottom:48}}>
-              {['GBP Domination','Review Engine','Social Content'].map(s => (
-                <span key={s} style={{background:'var(--red)',color:'#fff',fontSize:12,fontWeight:700,letterSpacing:1,textTransform:'uppercase',padding:'8px 18px',borderRadius:200}}>{s}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
-      <section style={{padding:'60px 0',textAlign:'center'}}>
-        <div className="mx">
-          <h2 className="rv" style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',textTransform:'uppercase',marginBottom:24}}>
-            Ready to <span className="accent">dominate?</span>
-          </h2>
-          <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
-            <Link to="/industries" className="btn btn-outline rv rv-d1">All Industries</Link>
-            <button className="btn btn-red rv rv-d2">Contact Now
-              <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </button>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+  return <IndustryPageTemplate data={data} />
 }

@@ -1,73 +1,48 @@
-import { Link } from 'react-router-dom'
-import WaveDivider from '../../components/WaveDivider'
-import { useRef, useEffect } from 'react'
-
-function LottieIcon({ src }) {
-  const ref = useRef(null)
-  useEffect(() => {
-    let anim
-    import('lottie-web/build/player/lottie_light').then(lottie => {
-      if (!ref.current) return
-      anim = lottie.default.loadAnimation({
-        container: ref.current, renderer: 'svg',
-        loop: true, autoplay: true, path: src,
-      })
-    }).catch(() => {})
-    return () => { if (anim) anim.destroy() }
-  }, [src])
-  return <div ref={ref} style={{width: 64, height: 64}} />
-}
+import IndustryPageTemplate from './IndustryPageTemplate'
 
 export default function LawFirmsPage() {
-  return (
-    <>
-      <section className="page-hero">
-        <div className="mx">
-          <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:24}}>
-            <LottieIcon src="/law-red.json" />
-            <div>
-              <h1 className="rv vis" style={{marginBottom:0}}>Personal Injury <span className="accent">Law Firms.</span></h1>
-              <p style={{fontSize:17,color:'var(--text-3)',marginTop:8}}>PI Attorneys, Trial Lawyers</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  const data = {
+    label: 'PERSONAL INJURY ATTORNEYS, TRIAL LAWYERS',
+    headline: <>Sign Cases Before<br/>Competitors <span className="accent">Answer The Phone.</span></>,
+    subtitle: "When someone searches 'car accident lawyer near me' at 11 PM, the firm that responds first wins. That should be you — every single time.",
+    stats: [
+      { num: '30%', label: 'Intake Automated' },
+      { num: '24/7', label: 'AI Lead Response' },
+      { num: '<5s', label: 'Average Response Time' },
+    ],
+    painPoints: [
+      'Leads calling after hours go to voicemail — and then to competitors',
+      "Your Google reviews don't reflect the quality of your results",
+      'Intake process is manual, slow, and drops leads',
+      'Paying for ads without a strong organic foundation',
+    ],
+    solutionIntro: 'We build the review engine and lead funnel that signs cases while you sleep.',
+    solutions: [
+      {
+        title: 'GBP Domination',
+        desc: 'Dominate local search for PI in your market. Optimized profile, weekly content, and keyword-rich review responses.',
+        iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
+      },
+      {
+        title: 'MinAI Voice AI',
+        desc: 'Every call answered instantly — 24/7. AI qualifies leads, books consultations, and texts back missed calls automatically.',
+        iconPath: '<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>',
+      },
+      {
+        title: 'Review Engine',
+        desc: 'Automated SMS and email sequences request reviews from past clients. More 5-star reviews = more signed cases.',
+        iconPath: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+      },
+      {
+        title: 'Intake Automation',
+        desc: 'Leads from web, phone, and social flow into one CRM. No lead falls through the cracks. 30% of intake automated from day one.',
+        iconPath: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+      },
+    ],
+    services: ['GBP Domination', 'Paid Ads', 'MinAI Voice AI', 'Review Engine'],
+    shortName: 'Law Firms',
+    ctaIndustry: 'law firm',
+  }
 
-      <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="wave" />
-      <section style={{background:'var(--cream)',padding:'var(--gap) 0'}}>
-        <div className="mx">
-          <div style={{maxWidth:800}}>
-            <div className="rv" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:24}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What You Want</div>
-              <p style={{fontSize:20,color:'var(--dark)',fontWeight:600,lineHeight:1.5}}>Signed cases before competitors answer the phone</p>
-            </div>
-            <div className="rv rv-d1" style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:24,padding:'32px 36px',marginBottom:40}}>
-              <div style={{fontSize:11,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:12}}>What We Do</div>
-              <p style={{fontSize:20,color:'var(--text-2)',fontStyle:'italic',lineHeight:1.6}}>"We build the review engine and lead funnel. Voice AI answers every call. You get warm leads, not cold ones."</p>
-            </div>
-            <div className="rv rv-d2" style={{display:'flex',gap:10,flexWrap:'wrap',marginBottom:48}}>
-              {['GBP Domination','Paid Ads','MinAI Voice AI'].map(s => (
-                <span key={s} style={{background:'var(--red)',color:'#fff',fontSize:12,fontWeight:700,letterSpacing:1,textTransform:'uppercase',padding:'8px 18px',borderRadius:200}}>{s}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
-      <section style={{padding:'60px 0',textAlign:'center'}}>
-        <div className="mx">
-          <h2 className="rv" style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',textTransform:'uppercase',marginBottom:24}}>
-            Ready to <span className="accent">dominate?</span>
-          </h2>
-          <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
-            <Link to="/industries" className="btn btn-outline rv rv-d1">All Industries</Link>
-            <button className="btn btn-red rv rv-d2">Contact Now
-              <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </button>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+  return <IndustryPageTemplate data={data} />
 }
