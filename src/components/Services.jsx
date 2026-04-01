@@ -1,11 +1,17 @@
+import { useState } from 'react'
+
 const services = [
-  { title: 'GBP Domination', desc: 'Rank top in local search. Drive high-intent leads directly to your calendar.' },
-  { title: 'LinkedIn CEO Authority', desc: 'Position you as an industry titan. Build trust and generate premium B2B pipelines.' },
-  { title: 'Social Media Content', desc: 'High-converting content across Meta, LinkedIn, Instagram, TikTok, and more.' },
-  { title: 'Paid Ads', desc: 'Meta and Google campaigns that turn ad spend into scalable revenue.' },
+  { id: 'gbp', title: 'GBP Domination', desc: 'Rank top in local search. Drive high-intent leads directly to your calendar.', img: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&q=80&w=800' },
+  { id: 'linkedin', title: 'LinkedIn CEO Authority', desc: 'Position you as an industry titan. Build trust and generate premium B2B pipelines.', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800' },
+  { id: 'social', title: 'Social Media Content', desc: 'High-converting content across Meta, LinkedIn, Instagram, TikTok, and more.', img: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800' },
+  { id: 'ads', title: 'Paid Ads', desc: 'Meta and Google campaigns that turn ad spend into scalable revenue.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800' },
 ]
 
+const colors = { gbp: '#C8102E', linkedin: '#0A66C2', social: '#E8443A', ads: '#1A1816' }
+
 export default function Services() {
+  const [active, setActive] = useState('gbp')
+
   return (
     <section className="services-section" id="services" style={{position: 'relative'}}>
       <svg className="deco" style={{top: '8%', right: '5%', width: 80, height: 40, opacity: .09}} viewBox="0 0 80 40" fill="none">
@@ -18,22 +24,29 @@ export default function Services() {
         <div className="services-heading rv">
           Here's how we build your <span className="accent">Growth Machine.</span>
         </div>
-        <div className="srv-block rv rv-d2">
+        <div className="srv-block rv rv-d2" style={{background: colors[active], transition: 'background .5s ease'}}>
           <div className="srv-block-inner">
             <div>
-              <div className="srv-video">
-                <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&q=80&w=1000" alt="Showreel" />
+              <div className="srv-visual">
+                {services.map((srv) => (
+                  <img key={srv.id} className={`srv-visual-img${active === srv.id ? ' active' : ''}`} src={srv.img} alt={srv.title} />
+                ))}
                 <div className="srv-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
               </div>
-              <div className="srv-caption"></div>
-              <div className="srv-caption-body"></div>
             </div>
             <div>
               {services.map((srv) => (
-                <div key={srv.title} className="srv-item">
-                  <h3>{srv.title}</h3>
-                  <p>{srv.desc}</p>
-                  <span className="srv-arrow">Explore <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+                <div key={srv.id} className={`srv-item${active === srv.id ? ' active' : ''}`} onClick={() => setActive(srv.id)}>
+                  <div className="srv-item-head">
+                    <h3>{srv.title}</h3>
+                    <div className="srv-item-arrow">
+                      <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                  </div>
+                  <div className="srv-expand">
+                    <p>{srv.desc}</p>
+                    <a href="/services" className="srv-expand-cta">Explore <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
+                  </div>
                 </div>
               ))}
             </div>
