@@ -57,7 +57,7 @@ export default function WorkPage() {
       <section className="page-hero">
         <div className="mx">
           <h1 className="rv vis">Proven <span className="accent">Results.</span><br/>Real Clients.</h1>
-          <p className="page-hero-body rv vis rv-d2">Every result shown here is from a real client in our active roster. No hypotheticals. No projections.</p>
+          <p className="page-hero-body rv vis rv-d2">Every result shown here is from a real client in our active roster.</p>
         </div>
       </section>
 

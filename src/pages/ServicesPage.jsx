@@ -10,7 +10,7 @@ export default function ServicesPage() {
         </svg>
         <div className="mx">
           <h1 className="rv vis">Two Products.<br/><span className="accent">Zero Fluff.</span></h1>
-          <p className="page-hero-body rv vis rv-d2">We offer two distinct, standalone products. Each stands on its own value. No bundle discounts. Just results.</p>
+          <p className="page-hero-body rv vis rv-d2">We offer two distinct, standalone products. Each stands on its own value.</p>
         </div>
       </section>
 

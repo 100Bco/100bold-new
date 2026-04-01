@@ -593,6 +593,17 @@ img { display: block; max-width: 100%; }
 .eco-stat { padding: 28px; border-radius: var(--r); background: var(--card); border: 1px solid var(--border); text-align: center; }
 .eco-stat-num { font-family: var(--font-head); font-size: 40px; color: var(--red); line-height: 1; margin-bottom: 4px; }
 .eco-stat-label { font-size: 12px; font-weight: 700; color: var(--text-3); letter-spacing: 1px; text-transform: uppercase; }
+.eco-stat-icon { margin-bottom: 16px; display: flex; justify-content: center; }
+.eco-stat-icon svg { padding: 12px; background: #f5f5f5; border-radius: 50%; width: 64px; height: 64px; }
+.eco-stat-wide .eco-stat-num { font-size: 32px; margin-bottom: 2px; }
+.eco-stat-wide .eco-stat-label { text-transform: none; letter-spacing: 0; }
+
+/* MinAI Demo Video */
+.minai-demo-video {
+  position: relative; width: 100%; max-width: 900px; margin: 0 auto;
+  aspect-ratio: 16/9; border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.12); background: var(--dark);
+}
 
 .about-network { background: var(--white); padding: var(--gap) 0; }
 .about-network h2 { font-family: var(--font-head); font-size: clamp(44px, 5vw, 72px); line-height: .9; text-transform: uppercase; color: var(--dark); margin-bottom: 16px; }
