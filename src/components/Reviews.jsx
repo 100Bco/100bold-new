@@ -29,7 +29,7 @@ export default function Reviews() {
                 </div>
               ))}
             </div>
-            <p className="rp-note">↑ Replace this section with your GHL Google Review widget embed code</p>
+            <p className="rp-note" style={{display: 'none'}}>↑ Replace this section with your GHL Google Review widget embed code</p>
           </div>
         </div>
       </div>
