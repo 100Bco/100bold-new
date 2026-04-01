@@ -22,7 +22,7 @@ export default function WhyUs() {
           <div className="why-card">
             <div className="why-num">01</div>
             <h3>Operator Credibility</h3>
-            <p>We've built businesses in your industry. We speak your language — not marketing language.</p>
+            <p>We've built businesses in your industry. We speak your language.</p>
           </div>
           <div className="why-card">
             <div className="why-num">02</div>
@@ -32,7 +32,7 @@ export default function WhyUs() {
           <div className="why-card">
             <div className="why-num">03</div>
             <h3>GBP + LinkedIn System</h3>
-            <p>Proven playbooks that deliver consistently at scale. No back-and-forth.</p>
+            <p>Proven playbooks that deliver consistently at scale.</p>
           </div>
         </div>
         <div className="why-cta rv rv-d3">

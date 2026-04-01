@@ -25,8 +25,8 @@ export default function Services() {
                 <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&q=80&w=1000" alt="Showreel" />
                 <div className="srv-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
               </div>
-              <div className="srv-caption">100Bold Client Growth Showreel</div>
-              <div className="srv-caption-body">From GBP to LinkedIn authority — the output machine in action.</div>
+              <div className="srv-caption"></div>
+              <div className="srv-caption-body"></div>
             </div>
             <div>
               {services.map((srv) => (
