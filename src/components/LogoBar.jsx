@@ -10,7 +10,7 @@ const logos = [
   { src: '/CCHL Logo.png', alt: 'CCHL' },
   { src: '/Kalotoy Logo.webp', alt: 'Kalotoy' },
   { src: '/Logo Woodsland.jpg', alt: 'Woodsland' },
-  { src: '/Logo_Sao_Thái_Dương.png', alt: 'Sao Thái Dương' },
+  { src: '/Logo-Sao-Thai-Duong.png', alt: 'Sao Thái Dương' },
   { src: '/Logo-Hexagon.png', alt: 'Hexagon' },
   { src: '/logo-minhlong.png', alt: 'Minh Long' },
   { src: '/Quang Vinh Logo.png', alt: 'Quang Vinh' },
