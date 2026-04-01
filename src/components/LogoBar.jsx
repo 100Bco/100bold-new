@@ -6,18 +6,19 @@ const logos = [
   { src: '/GAACC-logo-400x400-1.webp', alt: 'GAACC' },
   { src: '/100B - TACH NEN -1.png', alt: '100B Beyond Borders' },
   { src: '/Bee Con Logo.png', alt: 'Bee Con' },
-  { src: '/Beinco logo.png', alt: 'Beinco' },
   { src: '/CCHL Logo.png', alt: 'CCHL' },
   { src: '/Kalotoy Logo.webp', alt: 'Kalotoy' },
   { src: '/Logo Woodsland.jpg', alt: 'Woodsland' },
   { src: '/Logo-Sao-Thai-Duong.png', alt: 'Sao Thái Dương' },
   { src: '/Logo-Hexagon.png', alt: 'Hexagon' },
-  { src: '/logo-minhlong.png', alt: 'Minh Long' },
   { src: '/Quang Vinh Logo.png', alt: 'Quang Vinh' },
+  { src: '/Logo Dacy.jpg', alt: 'Dacy Business Park' },
+  { src: '/tab+tm512-1920w.webp', alt: 'TAB' },
+  { src: '/Logo Linkedin Glenn.png', alt: 'Glenn' },
+  { src: '/Subele_logo_1-removebg-preview.png', alt: 'Subele' },
 ]
 
 export default function LogoBar() {
-  // Duplicate logos for seamless infinite scroll
   const allLogos = [...logos, ...logos]
 
   return (
