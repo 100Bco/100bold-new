@@ -127,7 +127,7 @@ export default function WorkPage() {
           <div className="about-hero-grid">
             <div>
               <h1 className="rv vis">Proven <span className="accent">Results.</span><br/>Real Clients.</h1>
-              <p className="page-hero-body rv vis rv-d2">Every result shown here is from a real client on our active roster.</p>
+              <p className="page-hero-body rv vis rv-d2">Every result shown here is from a real client in our active roster.</p>
             </div>
             <div className="about-hero-visual rv vis rv-d2">
               <WorkHeroGraphic />
