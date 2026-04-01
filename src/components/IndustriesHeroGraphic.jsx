@@ -43,7 +43,7 @@ export default function IndustriesHeroGraphic() {
       alignItems: 'center',
       justifyContent: 'center',
       padding: 16,
-      transform: 'scale(0.9)', // Thu nhỏ một chút trên màn hình nhỏ, bạn có thể dùng media query nếu cần
+      transform: 'scale(0.9)', // Thu nhỏ một chút trên màn hình nhỏ
     }}>
       <div style={{
         position: 'relative',
@@ -136,10 +136,10 @@ export default function IndustriesHeroGraphic() {
           style={{
             position: 'absolute',
             zIndex: 20,
-            width: 144, // 36 * 4
+            width: 144, 
             height: 144,
             backgroundColor: '#E31837',
-            borderRadius: 40, // 2.5rem
+            borderRadius: 40, 
             boxShadow: '0 20px 50px rgba(227,24,55,0.3)',
             display: 'flex',
             alignItems: 'center',
@@ -154,7 +154,7 @@ export default function IndustriesHeroGraphic() {
             transform: 'rotate(-45deg)'
           }}>
             <span style={{
-              fontSize: 36, // 4xl
+              fontSize: 36, 
               fontWeight: 'bold',
               color: 'white',
               lineHeight: 1
@@ -163,7 +163,7 @@ export default function IndustriesHeroGraphic() {
               fontSize: 10,
               fontWeight: 'bold',
               color: 'rgba(255, 255, 255, 0.9)',
-              letterSpacing: '0.1em', // tracking-widest
+              letterSpacing: '0.1em', 
               textTransform: 'uppercase',
               marginTop: 8,
               textAlign: 'center',
@@ -204,35 +204,33 @@ export default function IndustriesHeroGraphic() {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 12, // gap-3
+                  gap: 12, 
                   backgroundColor: 'white',
-                  padding: '10px 16px', // py-2.5 px-4
-                  borderRadius: 16, // 2xl
+                  padding: '10px 16px', 
+                  borderRadius: 16, 
                   boxShadow: '0 8px 25px rgba(0,0,0,0.06)',
-                  border: '1px solid #F3F4F6', // gray-100
+                  border: '1px solid #F3F4F6', 
                   whiteSpace: 'nowrap',
                   cursor: 'default',
                   transition: 'all 0.3s ease'
                 }}
-                // Inline hover effect simulation (React doesn't support :hover in inline styles natively without extra libraries, 
-                // but this static style looks rất gần với bản Tailwind)
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#FECACA'; // red-200
+                  e.currentTarget.style.borderColor = '#FECACA'; 
                   e.currentTarget.style.boxShadow = '0 8px 25px rgba(227,24,55,0.15)';
-                  e.currentTarget.children[0].style.backgroundColor = '#FEE2E2'; // red-100
+                  e.currentTarget.children[0].style.backgroundColor = '#FEE2E2'; 
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = '#F3F4F6';
                   e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.06)';
-                  e.currentTarget.children[0].style.backgroundColor = '#FEF2F2'; // red-50
+                  e.currentTarget.children[0].style.backgroundColor = '#FEF2F2'; 
                 }}
               >
                 {/* Vòng tròn bọc Lottie */}
                 <div style={{
-                  width: 36, // w-9
-                  height: 36, // h-9
+                  width: 36, 
+                  height: 36, 
                   borderRadius: '50%',
-                  backgroundColor: '#FEF2F2', // red-50
+                  backgroundColor: '#FEF2F2', 
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -243,35 +241,12 @@ export default function IndustriesHeroGraphic() {
                 <span style={{
                   fontSize: 13,
                   fontWeight: 'bold',
-                  color: '#1F2937' // gray-800
+                  color: '#1F2937' 
                 }}>{node.name}</span>
               </motion.div>
             </motion.div>
           );
         })}
-
-        {/* Badge "6 Industries" */}
-        <motion.div
-          animate={{y:[-4,4,-4]}}
-          transition={{duration:4,repeat:Infinity,ease:'easeInOut'}}
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            right: -32, // md:-right-8
-            zIndex: 30,
-            backgroundColor: '#E31837',
-            color: 'white',
-            fontSize: 11,
-            fontWeight: 'bold',
-            letterSpacing: 2,
-            textTransform: 'uppercase',
-            padding: '6px 16px',
-            borderRadius: 9999, // full
-            boxShadow: '0 8px 20px rgba(200,16,46,0.3)'
-          }}
-        >
-          6 Industries
-        </motion.div>
 
       </div>
     </div>
