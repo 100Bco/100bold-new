@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const services = [
-  { id: 'gbp', title: 'GBP Domination', desc: 'Rank top in local search. Drive high-intent leads directly to your calendar.', img: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&q=80&w=800' },
+  { id: 'gbp', title: 'Google Domination', desc: 'Rank top in local search. Drive high-intent leads directly to your calendar.', img: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&q=80&w=800' },
   { id: 'linkedin', title: 'LinkedIn CEO Authority', desc: 'Position you as an industry titan. Build trust and generate premium B2B pipelines.', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800' },
   { id: 'social', title: 'Social Media Content', desc: 'High-converting content across Meta, LinkedIn, Instagram, TikTok, and more.', img: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800' },
   { id: 'ads', title: 'Paid Ads', desc: 'Meta and Google campaigns that turn ad spend into scalable revenue.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800' },

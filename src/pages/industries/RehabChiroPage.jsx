@@ -3,6 +3,7 @@ import IndustryPageTemplate from './IndustryPageTemplate'
 export default function RehabChiroPage() {
   const data = {
     label: 'PI CHIROPRACTORS, REHABILITATION CENTERS',
+    lottie: '/wheelchair-insurance-red.json',
     headline: <>Get More Attorney<br/>Referrals <span className="accent">On Autopilot.</span></>,
     subtitle: "Attorneys refer to clinics they trust — and trust starts with a dominant Google presence and 5-star reviews they can see themselves.",
     stats: [
@@ -19,7 +20,7 @@ export default function RehabChiroPage() {
     solutionIntro: 'We dominate your Google profile so attorneys refer to you first.',
     solutions: [
       {
-        title: 'GBP Domination',
+        title: 'Google Domination',
         desc: "Full profile optimization, weekly posts, and local SEO. When attorneys search for PI chiropractors, you're the first name they see.",
         iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
       },
@@ -39,7 +40,7 @@ export default function RehabChiroPage() {
         iconPath: '<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>',
       },
     ],
-    services: ['GBP Domination', 'Review Engine', 'Social Content', 'MinAI'],
+    services: ['Google Domination', 'Review Engine', 'Social Content', 'MinAI'],
     shortName: 'Rehab & Chiro',
     ctaIndustry: 'rehab clinic',
   }
