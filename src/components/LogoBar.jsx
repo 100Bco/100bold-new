@@ -3,9 +3,17 @@ const logos = [
   { src: '/Logo Miami Vice.png', alt: 'Miami Vice' },
   { src: '/t98-rehab-red-logo-400x299.png', alt: 'T98 Rehab' },
   { src: '/Asset 1@10x.png', alt: 'Dang Law Group' },
-
   { src: '/GAACC-logo-400x400-1.webp', alt: 'GAACC' },
   { src: '/100B - TACH NEN -1.png', alt: '100B Beyond Borders' },
+  { src: '/Bee Con Logo.png', alt: 'Bee Con' },
+  { src: '/Beinco logo.png', alt: 'Beinco' },
+  { src: '/CCHL Logo.png', alt: 'CCHL' },
+  { src: '/Kalotoy Logo.webp', alt: 'Kalotoy' },
+  { src: '/Logo Woodsland.jpg', alt: 'Woodsland' },
+  { src: '/Logo_Sao_Thái_Dương.png', alt: 'Sao Thái Dương' },
+  { src: '/Logo-Hexagon.png', alt: 'Hexagon' },
+  { src: '/logo-minhlong.png', alt: 'Minh Long' },
+  { src: '/Quang Vinh Logo.png', alt: 'Quang Vinh' },
 ]
 
 export default function LogoBar() {
