@@ -1,37 +1,24 @@
 import { Link } from 'react-router-dom'
+import Lottie from 'lottie-react'
+import { useState, useEffect } from 'react'
 
-const industries = [
-  {
-    name: 'General Contractors',
-    desc: 'GBP domination for builders and GCs',
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-4h6v4"/></svg>,
-  },
-  {
-    name: 'HVAC / Electrical',
-    desc: 'More calls, more jobs, less complexity',
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>,
-  },
-  {
-    name: 'Real Estate',
-    desc: 'Credibility and deal flow from the right relationships',
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v3"/><path d="M2 13h20"/></svg>,
-  },
-  {
-    name: 'PI Law Firms',
-    desc: 'Signed cases before competitors answer the phone',
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>,
-  },
-  {
-    name: 'Rehab & Chiro',
-    desc: 'Dominate Google, get more PI referrals',
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>,
-  },
-  {
-    name: 'Plumbing / Roofing',
-    desc: 'Own every local search in your area',
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>,
-  },
+const industryData = [
+  { name: 'General Contractors', desc: 'GBP domination for builders and GCs', lottie: '/building-red.json' },
+  { name: 'HVAC / Electrical', desc: 'More calls, more jobs, less complexity', lottie: '/power-red.json' },
+  { name: 'Real Estate', desc: 'Credibility and deal flow from the right relationships', lottie: '/hourse-red.json' },
+  { name: 'PI Law Firms', desc: 'Signed cases before competitors answer the phone', lottie: '/law-red.json' },
+  { name: 'Rehab & Chiro', desc: 'Dominate Google, get more PI referrals', lottie: '/wheelchair-insurance-red.json' },
+  { name: 'Plumbing / Roofing', desc: 'Own every local search in your area', lottie: '/repair-tools-red.json' },
 ]
+
+function LottieIcon({ src }) {
+  const [data, setData] = useState(null)
+  useEffect(() => {
+    fetch(src).then(r => r.json()).then(setData).catch(() => {})
+  }, [src])
+  if (!data) return <div style={{width: 48, height: 48}} />
+  return <Lottie animationData={data} loop autoplay style={{width: 48, height: 48}} />
+}
 
 export default function IndustriesPreview() {
   return (
@@ -42,7 +29,6 @@ export default function IndustriesPreview() {
       <svg className="deco" style={{bottom: '10%', right: '6%', width: 50, height: 50, opacity: .1}} viewBox="0 0 50 50" fill="none">
         <rect x="5" y="5" width="40" height="40" rx="8" stroke="var(--red)" strokeWidth="2" strokeDasharray="5 7"/>
       </svg>
-      {/* Cross/plus shapes */}
       <svg className="deco" style={{top: '50%', left: '7%', width: 45, height: 45, opacity: .08}} viewBox="0 0 45 45" fill="none">
         <path d="M22.5 5v35M5 22.5h35" stroke="var(--red)" strokeWidth="2.5" strokeLinecap="round"/>
         <path d="M12 12l21 21M33 12L12 33" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" opacity=".5"/>
@@ -53,9 +39,9 @@ export default function IndustriesPreview() {
           <p>We only work in industries we've operated in. We know your pain points firsthand.</p>
         </div>
         <div className="ip-grid rv rv-d1">
-          {industries.map((ind) => (
+          {industryData.map((ind) => (
             <div key={ind.name} className="ip-card">
-              <div className="ip-icon">{ind.icon}</div>
+              <div className="ip-icon"><LottieIcon src={ind.lottie} /></div>
               <h3>{ind.name}</h3>
               <p>{ind.desc}</p>
             </div>
