@@ -10,6 +10,12 @@ import IndustriesPage from './pages/IndustriesPage'
 import ServicesPage from './pages/ServicesPage'
 import WorkPage from './pages/WorkPage'
 import MinAIPage from './pages/MinAIPage'
+import LocalServicesPage from './pages/industries/LocalServicesPage'
+import ConstructionPage from './pages/industries/ConstructionPage'
+import RealEstatePage from './pages/industries/RealEstatePage'
+import LawFirmsPage from './pages/industries/LawFirmsPage'
+import RehabChiroPage from './pages/industries/RehabChiroPage'
+import PlumbingRoofingPage from './pages/industries/PlumbingRoofingPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -40,6 +46,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/industries/local-services" element={<LocalServicesPage />} />
+        <Route path="/industries/construction" element={<ConstructionPage />} />
+        <Route path="/industries/real-estate" element={<RealEstatePage />} />
+        <Route path="/industries/law-firms" element={<LawFirmsPage />} />
+        <Route path="/industries/rehab-chiro" element={<RehabChiroPage />} />
+        <Route path="/industries/plumbing-roofing" element={<PlumbingRoofingPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/work" element={<WorkPage />} />
         <Route path="/minai" element={<MinAIPage />} />

@@ -1,50 +1,31 @@
-import WaveDivider from '../components/WaveDivider'
 import { Link } from 'react-router-dom'
 import IndustriesHeroGraphic from '../components/IndustriesHeroGraphic'
+import WaveDivider from '../components/WaveDivider'
+import { useRef, useEffect } from 'react'
+
+function LottieIcon({ src }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    let anim
+    import('lottie-web/build/player/lottie_light').then(lottie => {
+      if (!ref.current) return
+      anim = lottie.default.loadAnimation({
+        container: ref.current, renderer: 'svg',
+        loop: true, autoplay: true, path: src,
+      })
+    }).catch(() => {})
+    return () => { if (anim) anim.destroy() }
+  }, [src])
+  return <div ref={ref} style={{width: 48, height: 48}} />
+}
 
 const industries = [
-  {
-    name: 'Local Service Contractors',
-    examples: 'HVAC, Plumbing, Electrical, Roofing, Solar, Painting, Pest Control',
-    want: 'More calls, more jobs, less marketing complexity',
-    message: 'We take over your Google presence. More reviews, more calls — hands-off.',
-    services: ['GBP Domination', 'Review Engine', 'Social Content'],
-  },
-  {
-    name: 'General Contractors & Construction',
-    examples: 'Commercial GCs, Residential Builders, Construction Firms',
-    want: 'Consistent project pipeline and industry credibility',
-    message: 'Dominate local search so the right projects find you.',
-    services: ['GBP Domination', 'LinkedIn CEO Authority', 'Network Access'],
-  },
-  {
-    name: 'Real Estate Developers',
-    examples: 'Residential & Commercial Developers, Property Managers',
-    want: 'Credibility and deal flow from the right relationships',
-    message: 'Digital authority that puts you in front of the people that matter.',
-    services: ['LinkedIn CEO Authority', 'GBP Domination', 'Network Access'],
-  },
-  {
-    name: 'Personal Injury Law Firms',
-    examples: 'PI Attorneys, Trial Lawyers',
-    want: 'Signed cases before competitors answer the phone',
-    message: 'Review engine + lead funnel. Voice AI answers every call. Warm leads only.',
-    services: ['GBP Domination', 'Paid Ads', 'MinAI Voice AI'],
-  },
-  {
-    name: 'PI Chiropractors & Rehab Clinics',
-    examples: 'Personal Injury Chiropractors, Rehabilitation Centers',
-    want: 'More PI referrals, stronger GBP presence',
-    message: 'Dominate Google and generate reviews that make attorneys refer you first.',
-    services: ['GBP Domination', 'Review Engine', 'Social Content'],
-  },
-  {
-    name: 'Import/Export & Trade',
-    examples: 'Construction Materials, International Trade Businesses',
-    want: 'Market presence and digital credibility in a niche space',
-    message: 'We\'ve done import/export ourselves. We build the presence that sets you apart.',
-    services: ['LinkedIn CEO Authority', 'GBP Domination'],
-  },
+  { name: 'Local Service Contractors', desc: 'HVAC, Plumbing, Electrical, Roofing, Solar, Painting, Pest Control', lottie: '/power-red.json', path: '/industries/local-services' },
+  { name: 'General Contractors & Construction', desc: 'Commercial GCs, Residential Builders, Construction Firms', lottie: '/repair-tools-red.json', path: '/industries/construction' },
+  { name: 'Real Estate Developers', desc: 'Residential & Commercial Developers, Property Managers, Brokerages', lottie: '/building-red.json', path: '/industries/real-estate' },
+  { name: 'Personal Injury Law Firms', desc: 'PI Attorneys, Trial Lawyers', lottie: '/law-red.json', path: '/industries/law-firms' },
+  { name: 'PI Chiropractors & Rehab', desc: 'Personal Injury Chiropractors, Rehabilitation Centers', lottie: '/wheelchair-insurance-red.json', path: '/industries/rehab-chiro' },
+  { name: 'Plumbing, Roofing & Trades', desc: 'Plumbers, Roofers, HVAC Specialists, Electricians', lottie: '/hourse-red.json', path: '/industries/plumbing-roofing' },
 ]
 
 export default function IndustriesPage() {
@@ -65,47 +46,30 @@ export default function IndustriesPage() {
       </section>
 
       <WaveDivider from="#FEFCF9" to="#F7F3ED" variant="wave" />
-      <section className="ind-list" style={{position: 'relative'}}>
-        {/* Spiral path */}
-        <svg className="deco" style={{top: '5%', right: '4%', width: 70, height: 70, opacity: .07}} viewBox="0 0 70 70" fill="none">
-          <path d="M35 35C35 30,40 28,43 31C46 34,44 40,39 41C33 42,28 37,29 31C30 23,38 19,44 22C52 26,54 38,48 45C41 53,27 53,22 44C16 33,20 18,32 14" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" fill="none"/>
-        </svg>
-        {/* Triangle cluster */}
-        <svg className="deco" style={{bottom: '8%', left: '3%', width: 55, height: 55, opacity: .08}} viewBox="0 0 55 55" fill="none">
-          <path d="M18 45L28 25L38 45Z" stroke="var(--red)" strokeWidth="2" fill="none"/>
-          <path d="M8 50L16 36L24 50Z" stroke="var(--red)" strokeWidth="1.5" fill="none"/>
-          <path d="M30 50L38 36L46 50Z" stroke="var(--red)" strokeWidth="1.5" fill="none"/>
-        </svg>
+      <section style={{background: 'var(--cream)', padding: 'var(--gap) 0'}}>
         <div className="mx">
-          {industries.map((ind, i) => (
-            <div key={ind.name} className={`ind-item rv${i > 0 ? ` rv-d${Math.min(i, 3)}` : ''}`}>
-              <div className="ind-item-left">
-                <h2>{ind.name}</h2>
-                <p className="ind-examples">{ind.examples}</p>
-                <div className="ind-tags">
-                  {ind.services.map((s) => <span key={s} className="ind-tag">{s}</span>)}
+          <div className="ind-landing-grid">
+            {industries.map((ind, i) => (
+              <Link to={ind.path} key={ind.name} className={`ind-landing-card rv${i > 0 ? ` rv-d${Math.min(i, 3)}` : ''}`}>
+                <div className="ind-landing-icon">
+                  <LottieIcon src={ind.lottie} />
                 </div>
-              </div>
-              <div className="ind-item-right">
-                <div className="ind-want">
-                  <span className="ind-want-label">What They Want</span>
-                  {ind.want}
+                <div>
+                  <h3>{ind.name}</h3>
+                  <p>{ind.desc}</p>
                 </div>
-                <div className="ind-msg">
-                  <span className="ind-msg-label">What We Say</span>
-                  "{ind.message}"
-                </div>
-              </div>
-            </div>
-          ))}
+                <svg className="ind-landing-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="curve" />
-      <section className="ind-cta">
-        <div className="mx" style={{textAlign: 'center', padding: '60px 0'}}>
+      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
+      <section style={{padding: '60px 0', textAlign: 'center'}}>
+        <div className="mx">
           <h2 className="rv" style={{fontFamily: 'var(--font-head)', fontSize: 'clamp(36px, 4vw, 56px)', textTransform: 'uppercase', marginBottom: 24}}>
-            Don't see your industry? <span className="accent">Let's talk.</span>
+            Ready to <span className="accent">dominate?</span>
           </h2>
           <button className="btn btn-red rv rv-d1">
             Contact Now

@@ -10,7 +10,7 @@ export default function ServicesHeroGraphic() {
       {/* Dashed orbit circles - roaming freely across the grid */}
       <motion.svg
         animate={{x:[-80,120,60,-140,30,-80], y:[-60,80,-30,100,-90,-60], rotate:[0,360]}}
-        transition={{x:{duration:14,repeat:Infinity,ease:'easeInOut'}, y:{duration:11,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:18,repeat:Infinity,ease:'linear'}}}
+        transition={{x:{duration:20,repeat:Infinity,ease:'easeInOut'}, y:{duration:16,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:25,repeat:Infinity,ease:'linear'}}}
         style={{position:'absolute',top:'50%',left:'50%',marginTop:-140,marginLeft:-140,pointerEvents:'none',overflow:'visible',opacity:.3}}
         width="280" height="280" viewBox="0 0 280 280"
       >
@@ -18,11 +18,11 @@ export default function ServicesHeroGraphic() {
       </motion.svg>
       <motion.svg
         animate={{x:[100,-80,50,-120,80,100], y:[70,-100,40,-60,110,70], rotate:[360,0]}}
-        transition={{x:{duration:18,repeat:Infinity,ease:'easeInOut'}, y:{duration:13,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:30,repeat:Infinity,ease:'linear'}}}
-        style={{position:'absolute',top:'50%',left:'50%',marginTop:-230,marginLeft:-230,pointerEvents:'none',overflow:'visible',opacity:.25}}
-        width="460" height="460" viewBox="0 0 460 460"
+        transition={{x:{duration:24,repeat:Infinity,ease:'easeInOut'}, y:{duration:18,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:40,repeat:Infinity,ease:'linear'}}}
+        style={{position:'absolute',top:'50%',left:'50%',marginTop:-160,marginLeft:-160,pointerEvents:'none',overflow:'visible',opacity:.25}}
+        width="320" height="320" viewBox="0 0 320 320"
       >
-        <circle cx="230" cy="230" r="220" stroke="#888" strokeWidth="1.5" fill="none" strokeDasharray="6 8"/>
+        <circle cx="160" cy="160" r="150" stroke="#888" strokeWidth="1.5" fill="none" strokeDasharray="6 8"/>
       </motion.svg>
 
       {/* Central Hub - Diamond */}
