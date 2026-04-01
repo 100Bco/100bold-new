@@ -7,19 +7,19 @@ export default function ServicesHeroGraphic() {
       {/* Background glow */}
       <div style={{position:'absolute',width:240,height:240,background:'radial-gradient(circle,rgba(227,24,55,.06) 0%,transparent 70%)',top:'50%',left:'50%',transform:'translate(-50%,-50%)',borderRadius:'50%'}} />
 
-      {/* Dashed orbit circles - small red, large gray */}
+      {/* Dashed orbit circles - roaming freely across the grid */}
       <motion.svg
-        animate={{x:[-25,20,-10,25,-25], y:[-20,15,25,-15,-20], rotate:[0,360]}}
-        transition={{x:{duration:8,repeat:Infinity,ease:'easeInOut'}, y:{duration:6,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:20,repeat:Infinity,ease:'linear'}}}
-        style={{position:'absolute',top:'50%',left:'50%',marginTop:-140,marginLeft:-140,pointerEvents:'none',overflow:'visible',opacity:.35}}
+        animate={{x:[-80,120,60,-140,30,-80], y:[-60,80,-30,100,-90,-60], rotate:[0,360]}}
+        transition={{x:{duration:14,repeat:Infinity,ease:'easeInOut'}, y:{duration:11,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:18,repeat:Infinity,ease:'linear'}}}
+        style={{position:'absolute',top:'50%',left:'50%',marginTop:-140,marginLeft:-140,pointerEvents:'none',overflow:'visible',opacity:.3}}
         width="280" height="280" viewBox="0 0 280 280"
       >
         <circle cx="140" cy="140" r="125" stroke="#E31837" strokeWidth="1.5" fill="none" strokeDasharray="8 8"/>
       </motion.svg>
       <motion.svg
-        animate={{x:[20,-15,10,-20,20], y:[15,-20,-10,18,15], rotate:[360,0]}}
-        transition={{x:{duration:12,repeat:Infinity,ease:'easeInOut'}, y:{duration:9,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:35,repeat:Infinity,ease:'linear'}}}
-        style={{position:'absolute',top:'50%',left:'50%',marginTop:-230,marginLeft:-230,pointerEvents:'none',overflow:'visible',opacity:.3}}
+        animate={{x:[100,-80,50,-120,80,100], y:[70,-100,40,-60,110,70], rotate:[360,0]}}
+        transition={{x:{duration:18,repeat:Infinity,ease:'easeInOut'}, y:{duration:13,repeat:Infinity,ease:'easeInOut'}, rotate:{duration:30,repeat:Infinity,ease:'linear'}}}
+        style={{position:'absolute',top:'50%',left:'50%',marginTop:-230,marginLeft:-230,pointerEvents:'none',overflow:'visible',opacity:.25}}
         width="460" height="460" viewBox="0 0 460 460"
       >
         <circle cx="230" cy="230" r="220" stroke="#888" strokeWidth="1.5" fill="none" strokeDasharray="6 8"/>
