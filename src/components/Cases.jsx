@@ -1,21 +1,21 @@
 const cases = [
   {
     title: 'LT Commercial Group',
-    desc: "Creative content that keeps Austin's top commercial real estate group top of mind.",
+    desc: "Creative content that keeps Austin's top commercial real estate group top of mind. In front of the investors, brokers, and business owners that move the market.",
     img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
     metric: '6,000+', metricLabel: 'Business Leaders Reached', tags: ['Content', 'GBP'],
   },
   {
     title: 'Lezlie Tram',
-    desc: 'Turned an already-active LinkedIn into a magnet. Consistent content and real engagement.',
+    desc: 'Turned an already-active LinkedIn into a magnet. Consistent content, real engagement, and a growing pipeline of connections and conversations.',
     img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
     metric: '2.5X', metricLabel: 'LinkedIn Growth', tags: ['LinkedIn', 'CEO Authority'],
   },
   {
     title: 'Dacy Business Park',
-    desc: 'Built digital presence from scratch. Sold-out launch event and immediate lease inquiries.',
+    desc: 'Built the digital presence from scratch, then launched a targeted campaign to 6,000 local business leaders. Sold-out launch event and immediate lease inquiries on day one.',
     img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
-    metric: '100', metricLabel: 'Attendees. 3 Leads in 24h', tags: ['Website', 'GBP', 'Events'],
+    metric: '100 Attendees', metricLabel: '3 Leads in 24 Hours', tags: ['Website', 'GBP', 'Events'],
   },
 ]
 
@@ -52,7 +52,6 @@ export default function Cases() {
               <div className="case-body">
                 <h3>{c.title}</h3>
                 <p>{c.desc}</p>
-                <a href="#" className="btn btn-text" style={{ fontSize: 12 }}>Case Study <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
               </div>
             </div>
           ))}
