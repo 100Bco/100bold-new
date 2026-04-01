@@ -17,9 +17,8 @@ export default function WhyUs() {
       </svg>
       <div className="mx">
         <h2 className="why-us-heading rv">We Are <span className="accent">Operators.</span> Not Marketers.</h2>
-        <p className="why-us-sub rv rv-d2">Our founding team has owned and operated businesses in the exact industries we serve.</p>
-        <p className="why-us-sub rv rv-d2" style={{marginTop: '24px'}}>We know your pain points because we've lived them.</p>
-        <div className="why-grid rv rv-d2">
+        <p className="why-us-sub rv rv-d2">Our founding team has owned and operated businesses in the exact industries we serve. We know your pain points because we've lived them.</p>
+        <div className="why-grid rv rv-d2" style={{marginTop: '48px'}}>
           <div className="why-card">
             <div className="why-num">01</div>
             <h3>Operator Credibility</h3>
