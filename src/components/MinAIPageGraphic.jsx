@@ -36,10 +36,10 @@ export default function MinAIPageGraphic() {
         className="minai-float minai-float-chat-tl"
       >
         <div className="minai-float-chat-inner">
-          <div className="minai-float-avatar"><User size={16} color="#fff" /></div>
+          <div className="minai-float-avatar"><User size={12} color="#fff" /></div>
           <div className="minai-float-lines">
-            <div className="minai-float-line" style={{width: 64, background: 'rgba(255,255,255,.8)'}}></div>
-            <div className="minai-float-line" style={{width: 40, background: 'rgba(255,255,255,.5)'}}></div>
+            <div className="minai-float-line" style={{width: 44, background: 'rgba(255,255,255,.8)'}}></div>
+            <div className="minai-float-line" style={{width: 28, background: 'rgba(255,255,255,.5)'}}></div>
           </div>
         </div>
       </motion.div>
@@ -118,7 +118,7 @@ export default function MinAIPageGraphic() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
         className="minai-float minai-float-chat-mr"
       >
-        <MessageCircle size={24} color="#fff" />
+        <MessageCircle size={16} color="#fff" />
       </motion.div>
 
       {/* Floating Element 6: Bottom Right Dashboard */}
@@ -128,7 +128,7 @@ export default function MinAIPageGraphic() {
         className="minai-float minai-float-dash-br transform-style-3d"
       >
         <div className="minai-dash-br-head">
-          <PieChart size={32} color="var(--red)" />
+          <PieChart size={22} color="var(--red)" />
           <div className="minai-float-lines">
             <div className="minai-float-line" style={{width: 80, height: 10, background: '#d1d5db'}}></div>
             <div className="minai-float-line" style={{width: 48, background: '#e5e7eb'}}></div>
