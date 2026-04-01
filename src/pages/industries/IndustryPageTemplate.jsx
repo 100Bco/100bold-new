@@ -24,10 +24,10 @@ export default function IndustryPageTemplate({ data }) {
       {/* Hero */}
       <section className="page-hero" style={{position:'relative'}}>
         <div className="mx">
-          <div style={{display:'grid',gridTemplateColumns:'2fr 1fr',gap:48,alignItems:'center'}}>
+          <div style={{display:'grid',gridTemplateColumns:'3fr 1fr',gap:32,alignItems:'center'}}>
             <div>
               <div style={{fontSize:12,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:16}}>{data.label}</div>
-              <h1 className="rv vis" style={{maxWidth:650}}>{data.headline}</h1>
+              <h1 className="rv vis">{data.headline}</h1>
               <p className="page-hero-body rv vis rv-d1" style={{maxWidth:560}}>{data.subtitle}</p>
               <div className="rv vis rv-d2" style={{display:'flex',gap:12,marginTop:32}}>
                 <button className="btn btn-red">Contact Now <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
