@@ -1,4 +1,5 @@
 import WaveDivider from '../components/WaveDivider'
+import MinAIPageGraphic from '../components/MinAIPageGraphic'
 
 const ChatIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
 const PhoneIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -19,8 +20,15 @@ export default function MinAIPage() {
     <>
       <section className="page-hero">
         <div className="mx">
-          <h1 className="rv vis">Meet <span className="accent">MinAI.</span><br/>The Engine Behind 100Bold.</h1>
-          <p className="page-hero-body rv vis rv-d2">MinAI is the technology engine behind every 100Bold engagement. Founder-built, scaled to 1M+ users.</p>
+          <div className="about-hero-grid">
+            <div>
+              <h1 className="rv vis">Meet <span className="accent">MinAI.</span><br/>The Engine Behind 100Bold.</h1>
+              <p className="page-hero-body rv vis rv-d2">MinAI is the technology engine behind every 100Bold engagement. Founder-built, scaled to 1M+ users.</p>
+            </div>
+            <div className="about-hero-visual rv vis rv-d2">
+              <MinAIPageGraphic />
+            </div>
+          </div>
         </div>
       </section>
 
