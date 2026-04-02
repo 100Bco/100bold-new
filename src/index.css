@@ -191,7 +191,7 @@ img { display: block; max-width: 100%; }
 .marquee-track {
   display: flex; align-items: center; gap: clamp(40px, 6vw, 80px);
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 18s linear infinite;
 }
 .marquee-item {
   flex-shrink: 0;
@@ -794,6 +794,7 @@ img { display: block; max-width: 100%; }
   background: #fff; border: 1px solid var(--border); border-radius: 20px;
   margin: 8px auto 0; max-width: var(--max); padding: 16px 20px;
   box-shadow: 0 12px 40px rgba(0,0,0,.1);
+  pointer-events: auto;
 }
 .nav-mobile a {
   display: block; padding: 12px 16px; border-radius: 12px;
@@ -837,7 +838,7 @@ img { display: block; max-width: 100%; }
   .work-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .minai-feat-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .minai-pricing-grid { grid-template-columns: 1fr; }
-  .minai-features { grid-template-columns: 1fr; }
+  .minai-features { grid-template-columns: 1fr 1fr; gap: 12px; }
   .minai-graphic-wrap { transform: scale(.7); }
   .ind-hero-grid { grid-template-columns: 1fr; }
   .ind-stats-grid { grid-template-columns: repeat(3, 1fr); }
@@ -854,9 +855,22 @@ img { display: block; max-width: 100%; }
   .hero h1 { font-size: clamp(40px, 10vw, 64px); }
   .page-hero h1 { font-size: clamp(36px, 8vw, 56px); }
   .hero-body { font-size: 17px; }
-  .cases-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .cases-grid {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 16px; max-width: none; padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .cases-grid::-webkit-scrollbar { display: none; }
+  .cases-grid .case-card { flex: 0 0 280px; scroll-snap-align: start; }
+  .rp-cards {
+    display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 16px; max-width: none !important; padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .rp-cards::-webkit-scrollbar { display: none; }
+  .rp-cards .rp-card { flex: 0 0 260px; scroll-snap-align: start; }
   .work-grid { grid-template-columns: 1fr; max-width: 400px; }
-  .ip-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .ip-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .minai-feat-grid { grid-template-columns: 1fr; max-width: 400px; }
   .eco-stats { grid-template-columns: 1fr; }
   .ind-stats-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -864,7 +878,10 @@ img { display: block; max-width: 100%; }
   .ind-solution-card { padding: 20px; }
   .about-hero-visual { display: none; }
   .minai-graphic-wrap { transform: scale(.55); }
+  .minai-card { padding: 24px; gap: 20px; border-radius: 28px; }
   .srv-block { border-radius: 28px; padding: 20px; }
+  .logo-bar { padding: 32px 0; }
+  .marquee-item img { height: 32px; max-width: 120px; }
   .nav-dropdown { min-width: 280px; grid-template-columns: 1fr; }
   .services-heading { font-size: clamp(36px, 8vw, 56px); }
   .hero-video { border-radius: 20px; }
