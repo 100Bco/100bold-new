@@ -914,3 +914,107 @@ img { display: block; max-width: 100%; }
   .minai-headline { font-size: clamp(32px, 8vw, 48px); }
   .footer-bottom { font-size: 12px; flex-direction: column; gap: 8px; }
 }
+
+/* ═══════════════════════════════════════════════
+   PHẦN VÁ LỖI CHO FOOTER & MINAI GRAPHIC (MOBILE)
+   Dán đoạn này vào cuối file CSS gốc của bạn
+   ═══════════════════════════════════════════════ */
+
+/* 1. Fix Icon Footer */
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-socials a {
+  color: rgba(255, 255, 255, 0.45);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-socials a:hover {
+  color: var(--red);
+  transform: translateY(-2px);
+}
+
+.footer-socials svg {
+  display: block;
+}
+
+/* 2. Fix MinAI Graphic trên Mobile/Tablet */
+@media (max-width: 960px) {
+  /* Ghi đè để Graphic không bị văng ra ngoài */
+  .minai-graphic-wrap {
+    transform: scale(0.65) !important; /* Tỉ lệ vừa phải để dễ nhìn */
+    margin: -80px auto !important;    /* Thu hẹp khoảng trắng dư */
+    height: 420px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Ẩn các dây nối SVG vì nó bị lệch tọa độ trên mobile */
+  .minai-connections {
+    display: none !important;
+  }
+
+  /* Ép các thẻ Dashboard bay vào sát tâm hơn */
+  .minai-float-dash-ml { 
+    left: 0% !important; 
+    top: 30% !important; 
+    width: 200px !important; 
+    transform: scale(0.9) !important;
+  }
+  
+  .minai-float-dash-tr { 
+    right: 0% !important; 
+    top: 5% !important; 
+    width: 180px !important; 
+    transform: scale(0.9) !important;
+  }
+  
+  .minai-float-dash-br { 
+    right: 0% !important; 
+    bottom: 0% !important; 
+    width: 180px !important; 
+    transform: scale(0.9) !important;
+  }
+
+  /* Chỉnh lại các icon chat lơ lửng */
+  .minai-float-chat-tl { left: 5% !important; top: 10% !important; }
+  .minai-float-chat-mr { right: 5% !important; top: 45% !important; }
+  .minai-float-card-bl { left: 5% !important; bottom: 5% !important; }
+
+  /* Thu nhỏ Emblem trung tâm một chút */
+  .minai-emblem {
+    width: 240px !important;
+    height: 240px !important;
+  }
+  .minai-emblem-text {
+    font-size: 36px !important;
+  }
+}
+
+/* 3. Tối ưu riêng cho Mobile siêu nhỏ */
+@media (max-width: 480px) {
+  .minai-graphic-wrap {
+    transform: scale(0.5) !important;
+    margin: -120px auto !important;
+  }
+  
+  /* Thu nhỏ dashboard thêm nữa để không chiếm hết màn hình */
+  .minai-float-dash-ml, 
+  .minai-float-dash-tr, 
+  .minai-float-dash-br { 
+    width: 160px !important; 
+  }
+}
+
+/* Đảm bảo section chứa graphic không bị tràn ngang gây lỗi scroll */
+.minai {
+  overflow: hidden;
+}
