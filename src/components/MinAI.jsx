@@ -10,6 +10,11 @@ export default function MinAI() {
             <h2 className="minai-headline">Embed <span className="accent">MinAI.</span><br/>Automate Growth.</h2>
             <p className="minai-subtitle">Every 100Bold client gets MinAI — our AI platform — from day one.<br/><span className="accent">No extra cost.</span></p>
 
+            {/* Mobile only: graphic between subtitle and features */}
+            <div className="minai-visual-mobile">
+              <MinAIGraphic />
+            </div>
+
             <div className="minai-features">
               <div className="minai-feat">
                 <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> AI Chatbot</h4>
@@ -34,7 +39,8 @@ export default function MinAI() {
             </button>
           </div>
 
-          <div className="minai-visual">
+          {/* Desktop only: graphic on right */}
+          <div className="minai-visual minai-visual-desktop">
             <MinAIGraphic />
           </div>
         </div>

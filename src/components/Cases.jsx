@@ -2,19 +2,19 @@ const cases = [
   {
     title: 'LT Commercial Group',
     desc: "Creative content that keeps Austin's top commercial real estate group top of mind. In front of the investors, brokers, and business owners that move the market.",
-    img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
+    img: '/works/LT COMMERCIAL GROUP.png',
     metric: '6,000+', metricLabel: 'Business Leaders Reached', tags: ['Content', 'Google'],
   },
   {
     title: 'Lezlie Tram',
     desc: 'Turned an already-active LinkedIn into a magnet. Consistent content, real engagement, and a growing pipeline of connections and conversations.',
-    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
+    img: '/works/LEZLIE TRAM.png',
     metric: '2.5X', metricLabel: 'LinkedIn Growth', tags: ['LinkedIn', 'CEO Authority'],
   },
   {
     title: 'Dacy Business Park',
     desc: 'Built the digital presence from scratch, then launched a targeted campaign to 6,000 local business leaders. Sold-out launch event and immediate lease inquiries on day one.',
-    img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
+    img: '/works/DACY BUSINESS PARK.png',
     metric: '100 Attendees', metricLabel: '3 Leads in 24 Hours', tags: ['Website', 'Google', 'Events'],
   },
 ]
