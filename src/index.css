@@ -162,7 +162,7 @@ img { display: block; max-width: 100%; }
 }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-video {
-  position: relative; aspect-ratio: 16/9; border-radius: var(--r-xl);
+  position: relative; aspect-ratio: 1/1; border-radius: var(--r-xl);
   overflow: hidden; background: var(--dark);
   box-shadow: 0 32px 72px rgba(0,0,0,.1);
 }
