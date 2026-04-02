@@ -303,6 +303,8 @@ img { display: block; max-width: 100%; }
 .minai-feat h4 svg { width: 14px; height: 14px; color: var(--red); }
 .minai-feat p { font-size: 17px; color: rgba(255,255,255,.5); line-height: 1.5; }
 .minai-visual { position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; }
+.minai-visual-mobile { display: none; }
+.minai-visual-desktop { display: flex; }
 
 /* ── MinAI 3D Graphic ── */
 .transform-style-3d { transform-style: preserve-3d; }
@@ -817,6 +819,8 @@ img { display: block; max-width: 100%; }
   .hero-video { max-width: 520px; }
   .srv-block-inner { grid-template-columns: 1fr; }
   .minai-card { grid-template-columns: 1fr; }
+  .minai-visual-desktop { display: none; }
+  .minai-visual-mobile { display: flex; justify-content: center; margin: -20px 0 16px; }
   .cases-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .li-grid { grid-template-columns: 1fr; max-width: 440px; }
   .footer-top { flex-direction: column; }
@@ -826,8 +830,8 @@ img { display: block; max-width: 100%; }
   .nav-mobile { display: flex; }
   .deco { display: none; }
   .rp-cards { grid-template-columns: 1fr; max-width: 440px; }
-  .why-grid { grid-template-columns: 1fr; }
-  .ip-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
+  .why-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .ip-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: none; }
   .adv-grid { grid-template-columns: 1fr; }
   .eco-stats { grid-template-columns: repeat(2, 1fr); }
   .net-features { grid-template-columns: 1fr; }
@@ -870,7 +874,7 @@ img { display: block; max-width: 100%; }
   .rp-cards::-webkit-scrollbar { display: none; }
   .rp-cards .rp-card { flex: 0 0 260px; scroll-snap-align: start; }
   .work-grid { grid-template-columns: 1fr; max-width: 400px; }
-  .ip-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
+  .ip-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: none; }
   .minai-feat-grid { grid-template-columns: 1fr; max-width: 400px; }
   .eco-stats { grid-template-columns: 1fr; }
   .ind-stats-grid { grid-template-columns: 1fr; gap: 16px; }
