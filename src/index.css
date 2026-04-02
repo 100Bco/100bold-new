@@ -518,7 +518,7 @@ img { display: block; max-width: 100%; }
   flex-wrap: wrap; gap: 24px;
 }
 .footer-logo-link { display: block; }
-.footer-logo-img { height: 36px; width: auto; filter: brightness(10); }
+.footer-logo-img { height: 36px; width: auto; filter: brightness(0) invert(1); }
 .footer-nav { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 .footer-nav a {
   font-size: 13px; font-weight: 700; color: rgba(255,255,255,.45);
@@ -820,8 +820,8 @@ img { display: block; max-width: 100%; }
   .srv-block-inner { grid-template-columns: 1fr; }
   .minai-card { grid-template-columns: 1fr; }
   .minai-visual-desktop { display: none; }
-  .minai-visual-mobile { display: flex; justify-content: center; margin: 0; padding: 0; max-height: 200px; overflow: hidden; }
-  .minai-graphic-wrap { transform: scale(.4); margin: -100px 0; height: 300px; }
+  .minai-visual-mobile { display: flex; justify-content: center; margin: -10px 0 0; }
+  .minai-graphic-wrap { transform: scale(.6); margin: -60px 0; }
   .cases-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .li-grid { grid-template-columns: 1fr; max-width: 440px; }
   .footer-top { flex-direction: column; }
@@ -844,14 +844,15 @@ img { display: block; max-width: 100%; }
   .minai-feat-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .minai-pricing-grid { grid-template-columns: 1fr; }
   .minai-features { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .minai-graphic-wrap { transform: scale(.5); margin: -80px 0; }
+  .minai-graphic-wrap { transform: scale(.55); margin: -70px 0; }
   .ind-hero-grid { grid-template-columns: 1fr; }
   .ind-stats-grid { grid-template-columns: repeat(3, 1fr); }
   .ind-pain-grid { grid-template-columns: 1fr; }
   .ind-solutions-grid { grid-template-columns: 1fr; }
   .page-hero { padding: 130px 0 60px; }
   .hero { min-height: auto; padding: 130px 0 40px; }
-  .hero-cities { flex-wrap: wrap; }
+  .hero-cities { flex-wrap: nowrap; }
+  .hero-city-badge { padding: 5px 8px; font-size: 9px; letter-spacing: 1px; }
 }
 
 /* ── Responsive: Mobile ── */
@@ -876,13 +877,16 @@ img { display: block; max-width: 100%; }
   .rp-cards .rp-card { flex: 0 0 260px; scroll-snap-align: start; }
   .work-grid { grid-template-columns: 1fr; max-width: 400px; }
   .ip-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: none; }
+  .ip-card h3 { font-size: 16px; }
+  .ip-card p { font-size: 13px; }
+  .ip-icon div { width: 36px !important; height: 36px !important; }
   .minai-feat-grid { grid-template-columns: 1fr; max-width: 400px; }
   .eco-stats { grid-template-columns: 1fr; }
   .ind-stats-grid { grid-template-columns: 1fr; gap: 16px; }
   .ind-pain-card { padding: 16px 20px; }
   .ind-solution-card { padding: 20px; }
   .about-hero-visual { display: none; }
-  .minai-graphic-wrap { transform: scale(.45); margin: -60px 0; }
+  .minai-graphic-wrap { transform: scale(.5); margin: -60px 0; }
   .minai-card { padding: 24px; gap: 20px; border-radius: 28px; }
   .srv-block { border-radius: 28px; padding: 20px; }
   .logo-bar { padding: 32px 0; }
@@ -901,7 +905,7 @@ img { display: block; max-width: 100%; }
 @media (max-width: 480px) {
   .hero h1 { font-size: clamp(40px, 11vw, 56px); }
   .hero-body { font-size: 16px; max-width: 100%; }
-  .hero-city-badge { padding: 6px 10px; font-size: 10px; }
+  .hero-city-badge { padding: 5px 7px; font-size: 8px; letter-spacing: 1px; gap: 4px; }
   .btn { padding: 12px 20px; font-size: 14px; }
   .nav { padding: 0 16px; height: 52px; }
   .nav-logo { height: 26px; }
