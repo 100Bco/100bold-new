@@ -2,34 +2,18 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const industryLinks = [
-  { path: '/industries/local-services', name: 'Local Services', lottie: '/power-red.json' },
-  { path: '/industries/construction', name: 'Construction', lottie: '/repair-tools-red.json' },
-  { path: '/industries/real-estate', name: 'Real Estate', lottie: '/building-red.json' },
-  { path: '/industries/law-firms', name: 'Law Firms', lottie: '/law-red.json' },
-  { path: '/industries/rehab-chiro', name: 'Rehab & Chiro', lottie: '/wheelchair-insurance-red.json' },
-  { path: '/industries/plumbing-roofing', name: 'Plumbing & Roofing', lottie: '/hourse-red.json' },
+  { path: '/industries/local-services', name: 'Local Services' },
+  { path: '/industries/construction', name: 'Construction' },
+  { path: '/industries/real-estate', name: 'Real Estate' },
+  { path: '/industries/law-firms', name: 'Law Firms' },
+  { path: '/industries/rehab-chiro', name: 'Rehab & Chiro' },
+  { path: '/industries/plumbing-roofing', name: 'Plumbing & Roofing' },
 ]
-
-function NavLottie({ src }) {
-  const ref = { current: null }
-  useEffect(() => {
-    let anim
-    if (!ref.current) return
-    import('lottie-web/build/player/lottie_light').then(lottie => {
-      if (!ref.current) return
-      anim = lottie.default.loadAnimation({
-        container: ref.current, renderer: 'svg',
-        loop: true, autoplay: true, path: src,
-      })
-    }).catch(() => {})
-    return () => { if (anim) anim.destroy() }
-  }, [src])
-  return <div ref={el => ref.current = el} style={{width: 24, height: 24, flexShrink: 0}} />
-}
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [dropOpen, setDropOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -38,7 +22,7 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => { setDropOpen(false) }, [location.pathname])
+  useEffect(() => { setDropOpen(false); setMobileOpen(false) }, [location.pathname])
 
   const isActive = (path) => location.pathname === path
   const isIndustryActive = location.pathname.startsWith('/industries')
@@ -49,6 +33,8 @@ export default function Nav() {
         <Link to="/">
           <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="nav-logo" />
         </Link>
+
+        {/* Desktop nav */}
         <div className="nav-links">
           <Link to="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
           <Link to="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
@@ -60,9 +46,7 @@ export default function Nav() {
             {dropOpen && (
               <div className="nav-dropdown">
                 {industryLinks.map(ind => (
-                  <Link key={ind.path} to={ind.path} className="nav-dropdown-item">
-                    {ind.name}
-                  </Link>
+                  <Link key={ind.path} to={ind.path} className="nav-dropdown-item">{ind.name}</Link>
                 ))}
               </div>
             )}
@@ -71,10 +55,32 @@ export default function Nav() {
           <Link to="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
           <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
         </div>
+
         <div className="nav-btns">
           <a href="https://link.minai.biz/widget/bookings/100bold" target="_blank" rel="noopener noreferrer" className="nav-cta">Contact</a>
         </div>
+
+        {/* Mobile hamburger */}
+        <button className="nav-burger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
+          <span className={`nav-burger-line${mobileOpen ? ' open' : ''}`}></span>
+        </button>
       </nav>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="nav-mobile">
+          <Link to="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
+          <Link to="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
+          <Link to="/industries" className={isIndustryActive ? 'nav-active' : ''}>Industries</Link>
+          {industryLinks.map(ind => (
+            <Link key={ind.path} to={ind.path} className="nav-mobile-sub">{ind.name}</Link>
+          ))}
+          <Link to="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
+          <Link to="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
+          <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
+          <a href="https://link.minai.biz/widget/bookings/100bold" target="_blank" rel="noopener noreferrer" className="nav-mobile-cta">Contact Now</a>
+        </div>
+      )}
     </div>
   )
 }
