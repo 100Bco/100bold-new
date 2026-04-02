@@ -63,7 +63,7 @@ export default function MinAIPage() {
             Watch Demo <span className="accent">Video!</span>
           </h2>
           <div className="minai-demo-video rv rv-d1">
-            <iframe src="https://fast.wistia.net/embed/iframe/clfoknzq7j?seo=true&videoFoam=true" title="MinAI Demo" allow="autoplay; fullscreen" allowFullScreen style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',border:0,borderRadius: 'var(--r-lg)'}}></iframe>
+            <iframe src="https://drive.google.com/file/d/1UqAtNkMNQ94rE2JwkrEy9MOWDD2guL88/preview" title="MinAI Demo" allow="autoplay; fullscreen" allowFullScreen style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',border:0,borderRadius: 'var(--r-lg)'}}></iframe>
           </div>
         </div>
       </section>
@@ -75,10 +75,10 @@ export default function MinAIPage() {
           <h2 className="rv" style={{fontFamily: 'var(--font-head)', fontSize: 'clamp(36px, 4vw, 56px)', textTransform: 'uppercase', marginBottom: 24}}>
             Get 100Bold working for <span className="accent">your business.</span>
           </h2>
-          <button className="btn btn-red rv rv-d1">
+          <a href="https://link.minai.biz/widget/bookings/100bold" target="_blank" rel="noopener noreferrer" className="btn btn-red rv rv-d1">
             Contact Now
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </button>
+          </a>
         </div>
       </section>
     </>

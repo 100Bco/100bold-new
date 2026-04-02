@@ -72,8 +72,7 @@ export default function Nav() {
           <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
         </div>
         <div className="nav-btns">
-          <a href="https://portfolio.100bold.co/" target="_blank" rel="noopener noreferrer" className="nav-portfolio">Our Portfolio</a>
-          <button className="nav-cta">Contact</button>
+          <a href="https://link.minai.biz/widget/bookings/100bold" target="_blank" rel="noopener noreferrer" className="nav-cta">Contact</a>
         </div>
       </nav>
     </div>

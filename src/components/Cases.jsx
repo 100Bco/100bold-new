@@ -54,12 +54,6 @@ export default function Cases() {
             </div>
           ))}
         </div>
-        <div style={{textAlign:'center',marginTop:40}}>
-          <a href="https://portfolio.100bold.co/" target="_blank" rel="noopener noreferrer" className="btn btn-outline rv rv-d2" style={{color:'#fff',borderColor:'rgba(255,255,255,.2)'}}>
-            See Our Portfolio
-            <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </a>
-        </div>
       </div>
     </section>
   )
