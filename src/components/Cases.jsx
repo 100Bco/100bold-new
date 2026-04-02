@@ -39,10 +39,6 @@ export default function Cases() {
             <div key={c.title} className={`case-card rv${i === 1 ? ' rv-d1' : i === 2 ? ' rv-d2' : ''}`}>
               <div className="case-thumb">
                 <img src={c.img} alt={c.title} />
-                <div className="case-metric">
-                  <div className="case-metric-num">{c.metric}</div>
-                  <div className="case-metric-label">{c.metricLabel}</div>
-                </div>
                 <div className="case-tags-row">
                   {c.tags.map((tag) => <span key={tag} className="case-tag-pill">{tag}</span>)}
                 </div>
