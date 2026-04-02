@@ -23,6 +23,29 @@ function ScrollToTop() {
   return null
 }
 
+const pageTitles = {
+  '/': '100Bold — Start Brave. Stay Bold.',
+  '/about': 'About Us — 100Bold | Operators, Not Marketers',
+  '/industries': 'Industries We Serve — 100Bold',
+  '/industries/local-services': 'Local Service Contractors — 100Bold | HVAC, Plumbing, Roofing',
+  '/industries/construction': 'General Contractors & Construction — 100Bold',
+  '/industries/real-estate': 'Real Estate Developers — 100Bold',
+  '/industries/law-firms': 'Personal Injury Law Firms — 100Bold',
+  '/industries/rehab-chiro': 'PI Chiropractors & Rehab Clinics — 100Bold',
+  '/industries/plumbing-roofing': 'Plumbing, Roofing & Trades — 100Bold',
+  '/services': 'Services — 100Bold | Google Domination & LinkedIn CEO Authority',
+  '/work': 'Work — 100Bold | Proven Results, Real Clients',
+  '/minai': 'MinAI — The Engine Behind 100Bold',
+}
+
+function PageTitle() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    document.title = pageTitles[pathname] || '100Bold — Start Brave. Stay Bold.'
+  }, [pathname])
+  return null
+}
+
 function RevealObserver() {
   const { pathname } = useLocation()
   useEffect(() => {
@@ -40,6 +63,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <PageTitle />
       <RevealObserver />
       <Nav />
       <Routes>
