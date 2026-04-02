@@ -944,48 +944,43 @@ img { display: block; max-width: 100%; }
   display: block;
 }
 
-* ═══════════════════════════════════════════════
-   BẢN FIX GRAPHIC MINAI CHO MOBILE - GIÃN CÁCH TỐI ĐA
-   ═══════════════════════════════════════════════ */
+/* --- FIX MINAI GRAPHIC MOBILE SAFE VERSION --- */
 
 @media (max-width: 960px) {
-  /* 1. Tăng chiều cao container để các phần tử có chỗ bay lên trên/xuống dưới */
   .minai-graphic-wrap {
     transform: scale(0.65) !important;
-    height: 520px !important; /* Tăng thêm chiều cao */
+    height: 520px !important;
     margin: -60px auto !important;
     width: 100% !important;
     position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
-  /* 2. Ẩn các dây nối và 2 dashboard phụ để giảm tải cho mobile (tùy chọn nhưng nên làm) */
-  .minai-connections { display: none !important; }
+  .minai-connections { 
+    display: none !important; 
+  }
   
-  /* 3. Đẩy các phần tử ra xa tâm để không đè lên Emblem */
-  
-  /* Góc trên trái */
   .minai-float-chat-tl { 
     top: -5% !important; 
     left: -5% !important; 
     transform: scale(0.9) rotate(-10deg) !important;
   }
 
-  /* Dashboard to bên trái - ép nhỏ lại và đẩy ra biên */
   .minai-float-dash-ml { 
     left: -25% !important; 
     top: 30% !important; 
     width: 180px !important;
-    opacity: 0.8 !important; /* Làm mờ nhẹ để nổi bật tâm */
+    opacity: 0.8 !important;
     transform: scale(0.8) !important;
   }
 
-  /* Thẻ nhỏ góc dưới trái */
   .minai-float-card-bl { 
     bottom: -5% !important; 
     left: -5% !important; 
   }
 
-  /* Dashboard bên phải trên - đẩy ra xa biên */
   .minai-float-dash-tr { 
     top: -5% !important; 
     right: -20% !important; 
@@ -993,13 +988,11 @@ img { display: block; max-width: 100%; }
     transform: scale(0.8) !important;
   }
 
-  /* Icon chat tròn bên phải */
   .minai-float-chat-mr { 
     right: -5% !important; 
     top: 45% !important; 
   }
 
-  /* Dashboard dưới cùng bên phải */
   .minai-float-dash-br { 
     bottom: -5% !important; 
     right: -10% !important; 
@@ -1007,35 +1000,25 @@ img { display: block; max-width: 100%; }
     transform: scale(0.8) !important;
   }
 
-  /* 4. Chỉnh lại Emblem trung tâm để không bị che khuất */
   .minai-emblem {
     width: 220px !important;
     height: 220px !important;
-    z-index: 50 !important; /* Luôn nằm trên cùng */
+    z-index: 50 !important;
   }
   
   .minai-emblem-text {
     font-size: 32px !important;
   }
-  
-  .minai-emblem-icon {
-    width: 44px !important;
-    height: 44px !important;
-  }
 }
 
-/* 5. Cho các màn hình điện thoại cực nhỏ (iPhone SE, etc.) */
 @media (max-width: 480px) {
   .minai-graphic-wrap {
     transform: scale(0.5) !important;
     margin: -100px auto !important;
   }
-
-  /* Trên mobile cực nhỏ, ta nên ẩn bớt 1-2 cái dashboard để nhìn cho thoáng */
   .minai-float-dash-ml, .minai-float-dash-tr {
-    display: none !important; /* Ẩn bớt 2 dash to nhất để đỡ rối */
+    display: none !important;
   }
-
   .minai-float-dash-br {
     right: -5% !important;
     bottom: 5% !important;
@@ -1044,10 +1027,10 @@ img { display: block; max-width: 100%; }
   }
 }
 
-/* Fix lỗi bị đè bởi text phía trên */
-.minai-card {
-    padding-top: 60px !important;
-}
 .minai {
-  overflow: hidden;
+  overflow: hidden !important;
+}
+
+.minai-card {
+  padding-top: 60px !important;
 }
