@@ -21,10 +21,6 @@ export default function Hero() {
       <svg className="deco" style={{ bottom: '12%', left: '2%', width: 100, height: 100, opacity: .08 }} viewBox="0 0 100 100" fill="none">
         <circle cx="50" cy="50" r="40" stroke="var(--red)" strokeWidth="2" strokeDasharray="6 8" fill="none"/>
       </svg>
-      {/* Dot grid */}
-      <svg className="deco" style={{ bottom: '35%', right: '12%', width: 60, height: 60, opacity: .07 }} viewBox="0 0 60 60" fill="none">
-        {[0,1,2,3,4].flatMap(r => [0,1,2,3,4].map(c => <circle key={`${r}${c}`} cx={6+c*12} cy={6+r*12} r="2" fill="var(--red)"/>))}
-      </svg>
       <div className="mx">
         <div className="hero-grid">
           <div>
@@ -47,11 +43,8 @@ export default function Hero() {
             </div>
           </div>
           <div className="rv vis rv-d2" style={{ position: 'relative' }}>
-            <svg className="deco" style={{ top: -24, right: -16, width: 48, height: 48, opacity: .2 }} viewBox="0 0 48 48" fill="none">
-              <path d="M24 4L27 20L44 17L29 28L38 44L24 32L10 44L19 28L4 17L21 20Z" stroke="var(--red)" strokeWidth="2" strokeLinejoin="round" fill="none"/>
-            </svg>
             <div className="hero-video">
-              <iframe src="https://fast.wistia.net/embed/iframe/clfoknzq7j?seo=true&videoFoam=true" title="100Bold Showreel" allow="autoplay; fullscreen" allowFullScreen style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',border:0}}></iframe>
+              <wistia-player media-id="jzqrwe3t4z" aspect="1.0" style={{width:'100%',height:'100%'}}></wistia-player>
             </div>
           </div>
         </div>
