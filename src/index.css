@@ -667,6 +667,14 @@ img { display: block; max-width: 100%; }
 .net-feat p { font-size: 17px; color: var(--text-2); line-height: 1.6; }
 
 /* ── Industries Page ── */
+/* Industry Sub-page Grids */
+.ind-hero-grid { display: grid; grid-template-columns: 3fr 1fr; gap: 32px; align-items: center; }
+.ind-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+.ind-pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 800px; margin: 0 auto; }
+.ind-pain-card { background: var(--cream); border: 1px solid var(--border); border-radius: 20px; padding: 24px 28px; display: flex; align-items: center; gap: 16px; text-align: left; }
+.ind-solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
+.ind-solution-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; }
+
 .ind-list { background: var(--cream); padding: var(--gap) 0; }
 
 /* Industries Landing Grid */
@@ -768,21 +776,57 @@ img { display: block; max-width: 100%; }
 .rv-d3 { transition-delay: .3s; }
 
 /* ── Responsive ── */
+/* ── Mobile Nav ── */
+.nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 8px; position: relative; width: 32px; height: 32px; }
+.nav-burger-line, .nav-burger-line::before, .nav-burger-line::after {
+  display: block; width: 20px; height: 2px; background: var(--dark); border-radius: 2px;
+  position: absolute; left: 6px; transition: all .3s;
+}
+.nav-burger-line { top: 15px; }
+.nav-burger-line::before { content: ''; top: -6px; }
+.nav-burger-line::after { content: ''; top: 6px; }
+.nav-burger-line.open { background: transparent; }
+.nav-burger-line.open::before { top: 0; transform: rotate(45deg); }
+.nav-burger-line.open::after { top: 0; transform: rotate(-45deg); }
+
+.nav-mobile {
+  display: none; flex-direction: column; gap: 4px;
+  background: #fff; border: 1px solid var(--border); border-radius: 20px;
+  margin: 8px auto 0; max-width: var(--max); padding: 16px 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.1);
+}
+.nav-mobile a {
+  display: block; padding: 12px 16px; border-radius: 12px;
+  font-size: 16px; font-weight: 600; color: var(--dark); text-decoration: none;
+  transition: background .2s;
+}
+.nav-mobile a:hover, .nav-mobile a.nav-active { background: rgba(200,16,46,.05); color: var(--red); }
+.nav-mobile-sub { padding-left: 32px !important; font-size: 14px !important; color: var(--text-2) !important; }
+.nav-mobile-cta {
+  display: block; text-align: center; margin-top: 8px;
+  padding: 14px; background: var(--red); color: #fff !important; border-radius: 14px;
+  font-weight: 700; font-size: 15px;
+}
+
+/* ── Responsive: Tablet ── */
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; }
   .about-hero-grid { grid-template-columns: 1fr; }
-  .about-hero-visual { min-height: 360px; }
+  .about-hero-visual { min-height: 300px; }
   .hero-video { max-width: 520px; }
   .srv-block-inner { grid-template-columns: 1fr; }
   .minai-card { grid-template-columns: 1fr; }
-  .cases-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .cases-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .li-grid { grid-template-columns: 1fr; max-width: 440px; }
   .footer-top { flex-direction: column; }
   .nav-links { display: none; }
+  .nav-btns { display: none; }
+  .nav-burger { display: block; }
+  .nav-mobile { display: flex; }
   .deco { display: none; }
   .rp-cards { grid-template-columns: 1fr; max-width: 440px; }
   .why-grid { grid-template-columns: 1fr; }
-  .ip-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .ip-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .adv-grid { grid-template-columns: 1fr; }
   .eco-stats { grid-template-columns: repeat(2, 1fr); }
   .net-features { grid-template-columns: 1fr; }
@@ -790,7 +834,53 @@ img { display: block; max-width: 100%; }
   .ind-landing-grid { grid-template-columns: 1fr; }
   .tier-grid { grid-template-columns: 1fr; max-width: 440px; }
   .lnk-detail-grid { grid-template-columns: 1fr; }
-  .work-grid { grid-template-columns: 1fr; max-width: 520px; }
-  .minai-feat-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .work-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
+  .minai-feat-grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
   .minai-pricing-grid { grid-template-columns: 1fr; }
+  .minai-features { grid-template-columns: 1fr; }
+  .minai-graphic-wrap { transform: scale(.7); }
+  .ind-hero-grid { grid-template-columns: 1fr; }
+  .ind-stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .ind-pain-grid { grid-template-columns: 1fr; }
+  .ind-solutions-grid { grid-template-columns: 1fr; }
+  .page-hero { padding: 130px 0 60px; }
+  .hero { min-height: auto; padding: 130px 0 40px; }
+  .hero-cities { flex-wrap: wrap; }
+}
+
+/* ── Responsive: Mobile ── */
+@media (max-width: 640px) {
+  :root { --gap: clamp(48px, 8vw, 80px); }
+  .hero h1 { font-size: clamp(40px, 10vw, 64px); }
+  .page-hero h1 { font-size: clamp(36px, 8vw, 56px); }
+  .hero-body { font-size: 17px; }
+  .cases-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .work-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .ip-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .minai-feat-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .eco-stats { grid-template-columns: 1fr; }
+  .ind-stats-grid { grid-template-columns: 1fr; gap: 16px; }
+  .ind-pain-card { padding: 16px 20px; }
+  .ind-solution-card { padding: 20px; }
+  .about-hero-visual { display: none; }
+  .minai-graphic-wrap { transform: scale(.55); }
+  .srv-block { border-radius: 28px; padding: 20px; }
+  .nav-dropdown { min-width: 280px; grid-template-columns: 1fr; }
+  .services-heading { font-size: clamp(36px, 8vw, 56px); }
+  .hero-video { border-radius: 20px; }
+  .page-hero { padding: 110px 0 40px; }
+}
+
+/* ── Responsive: Small Mobile ── */
+@media (max-width: 480px) {
+  .hero h1 { font-size: clamp(36px, 9vw, 48px); }
+  .hero-body { font-size: 16px; max-width: 100%; }
+  .hero-city-badge { padding: 6px 10px; font-size: 10px; }
+  .btn { padding: 12px 20px; font-size: 14px; }
+  .nav { padding: 0 16px; height: 52px; }
+  .nav-logo { height: 26px; }
+  .mx { padding: 0 16px; }
+  .srv-item h3 { font-size: 24px; }
+  .minai-headline { font-size: clamp(32px, 8vw, 48px); }
+  .footer-bottom { font-size: 12px; flex-direction: column; gap: 8px; }
 }

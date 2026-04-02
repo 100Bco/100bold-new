@@ -24,7 +24,7 @@ export default function IndustryPageTemplate({ data }) {
       {/* Hero */}
       <section className="page-hero" style={{position:'relative'}}>
         <div className="mx">
-          <div style={{display:'grid',gridTemplateColumns:'3fr 1fr',gap:32,alignItems:'center'}}>
+          <div className="ind-hero-grid">
             <div>
               <div style={{fontSize:12,fontWeight:700,letterSpacing:3,textTransform:'uppercase',color:'var(--red)',marginBottom:16}}>{data.label}</div>
               <h1 className="rv vis">{data.headline}</h1>
@@ -46,7 +46,7 @@ export default function IndustryPageTemplate({ data }) {
       {/* Stats Bar */}
       <section style={{background:'var(--dark)',padding:'48px 0',color:'#fff'}}>
         <div className="mx">
-          <div className="rv vis" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:24,textAlign:'center'}}>
+          <div className="rv vis ind-stats-grid">
             {data.stats.map((s,i) => (
               <div key={i}>
                 <div style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',color:'var(--red)',lineHeight:1}}>{s.num}</div>
@@ -62,9 +62,9 @@ export default function IndustryPageTemplate({ data }) {
         <div className="mx">
           <h2 className="rv" style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',textTransform:'uppercase',marginBottom:12}}>Sound <span className="accent">Familiar?</span></h2>
           <p className="rv rv-d1" style={{fontSize:18,color:'var(--text-2)',marginBottom:48}}>These problems cost you money every single day.</p>
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,maxWidth:800,margin:'0 auto'}}>
+          <div className="ind-pain-grid">
             {data.painPoints.map((p,i) => (
-              <div key={i} className={`rv rv-d${Math.min(i+1,3)}`} style={{background:'var(--cream)',border:'1px solid var(--border)',borderRadius:20,padding:'24px 28px',display:'flex',alignItems:'center',gap:16,textAlign:'left'}}>
+              <div key={i} className={`rv rv-d${Math.min(i+1,3)} ind-pain-card`}>
                 <div style={{width:32,height:32,borderRadius:'50%',background:'rgba(200,16,46,.08)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3L3 11" stroke="var(--red)" strokeWidth="2" strokeLinecap="round"/></svg>
                 </div>
@@ -81,9 +81,9 @@ export default function IndustryPageTemplate({ data }) {
         <div className="mx">
           <h2 className="rv" style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',textTransform:'uppercase',marginBottom:12,textAlign:'center'}}>Here's How 100Bold <span className="accent">Fixes It.</span></h2>
           <p className="rv rv-d1" style={{fontSize:18,color:'var(--text-2)',marginBottom:48,textAlign:'center'}}>{data.solutionIntro}</p>
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20,maxWidth:900,margin:'0 auto'}}>
+          <div className="ind-solutions-grid">
             {data.solutions.map((s,i) => (
-              <div key={i} className={`rv rv-d${Math.min(i+1,3)}`} style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:20,padding:'28px 28px'}}>
+              <div key={i} className={`rv rv-d${Math.min(i+1,3)} ind-solution-card`}>
                 <div style={{width:44,height:44,borderRadius:14,background:'rgba(200,16,46,.06)',display:'flex',alignItems:'center',justifyContent:'center',marginBottom:16}}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{__html: s.iconPath}} />
                 </div>
