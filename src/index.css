@@ -944,93 +944,45 @@ img { display: block; max-width: 100%; }
   display: block;
 }
 
-/* --- FIX MINAI GRAPHIC MOBILE SAFE VERSION --- */
+/* --- CLEANUP: HIDE MINAI GRAPHIC ON MOBILE --- */
 
 @media (max-width: 960px) {
-  .minai-graphic-wrap {
-    transform: scale(0.65) !important;
-    height: 520px !important;
-    margin: -60px auto !important;
-    width: 100% !important;
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  .minai-connections { 
-    display: none !important; 
-  }
-  
-  .minai-float-chat-tl { 
-    top: -5% !important; 
-    left: -5% !important; 
-    transform: scale(0.9) rotate(-10deg) !important;
-  }
-
-  .minai-float-dash-ml { 
-    left: -25% !important; 
-    top: 30% !important; 
-    width: 180px !important;
-    opacity: 0.8 !important;
-    transform: scale(0.8) !important;
-  }
-
-  .minai-float-card-bl { 
-    bottom: -5% !important; 
-    left: -5% !important; 
-  }
-
-  .minai-float-dash-tr { 
-    top: -5% !important; 
-    right: -20% !important; 
-    width: 170px !important;
-    transform: scale(0.8) !important;
-  }
-
-  .minai-float-chat-mr { 
-    right: -5% !important; 
-    top: 45% !important; 
-  }
-
-  .minai-float-dash-br { 
-    bottom: -5% !important; 
-    right: -10% !important; 
-    width: 170px !important;
-    transform: scale(0.8) !important;
-  }
-
-  .minai-emblem {
-    width: 220px !important;
-    height: 220px !important;
-    z-index: 50 !important;
-  }
-  
-  .minai-emblem-text {
-    font-size: 32px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .minai-graphic-wrap {
-    transform: scale(0.5) !important;
-    margin: -100px auto !important;
-  }
-  .minai-float-dash-ml, .minai-float-dash-tr {
+  /* 1. Ẩn hoàn toàn cụm Graphic chuyển động */
+  .minai-graphic-wrap, 
+  .minai-visual-desktop,
+  .minai-connections {
     display: none !important;
   }
-  .minai-float-dash-br {
-    right: -5% !important;
-    bottom: 5% !important;
-    width: 200px !important;
-    transform: scale(1) !important;
+
+  /* 2. Cấu trúc lại Card để phần chữ chiếm toàn bộ không gian */
+  .minai-card {
+    grid-template-columns: 1fr !important; /* Chuyển về 1 cột */
+    padding: 40px 24px !important;
+    text-align: center !important; /* Căn giữa nội dung cho đẹp */
+  }
+
+  /* 3. Căn giữa các icon tính năng (features) */
+  .minai-features {
+    grid-template-columns: 1fr 1fr !important; /* Vẫn giữ 2 cột icon nếu muốn hoặc 1 cột */
+    text-align: left !important; /* Giữ text tính năng căn trái cho dễ đọc */
+    max-width: 500px;
+    margin: 0 auto 24px;
+  }
+
+  /* 4. Chỉnh lại tiêu đề và nút bấm */
+  .minai-headline {
+    margin: 0 auto 16px !important;
+  }
+  
+  .minai-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Đưa tất cả nội dung ra giữa */
   }
 }
 
-.minai {
-  overflow: hidden !important;
-}
-
-.minai-card {
-  padding-top: 60px !important;
+@media (max-width: 640px) {
+  .minai-features {
+    grid-template-columns: 1fr !important; /* Mobile nhỏ thì icon xếp dọc */
+  }
 }
