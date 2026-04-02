@@ -44,7 +44,7 @@ export default function Hero() {
           </div>
           <div className="rv vis rv-d2" style={{ position: 'relative' }}>
             <div className="hero-video">
-              <wistia-player media-id="jzqrwe3t4z" aspect="1.0" style={{width:'100%',height:'100%'}}></wistia-player>
+              <wistia-player media-id="jzqrwe3t4z" style={{width:'100%',height:'100%',display:'block'}}></wistia-player>
             </div>
           </div>
         </div>
