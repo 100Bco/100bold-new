@@ -113,7 +113,7 @@ const worksCases = [
     title: 'InFrame Wedding Photography',
     industry: 'Wedding and Engagement Photography — Bay Area, CA',
     services: ['Google', 'Email Marketing'],
-    img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800',
+    img: '/works/INFRAME WEDDING PHOTOGRAPHY.png',
     metric: 'Now', metricLabel: 'Onboarding',
     desc: 'Full backend integration, AI chatbot, and a review-generation campaign targeting past clients. Getting a beautiful brand the digital infrastructure it deserves.',
   }
