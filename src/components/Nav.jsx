@@ -57,7 +57,7 @@ export default function Nav() {
         </div>
 
         <div className="nav-btns">
-          <a href="https://link.minai.biz/widget/bookings/100bold" target="_blank" rel="noopener noreferrer" className="nav-cta">Contact</a>
+          <Link to="/contact" className="nav-cta">Contact</Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -78,7 +78,7 @@ export default function Nav() {
           <Link to="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
           <Link to="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
           <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
-          <a href="https://link.minai.biz/widget/bookings/100bold" target="_blank" rel="noopener noreferrer" className="nav-mobile-cta">Contact Now</a>
+          <Link to="/contact" className="nav-mobile-cta">Contact Us</Link>
         </div>
       )}
     </div>
