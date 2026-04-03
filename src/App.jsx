@@ -10,6 +10,7 @@ import IndustriesPage from './pages/IndustriesPage'
 import ServicesPage from './pages/ServicesPage'
 import WorkPage from './pages/WorkPage'
 import MinAIPage from './pages/MinAIPage'
+import ContactPage from './pages/ContactPage'
 import LocalServicesPage from './pages/industries/LocalServicesPage'
 import ConstructionPage from './pages/industries/ConstructionPage'
 import RealEstatePage from './pages/industries/RealEstatePage'
@@ -36,6 +37,7 @@ const pageTitles = {
   '/services': 'Services — 100Bold | Google Domination & LinkedIn CEO Authority',
   '/work': 'Work — 100Bold | Proven Results, Real Clients',
   '/minai': 'MinAI — The Engine Behind 100Bold',
+  '/contact': 'Contact — 100Bold | Let\'s Talk',
 }
 
 function PageTitle() {
@@ -79,6 +81,7 @@ function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/work" element={<WorkPage />} />
         <Route path="/minai" element={<MinAIPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <WaveDivider from="var(--white)" to="#1A1816" variant="wave" />
       <Footer />
