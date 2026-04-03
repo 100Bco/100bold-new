@@ -914,3 +914,75 @@ img { display: block; max-width: 100%; }
   .minai-headline { font-size: clamp(32px, 8vw, 48px); }
   .footer-bottom { font-size: 12px; flex-direction: column; gap: 8px; }
 }
+
+/* ═══════════════════════════════════════════════
+   PHẦN VÁ LỖI CHO FOOTER & MINAI GRAPHIC (MOBILE)
+   Dán đoạn này vào cuối file CSS gốc của bạn
+   ═══════════════════════════════════════════════ */
+
+/* 1. Fix Icon Footer */
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-socials a {
+  color: rgba(255, 255, 255, 0.45);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-socials a:hover {
+  color: var(--red);
+  transform: translateY(-2px);
+}
+
+.footer-socials svg {
+  display: block;
+}
+
+/* --- CLEANUP: HIDE MINAI GRAPHIC ON MOBILE --- */
+
+@media (max-width: 960px) {
+  /* 1. Ẩn hoàn toàn cụm Graphic chuyển động */
+  .minai-graphic-wrap, 
+  .minai-visual-desktop,
+  .minai-connections {
+    display: none !important;
+  }
+
+  /* 2. Cấu trúc lại Card để phần chữ chiếm toàn bộ không gian */
+  .minai-card {
+    grid-template-columns: 1fr !important; /* Chuyển về 1 cột */
+    padding: 40px 24px !important;
+    text-align: center !important; /* Căn giữa nội dung cho đẹp */
+  }
+
+  /* 3. Căn giữa các icon tính năng (features) */
+  .minai-features {
+    grid-template-columns: 1fr 1fr !important; /* Vẫn giữ 2 cột icon nếu muốn hoặc 1 cột */
+    text-align: left !important; /* Giữ text tính năng căn trái cho dễ đọc */
+    max-width: 500px;
+    margin: 0 auto 24px;
+  }
+
+  /* 4. Chỉnh lại tiêu đề và nút bấm */
+  .minai-headline {
+    margin: 0 auto 16px !important;
+  }
+  
+  .minai-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Đưa tất cả nội dung ra giữa */
+  }
+}
+
+@media (max-width: 640px) {
+  .minai-features {
+    grid-template-columns: 1fr !important; /* Mobile nhỏ thì icon xếp dọc */
+  }
+}
