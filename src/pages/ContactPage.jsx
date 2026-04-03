@@ -1,9 +1,15 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect } from 'react'
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', message: '' })
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  useEffect(() => {
+    // Load MinAI form embed script
+    if (!document.querySelector('script[src="https://link.minai.biz/js/form_embed.js"]')) {
+      const script = document.createElement('script')
+      script.src = 'https://link.minai.biz/js/form_embed.js'
+      script.type = 'text/javascript'
+      document.body.appendChild(script)
+    }
+  }, [])
 
   return (
     <>
@@ -38,6 +44,14 @@ export default function ContactPage() {
               </div>
 
               <div className="contact-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                <div>
+                  <div className="contact-label">Facebook</div>
+                  <a href="https://www.facebook.com/100bold.co" target="_blank" rel="noopener noreferrer" className="contact-value">100Bold</a>
+                </div>
+              </div>
+
+              <div className="contact-item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 <div>
                   <div className="contact-label">LinkedIn</div>
@@ -52,48 +66,38 @@ export default function ContactPage() {
                   <a href="https://www.instagram.com/100bold.co/" target="_blank" rel="noopener noreferrer" className="contact-value">@100bold.co</a>
                 </div>
               </div>
-
-              <div style={{marginTop:32}}>
-                <a href="https://link.minai.biz/widget/bookings/100bold" target="_blank" rel="noopener noreferrer" className="btn btn-red">
-                  Book a Call
-                  <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </a>
-              </div>
             </div>
 
-            {/* Right: Contact Form */}
-            <div className="contact-form-wrap rv rv-d1">
-              <h3 style={{fontFamily:'var(--font-head)',fontSize:24,textTransform:'uppercase',marginBottom:20}}>Send a <span className="accent">Message.</span></h3>
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                <div className="contact-form-row">
-                  <div className="contact-field">
-                    <label>Name *</label>
-                    <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your name" required />
-                  </div>
-                  <div className="contact-field">
-                    <label>Email *</label>
-                    <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@company.com" required />
-                  </div>
-                </div>
-                <div className="contact-form-row">
-                  <div className="contact-field">
-                    <label>Company</label>
-                    <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Company name" />
-                  </div>
-                  <div className="contact-field">
-                    <label>Phone</label>
-                    <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="(512) 000-0000" />
-                  </div>
-                </div>
-                <div className="contact-field">
-                  <label>Message *</label>
-                  <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your business and what you're looking for..." rows="5" required></textarea>
-                </div>
-                <button type="submit" className="btn btn-red" style={{width:'100%',justifyContent:'center'}}>
-                  Send Message
-                  <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </button>
-              </form>
+            {/* Right: Booking Widget + Sign Up Form */}
+            <div className="rv rv-d1">
+              {/* Booking Widget */}
+              <div className="contact-form-wrap" style={{marginBottom:24}}>
+                <h3 style={{fontFamily:'var(--font-head)',fontSize:24,textTransform:'uppercase',marginBottom:16}}>Book a <span className="accent">Call.</span></h3>
+                <iframe
+                  src="https://link.minai.biz/widget/booking/oPdza9BB7isKUhMkkyw2"
+                  style={{width:'100%',minHeight:500,border:'none',overflow:'hidden'}}
+                  scrolling="no"
+                  title="Book a Call with 100Bold"
+                ></iframe>
+              </div>
+
+              {/* Sign Up Form */}
+              <div className="contact-form-wrap">
+                <h3 style={{fontFamily:'var(--font-head)',fontSize:24,textTransform:'uppercase',marginBottom:16}}>Sign <span className="accent">Up.</span></h3>
+                <iframe
+                  src="https://link.minai.biz/widget/form/FWsWItRpNxvcxPDQuzSO"
+                  style={{width:'100%',minHeight:400,border:'none',borderRadius:3}}
+                  id="inline-FWsWItRpNxvcxPDQuzSO"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-activation-type="alwaysActivated"
+                  data-deactivation-type="neverDeactivate"
+                  data-form-name="SIGN UP FORM - WEBSITE 100BOLD"
+                  data-layout-iframe-id="inline-FWsWItRpNxvcxPDQuzSO"
+                  data-form-id="FWsWItRpNxvcxPDQuzSO"
+                  title="SIGN UP FORM - WEBSITE 100BOLD"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
