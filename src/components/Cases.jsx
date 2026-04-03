@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const cases = [
   {
     title: 'LT Commercial Group',
@@ -32,13 +34,17 @@ export default function Cases() {
       <div className="mx">
         <div className="cases-head">
           <h2 className="rv">Proven <span className="accent">Results.</span></h2>
-          <a href="/work" className="btn btn-text rv rv-d1">View All <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
+          <Link to="/work" className="btn btn-text rv rv-d1">View All <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></Link>
         </div>
         <div className="cases-grid">
           {cases.map((c, i) => (
             <div key={c.title} className={`case-card rv${i === 1 ? ' rv-d1' : i === 2 ? ' rv-d2' : ''}`}>
               <div className="case-thumb">
                 <img src={c.img} alt={c.title} />
+                <div className="case-metric">
+                  <div className="case-metric-num">{c.metric}</div>
+                  <div className="case-metric-label">{c.metricLabel}</div>
+                </div>
                 <div className="case-tags-row">
                   {c.tags.map((tag) => <span key={tag} className="case-tag-pill">{tag}</span>)}
                 </div>

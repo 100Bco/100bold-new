@@ -150,6 +150,10 @@ export default function WorkPage() {
               <div key={c.title} className="work-card rv vis">
                 <div className="case-thumb">
                   <img src={c.img} alt={c.title} />
+                  <div className="case-metric">
+                    <div className="case-metric-num">{c.metric}</div>
+                    <div className="case-metric-label">{c.metricLabel}</div>
+                  </div>
                   <div className="case-tags-row">
                     {c.services.map((s) => <span key={s} className="case-tag-pill">{s}</span>)}
                   </div>
@@ -179,6 +183,10 @@ export default function WorkPage() {
               <div key={c.title} className="work-card rv vis">
                 <div className="case-thumb">
                   <img src={c.img} alt={c.title} />
+                  <div className="case-metric">
+                    <div className="case-metric-num">{c.metric}</div>
+                    <div className="case-metric-label">{c.metricLabel}</div>
+                  </div>
                   <div className="case-tags-row">
                     {c.services.map((s) => <span key={s} className="case-tag-pill">{s}</span>)}
                   </div>
