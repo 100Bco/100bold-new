@@ -9,7 +9,7 @@ const activeCases = [
     img: '/works/LT COMMERCIAL GROUP.png',
     metric: '6,000+', metricLabel: 'Business Leaders Reached',
     desc: "Creative content that keeps Austin's top commercial real estate group top of mind. In front of the investors, brokers, and business owners that move the market.",
-    link: 'https://www.facebook.com/ltcommercialgroup'
+    link: 'https://www.facebook.com/ltcommercialgroup',
   },
   {
     title: 'Lezlie Tram',
@@ -18,7 +18,7 @@ const activeCases = [
     img: '/works/LEZLIE TRAM.png',
     metric: '2.5X', metricLabel: 'LinkedIn Growth',
     desc: 'Turned an already-active LinkedIn into a magnet. Consistent content, real engagement, and a growing pipeline of connections and conversations.',
-    link: 'https://www.linkedin.com/in/lezlie-tram-ceo-233b85b7/'
+    link: 'https://www.linkedin.com/in/lezlie-tram-ceo-233b85b7/',
   },
   {
     title: 'Dacy Business Park',
@@ -27,7 +27,7 @@ const activeCases = [
     img: '/works/DACY BUSINESS PARK.png',
     metric: '100 Attendees', metricLabel: '3 Leads in 24 Hours',
     desc: 'Built the digital presence from scratch, then launched a targeted campaign to 6,000 local business leaders. Sold-out launch event and immediate lease inquiries on day one.',
-    link: 'https://dacylaunch.ltcommercialgroup.com/'
+    link: 'https://dacylaunch.ltcommercialgroup.com/',
   },
   {
     title: 'Bee Construction',
@@ -36,7 +36,7 @@ const activeCases = [
     img: '/works/BEE CONSTRUCTION.png',
     metric: '$2M+', metricLabel: 'Lead in 72 Hours',
     desc: 'Took them from zero. No website, no social, no digital footprint. Within 72 hours of launch, a single ad brought in a $2M+ development lead.',
-    link: 'https://beeusa.net/'
+    link: 'https://beeusa.net/',
   },
   {
     title: 'T98 Rehab',
@@ -45,7 +45,7 @@ const activeCases = [
     img: '/works/T98 REHAB & CHIROPRACTIC.png',
     metric: '12 Hours', metricLabel: 'First Lead Closed',
     desc: "Connected the Google, wired in MinAI's lead capture backend, and within 12 hours the first lead came in and closed. Now scaling content and local search across 3 locations.",
-    link: 'https://t98rehab.com/'
+    link: 'https://t98rehab.com/',
   },
   {
     title: 'Dang Law Group',
@@ -54,7 +54,7 @@ const activeCases = [
     img: '/works/DANG LAW GROUP.png',
     metric: '30%', metricLabel: 'Intake Automated',
     desc: 'Built the intake automation and the brand story. A bold founder persona, a smarter lead funnel, and real traction inside the local community. Ads coming soon.',
-    link: 'https://www.facebook.com/DangLawGroupATX'
+    link: 'https://www.facebook.com/DangLawGroupATX',
   },
   {
     title: 'Subele Tequila',
@@ -63,7 +63,7 @@ const activeCases = [
     img: '/works/SUBELE TEQUILA.png',
     metric: '$11K', metricLabel: 'Sales in 2 Hours',
     desc: 'Two events, 300+ high-level attendees, and $11K in charity sales in under two hours. Building brand awareness where it counts — in rooms full of the right people.',
-    link: 'https://dacylaunch.ltcommercialgroup.com/'
+    link: 'https://dacylaunch.ltcommercialgroup.com/',
   },
   {
     title: 'Taco Man 512',
@@ -72,7 +72,7 @@ const activeCases = [
     img: '/works/TACO MAN 512.png',
     metric: '300+', metricLabel: 'Attendees in 2 Events',
     desc: "Austin's favorite taco crew, now in the right rooms. We put Taco Man 512 in front of high-quality audiences through curated events and content, turning a beloved brand into a booking machine.",
-    link: 'https://dacylaunch.ltcommercialgroup.com/'
+    link: 'https://dacylaunch.ltcommercialgroup.com/',
   },
   {
     title: '100B',
@@ -81,7 +81,7 @@ const activeCases = [
     img: '/works/100B HOLDING.png',
     metric: '20+', metricLabel: 'Nine-Figure Factories',
     desc: "Built everything from zero: brand, website, graphic design, back end, the full system. Now the gateway connecting global investors with a curated network of Vietnam's most elite construction materials manufacturers, each doing $100M to $400M a year.",
-    link: 'https://100b.co/'
+    link: 'https://100b.co/',
   },
   {
     title: 'Woodsland',
@@ -90,7 +90,7 @@ const activeCases = [
     img: '/works/WOODSLAND.png',
     metric: '$5M', metricLabel: 'Export Contract',
     desc: "One of Vietnam's largest furniture factories and a longtime IKEA supplier. We drove the brand positioning and outreach strategy that opened the door to a $5M film-faced plywood export contract into Europe.",
-    link: 'https://www.linkedin.com/feed/update/urn:li:activity:7350501850061713409'
+    link: 'https://www.linkedin.com/feed/update/urn:li:activity:7350501850061713409',
   },
   {
     title: 'Hexagon Group',
@@ -99,7 +99,7 @@ const activeCases = [
     img: '/works/HEXAGON GROUP.png',
     metric: '1st', metricLabel: 'US Container Shipped',
     desc: 'A leading Vietnamese interior firm serving global brands including Apple. We drove the content and business development strategy that got their first container of custom interior materials into the US market.',
-    link: 'https://www.linkedin.com/feed/update/urn:li:activity:7341087312241442817'
+    link: 'https://www.linkedin.com/feed/update/urn:li:activity:7341087312241442817',
   },
   {
     title: 'AREAA Austin',
@@ -108,7 +108,7 @@ const activeCases = [
     img: '/works/AREAA AUSTIN.png',
     metric: '2X', metricLabel: 'Outreach Efficiency',
     desc: "Rebuilt their digital infrastructure and automated their outreach. Same team, twice the reach. Full website, streamlined backend, and email campaigns running for one of Austin's key real estate networks.",
-    link: 'https://areaaaustin.minai.biz/'
+    link: 'https://areaaaustin.minai.biz/',
   }
 ];
 
@@ -120,7 +120,7 @@ const worksCases = [
     img: '/works/LINKEDINGLENN.png',
     metric: '5,000+', metricLabel: 'Contacts Activated',
     desc: "Plugging in the full CRM stack and building Glenn Hart's LinkedIn CEO presence. Starting with a 5,000+ contact outreach campaign to activate one of Austin's most connected real estate networks.",
-    link: 'https://www.linkedin.com/in/linkedglenn/'
+    link: 'https://www.linkedin.com/in/linkedglenn/',
   },
   {
     title: 'InFrame Wedding Photography',
@@ -129,7 +129,7 @@ const worksCases = [
     img: '/works/INFRAME WEDDING PHOTOGRAPHY.png',
     metric: 'Now', metricLabel: 'Onboarding',
     desc: 'Full backend integration, AI chatbot, and a review-generation campaign targeting past clients. Getting a beautiful brand the digital infrastructure it deserves.',
-    link: 'https://www.inframefoto.com/'
+    link: 'https://www.inframefoto.com/',
   }
 ];
 
@@ -161,15 +161,9 @@ export default function WorkPage() {
           <h2 className="rv vis" style={{ marginBottom: '2rem', fontSize: '2rem', borderBottom: '2px solid var(--red)', paddingBottom: '0.5rem', display: 'inline-block' }}>ACTIVE ROSTER</h2>
           <div className="work-grid">
             {activeCases.map((c, i) => (
-              <div key={c.title} className="work-card rv vis">
+              <a key={c.title} href={c.link} target="_blank" rel="noopener noreferrer" className="work-card rv vis" style={{textDecoration:'none',color:'inherit'}}>
                 <div className="case-thumb">
-                  {c.link ? (
-                    <a href={c.link} target="_blank" rel="noopener noreferrer" style={{ display: 'block', height: '100%' }}>
-                      <img src={c.img} alt={c.title} />
-                    </a>
-                  ) : (
-                    <img src={c.img} alt={c.title} />
-                  )}
+                  <img src={c.img} alt={c.title} />
                   <div className="case-metric">
                     <div className="case-metric-num">{c.metric}</div>
                     <div className="case-metric-label">{c.metricLabel}</div>
@@ -179,19 +173,11 @@ export default function WorkPage() {
                   </div>
                 </div>
                 <div className="work-card-body">
-                  <h3>
-                    {c.link ? (
-                      <a href={c.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
-                        {c.title}
-                      </a>
-                    ) : (
-                      c.title
-                    )}
-                  </h3>
+                  <h3>{c.title}</h3>
                   <p className="work-industry">{c.industry}</p>
                   <p>{c.desc}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -208,15 +194,9 @@ export default function WorkPage() {
           <h2 className="rv vis" style={{ marginBottom: '2rem', fontSize: '2rem', borderBottom: '2px solid var(--red)', paddingBottom: '0.5rem', display: 'inline-block' }}>NOW IN THE WORKS</h2>
           <div className="work-grid">
             {worksCases.map((c, i) => (
-              <div key={c.title} className="work-card rv vis">
+              <a key={c.title} href={c.link} target="_blank" rel="noopener noreferrer" className="work-card rv vis" style={{textDecoration:'none',color:'inherit'}}>
                 <div className="case-thumb">
-                  {c.link ? (
-                    <a href={c.link} target="_blank" rel="noopener noreferrer" style={{ display: 'block', height: '100%' }}>
-                      <img src={c.img} alt={c.title} />
-                    </a>
-                  ) : (
-                    <img src={c.img} alt={c.title} />
-                  )}
+                  <img src={c.img} alt={c.title} />
                   <div className="case-metric">
                     <div className="case-metric-num">{c.metric}</div>
                     <div className="case-metric-label">{c.metricLabel}</div>
@@ -226,19 +206,11 @@ export default function WorkPage() {
                   </div>
                 </div>
                 <div className="work-card-body">
-                  <h3>
-                    {c.link ? (
-                      <a href={c.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
-                        {c.title}
-                      </a>
-                    ) : (
-                      c.title
-                    )}
-                  </h3>
+                  <h3>{c.title}</h3>
                   <p className="work-industry">{c.industry}</p>
                   <p>{c.desc}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
