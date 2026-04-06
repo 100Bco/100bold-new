@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import WaveDivider from './components/WaveDivider'
@@ -85,6 +86,7 @@ function App() {
       </Routes>
       <WaveDivider from="var(--white)" to="#1A1816" variant="wave" />
       <Footer />
+      <Analytics />
     </BrowserRouter>
   )
 }
