@@ -1,26 +1,35 @@
-User-agent: *
-Allow: /
-
+# Sitemap (Quan trọng cho Google & Bing Indexing)
 Sitemap: https://100bold.co/sitemap.xml
 
-# AI Crawlers
+# Khai báo file tóm tắt dữ liệu cho các AI Crawlers (Chuẩn mới nhất)
+LLMS-Path: https://100bold.co/llms.txt
+
+# Cấu hình quyền truy cập chung cho mọi Bot (Search Engine & AI)
+User-agent: *
+Allow: /
+# Các trang không cần thiết hoặc bảo mật nên chặn để bot tập trung vào nội dung chính
+Disallow: /admin/
+Disallow: /login/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /my-account/
+
+# Chỉ dẫn cụ thể cho các AI Crawlers quan trọng 
+# (Dùng thêm cú pháp này để "ép" các hệ thống AI ưu tiên nội dung của bạn)
 User-agent: GPTBot
 Allow: /
+Crawl-delay: 1
 
-User-agent: ChatGPT-User
+User-agent: ClaudeBot
 Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
 
 User-agent: Google-Extended
 Allow: /
 
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Bytespider
+User-agent: Applebot-Extended
 Allow: /
