@@ -33,6 +33,114 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Schema Markup: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "100Bold Agency",
+      "alternateName": "100Bold",
+      "url": "https://100bold.co",
+      "logo": "https://100bold.co/100BOLD%20-%20OP3-09%20(1).png",
+      "description": "Austin's growth agency for $5M+ service businesses. We dominate Google, build LinkedIn authority, and install AI infrastructure.",
+      "email": "start@100bold.co",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/100bold.co",
+        "https://www.linkedin.com/company/100bold",
+        "https://www.instagram.com/100bold.co/"
+      ],
+      "foundingLocation": "Austin, Texas",
+      "slogan": "Start Brave. Stay Bold.",
+      "knowsAbout": ["Google Business Profile", "LinkedIn Marketing", "AI Infrastructure", "Local SEO", "Social Media Marketing"]
+    }
+    </script>
+
+    <!-- Schema Markup: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "100Bold Agency",
+      "url": "https://100bold.co",
+      "telephone": "",
+      "email": "start@100bold.co",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$$",
+      "areaServed": [
+        { "@type": "City", "name": "Austin" },
+        { "@type": "City", "name": "San Antonio" },
+        { "@type": "City", "name": "Dallas" },
+        { "@type": "City", "name": "Houston" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Google Domination",
+              "description": "Full Google Business Profile takeover — optimization, weekly content, review generation, local SEO, AI chatbot installation."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "LinkedIn CEO Authority",
+              "description": "Complete LinkedIn profile management for CEOs and founders — strategy, ghostwriting, engagement, and network growth."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Social Media Content",
+              "description": "High-converting content across Meta, LinkedIn, Instagram, TikTok, and more."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Paid Ads",
+              "description": "Google and Meta ad campaigns layered on established organic foundation for maximum ROI."
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Schema Markup: WebSite with SiteNavigationElement -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "100Bold",
+      "url": "https://100bold.co",
+      "description": "Austin's growth agency for $5M+ service businesses.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://100bold.co/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
