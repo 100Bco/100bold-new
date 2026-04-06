@@ -36,22 +36,26 @@ export default function ContactPage() {
               ></iframe>
             </div>
 
-            {/* Right: Join Our List */}
+           {/* Right: Join Our List */}
             <div className="contact-form-wrap rv rv-d1">
               <h2 style={{fontFamily:'var(--font-head)',fontSize:'clamp(28px,3vw,40px)',textTransform:'uppercase',marginBottom:16}}>Join Our <span className="accent">List.</span></h2>
-              <iframe
-                src="https://link.minai.biz/widget/form/FWsWItRpNxvcxPDQuzSO"
-                style={{width:'100%',minHeight:550,border:'none',borderRadius:3}}
-                id="inline-FWsWItRpNxvcxPDQuzSO"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-activation-type="alwaysActivated"
-                data-deactivation-type="neverDeactivate"
-                data-form-name="SIGN UP FORM - WEBSITE 100BOLD"
-                data-layout-iframe-id="inline-FWsWItRpNxvcxPDQuzSO"
-                data-form-id="FWsWItRpNxvcxPDQuzSO"
-                title="SIGN UP FORM - WEBSITE 100BOLD"
-              ></iframe>
+              
+              <div style={{ overflow: 'hidden' }}>
+                <iframe
+                  src="https://link.minai.biz/widget/form/FWsWItRpNxvcxPDQuzSO"
+                  style={{width:'100%',minHeight:550,border:'none',borderRadius:3, marginTop:'-45px'}}
+                  id="inline-FWsWItRpNxvcxPDQuzSO"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-activation-type="alwaysActivated"
+                  data-deactivation-type="neverDeactivate"
+                  data-form-name="SIGN UP FORM - WEBSITE 100BOLD"
+                  data-layout-iframe-id="inline-FWsWItRpNxvcxPDQuzSO"
+                  data-form-id="FWsWItRpNxvcxPDQuzSO"
+                  title="SIGN UP FORM - WEBSITE 100BOLD"
+                ></iframe>
+              </div>
+              
             </div>
           </div>
         </div>
