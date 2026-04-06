@@ -31,7 +31,6 @@ export default function Services() {
                 {services.map((srv) => (
                   <img key={srv.id} className={`srv-visual-img${active === srv.id ? ' active' : ''}`} src={srv.img} alt={srv.title} />
                 ))}
-                <div className="srv-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
               </div>
             </div>
             <div>
