@@ -45,6 +45,14 @@ function PageTitle() {
   const { pathname } = useLocation()
   useEffect(() => {
     document.title = pageTitles[pathname] || '100Bold — Start Brave. Stay Bold.'
+    // Update canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]')
+    if (!canonical) {
+      canonical = document.createElement('link')
+      canonical.rel = 'canonical'
+      document.head.appendChild(canonical)
+    }
+    canonical.href = `https://100bold.co${pathname === '/' ? '' : pathname}`
   }, [pathname])
   return null
 }
