@@ -57,6 +57,7 @@ export default function Nav() {
         </div>
 
         <div className="nav-btns">
+          <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nav-login">Log In</a>
           <Link to="/contact" className="nav-cta">Contact</Link>
         </div>
 
