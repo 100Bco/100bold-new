@@ -64,15 +64,13 @@ export default function AboutPage() {
               <div className="eco-stat-num">6,000+</div>
               <div className="eco-stat-label">Austin Business Contacts</div>
             </div>
-            <div className="eco-stat eco-stat-wide">
+            <div className="eco-stat">
               <div className="eco-stat-num">Growth-Focused</div>
-              <div className="eco-stat-label" style={{fontWeight: 700, fontSize: 16, marginBottom: 4}}>Founders</div>
-              <div className="eco-stat-label" style={{display:'none'}}></div>
+              <div className="eco-stat-label">Founders</div>
             </div>
-            <div className="eco-stat eco-stat-wide">
+            <div className="eco-stat">
               <div className="eco-stat-num">Proven</div>
-              <div className="eco-stat-label" style={{fontWeight: 700, fontSize: 16, marginBottom: 4}}>Industries</div>
-              <div className="eco-stat-label" style={{display:'none'}}></div>
+              <div className="eco-stat-label">Industries</div>
             </div>
             <div className="eco-stat">
               <div className="eco-stat-num">$5M+</div>

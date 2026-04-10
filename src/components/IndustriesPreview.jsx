@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 import { useRef, useEffect } from 'react'
 
 const industryData = [
-  { name: 'General Contractors', desc: 'Google domination for builders and GCs', lottie: '/repair-tools-red.json' },
-  { name: 'HVAC / Electrical', desc: 'More calls, more jobs, less complexity', lottie: '/power-red.json' },
+  { name: 'Contractors & Builders', desc: 'Google domination for builders and GCs', lottie: '/repair-tools-red.json' },
+  { name: 'Home Services & Solar', desc: 'More calls, more jobs, less complexity', lottie: '/power-red.json' },
   { name: 'Real Estate', desc: 'Credibility and deal flow from the right relationships', lottie: '/building-red.json' },
   { name: 'PI Law Firms', desc: 'Signed cases before competitors answer the phone', lottie: '/law-red.json' },
-  { name: 'Rehab & Chiro', desc: 'Dominate Google, get more PI referrals', lottie: '/wheelchair-insurance-red.json' },
-  { name: 'Plumbing / Roofing', desc: 'Own every local search in your area', lottie: '/hourse-red.json' },
+  { name: 'Chiro & Rehab', desc: 'Dominate Google, get more PI referrals', lottie: '/wheelchair-insurance-red.json' },
+  { name: 'Plumbing & Roofing', desc: 'Own every local search in your area', lottie: '/hourse-red.json' },
 ]
 
 function LottieIcon({ src }) {
