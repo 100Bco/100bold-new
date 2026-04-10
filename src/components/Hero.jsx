@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const ArrowIcon = () => (
   <svg viewBox="0 0 16 16" fill="none">
     <path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -38,7 +40,7 @@ export default function Hero() {
               ))}
             </div>
             <div className="hero-ctas rv vis rv-d3">
-              <a href="https://link.minai.biz/widget/bookings/100bold" target="_blank" rel="noopener noreferrer" className="btn btn-red">Contact Now <ArrowIcon /></a>
+              <Link to="/contact" className="btn btn-red">Contact Now <ArrowIcon /></Link>
               <a href="#services" className="btn btn-outline">View Playbook</a>
             </div>
           </div>
