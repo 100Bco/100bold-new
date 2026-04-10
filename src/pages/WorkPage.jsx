@@ -215,6 +215,8 @@ export default function WorkPage() {
           </div>
         </div>
       </section>
+
+      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
     </>
   )
 }
