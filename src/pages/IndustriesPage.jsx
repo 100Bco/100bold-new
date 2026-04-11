@@ -20,12 +20,12 @@ function LottieIcon({ src }) {
 }
 
 const industries = [
-  { name: 'Home Services & Solar', desc: 'HVAC, Solar, Pest Control, Painting, Landscaping', lottie: '/power-red.json', path: '/industries/local-services' },
   { name: 'General Contractors & Builders', desc: 'Commercial GCs, Residential Builders, Remodeling Contractors', lottie: '/repair-tools-red.json', path: '/industries/construction' },
+  { name: 'Plumbing, Roofing & Electrical', desc: 'Plumbers, Roofers, Electricians', lottie: '/hourse-red.json', path: '/industries/plumbing-roofing' },
+  { name: 'Home Services & Solar', desc: 'HVAC, Solar, Pest Control, Painting, Landscaping', lottie: '/power-red.json', path: '/industries/local-services' },
   { name: 'Real Estate & Property Management', desc: 'Developers, Property Managers, Brokerages', lottie: '/building-red.json', path: '/industries/real-estate' },
   { name: 'Personal Injury Law Firms', desc: 'PI Attorneys, Trial Lawyers', lottie: '/law-red.json', path: '/industries/law-firms' },
   { name: 'Chiropractic & Rehabilitation', desc: 'Chiropractors, Physical Therapy, Rehab Centers', lottie: '/wheelchair-insurance-red.json', path: '/industries/rehab-chiro' },
-  { name: 'Plumbing, Roofing & Electrical', desc: 'Plumbers, Roofers, Electricians', lottie: '/hourse-red.json', path: '/industries/plumbing-roofing' },
 ]
 
 export default function IndustriesPage() {
