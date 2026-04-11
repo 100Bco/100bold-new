@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const industryLinks = [
-  { path: '/industries/local-services', name: 'Local Services' },
-  { path: '/industries/construction', name: 'Construction' },
-  { path: '/industries/real-estate', name: 'Real Estate' },
-  { path: '/industries/law-firms', name: 'Law Firms' },
-  { path: '/industries/rehab-chiro', name: 'Rehab & Chiro' },
+  { path: '/industries/construction', name: 'Contractors & Builders' },
   { path: '/industries/plumbing-roofing', name: 'Plumbing & Roofing' },
+  { path: '/industries/local-services', name: 'Home Services & Solar' },
+  { path: '/industries/real-estate', name: 'Real Estate' },
+  { path: '/industries/law-firms', name: 'PI Law Firms' },
+  { path: '/industries/rehab-chiro', name: 'Chiro & Rehab' },
 ]
 
 export default function Nav() {

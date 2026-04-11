@@ -4,11 +4,11 @@ import { useRef, useEffect } from 'react';
 // Giữ nguyên data và lottie files của bạn
 const industries = [
   { name: 'Contractors', lottie: '/repair-tools-red.json', angle: 270 },
-  { name: 'HVAC', lottie: '/power-red.json', angle: 330 },
-  { name: 'Real Estate', lottie: '/building-red.json', angle: 30 },
-  { name: 'Law', lottie: '/law-red.json', angle: 90 },
-  { name: 'Rehab', lottie: '/wheelchair-insurance-red.json', angle: 150 },
-  { name: 'Plumbing', lottie: '/hourse-red.json', angle: 210 },
+  { name: 'Plumbing', lottie: '/hourse-red.json', angle: 330 },
+  { name: 'Home Services', lottie: '/power-red.json', angle: 30 },
+  { name: 'Real Estate', lottie: '/building-red.json', angle: 90 },
+  { name: 'Law', lottie: '/law-red.json', angle: 150 },
+  { name: 'Rehab', lottie: '/wheelchair-insurance-red.json', angle: 210 },
 ];
 
 // Giữ nguyên component render Lottie của bạn
