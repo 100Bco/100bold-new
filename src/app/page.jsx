@@ -1,13 +1,13 @@
-import Hero from '../components/Hero'
-import LogoBar from '../components/LogoBar'
-import WhyUs from '../components/WhyUs'
-import IndustriesPreview from '../components/IndustriesPreview'
-import Services from '../components/Services'
-import MinAI from '../components/MinAI'
-import Cases from '../components/Cases'
-import Reviews from '../components/Reviews'
-import CTA from '../components/CTA'
-import WaveDivider from '../components/WaveDivider'
+import Hero from '@/components/Hero'
+import LogoBar from '@/components/LogoBar'
+import WhyUs from '@/components/WhyUs'
+import IndustriesPreview from '@/components/IndustriesPreview'
+import Services from '@/components/Services'
+import MinAI from '@/components/MinAI'
+import Cases from '@/components/Cases'
+import Reviews from '@/components/Reviews'
+import CTA from '@/components/CTA'
+import WaveDivider from '@/components/WaveDivider'
 
 export default function HomePage() {
   return (

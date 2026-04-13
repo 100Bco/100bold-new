@@ -1,6 +1,10 @@
-import { Link } from 'react-router-dom'
-import WaveDivider from '../components/WaveDivider'
-import MinAIGraphic from '../components/MinAIGraphic'
+import Link from 'next/link'
+import WaveDivider from '@/components/WaveDivider'
+import MinAIGraphic from '@/components/MinAIGraphic'
+
+export const metadata = {
+  title: 'MinAI — The Engine Behind 100Bold',
+}
 
 const ChatIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
 const PhoneIcon = () => <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -76,7 +80,7 @@ export default function MinAIPage() {
           <h2 className="rv" style={{fontFamily: 'var(--font-head)', fontSize: 'clamp(36px, 4vw, 56px)', textTransform: 'uppercase', marginBottom: 24}}>
             Get 100Bold working for <span className="accent">your business.</span>
           </h2>
-          <Link to="/contact" className="btn btn-red rv rv-d1">
+          <Link href="/contact" className="btn btn-red rv rv-d1">
             Contact Now
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>

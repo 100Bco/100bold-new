@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import { useRef, useEffect } from 'react'
 
 const industryData = [
@@ -57,7 +59,7 @@ export default function IndustriesPreview() {
           ))}
         </div>
         <div className="ip-cta rv rv-d2">
-          <Link to="/industries" className="btn btn-dark">
+          <Link href="/industries" className="btn btn-dark">
             View All Industries
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>

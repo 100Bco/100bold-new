@@ -1,5 +1,9 @@
-import WaveDivider from '../components/WaveDivider'
-import WorkHeroGraphic from '../components/WorkHeroGraphic'
+import WaveDivider from '@/components/WaveDivider'
+import WorkHeroGraphic from '@/components/WorkHeroGraphic'
+
+export const metadata = {
+  title: 'Work — 100Bold | Proven Results, Real Clients',
+}
 
 const activeCases = [
   {

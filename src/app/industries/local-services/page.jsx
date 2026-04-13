@@ -1,4 +1,8 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
+
+export const metadata = {
+  title: 'Home Services & Solar — HVAC, Solar, Pest Control',
+}
 
 export default function LocalServicesPage() {
   const data = {

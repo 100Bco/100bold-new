@@ -1,4 +1,8 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
+
+export const metadata = {
+  title: 'Chiropractic & Rehabilitation',
+}
 
 export default function RehabChiroPage() {
   const data = {
