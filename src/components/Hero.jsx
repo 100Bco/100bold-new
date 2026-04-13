@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const ArrowIcon = () => (
   <svg viewBox="0 0 16 16" fill="none">
@@ -40,7 +40,7 @@ export default function Hero() {
               ))}
             </div>
             <div className="hero-ctas rv vis rv-d3">
-              <Link to="/contact" className="btn btn-red">Contact Now <ArrowIcon /></Link>
+              <Link href="/contact" className="btn btn-red">Contact Now <ArrowIcon /></Link>
               <a href="#services" className="btn btn-outline">View Playbook</a>
             </div>
           </div>

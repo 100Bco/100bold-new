@@ -1,6 +1,10 @@
-import { Link } from 'react-router-dom'
-import WaveDivider from '../components/WaveDivider'
-import ServicesHeroGraphic from '../components/ServicesHeroGraphic'
+import Link from 'next/link'
+import WaveDivider from '@/components/WaveDivider'
+import ServicesHeroGraphic from '@/components/ServicesHeroGraphic'
+
+export const metadata = {
+  title: 'Services — 100Bold | Google Domination & LinkedIn CEO Authority',
+}
 
 export default function ServicesPage() {
   return (
@@ -119,7 +123,7 @@ export default function ServicesPage() {
           <h2 className="rv" style={{fontFamily: 'var(--font-head)', fontSize: 'clamp(36px, 4vw, 56px)', textTransform: 'uppercase', marginBottom: 24}}>
             Ready to <span className="accent">dominate?</span>
           </h2>
-          <Link to="/contact" className="btn btn-red rv rv-d1">
+          <Link href="/contact" className="btn btn-red rv rv-d1">
             Contact Now
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>

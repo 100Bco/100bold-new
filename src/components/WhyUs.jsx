@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 export default function WhyUs() {
   return (
@@ -36,7 +36,7 @@ export default function WhyUs() {
           </div>
         </div>
         <div className="why-cta rv rv-d3">
-          <Link to="/about" className="btn btn-text">
+          <Link href="/about" className="btn btn-text">
             Learn More About Us
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>

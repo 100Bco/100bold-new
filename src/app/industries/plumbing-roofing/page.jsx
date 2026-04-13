@@ -1,4 +1,8 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
+
+export const metadata = {
+  title: 'Plumbing, Roofing & Electrical',
+}
 
 export default function PlumbingRoofingPage() {
   const data = {

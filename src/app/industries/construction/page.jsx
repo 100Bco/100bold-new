@@ -1,4 +1,8 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
+
+export const metadata = {
+  title: 'General Contractors & Construction',
+}
 
 export default function ConstructionPage() {
   const data = {

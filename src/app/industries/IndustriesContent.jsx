@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom'
-import IndustriesHeroGraphic from '../components/IndustriesHeroGraphic'
-import WaveDivider from '../components/WaveDivider'
+'use client'
+
+import Link from 'next/link'
+import IndustriesHeroGraphic from '@/components/IndustriesHeroGraphic'
+import WaveDivider from '@/components/WaveDivider'
 import { useRef, useEffect } from 'react'
 
 function LottieIcon({ src }) {
@@ -28,7 +30,7 @@ const industries = [
   { name: 'Chiropractic & Rehabilitation', desc: 'Chiropractors, Physical Therapy, Rehab Centers', lottie: '/wheelchair-insurance-red.json', path: '/industries/rehab-chiro' },
 ]
 
-export default function IndustriesPage() {
+export default function IndustriesContent() {
   return (
     <>
       <section className="page-hero">
@@ -50,7 +52,7 @@ export default function IndustriesPage() {
         <div className="mx">
           <div className="ind-landing-grid">
             {industries.map((ind, i) => (
-              <Link to={ind.path} key={ind.name} className={`ind-landing-card rv${i > 0 ? ` rv-d${Math.min(i, 3)}` : ''}`}>
+              <Link href={ind.path} key={ind.name} className={`ind-landing-card rv${i > 0 ? ` rv-d${Math.min(i, 3)}` : ''}`}>
                 <div className="ind-landing-icon">
                   <LottieIcon src={ind.lottie} />
                 </div>
@@ -71,7 +73,7 @@ export default function IndustriesPage() {
           <h2 className="rv" style={{fontFamily: 'var(--font-head)', fontSize: 'clamp(36px, 4vw, 56px)', textTransform: 'uppercase', marginBottom: 24}}>
             Ready to <span className="accent">dominate?</span>
           </h2>
-          <Link to="/contact" className="btn btn-red rv rv-d1">
+          <Link href="/contact" className="btn btn-red rv rv-d1">
             Contact Now
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>

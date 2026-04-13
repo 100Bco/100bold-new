@@ -1,5 +1,9 @@
-import WaveDivider from '../components/WaveDivider'
-import AboutHeroGraphic from '../components/AboutHeroGraphic'
+import WaveDivider from '@/components/WaveDivider'
+import AboutHeroGraphic from '@/components/AboutHeroGraphic'
+
+export const metadata = {
+  title: 'About Us — 100Bold | Operators, Not Marketers',
+}
 
 export default function AboutPage() {
   return (

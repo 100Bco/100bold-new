@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const cases = [
   {
@@ -34,7 +34,7 @@ export default function Cases() {
       <div className="mx">
         <div className="cases-head">
           <h2 className="rv">Proven <span className="accent">Results.</span></h2>
-          <Link to="/work" className="btn btn-text rv rv-d1">View All <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></Link>
+          <Link href="/work" className="btn btn-text rv rv-d1">View All <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></Link>
         </div>
         <div className="cases-grid">
           {cases.map((c, i) => (

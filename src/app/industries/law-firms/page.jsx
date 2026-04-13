@@ -1,4 +1,8 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
+
+export const metadata = {
+  title: 'Personal Injury Law Firms',
+}
 
 export default function LawFirmsPage() {
   const data = {

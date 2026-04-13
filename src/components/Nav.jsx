@@ -1,5 +1,8 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const industryLinks = [
   { path: '/industries/construction', name: 'Contractors & Builders' },
@@ -14,7 +17,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [dropOpen, setDropOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const location = useLocation()
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -22,43 +25,43 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => { setDropOpen(false); setMobileOpen(false) }, [location.pathname])
+  useEffect(() => { setDropOpen(false); setMobileOpen(false) }, [pathname])
 
-  const isActive = (path) => location.pathname === path
-  const isIndustryActive = location.pathname.startsWith('/industries')
+  const isActive = (path) => pathname === path
+  const isIndustryActive = pathname.startsWith('/industries')
 
   return (
     <div className={`nav-wrap${scrolled ? ' scrolled' : ''}`}>
       <nav className="nav">
-        <Link to="/">
+        <Link href="/">
           <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="nav-logo" />
         </Link>
 
         {/* Desktop nav */}
         <div className="nav-links">
-          <Link to="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
-          <Link to="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
+          <Link href="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
+          <Link href="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
           <div className="nav-dropdown-wrap" onMouseEnter={() => setDropOpen(true)} onMouseLeave={() => setDropOpen(false)}>
-            <Link to="/industries" className={`nav-dropdown-trigger${isIndustryActive ? ' nav-active' : ''}`}>
+            <Link href="/industries" className={`nav-dropdown-trigger${isIndustryActive ? ' nav-active' : ''}`}>
               Industries
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{marginLeft:4}}><path d="M2 4l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>
             {dropOpen && (
               <div className="nav-dropdown">
                 {industryLinks.map(ind => (
-                  <Link key={ind.path} to={ind.path} className="nav-dropdown-item">{ind.name}</Link>
+                  <Link key={ind.path} href={ind.path} className="nav-dropdown-item">{ind.name}</Link>
                 ))}
               </div>
             )}
           </div>
-          <Link to="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
-          <Link to="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
-          <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
+          <Link href="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
+          <Link href="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
+          <Link href="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
         </div>
 
         <div className="nav-btns">
           <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nav-login">Log In</a>
-          <Link to="/contact" className="nav-cta">Contact</Link>
+          <Link href="/contact" className="nav-cta">Contact</Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -70,16 +73,16 @@ export default function Nav() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="nav-mobile">
-          <Link to="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
-          <Link to="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
-          <Link to="/industries" className={isIndustryActive ? 'nav-active' : ''}>Industries</Link>
+          <Link href="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
+          <Link href="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
+          <Link href="/industries" className={isIndustryActive ? 'nav-active' : ''}>Industries</Link>
           {industryLinks.map(ind => (
-            <Link key={ind.path} to={ind.path} className="nav-mobile-sub">{ind.name}</Link>
+            <Link key={ind.path} href={ind.path} className="nav-mobile-sub">{ind.name}</Link>
           ))}
-          <Link to="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
-          <Link to="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
-          <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
-          <Link to="/contact" className="nav-mobile-cta">Contact Us</Link>
+          <Link href="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
+          <Link href="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
+          <Link href="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
+          <Link href="/contact" className="nav-mobile-cta">Contact Us</Link>
         </div>
       )}
     </div>
