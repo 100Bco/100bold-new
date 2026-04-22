@@ -145,7 +145,7 @@ export default function RootLayout({ children }) {
 
         {/* Wistia Video */}
         <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
-        <Script src="https://fast.wistia.com/embed/jzqrwe3t4z.js" strategy="lazyOnload" />
+        <Script src="https://fast.wistia.com/embed/futnh0kwqu.js" strategy="lazyOnload" />
 
         <Analytics />
       </body>
