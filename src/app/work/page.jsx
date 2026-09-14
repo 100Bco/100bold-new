@@ -58,7 +58,7 @@ const activeCases = [
     img: '/works/DANG LAW GROUP.png',
     metric: '30%', metricLabel: 'Intake Automated',
     desc: 'Built the intake automation and the brand story. A bold founder persona, a smarter lead funnel, and real traction inside the local community. Ads coming soon.',
-    link: 'https://www.facebook.com/DangLawGroupATX',
+    link: 'https://danglawgroup.com/',
   },
   {
     title: 'Subele Tequila',
