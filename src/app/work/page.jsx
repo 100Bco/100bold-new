@@ -113,6 +113,15 @@ const activeCases = [
     metric: '2X', metricLabel: 'Outreach Efficiency',
     desc: "Rebuilt their digital infrastructure and automated their outreach. Same team, twice the reach. Full website, streamlined backend, and email campaigns running for one of Austin's key real estate networks.",
     link: 'https://areaaaustin.minai.biz/',
+  },
+  {
+    title: 'InFrame Wedding Photography',
+    industry: 'Wedding and Engagement Photography — Bay Area, CA',
+    services: ['Google', 'Email Marketing'],
+    img: '/works/INFRAME WEDDING PHOTOGRAPHY.png',
+    metric: 'Now', metricLabel: 'Onboarding',
+    desc: 'Full backend integration, AI chatbot, and a review-generation campaign targeting past clients. Getting a beautiful brand the digital infrastructure it deserves.',
+    link: 'https://www.inframefoto.com/',
   }
 ];
 
@@ -125,15 +134,6 @@ const worksCases = [
     metric: '5,000+', metricLabel: 'Contacts Activated',
     desc: "Plugging in the full CRM stack and building Glenn Hart's LinkedIn CEO presence. Starting with a 5,000+ contact outreach campaign to activate one of Austin's most connected real estate networks.",
     link: 'https://www.linkedin.com/in/linkedglenn/',
-  },
-  {
-    title: 'InFrame Wedding Photography',
-    industry: 'Wedding and Engagement Photography — Bay Area, CA',
-    services: ['Google', 'Email Marketing'],
-    img: '/works/INFRAME WEDDING PHOTOGRAPHY.png',
-    metric: 'Now', metricLabel: 'Onboarding',
-    desc: 'Full backend integration, AI chatbot, and a review-generation campaign targeting past clients. Getting a beautiful brand the digital infrastructure it deserves.',
-    link: 'https://www.inframefoto.com/',
   }
 ];
 

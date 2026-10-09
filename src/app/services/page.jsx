@@ -43,9 +43,7 @@ export default function ServicesPage() {
                 <li>Website build and conversion optimization</li>
                 <li>Google Business Profile takeover</li>
                 <li>Weekly content posted to Google</li>
-                <li>Review generation campaigns (SMS + email)</li>
                 <li>Every review replied to with keyword-rich responses</li>
-                <li>Monthly performance heat map</li>
                 <li>AI chatbot on website (powered by MinAI)</li>
                 <li>Lead capture form + CRM setup</li>
               </ul>
@@ -72,7 +70,8 @@ export default function ServicesPage() {
               <h3>Content</h3>
               <ul className="tier-list">
                 <li>Social media content (Meta, LinkedIn, Instagram, TikTok)</li>
-                <li>Email marketing campaigns and newsletters</li>
+                <li>Client reactivation campaigns via email marketing</li>
+                <li>Review generation campaigns (SMS + email)</li>
                 <li>Reviews transformed into short-form video</li>
                 <li>Carousels and infographics</li>
                 <li>Written posts and feature stories</li>
