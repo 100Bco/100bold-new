@@ -70,7 +70,7 @@ export default function ServicesPage() {
               <h3>Content</h3>
               <ul className="tier-list">
                 <li>Social media content (Meta, LinkedIn, Instagram, TikTok)</li>
-                <li>Email marketing campaigns and newsletters</li>
+                <li>Client reactivation campaigns via email marketing</li>
                 <li>Review generation campaigns (SMS + email)</li>
                 <li>Reviews transformed into short-form video</li>
                 <li>Carousels and infographics</li>
