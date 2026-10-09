@@ -31,8 +31,8 @@ export default function WhyUs() {
           </div>
           <div className="why-card">
             <div className="why-num">03</div>
-            <h3>Google + LinkedIn System</h3>
-            <p>Proven playbooks that deliver consistently at scale.</p>
+            <h3>Full-Stack Growth System</h3>
+            <p>SEO, Paid Ads, Content, and LinkedIn CEO Authority — four proven products that compound at scale.</p>
           </div>
         </div>
         <div className="why-cta rv rv-d3">
