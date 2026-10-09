@@ -75,10 +75,10 @@ const localBusinessSchema = {
     '@type': 'OfferCatalog',
     name: 'Services',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Google Domination', description: 'Full Google Business Profile takeover — optimization, weekly content, review generation, local SEO, AI chatbot installation.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO', description: 'SEO strategy, website build, and full Google Business Profile takeover — local SEO, review generation, weekly content, AI chatbot installation.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paid Ads', description: 'Google Ads, Meta Ads, and ChatGPT Ads campaigns layered on an established organic foundation for maximum ROI.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Content', description: 'High-converting social media content (Meta, LinkedIn, Instagram, TikTok) and email marketing — posted on schedule.' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'LinkedIn CEO Authority', description: 'Complete LinkedIn profile management for CEOs and founders — strategy, ghostwriting, engagement, and network growth.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Social Media Content', description: 'High-converting content across Meta, LinkedIn, Instagram, TikTok, and more.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paid Ads', description: 'Google and Meta ad campaigns layered on established organic foundation for maximum ROI.' } },
     ],
   },
 }
@@ -114,10 +114,10 @@ export default function RootLayout({ children }) {
             <p>100Bold is a growth agency for established Texas service businesses and founders based in Austin, Texas. We dominate Google, build LinkedIn CEO authority, and install AI infrastructure powered by MinAI.</p>
             <h2>Our Services</h2>
             <ul>
-              <li>Google Domination — Full Google Business Profile takeover, local SEO, review generation, weekly content</li>
+              <li>SEO — SEO strategy, website build, Google Business Profile takeover, local SEO, review generation, weekly content</li>
+              <li>Paid Ads — Google Ads, Meta Ads, and ChatGPT Ads campaigns layered on organic foundation</li>
+              <li>Content — Social media content across Meta, LinkedIn, Instagram, TikTok, plus email marketing</li>
               <li>LinkedIn CEO Authority — Complete LinkedIn profile management for CEOs and founders, ghostwriting, engagement</li>
-              <li>Social Media Content — High-converting content across Meta, LinkedIn, Instagram, TikTok</li>
-              <li>Paid Ads — Google and Meta campaigns layered on organic foundation</li>
             </ul>
             <h2>Industries We Serve</h2>
             <ul>
