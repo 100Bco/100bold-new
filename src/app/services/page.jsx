@@ -3,7 +3,7 @@ import WaveDivider from '@/components/WaveDivider'
 import ServicesHeroGraphic from '@/components/ServicesHeroGraphic'
 
 export const metadata = {
-  title: 'Services — 100Bold | Google Domination & LinkedIn CEO Authority',
+  title: 'Services — 100Bold | SEO, Paid Ads, Content & LinkedIn Authority',
 }
 
 export default function ServicesPage() {
@@ -13,8 +13,8 @@ export default function ServicesPage() {
         <div className="mx">
           <div className="about-hero-grid">
             <div>
-              <h1 className="rv vis">Two Products.<br/><span className="accent">Zero Fluff.</span></h1>
-              <p className="page-hero-body rv vis rv-d2">We offer two distinct, standalone products. Each stands on its own value.</p>
+              <h1 className="rv vis">Four Products.<br/><span className="accent">Zero Fluff.</span></h1>
+              <p className="page-hero-body rv vis rv-d2">We offer four distinct, standalone products. Each stands on its own value.</p>
             </div>
             <div className="about-hero-visual rv vis rv-d2">
               <ServicesHeroGraphic />
@@ -23,7 +23,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Google Domination */}
+      {/* Growth Services */}
       <WaveDivider from="#FEFCF9" to="#1A1816" variant="wave" />
       <section className="svc-detail" style={{background: 'var(--dark)', color: '#fff', padding: 'var(--gap) 0', position: 'relative'}}>
         {/* Cross/plus - white on dark */}
@@ -31,16 +31,17 @@ export default function ServicesPage() {
           <path d="M25 5v40M5 25h40" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"/>
         </svg>
         <div className="mx">
-          <h2 className="svc-title rv">Google <span className="accent">Domination.</span></h2>
-          <p className="svc-intro rv rv-d2">Your Google Business Profile is your most important digital asset. We treat it like one.</p>
+          <h2 className="svc-title rv">Growth <span className="accent">Services.</span></h2>
+          <p className="svc-intro rv rv-d2">Three products that get $5M+ service businesses found, chosen, and remembered.</p>
 
           <div className="tier-grid rv rv-d2">
             <div className="tier-card">
-              <div className="tier-label">Tier 1</div>
-              <h3>Google Domination</h3>
-              <div className="tier-price" style={{display: 'none'}}>$4,000<span>/month</span></div>
+              <div className="tier-label">01</div>
+              <h3>SEO</h3>
               <ul className="tier-list">
-                <li>Full Google profile optimization</li>
+                <li>SEO strategy &amp; on-page optimization</li>
+                <li>Website build and conversion optimization</li>
+                <li>Google Business Profile takeover</li>
                 <li>Weekly content posted to Google</li>
                 <li>Review generation campaigns (SMS + email)</li>
                 <li>Every review replied to with keyword-rich responses</li>
@@ -48,34 +49,36 @@ export default function ServicesPage() {
                 <li>AI chatbot on website (powered by MinAI)</li>
                 <li>Lead capture form + CRM setup</li>
               </ul>
-              <p className="tier-best">Best for: Towing, HVAC, plumbing, roofing — where customers go straight to Google.</p>
+              <p className="tier-best">Best for: Local service businesses — HVAC, plumbing, roofing, law — where customers go straight to Google.</p>
             </div>
 
             <div className="tier-card tier-featured">
-              <div className="tier-label">Tier 2</div>
-              <h3>Google + Social Content</h3>
-              <div className="tier-price" style={{display: 'none'}}>$6,500–7,000<span>/month</span></div>
+              <div className="tier-label">02</div>
+              <h3>Paid Ads</h3>
               <ul className="tier-list">
-                <li>Everything in Tier 1</li>
+                <li>Google Ads campaign management</li>
+                <li>Meta Ads (Facebook &amp; Instagram)</li>
+                <li>ChatGPT Ads — the emerging high-intent channel</li>
+                <li>Layered on organic/SEO foundation only</li>
+                <li>Organic ranking reduces cost-per-click</li>
+                <li>Full creative, targeting, and conversion tracking</li>
+                <li>Never run ads before organic is established</li>
+              </ul>
+              <p className="tier-best">Best for: Clients with solid organic foundation ready to accelerate paid acquisition.</p>
+            </div>
+
+            <div className="tier-card">
+              <div className="tier-label">03</div>
+              <h3>Content</h3>
+              <ul className="tier-list">
+                <li>Social media content (Meta, LinkedIn, Instagram, TikTok)</li>
+                <li>Email marketing campaigns and newsletters</li>
                 <li>Reviews transformed into short-form video</li>
                 <li>Carousels and infographics</li>
                 <li>Written posts and feature stories</li>
                 <li>Content posted on schedule — no approval delays</li>
               </ul>
-              <p className="tier-best">Best for: Businesses with a social presence that want it fed consistently.</p>
-            </div>
-
-            <div className="tier-card">
-              <div className="tier-label">Tier 3</div>
-              <h3>Paid Ads</h3>
-              <div className="tier-price" style={{display: 'none'}}>Custom</div>
-              <ul className="tier-list">
-                <li>Google Ads and/or Meta Ads</li>
-                <li>Layered on organic foundation only</li>
-                <li>Organic ranking reduces cost-per-click</li>
-                <li>Never run ads before organic is established</li>
-              </ul>
-              <p className="tier-best">Best for: Clients with solid organic foundation ready to accelerate.</p>
+              <p className="tier-best">Best for: Businesses with a brand presence that want it fed consistently across channels.</p>
             </div>
           </div>
         </div>

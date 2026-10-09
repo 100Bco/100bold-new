@@ -3,16 +3,16 @@
 import { useState } from 'react'
 
 const services = [
-  { id: 'gbp', title: 'Google Domination', desc: 'Rank top in local search. Drive high-intent leads directly to your calendar.', img: '/works/GIF 1.gif' },
+  { id: 'seo', title: 'SEO', desc: 'Rank top in local search. Dominate Google Business Profile. Build web infrastructure that converts.', img: '/works/GIF 1.gif' },
+  { id: 'ads', title: 'Paid Ads', desc: 'Google, Meta, and ChatGPT campaigns that turn ad spend into scalable revenue.', img: '/works/GIF 4.gif' },
+  { id: 'content', title: 'Content', desc: 'Social and email content that keeps your brand top of mind — posted on schedule, no approval delays.', img: '/works/GIF 3.gif' },
   { id: 'linkedin', title: 'LinkedIn CEO Authority', desc: 'Position you as an industry titan. Build trust and generate premium B2B pipelines.', img: '/works/GIF 2.gif' },
-  { id: 'social', title: 'Social Media Content', desc: 'High-converting content across Meta, LinkedIn, Instagram, TikTok, and more.', img: '/works/GIF 3.gif' },
-  { id: 'ads', title: 'Paid Ads', desc: 'Meta and Google campaigns that turn ad spend into scalable revenue.', img: '/works/GIF 4.gif' },
 ]
 
-const colors = { gbp: '#C8102E', linkedin: '#0A66C2', social: '#E8443A', ads: '#1A1816' }
+const colors = { seo: '#C8102E', ads: '#1A1816', content: '#E8443A', linkedin: '#0A66C2' }
 
 export default function Services() {
-  const [active, setActive] = useState('gbp')
+  const [active, setActive] = useState('seo')
 
   return (
     <section className="services-section" id="services" style={{position: 'relative'}}>
