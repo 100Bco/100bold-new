@@ -10,7 +10,7 @@ import './globals.css'
 import '@/styles/kinetic.css'
 import '@/styles/home.css'
 import '@/styles/hero-stream.css'
-import '@/styles/run-doors.css'
+import '@/styles/run-dial.css'
 
 const POSITIONING = '100Bold is a growth agency for $5M+ service businesses. We get you found on Google and in AI search, turn ad spend into signed clients and booked jobs, and make your CEO the best-known name in your market.'
 
@@ -108,7 +108,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body>
         <SmoothScroll />
