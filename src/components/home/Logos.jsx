@@ -8,7 +8,7 @@ const Set = () => (
   <div className="xl-set">
     {logos.items.map((l) => (
       <div className="xl-cell" key={l.name}>
-        {l.src ? <img src={l.src} alt={l.name} loading="lazy" /> : <span className="xl-word">{l.name}</span>}
+        <img src={l.src} alt={l.name} width={l.w} height={l.h} style={{ width: l.w, height: l.h }} loading="lazy" />
       </div>
     ))}
   </div>

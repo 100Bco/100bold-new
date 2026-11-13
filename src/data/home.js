@@ -25,11 +25,11 @@ export const router = {
 export const logos = {
   label: 'Trusted by service businesses across Texas and beyond',
   items: [
-    { name: 'Dang Law Group' },
-    { name: 'LT Commercial Group', src: '/LT Commercial group logo.png' },
-    { name: 'T98 Rehab', src: '/t98-rehab-red-logo-400x299.png' },
-    { name: 'Bee Construction', src: '/Bee Con Logo.png' },
-    { name: 'Dacy Business Park', src: '/Logo Dacy.jpg' },
+    { name: 'Dang Law Group', src: '/logos/dang-law-group.png', w: 94, h: 80 },
+    { name: 'LT Commercial Group', src: '/logos/lt-commercial.png', w: 51, h: 80 },
+    { name: 'T98 Rehab', src: '/logos/t98.png', w: 101, h: 75 },
+    { name: 'Bee Construction', src: '/logos/bee-construction.png', w: 112, h: 68 },
+    { name: 'Dacy Business Park', src: '/logos/dacy.png', w: 160, h: 47 },
   ],
 }
 
