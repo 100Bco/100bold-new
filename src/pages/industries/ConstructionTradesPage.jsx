@@ -1,6 +1,6 @@
 import IndustryPageTemplate from './IndustryPageTemplate'
 
-export default function ConstructionPage() {
+export default function ConstructionTradesPage() {
   const data = {
     label: 'GENERAL CONTRACTORS, BUILDERS, CONSTRUCTION',
     lottie: '/repair-tools-red.json',

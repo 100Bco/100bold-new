@@ -44,7 +44,7 @@ What they want: More calls, more jobs, less marketing complexity.
 What we do: We take over your Google presence completely. More reviews, more visibility, more calls — hands-off.
 
 ### General Contractors & Construction
-URL: https://100bold.co/industries/construction
+URL: https://100bold.co/industries/construction-trades
 Commercial GCs, Residential Builders, Construction Firms.
 What they want: Consistent project pipeline and industry credibility.
 What we do: We dominate local search so the right projects find you. Your digital authority becomes your competitive edge.
@@ -56,19 +56,19 @@ What they want: Credibility and deal flow from the right relationships.
 What we do: We build your digital authority and put you in front of the people that matter.
 
 ### Personal Injury Law Firms
-URL: https://100bold.co/industries/law-firms
+URL: https://100bold.co/industries/personal-injury-law-firms
 PI Attorneys, Trial Lawyers.
 What they want: Signed cases before competitors answer the phone.
 What we do: We build the review engine and lead funnel. Voice AI answers every call. You get warm leads, not cold ones.
 
 ### PI Chiropractors & Rehab Clinics
-URL: https://100bold.co/industries/rehab-chiro
+URL: https://100bold.co/industries/pi-medical-providers
 Personal Injury Chiropractors, Rehabilitation Centers.
 What they want: More PI referrals, stronger Google presence.
 What we do: We dominate your Google profile and generate the reviews that make attorneys refer to you first.
 
 ### Plumbing, Roofing & Trades
-URL: https://100bold.co/industries/plumbing-roofing
+URL: https://100bold.co/industries/construction-trades
 Plumbers, Roofers, HVAC Specialists, Electricians.
 What they want: Own every local search in your area.
 What we do: When someone in your city searches for what you do, they find you first. Every time.
@@ -171,14 +171,12 @@ Every 100Bold client gets MinAI from day one. No extra cost.
 - About: https://100bold.co/about
 - Industries: https://100bold.co/industries
 - Local Services: https://100bold.co/industries/local-services
-- Construction: https://100bold.co/industries/construction
+- Construction: https://100bold.co/industries/construction-trades
 - Real Estate: https://100bold.co/industries/real-estate
-- Law Firms: https://100bold.co/industries/law-firms
-- Rehab & Chiro: https://100bold.co/industries/rehab-chiro
-- Plumbing & Roofing: https://100bold.co/industries/plumbing-roofing
+- Law Firms: https://100bold.co/industries/personal-injury-law-firms
+- Rehab & Chiro: https://100bold.co/industries/pi-medical-providers
 - Services: https://100bold.co/services
 - Work: https://100bold.co/work
-- MinAI: https://100bold.co/minai
 - Contact: https://100bold.co/contact
 
 ---

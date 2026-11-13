@@ -1,6 +1,6 @@
 import IndustryPageTemplate from './IndustryPageTemplate'
 
-export default function RehabChiroPage() {
+export default function PIMedicalPage() {
   const data = {
     label: 'PI CHIROPRACTORS, REHABILITATION CENTERS',
     lottie: '/wheelchair-insurance-red.json',

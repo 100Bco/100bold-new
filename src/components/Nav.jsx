@@ -1,87 +1,127 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-const industryLinks = [
-  { path: '/industries/local-services', name: 'Local Services' },
-  { path: '/industries/construction', name: 'Construction' },
-  { path: '/industries/real-estate', name: 'Real Estate' },
-  { path: '/industries/law-firms', name: 'Law Firms' },
-  { path: '/industries/rehab-chiro', name: 'Rehab & Chiro' },
-  { path: '/industries/plumbing-roofing', name: 'Plumbing & Roofing' },
+export const serviceLinks = [
+  { path: '/services/seo-ai-search', name: 'SEO and AI Search' },
+  { path: '/services/web-design', name: 'Web design' },
+  { path: '/services/meta-ads', name: 'Meta ads' },
 ]
+
+export const industryLinks = [
+  { path: '/industries/personal-injury-law-firms', name: 'Personal injury law firms' },
+  { path: '/industries/pi-medical-providers', name: 'PI medical providers' },
+  { path: '/industries/real-estate', name: 'Real estate' },
+  { path: '/industries/construction-trades', name: 'Construction and trades' },
+  { path: '/industries/local-services', name: 'Local services' },
+]
+
+const aboutLinks = [
+  { path: '/about', name: 'About 100Bold' },
+  { path: '/insights', name: 'Insights' },
+  { path: '/contact', name: 'Contact' },
+]
+
+const menu = [
+  { name: 'Services', path: '/services', children: serviceLinks },
+  { name: 'Industries', path: '/industries', children: industryLinks },
+  { name: 'Work', path: '/work' },
+  { name: 'Portal', path: '/portal' },
+  { name: 'The Mark', path: '/the-mark', tag: 'For CEOs' },
+  { name: 'About', path: '/about', children: aboutLinks, match: ['/about', '/insights', '/contact'] },
+]
+
+const Chevron = () => (
+  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 4l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+)
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
-  const [dropOpen, setDropOpen] = useState(false)
+  const [open, setOpen] = useState(null)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const location = useLocation()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => { setDropOpen(false); setMobileOpen(false) }, [location.pathname])
+  useEffect(() => { setOpen(null); setMobileOpen(false) }, [pathname])
 
-  const isActive = (path) => location.pathname === path
-  const isIndustryActive = location.pathname.startsWith('/industries')
+  useEffect(() => {
+    document.documentElement.classList.toggle('nav-locked', mobileOpen)
+  }, [mobileOpen])
+
+  const isActive = (item) => {
+    const paths = item.match || [item.path]
+    return paths.some(p => pathname === p || pathname.startsWith(p + '/'))
+  }
 
   return (
-    <div className={`nav-wrap${scrolled ? ' scrolled' : ''}`}>
-      <nav className="nav">
-        <Link to="/">
-          <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="nav-logo" />
+    <header className={`nk-nav-wrap${scrolled ? ' scrolled' : ''}${mobileOpen ? ' menu-open' : ''}`}>
+      <nav className="nk-nav" aria-label="Main">
+        <Link to="/" className="nk-logo" aria-label="100Bold home">
+          <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" />
         </Link>
 
-        {/* Desktop nav */}
-        <div className="nav-links">
-          <Link to="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
-          <Link to="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
-          <div className="nav-dropdown-wrap" onMouseEnter={() => setDropOpen(true)} onMouseLeave={() => setDropOpen(false)}>
-            <Link to="/industries" className={`nav-dropdown-trigger${isIndustryActive ? ' nav-active' : ''}`}>
-              Industries
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{marginLeft:4}}><path d="M2 4l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </Link>
-            {dropOpen && (
-              <div className="nav-dropdown">
-                {industryLinks.map(ind => (
-                  <Link key={ind.path} to={ind.path} className="nav-dropdown-item">{ind.name}</Link>
-                ))}
-              </div>
-            )}
-          </div>
-          <Link to="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
-          <Link to="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
-          <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
+        <ul className="nk-links">
+          {menu.map(item => (
+            <li
+              key={item.name}
+              className={`nk-item${item.children ? ' has-drop' : ''}${open === item.name ? ' open' : ''}`}
+              onMouseEnter={() => item.children && setOpen(item.name)}
+              onMouseLeave={() => item.children && setOpen(null)}
+            >
+              <Link to={item.path} className={`nk-link${isActive(item) ? ' active' : ''}`}>
+                <span>{item.name}</span>
+                {item.tag && <em className="nk-tag">{item.tag}</em>}
+                {item.children && <Chevron />}
+              </Link>
+              {item.children && (
+                <div className="nk-drop">
+                  {item.children.map(c => (
+                    <Link key={c.path} to={c.path} className={`nk-drop-item${pathname === c.path ? ' active' : ''}`}>
+                      {c.name}
+                      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <div className="nk-btns">
+          <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nk-login">Log In</a>
+          <Link to="/contact" className="nk-cta"><span data-text="Book a call">Book a call</span></Link>
         </div>
 
-        <div className="nav-btns">
-          <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nav-login">Log In</a>
-          <Link to="/contact" className="nav-cta">Contact</Link>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button className="nav-burger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-          <span className={`nav-burger-line${mobileOpen ? ' open' : ''}`}></span>
+        <button className="nk-burger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu" aria-expanded={mobileOpen}>
+          <span /><span />
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="nav-mobile">
-          <Link to="/" className={isActive('/') ? 'nav-active' : ''}>Home</Link>
-          <Link to="/about" className={isActive('/about') ? 'nav-active' : ''}>About</Link>
-          <Link to="/industries" className={isIndustryActive ? 'nav-active' : ''}>Industries</Link>
-          {industryLinks.map(ind => (
-            <Link key={ind.path} to={ind.path} className="nav-mobile-sub">{ind.name}</Link>
+      <div className="nk-mobile" aria-hidden={!mobileOpen}>
+        <div className="nk-mobile-inner">
+          {menu.map((item, i) => (
+            <div key={item.name} className="nk-m-group" style={{ '--i': i }}>
+              <Link to={item.path} className={`nk-m-link${isActive(item) ? ' active' : ''}`}>
+                {item.name}{item.tag && <em className="nk-tag">{item.tag}</em>}
+              </Link>
+              {item.children && (
+                <div className="nk-m-sub">
+                  {item.children.map(c => <Link key={c.path} to={c.path}>{c.name}</Link>)}
+                </div>
+              )}
+            </div>
           ))}
-          <Link to="/services" className={isActive('/services') ? 'nav-active' : ''}>Services</Link>
-          <Link to="/work" className={isActive('/work') ? 'nav-active' : ''}>Work</Link>
-          <Link to="/minai" className={isActive('/minai') ? 'nav-active' : ''}>MinAI</Link>
-          <Link to="/contact" className="nav-mobile-cta">Contact Us</Link>
+          <div className="nk-m-foot">
+            <Link to="/contact" className="nk-m-cta">Book a call</Link>
+            <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nk-m-login">Log In</a>
+          </div>
         </div>
-      )}
-    </div>
+      </div>
+    </header>
   )
 }

@@ -20,12 +20,11 @@ function LottieIcon({ src }) {
 }
 
 const industries = [
-  { name: 'Local Service Contractors', desc: 'HVAC, Plumbing, Electrical, Roofing, Solar, Painting, Pest Control', lottie: '/power-red.json', path: '/industries/local-services' },
-  { name: 'General Contractors & Construction', desc: 'Commercial GCs, Residential Builders, Construction Firms', lottie: '/repair-tools-red.json', path: '/industries/construction' },
+  { name: 'Personal Injury Law Firms', desc: 'PI Attorneys, Trial Lawyers', lottie: '/law-red.json', path: '/industries/personal-injury-law-firms' },
+  { name: 'PI Medical Providers', desc: 'Personal Injury Chiropractors, Rehabilitation Centers', lottie: '/wheelchair-insurance-red.json', path: '/industries/pi-medical-providers' },
   { name: 'Real Estate Developers', desc: 'Residential & Commercial Developers, Property Managers, Brokerages', lottie: '/building-red.json', path: '/industries/real-estate' },
-  { name: 'Personal Injury Law Firms', desc: 'PI Attorneys, Trial Lawyers', lottie: '/law-red.json', path: '/industries/law-firms' },
-  { name: 'PI Chiropractors & Rehab', desc: 'Personal Injury Chiropractors, Rehabilitation Centers', lottie: '/wheelchair-insurance-red.json', path: '/industries/rehab-chiro' },
-  { name: 'Plumbing, Roofing & Trades', desc: 'Plumbers, Roofers, HVAC Specialists, Electricians', lottie: '/hourse-red.json', path: '/industries/plumbing-roofing' },
+  { name: 'General Contractors & Construction', desc: 'Commercial GCs, Residential Builders, Construction Firms', lottie: '/repair-tools-red.json', path: '/industries/construction-trades' },
+  { name: 'Local Service Contractors', desc: 'HVAC, Plumbing, Electrical, Roofing, Solar, Painting, Pest Control', lottie: '/power-red.json', path: '/industries/local-services' },
 ]
 
 export default function IndustriesPage() {

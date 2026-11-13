@@ -1,6 +1,6 @@
 import IndustryPageTemplate from './IndustryPageTemplate'
 
-export default function LawFirmsPage() {
+export default function PILawFirmsPage() {
   const data = {
     label: 'PERSONAL INJURY ATTORNEYS, TRIAL LAWYERS',
     lottie: '/law-red.json',

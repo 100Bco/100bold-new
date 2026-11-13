@@ -4,41 +4,40 @@ import { useLocation } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
-import WaveDivider from './components/WaveDivider'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import IndustriesPage from './pages/IndustriesPage'
 import ServicesPage from './pages/ServicesPage'
 import WorkPage from './pages/WorkPage'
-import MinAIPage from './pages/MinAIPage'
 import ContactPage from './pages/ContactPage'
 import LocalServicesPage from './pages/industries/LocalServicesPage'
-import ConstructionPage from './pages/industries/ConstructionPage'
+import ConstructionTradesPage from './pages/industries/ConstructionTradesPage'
 import RealEstatePage from './pages/industries/RealEstatePage'
-import LawFirmsPage from './pages/industries/LawFirmsPage'
-import RehabChiroPage from './pages/industries/RehabChiroPage'
-import PlumbingRoofingPage from './pages/industries/PlumbingRoofingPage'
-
-function ScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
-  return null
-}
+import PILawFirmsPage from './pages/industries/PILawFirmsPage'
+import PIMedicalPage from './pages/industries/PIMedicalPage'
+import ComingSoonPage from './pages/ComingSoonPage'
+import SmoothScroll from './lib/SmoothScroll'
+import MobileCTA from './components/MobileCTA'
 
 const pageTitles = {
-  '/': '100Bold — Start Brave. Stay Bold.',
-  '/about': 'About Us — 100Bold | Operators, Not Marketers',
-  '/industries': 'Industries We Serve — 100Bold',
-  '/industries/local-services': 'Local Service Contractors — 100Bold | HVAC, Plumbing, Roofing',
-  '/industries/construction': 'General Contractors & Construction — 100Bold',
-  '/industries/real-estate': 'Real Estate Developers — 100Bold',
-  '/industries/law-firms': 'Personal Injury Law Firms — 100Bold',
-  '/industries/rehab-chiro': 'PI Chiropractors & Rehab Clinics — 100Bold',
-  '/industries/plumbing-roofing': 'Plumbing, Roofing & Trades — 100Bold',
-  '/services': 'Services — 100Bold | Google Domination & LinkedIn CEO Authority',
-  '/work': 'Work — 100Bold | Proven Results, Real Clients',
-  '/minai': 'MinAI — The Engine Behind 100Bold',
-  '/contact': 'Contact — 100Bold | Let\'s Talk',
+  '/': '100Bold | Growth Agency for $5M+ Service Businesses',
+  '/about': 'About 100Bold | Run by Operators',
+  '/industries': 'Industries We Serve | 100Bold',
+  '/industries/personal-injury-law-firms': 'Marketing for Personal Injury Law Firms | 100Bold',
+  '/industries/pi-medical-providers': 'Marketing for PI Medical Providers | 100Bold',
+  '/industries/real-estate': 'Real Estate Marketing | 100Bold',
+  '/industries/construction-trades': 'Construction and Trades Marketing | 100Bold',
+  '/industries/local-services': 'Local Services Marketing | 100Bold',
+  '/services': 'Services | SEO, AI Search, Meta Ads, Web Design | 100Bold',
+  '/services/seo-ai-search': 'AI SEO and Local SEO Services for Service Businesses | 100Bold',
+  '/services/web-design': 'Web Design for Law Firms, Clinics, and Contractors | 100Bold',
+  '/services/meta-ads': 'Meta Ads for Service Businesses | Facebook and Instagram | 100Bold',
+  '/portal': 'Portal | AI Video Production | 100Bold',
+  '/the-mark': 'The Mark | Done-for-You LinkedIn Growth for Founders and CEOs',
+  '/insights': 'Insights on AI Search, SEO, and Growth | 100Bold',
+  '/work': 'Client Results and Case Studies | 100Bold',
+  '/contact': 'Contact 100Bold | Book a Call',
+  '/privacy': 'Privacy | 100Bold',
 }
 
 function PageTitle() {
@@ -73,7 +72,7 @@ function RevealObserver() {
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <SmoothScroll />
       <PageTitle />
       <RevealObserver />
       <Nav />
@@ -81,19 +80,24 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/industries" element={<IndustriesPage />} />
-        <Route path="/industries/local-services" element={<LocalServicesPage />} />
-        <Route path="/industries/construction" element={<ConstructionPage />} />
+        <Route path="/industries/personal-injury-law-firms" element={<PILawFirmsPage />} />
+        <Route path="/industries/pi-medical-providers" element={<PIMedicalPage />} />
         <Route path="/industries/real-estate" element={<RealEstatePage />} />
-        <Route path="/industries/law-firms" element={<LawFirmsPage />} />
-        <Route path="/industries/rehab-chiro" element={<RehabChiroPage />} />
-        <Route path="/industries/plumbing-roofing" element={<PlumbingRoofingPage />} />
+        <Route path="/industries/construction-trades" element={<ConstructionTradesPage />} />
+        <Route path="/industries/local-services" element={<LocalServicesPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/seo-ai-search" element={<ComingSoonPage title="SEO and AI Search" />} />
+        <Route path="/services/web-design" element={<ComingSoonPage title="Web design" />} />
+        <Route path="/services/meta-ads" element={<ComingSoonPage title="Meta ads" />} />
+        <Route path="/portal" element={<ComingSoonPage title="Portal" />} />
+        <Route path="/the-mark" element={<ComingSoonPage title="The Mark" />} />
+        <Route path="/insights" element={<ComingSoonPage title="Insights" />} />
+        <Route path="/privacy" element={<ComingSoonPage title="Privacy" />} />
         <Route path="/work" element={<WorkPage />} />
-        <Route path="/minai" element={<MinAIPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
-      <WaveDivider from="var(--white)" to="#1A1816" variant="wave" />
       <Footer />
+      <MobileCTA />
       <Analytics />
     </BrowserRouter>
   )
