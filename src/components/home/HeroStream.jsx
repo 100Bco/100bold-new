@@ -61,16 +61,16 @@ export default function HeroStream() {
           return n.classList.contains('hs-sub') ? r.left + Math.min(r.width, 440) : r.right
         })) - pr.left
         const right = vw - vw * 0.014
-        const W = Math.min(vw * 0.66, vh * 1.3, (right - textRight - 16) / 1.02)
+        const W = Math.min(vw * 0.58, vh * 1.02, (right - textRight - 16) / 1.02) * 0.9
         // let the hero grow taller when the spiral needs it, so nothing is cut at the bottom
         pin.style.minHeight = Math.max(vh, W * 1.1 + 60) + 'px'
         // keep the text block centred in the first screen the visitor sees, not in the taller hero
         const ch = copy.offsetHeight
         pin.style.alignItems = 'flex-start'
-        pin.style.paddingTop = Math.max(110, (vh - ch) / 2 + 30) + 'px'
+        pin.style.paddingTop = Math.max(104, (vh - ch) / 2 + 36) + 'px'
         visual.style.width = W + 'px'
-        visual.style.left = right - W * 1.062 + 'px'
-        visual.style.top = Math.max(-40, pin.offsetHeight / 2 + 40 - W * 0.597) + 'px'
+        visual.style.left = right - W * 1.062 - vw * 0.01 + 'px'
+        visual.style.top = Math.max(-20, pin.offsetHeight / 2 + 40 - W * 0.597) + 'px'
       } else {
         visual.style.width = visual.style.left = visual.style.top = ''
         pin.style.minHeight = ''
@@ -192,8 +192,15 @@ export default function HeroStream() {
     })
   })
 
-  const pause = (i) => {
+  const [tip, setTip] = useState(null)
+  const pause = (i, el) => {
     setHover(i)
+    if (i !== null && el) {
+      const vr = el.closest('.hs-visual').getBoundingClientRect()
+      const r = el.getBoundingClientRect()
+      const left = r.left + r.width / 2 - vr.left < vr.width * 0.55
+      setTip({ side: left ? 'r' : 'l', x: (left ? r.right + 12 : r.left - 12) - vr.left, y: r.top + r.height / 2 - vr.top })
+    }
     tweens.current.forEach((t) => gsap.to(t, { timeScale: i === null ? 1 : 0, duration: 0.5, overwrite: true }))
   }
 
@@ -255,7 +262,7 @@ export default function HeroStream() {
                   key={c.k}
                   className={`hs-icon${hover === i ? ' on' : ''}`}
                   style={{ offsetPath: `path('${PATH}')`, offsetDistance: `${(i * 100) / channels.length}%` }}
-                  onMouseEnter={() => pause(i)}
+                  onMouseEnter={(e) => pause(i, e.currentTarget)}
                 >
                   <Link href={c.to} aria-label={`${c.name}: ${c.service}`}>{ic[c.k]}</Link>
                 </li>
@@ -263,7 +270,7 @@ export default function HeroStream() {
             </ul>
           </div>
 
-          <p className={`hs-hint${active ? ' show' : ''}`} aria-live="polite">
+          <p className={`hs-hint${active ? ' show' : ''} side-${tip ? tip.side : 'r'}`} style={tip ? { left: tip.x, top: tip.y } : undefined} aria-live="polite">
             {active && <><b>{active.name}</b><span>→</span><Link href={active.to}>{active.service}</Link></>}
           </p>
         </div>
