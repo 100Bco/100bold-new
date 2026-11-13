@@ -78,7 +78,7 @@
 @media (prefers-reduced-motion: reduce) { .hs-dot::before, .hs-dot::after { animation: none; } }
 
 /* growing tip of the stream during the intro */
-.hs-tip { position: absolute; left: -9px; top: -9px; width: 18px; height: 18px; border-radius: 50%; background: var(--red); opacity: 0; z-index: 2; box-shadow: 0 0 0 6px rgba(200,16,46,.15), 0 0 24px rgba(200,16,46,.6); }
+.hs-sweep-hand { stroke: var(--red); stroke-width: 1.5; stroke-linecap: round; opacity: 0; filter: drop-shadow(0 0 6px rgba(200,16,46,.6)); transition: opacity .3s; }
 
 /* the red thread that carries the dot into the next section */
 .hs-run { position: absolute; inset: 0; z-index: 6; pointer-events: none; }

@@ -72,36 +72,85 @@ export default function HeroStream() {
         return t
       })
 
-      // 1. INTRO — the dot drops in, then the stream grows out of it, planting each channel as it passes
+      // 1. INTRO — the dot drops in, then a radar-like sweep turns around the dot and uncovers
+      //    the ribbon turn by turn along its spiral; each channel pops out as the sweep passes it
       const paths = gsap.utils.toArray('.hs-ribbon path')
-      gsap.set(paths, { strokeDashoffset: -1 })
-      const tip = root.querySelector('.hs-tip')
-      const tipPath = root.querySelector('.hs-thread')
-      icons.forEach((el, i) => { el.style.offsetDistance = (i / n) * 100 + '%'; el.style.setProperty('--k', '0') })
+      const thread = root.querySelector('.hs-thread')
+      const sweepFill = root.querySelector('.hs-sweep-fill')
+      const sweepHand = root.querySelector('.hs-sweep-hand')
+      const L = thread.getTotalLength()
+      // sample the spiral from the dot outward: cumulative angle (0 = up, clockwise) and radius
+      const S = 240
+      const th = [], rr = [], ss = []
+      let prev = null, acc = 0
+      for (let j = 0; j <= S; j++) {
+        const sLen = L * (1 - j / S)
+        const pt = thread.getPointAtLength(sLen)
+        const dx = pt.x - DOT.x, dy = pt.y - DOT.y
+        if (Math.hypot(dx, dy) < 24) continue // inside the dot: no meaningful angle yet
+        let ang = (Math.atan2(dx, -dy) * 180) / Math.PI
+        if (prev !== null) {
+          let d = ang - prev
+          if (d > 180) d -= 360
+          if (d < -180) d += 360
+          acc += d
+        } else acc = ang
+        prev = ang
+        th.push(acc); rr.push(Math.hypot(dx, dy)); ss.push(sLen / L)
+      }
+      const t0 = th[0], t1 = th[th.length - 1]
+      const at = (deg) => {
+        const rad = (deg * Math.PI) / 180
+        return [Math.sin(rad), -Math.cos(rad)]
+      }
+      const sweep = { a: t0 }
       const planted = new Array(n).fill(false)
-      const grow = { v: 0 }
-      const onGrow = () => {
-        const g1 = grow.v
-        gsap.set(paths, { strokeDashoffset: g1 - 1 })
-        const head = 1 - g1 // the growing tip, measured from the outer end of the ribbon
-        const L = tipPath.getTotalLength()
-        const pt = tipPath.getPointAtLength(L * head)
-        tip.style.transform = 'translate(' + pt.x + 'px,' + pt.y + 'px)'
-        tip.style.opacity = g1 > 0.01 && g1 < 0.995 ? '1' : '0'
+      const iconAngle = icons.map((_, i) => {
+        const q = i / n
+        let best = 0
+        for (let j = 0; j < ss.length; j++) if (Math.abs(ss[j] - q) < Math.abs(ss[best] - q)) best = j
+        return th[best]
+      })
+      const onSweep = () => {
+        const a = sweep.a
+        let d = 'M' + DOT.x + ',' + DOT.y
+        let last = null
+        for (let j = 0; j < th.length && th[j] <= a; j++) {
+          const [ux, uy] = at(th[j])
+          const R = rr[j] + 70
+          d += ' L' + (DOT.x + ux * R).toFixed(1) + ',' + (DOT.y + uy * R).toFixed(1)
+          last = j
+        }
+        let hx = DOT.x, hy = DOT.y
+        if (last !== null && last < th.length - 1) {
+          const f = (a - th[last]) / (th[last + 1] - th[last] || 1)
+          const R = rr[last] + (rr[last + 1] - rr[last]) * f + 70
+          const [ux, uy] = at(a)
+          hx = DOT.x + ux * R; hy = DOT.y + uy * R
+          d += ' L' + hx.toFixed(1) + ',' + hy.toFixed(1)
+        }
+        sweepFill.setAttribute('d', d + ' Z')
+        sweepHand.setAttribute('x2', hx.toFixed(1))
+        sweepHand.setAttribute('y2', hy.toFixed(1))
+        sweepHand.style.opacity = a > t0 + 2 && a < t1 - 2 ? '1' : '0'
         icons.forEach((el, i) => {
-          const q = i / n
-          if (!planted[i] && head <= q + 0.005) {
+          if (!planted[i] && a >= iconAngle[i]) {
             planted[i] = true
+            const q = i / n
             const k = { v: 0 }
             gsap.to(k, { v: kOf(q), duration: 0.7, ease: 'back.out(2.2)', onUpdate: () => el.style.setProperty('--k', k.v.toFixed(3)) })
           }
         })
       }
+      icons.forEach((el, i) => { el.style.offsetDistance = (i / n) * 100 + '%'; el.style.setProperty('--k', '0') })
+      onSweep()
+
       const intro = gsap.timeline({ defaults: { ease: 'expo.out' }, delay: 0.2 })
       intro
         .fromTo('.hs-dot', { y: -520, scaleX: 0.8, scaleY: 1.2 }, { y: 0, scaleX: 1, scaleY: 1, duration: 1.3, ease: 'bounce.out' })
         .from('.hs-dot img', { scale: 0.3, opacity: 0, duration: 0.7 }, '-=0.35')
-        .to(grow, { v: 1, duration: 3.4, ease: 'power1.inOut', onUpdate: onGrow }, '-=0.2')
+        .to(sweep, { a: t1, duration: 3, ease: 'power1.inOut', onUpdate: onSweep }, '-=0.2')
+        .add(() => { sweepFill.setAttribute('d', 'M-200,-200 H900 V900 H-200 Z') })
         .add(() => tweens.current.forEach((t) => t.play()))
         .from('.hs-h1 .nk-line > span', { yPercent: 115, duration: 1.3, stagger: 0.09 }, 0.35)
         .from('.hs-sub, .hs-ctas', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, 0.8)
@@ -199,11 +248,16 @@ export default function HeroStream() {
                   <stop offset="1" stopColor="#C8102E" stopOpacity="0.28" />
                 </linearGradient>
               </defs>
-              <path d={PATH} pathLength="1" className="hs-band" stroke="url(#hs-band)" />
-              <path d={PATH} pathLength="1" className="hs-thread" />
+              <mask id="hs-sweep" maskUnits="userSpaceOnUse" x="-300" y="-300" width="1300" height="1300">
+                <path className="hs-sweep-fill" style={{ fill: "#fff", stroke: "none", strokeDasharray: "none" }} d="M-200,-200 H900 V900 H-200 Z" />
+              </mask>
+              <g mask="url(#hs-sweep)">
+                <path d={PATH} pathLength="1" className="hs-band" stroke="url(#hs-band)" />
+                <path d={PATH} pathLength="1" className="hs-thread" />
+              </g>
+              <line className="hs-sweep-hand" x1={DOT.x} y1={DOT.y} x2={DOT.x} y2={DOT.y} />
             </svg>
 
-            <i className="hs-tip" aria-hidden="true" />
             <div className="hs-dot" style={{ left: DOT.x, top: DOT.y }}>
               <img src="/100BOLD - OP3-09 (1).png" alt="" />
             </div>
