@@ -61,12 +61,15 @@ export default function HeroStream() {
           return n.classList.contains('hs-sub') ? r.left + Math.min(r.width, 440) : r.right
         })) - pr.left
         const right = vw - vw * 0.014
-        const W = Math.min(vw * 0.62, vh - 40, (right - textRight - 20) / 1.02)
+        const W = Math.min(vw * 0.66, vh * 1.3, (right - textRight - 16) / 1.02)
+        // let the hero grow taller when the spiral needs it, so nothing is cut at the bottom
+        pin.style.minHeight = Math.max(vh, W * 1.1 + 60) + 'px'
         visual.style.width = W + 'px'
         visual.style.left = right - W * 1.062 + 'px'
-        visual.style.top = Math.max(-40, pr.height / 2 + 46 - W * 0.597) + 'px'
+        visual.style.top = Math.max(-40, pin.offsetHeight / 2 + 40 - W * 0.597) + 'px'
       } else {
         visual.style.width = visual.style.left = visual.style.top = ''
+        pin.style.minHeight = ''
       }
       el.style.setProperty('--s', String(visual.clientWidth / 600))
     }
