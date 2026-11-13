@@ -51,33 +51,48 @@ export default function HeroStream() {
     const copy = ref.current.querySelector('.hs-copy')
     // desktop: make the spiral as large as the space right of the text allows,
     // its outer ring kept just inside the right edge of the screen
+    // loop extents in the 600-unit drawing (the part of the ribbon on screen, plus band and icon padding)
+    let ext = null
+    const extents = () => {
+      const th = ref.current.querySelector('.hs-thread')
+      const L = th.getTotalLength()
+      let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9
+      for (let i = 0; i <= 200; i++) {
+        const pt = th.getPointAtLength((L * i) / 200)
+        if (pt.x > 610) continue
+        x0 = Math.min(x0, pt.x); x1 = Math.max(x1, pt.x); y0 = Math.min(y0, pt.y); y1 = Math.max(y1, pt.y)
+      }
+      const pad = 40
+      return { x0: x0 - pad, x1: x1 + pad, y0: y0 - pad, y1: y1 + pad }
+    }
+    // desktop: the whole hero fits one screen; the spiral is as large as the screen height and the
+    // room right of the text allow, and the text block is centred on the spiral's vertical centre
     const place = () => {
       if (window.innerWidth > 960) {
+        if (!ext) ext = extents()
         const vw = document.documentElement.clientWidth, vh = window.innerHeight
-        const pr = pin.getBoundingClientRect()
-        // the spiral's widest part sits level with the headline and sub-line, so only they limit it
-        const textRight = Math.max(...[...copy.querySelectorAll('.hs-h1 .nk-line > span, .hs-sub')].map((n) => {
-          const r = n.getBoundingClientRect()
-          return n.classList.contains('hs-sub') ? r.left + Math.min(r.width, 440) : r.right
-        })) - pr.left
-        const right = vw - vw * 0.014
-        const W = Math.min(vw * 0.58, vh * 1.02, (right - textRight - 16) / 1.02) * 0.9
-        // let the hero grow taller when the spiral needs it, so nothing is cut at the bottom
-        pin.style.minHeight = Math.max(vh, W * 1.1 + 60) + 'px'
-        // keep the text block centred in the first screen the visitor sees, not in the taller hero
-        const ch = copy.offsetHeight
+        const nav = document.querySelector('.nk-nav')
+        const top = (nav ? nav.getBoundingClientRect().bottom : 90) + 18
+        const bottom = vh - 22
+        const cy = (top + bottom) / 2
+        pin.style.minHeight = vh + 'px'
         pin.style.alignItems = 'flex-start'
-        pin.style.paddingTop = Math.max(104, (vh - ch) / 2 + 36) + 'px'
+        const pr = pin.getBoundingClientRect()
+        const textRight = Math.max(...[...copy.querySelectorAll('.hs-h1 .nk-line > span, .hs-sub, .hs-proof')].map((n) => n.getBoundingClientRect().right)) - pr.left
+        const right = vw * 0.975
+        const k = Math.min((bottom - top) / (ext.y1 - ext.y0), (right - textRight - 28) / (ext.x1 - ext.x0))
+        const W = 600 * k
         visual.style.width = W + 'px'
-        visual.style.left = right - W * 1.062 - vw * 0.01 + 'px'
-        visual.style.top = Math.max(-20, pin.offsetHeight / 2 + 40 - W * 0.597) + 'px'
+        visual.style.left = right - ext.x1 * k + 'px'
+        visual.style.top = cy - ((ext.y0 + ext.y1) / 2) * k + 'px'
+        pin.style.paddingTop = Math.max(top, cy - copy.offsetHeight / 2) + 'px'
       } else {
         visual.style.width = visual.style.left = visual.style.top = ''
-        pin.style.minHeight = ''
-        pin.style.alignItems = pin.style.paddingTop = ''
+        pin.style.minHeight = pin.style.alignItems = pin.style.paddingTop = ''
       }
       el.style.setProperty('--s', String(visual.clientWidth / 600))
     }
+    document.fonts?.ready.then(() => place())
     place()
     const ro = new ResizeObserver(place)
     ro.observe(pin)

@@ -85,11 +85,12 @@
 
 /* ═══ Poster layout: one tight text block left, the spiral as large as possible right ═══ */
 .hs-hero { background: radial-gradient(50% 60% at 72% 56%, rgba(200,16,46,.09), transparent 70%), #FBF8F3; overflow: hidden; }
-.hs-pin { position: relative; min-height: 100vh; min-height: 100svh; padding: 110px 0 40px; display: flex; align-items: center; overflow: visible; }
+.hs-pin { position: relative; min-height: 100vh; min-height: 100svh; padding: 110px 0 20px; display: flex; align-items: center; overflow: hidden; }
 .hs-grid { display: block; width: 100%; position: static; }
-.hs-copy { position: relative; z-index: 5; width: min(37vw, 640px); }
+.hs-copy { position: relative; z-index: 5; width: min(36vw, 600px); }
 .hs-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: min(18px, 1.8vh); }
-.hs-h1 { font-size: clamp(40px, min(4.7vw, 8.4vh), 78px); line-height: .93; margin-bottom: min(24px, 2.4vh); }
+.hs-h1 { font-family: 'Inter Tight', 'Outfit', sans-serif; font-weight: 600; font-variation-settings: normal; letter-spacing: -.045em; font-size: clamp(38px, min(4.3vw, 7.4vh), 74px); line-height: .98; margin-bottom: min(22px, 2.4vh); }
+.hs-h1 em { font-style: normal; }
 .hs-sub { max-width: 440px; font-size: clamp(15px, 1.2vw, 18px); margin-bottom: min(24px, 2.4vh); }
 .hs-ctas { margin-bottom: min(30px, 3vh); }
 .hs-proof { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; border-top: 1px solid rgba(26,24,22,.14); max-width: 500px; }
