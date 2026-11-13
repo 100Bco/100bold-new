@@ -64,12 +64,17 @@ export default function HeroStream() {
         const W = Math.min(vw * 0.66, vh * 1.3, (right - textRight - 16) / 1.02)
         // let the hero grow taller when the spiral needs it, so nothing is cut at the bottom
         pin.style.minHeight = Math.max(vh, W * 1.1 + 60) + 'px'
+        // keep the text block centred in the first screen the visitor sees, not in the taller hero
+        const ch = copy.offsetHeight
+        pin.style.alignItems = 'flex-start'
+        pin.style.paddingTop = Math.max(110, (vh - ch) / 2 + 30) + 'px'
         visual.style.width = W + 'px'
         visual.style.left = right - W * 1.062 + 'px'
         visual.style.top = Math.max(-40, pin.offsetHeight / 2 + 40 - W * 0.597) + 'px'
       } else {
         visual.style.width = visual.style.left = visual.style.top = ''
         pin.style.minHeight = ''
+        pin.style.alignItems = pin.style.paddingTop = ''
       }
       el.style.setProperty('--s', String(visual.clientWidth / 600))
     }
