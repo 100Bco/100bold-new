@@ -1,0 +1,68 @@
+/* ═══════════ Hero — "The Red Dot" ═══════════ */
+.rd-hero { position: relative; background: var(--white); }
+.rd-pin { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 120px 0 28px; overflow: hidden; }
+.rd-copy { position: relative; z-index: 2; will-change: transform; }
+
+.rd-h1 {
+  font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-variation-settings: 'opsz' 144;
+  font-size: clamp(54px, 9vw, 168px); line-height: .94; letter-spacing: -.035em; color: var(--dark);
+  max-width: 13ch; margin-bottom: clamp(28px, 3.5vw, 48px);
+}
+.rd-w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .02em .08em; margin: 0 .1em -.08em 0; }
+.rd-w > span { display: inline-block; transition: color .5s var(--ease-out); }
+.rd-em > span, .rd-w:hover > span { color: var(--red); font-style: italic; }
+.rd-w:last-child { overflow: visible; }
+
+.rd-dot-slot { display: inline-block; position: relative; width: .2em; height: .2em; margin-left: .05em; vertical-align: baseline; }
+.rd-dot { position: absolute; inset: 0; border-radius: 50%; background: var(--red); }
+.rd-dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--red); opacity: 0; }
+.rd-dot.is-landed::after, .rd-hero:not(:has(.is-landed)) .rd-dot::after { animation: rd-breathe 2.8s var(--ease-out) infinite; }
+@keyframes rd-breathe { 0% { transform: scale(1); opacity: .45; } 80%, 100% { transform: scale(2.8); opacity: 0; } }
+
+.rd-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.rd-sub { font-size: clamp(16px, 1.35vw, 20px); line-height: 1.55; color: var(--text-2); max-width: 520px; }
+.rd-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.rd-ctas .nk-btn { white-space: nowrap; }
+.rd-services { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.rd-services a {
+  display: inline-block; padding: 8px 16px; border-radius: var(--r-pill); border: 1px solid rgba(26,24,22,.12);
+  font-size: 13px; font-weight: 600; color: var(--text-2); transition: all .4s var(--ease-out);
+}
+.rd-services a:hover { border-color: var(--red); background: var(--red); color: #fff; }
+
+.rd-proof-wrap { position: relative; z-index: 2; width: 100%; margin-top: clamp(28px, 4vh, 56px); }
+.rd-proof { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(26,24,22,.12); }
+.rd-proof li { padding: 18px 24px 0 0; display: flex; flex-direction: column; gap: 4px; }
+.rd-proof li + li { padding-left: 24px; border-left: 1px solid rgba(26,24,22,.12); }
+.rd-proof strong { font-family: var(--font-head); font-weight: 400; font-size: clamp(22px, 1.9vw, 30px); line-height: 1; text-transform: uppercase; }
+.rd-proof strong span { color: var(--red); }
+.rd-proof em { font-style: normal; font-size: 13px; color: var(--text-3); }
+
+/* inside the dot — static by default (no-JS / reduced motion), absolute when animated */
+.rd-inside {
+  background: var(--red); color: #fff; min-height: 100vh; min-height: 100svh;
+  display: grid; place-items: center; grid-template-rows: 1fr auto 1fr; padding: 100px 24px 48px; overflow: hidden;
+}
+.rd-tag { font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-style: italic; font-size: clamp(48px, 9vw, 160px); line-height: .9; letter-spacing: -.03em; width: 100%; max-width: var(--max); }
+.rd-tag-a { align-self: end; text-align: left; }
+.rd-tag-b { align-self: start; text-align: right; }
+.rd-film {
+  width: min(46vmin, 440px); aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #000;
+  box-shadow: 0 30px 80px rgba(0,0,0,.35); margin: -2vmin 0; position: relative; z-index: 1;
+}
+
+@media (max-width: 960px) {
+  .rd-pin { padding-top: 110px; }
+  .rd-h1 { font-size: clamp(48px, 13vw, 96px); }
+  .rd-row { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .rd-proof { grid-template-columns: 1fr; }
+  .rd-proof li, .rd-proof li + li { padding: 12px 0; border-left: none; border-bottom: 1px solid rgba(26,24,22,.1); }
+  .rd-proof strong { font-size: 20px; }
+  .rd-proof em { font-size: 12px; }
+  .rd-film { width: 70vw; }
+}
+@media (max-width: 480px) {
+  .rd-ctas .nk-btn { flex: 1; justify-content: center; }
+  .rd-services { margin-top: 20px; }
+  .rd-services a { padding: 7px 12px; font-size: 12px; }
+}

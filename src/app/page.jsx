@@ -1,4 +1,4 @@
-import HeroEverywhere from '@/components/home/HeroEverywhere'
+import HeroDot from '@/components/home/HeroDot'
 import Router from '@/components/home/Router'
 import Logos from '@/components/home/Logos'
 import WhatWeDo from '@/components/home/WhatWeDo'
@@ -26,7 +26,7 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <main id="main" className="nk-home">
-      <HeroEverywhere />
+      <HeroDot />
       <Router />
       <Logos />
       <WhatWeDo />
