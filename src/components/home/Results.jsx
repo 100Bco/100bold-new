@@ -2,62 +2,47 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { useGsap, gsap, MQ } from '@/lib/motion'
 import { work } from '@/data/home'
 import Arrow from './Arrow'
 
+const headline = [
+  { k: 'Top 3', u: "in Google's AI results for a target search" },
+  { k: '12 hrs', u: 'from launch to first lead closed' },
+  { k: '3 leads', u: 'for leasing within 24 hours of launch' },
+]
+
+/* Results, with names — three cards, each with its 16:10 case image and one big number */
 export default function Results() {
   const ref = useRef(null)
-  const track = useRef(null)
-
   useGsap(ref, (mm) => {
-    mm.add(MQ.motion, () => revealIn(ref.current))
-    mm.add(MQ.desktop, () => {
-      const dist = () => track.current.scrollWidth - window.innerWidth
-      const tween = gsap.to(track.current, {
-        x: () => -dist(), ease: 'none',
-        scrollTrigger: {
-          trigger: '.nk-hs-pin', start: 'top top', end: () => '+=' + dist(),
-          pin: true, scrub: 0.8, invalidateOnRefresh: true, anticipatePin: 1,
-        },
-      })
-      gsap.utils.toArray('.nk-case-img img').forEach((img) => {
-        gsap.fromTo(img, { xPercent: -8, scale: 1.15 }, {
-          xPercent: 8, ease: 'none',
-          scrollTrigger: { trigger: img.closest('.nk-case'), containerAnimation: tween, start: 'left right', end: 'right left', scrub: true },
-        })
-      })
-      gsap.to('.nk-hs-progress span', {
-        scaleX: 1, ease: 'none',
-        scrollTrigger: { trigger: '.nk-hs-pin', start: 'top top', end: () => '+=' + dist(), scrub: true },
-      })
+    mm.add(MQ.motion, () => {
+      gsap.from(ref.current.querySelectorAll('.xr-head > *'), { y: 40, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: ref.current, start: 'top 78%', once: true } })
+      gsap.from(ref.current.querySelectorAll('.xr-card'), { y: 90, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: 0.12, scrollTrigger: { trigger: ref.current.querySelector('.xr-grid'), start: 'top 85%', once: true } })
     })
   })
-
   return (
-    <section className="nk-results" ref={ref}>
-      <div className="nk-hs-pin">
-        <div className="mx nk-results-head">
-          <div className="nk-sec-head">
-            <span className="nk-index" data-reveal>03</span>
-            <Lines lines={[work.h2]} className="nk-h2" />
-          </div>
-          <Link href="/work" className="nk-link-arrow light" data-reveal><span>See all work</span><Arrow /></Link>
+    <section className="xr" ref={ref}>
+      <div className="mx">
+        <div className="xr-head">
+          <div className="xw-head"><span className="nk-index">03</span><h2 className="x-h2">{work.h2}<i className="x-dot" aria-hidden="true" /></h2></div>
+          <Link href="/work" className="nk-link-arrow"><span>See all work</span><Arrow /></Link>
         </div>
-        <div className="nk-hs-track" ref={track}>
-          {work.items.map((c) => (
-            <Link href={c.to} className="nk-case" key={c.to} data-cursor="View">
-              <div className="nk-case-img"><img src={c.img} alt={c.alt} loading="lazy" /></div>
-              <div className="nk-case-body">
-                <span className="nk-case-client">{c.client}, {c.industry}</span>
-                <h3>{c.result}</h3>
-                <p>{c.desc}</p>
-                <span className="nk-link-arrow light"><span>Read the case study</span><Arrow /></span>
-              </div>
+        <div className="xr-grid">
+          {work.items.map((c, i) => (
+            <Link href={c.to} className="xr-card" key={c.to} data-cursor="View">
+              <span className="xr-im"><img src={c.img} alt={c.alt} loading="lazy" /><span className="xr-tag">{c.industry}</span></span>
+              <span className="xr-bd">
+                <strong className="xr-k">{headline[i].k}</strong>
+                <span className="xr-u">{c.result}</span>
+                <span className="xr-ft">
+                  <span><b>{c.client}</b><em>{c.desc}</em></span>
+                  <span className="xr-go"><Arrow /></span>
+                </span>
+              </span>
             </Link>
           ))}
         </div>
-        <div className="mx"><div className="nk-hs-progress"><span /></div></div>
       </div>
     </section>
   )

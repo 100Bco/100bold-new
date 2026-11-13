@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="nk-f-word" aria-hidden="true">100BOLD</div>
+        <div className="nk-f-word" aria-hidden="true">100BOLD<span>.</span></div>
 
         <div className="nk-f-bottom">
           <span>&copy; 2026 100Bold Agency. Start Brave. Stay Bold.</span>

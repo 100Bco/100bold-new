@@ -2,41 +2,34 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { useGsap, gsap, MQ } from '@/lib/motion'
 import { portal } from '@/data/home'
-import Arrow from './Arrow'
 
+/* Portal — a cinema screen that grows toward full width as you scroll */
 export default function Portal() {
   const ref = useRef(null)
-
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
-      revealIn(ref.current)
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: '.nk-portal-stage', start: 'top 85%', end: 'center center', scrub: 1 },
+      gsap.from(ref.current.querySelectorAll('.xp-head > *'), { y: 40, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: ref.current, start: 'top 75%', once: true } })
+      gsap.fromTo(ref.current.querySelector('.xp-screen'), { scale: 0.78, borderRadius: 32 }, {
+        scale: 1, borderRadius: 18, ease: 'none',
+        scrollTrigger: { trigger: ref.current.querySelector('.xp-screen'), start: 'top 95%', end: 'center 55%', scrub: true },
       })
-      tl.fromTo('.nk-portal-frame', { clipPath: 'inset(18% 22% 18% 22% round 40px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none' })
-        .fromTo('.nk-portal-frame .nk-ph', { scale: 1.3 }, { scale: 1, ease: 'none' }, 0)
     })
   })
-
   return (
-    <section className="nk-portal nk-dark" ref={ref}>
-      <div className="nk-portal-stage">
-        <div className="nk-portal-frame">
-          <div className="nk-ph nk-ph-dark" role="img" aria-label={portal.imgAlt}>
-            <span className="nk-ph-tag">Dang-Man · image coming soon</span>
-          </div>
+    <section className="xp" ref={ref}>
+      <div className="mx">
+        <div className="xp-head">
+          <p className="x-eyebrow">{portal.eyebrow}</p>
+          <h2 className="x-h2">{portal.h2}<i className="x-dot" aria-hidden="true" /></h2>
+          <p className="xp-body">{portal.body}</p>
         </div>
-        <div className="nk-portal-copy mx">
-          <p className="nk-eyebrow" data-reveal>{portal.eyebrow}</p>
-          <Lines lines={['We built a law firm', 'its own superhero']} className="nk-h2 nk-h2-xl" />
-          <p className="nk-portal-body" data-reveal>{portal.body}</p>
-          <Link href="/portal" className="nk-btn nk-btn-white" data-magnetic="0.3" data-reveal="0.1">
-            <span className="nk-play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg></span>
-            {portal.cta}
-          </Link>
-        </div>
+        <Link href="/portal" className="xp-screen" aria-label={portal.cta} data-cursor="Play">
+          <img src="/works/DANG LAW GROUP.png" alt={portal.imgAlt} loading="lazy" />
+          <span className="xp-play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg></span>
+          <span className="xp-cta">{portal.cta} →</span>
+        </Link>
       </div>
     </section>
   )

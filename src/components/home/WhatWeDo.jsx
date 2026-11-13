@@ -1,54 +1,43 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
-import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { useGsap, gsap, MQ } from '@/lib/motion'
 import { services } from '@/data/home'
 import Arrow from './Arrow'
 
+/* What we do — dark list; the row you point at opens and its animation grows */
 export default function WhatWeDo() {
   const ref = useRef(null)
-
+  const [open, setOpen] = useState(0)
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
-      revealIn(ref.current)
-      const cards = gsap.utils.toArray('.nk-stack-card')
-      cards.forEach((card, i) => {
-        if (i === cards.length - 1) return
-        gsap.to(card.querySelector('.nk-stack-inner'), {
-          scale: 0.9, filter: 'brightness(0.8)', ease: 'none',
-          scrollTrigger: { trigger: cards[i + 1], start: 'top 65%', end: 'top 20%', scrub: true },
-        })
+      gsap.from(ref.current.querySelectorAll('.xw-head > *, .xw-row'), {
+        y: 50, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.07,
+        scrollTrigger: { trigger: ref.current, start: 'top 75%', once: true },
       })
     })
   })
-
   return (
-    <section className="nk-wwd" ref={ref} id="services">
+    <section className="xw" ref={ref} id="services">
       <div className="mx">
-        <div className="nk-sec-head">
-          <span className="nk-index" data-reveal>02</span>
-          <Lines lines={[services.h2]} className="nk-h2" />
+        <div className="xw-head">
+          <span className="nk-index">02</span>
+          <h2 className="x-h2">{services.h2}<i className="x-dot" aria-hidden="true" /></h2>
         </div>
-        <div className="nk-stack">
+        <ul className="xw-list">
           {services.items.map((s, i) => (
-            <article className="nk-stack-card" key={s.to} style={{ '--i': i }}>
-              <div className="nk-stack-inner">
-                <div className="nk-stack-copy">
-                  <span className="nk-stack-num">0{i + 1} / 0{services.items.length}</span>
-                  <h3><Link href={s.to}>{s.title}</Link></h3>
-                  <p>{s.desc}</p>
-                  <Link href={s.to} className="nk-link-arrow" aria-label={`Learn more about ${s.title}`}>
-                    <span>Learn more</span><Arrow />
-                  </Link>
-                </div>
-                <div className="nk-stack-media">
-                  <img src={s.gif} alt="" loading="lazy" />
-                </div>
+            <li key={s.to} className={'xw-row' + (open === i ? ' open' : '')} onMouseEnter={() => setOpen(i)} onFocus={() => setOpen(i)}>
+              <span className="xw-n">{String(i + 1).padStart(2, '0')}</span>
+              <h3 className="xw-t"><Link href={s.to}>{s.title}</Link></h3>
+              <div className="xw-d">
+                <p>{s.desc}</p>
+                <Link href={s.to} className="xw-more" aria-label={'Learn more about ' + s.title}>Learn more <Arrow /></Link>
               </div>
-            </article>
+              <span className="xw-g"><img src={s.gif} alt="" loading="lazy" /></span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )

@@ -2,59 +2,49 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { useGsap, gsap, MQ } from '@/lib/motion'
 import { founder } from '@/data/home'
 import Arrow from './Arrow'
 
+/* the three figures from Minh's own quote */
+const stats = [
+  { to: 4, suf: ' yrs', label: 'in private equity' },
+  { to: 1.6, suf: 'M', dec: 1, label: 'users on a marketing platform' },
+  { to: 36, suf: '', label: 'cafe franchise locations' },
+]
+
+/* Run by an operator — portrait, three numbers from the quote, and the closing line */
 export default function Founder() {
   const ref = useRef(null)
-
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
-      revealIn(ref.current)
-      gsap.fromTo('.nk-quote .qw', { opacity: 0.15 }, {
-        opacity: 1, stagger: 0.05, ease: 'none',
-        scrollTrigger: { trigger: '.nk-quote', start: 'top 80%', end: 'bottom 45%', scrub: true },
-      })
-      gsap.fromTo('.nk-founder-photo .nk-ph', { yPercent: -8 }, {
-        yPercent: 8, ease: 'none',
-        scrollTrigger: { trigger: '.nk-founder-photo', start: 'top bottom', end: 'bottom top', scrub: true },
+      gsap.from(ref.current.querySelectorAll('.xf-port, .xf-copy > *'), { y: 50, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: ref.current, start: 'top 72%', once: true } })
+      ref.current.querySelectorAll('.xf-num').forEach((el) => {
+        const o = { v: 0 }, to = +el.dataset.to, dec = +el.dataset.dec || 0
+        gsap.to(o, { v: to, duration: 1.8, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true }, onUpdate: () => { el.textContent = o.v.toFixed(dec) } })
       })
     })
   })
-
-  const words = []
-  founder.quote.forEach((part, pi) => {
-    const hl = typeof part !== 'string'
-    const text = hl ? part.hl : part
-    text.split(/(\s+)/).forEach((w, wi) => {
-      if (!w) return
-      if (/^\s+$/.test(w)) { words.push(w); return }
-      words.push(<span key={`${pi}-${wi}`} className={`qw${hl ? ' hl' : ''}`}>{w}</span>)
-    })
-  })
-
   return (
-    <section className="nk-founder" ref={ref}>
-      <div className="mx nk-founder-grid">
-        <div className="nk-founder-photo" data-reveal>
-          <div className="nk-ph" role="img" aria-label={founder.imgAlt}>
-            <span className="nk-ph-tag">Minh Mac · photo coming soon</span>
-          </div>
+    <section className="xf" ref={ref}>
+      <div className="mx xf-grid">
+        <div className="xf-port">
+          <span className="xf-badge">Founder</span>
+          <div className="xf-ph" role="img" aria-label={founder.imgAlt}><span>Minh Mac · photo</span></div>
+          <div className="xf-nm"><div><b>Minh Mac</b><span>Founder, 100Bold</span></div><Link href="/about" className="nk-link-arrow light"><span>{founder.cta}</span><Arrow /></Link></div>
         </div>
-        <div className="nk-founder-copy">
-          <div className="nk-sec-head">
-            <span className="nk-index" data-reveal>04</span>
-            <Lines lines={[founder.h2]} className="nk-h2" />
-          </div>
-          <blockquote className="nk-quote">
-            <span className="nk-qmark" aria-hidden="true">“</span>
-            <p>{words}</p>
-          </blockquote>
-          <div className="nk-founder-foot" data-reveal>
+        <div className="xf-copy">
+          <p className="x-eyebrow">{founder.h2}</p>
+          <h2 className="x-h2">{founder.h2}<i className="x-dot" aria-hidden="true" /></h2>
+          <ul className="xf-stats">
+            {stats.map((s) => (
+              <li key={s.label}><b><span className="xf-num" data-to={s.to} data-dec={s.dec || 0}>{s.dec ? s.to.toFixed(s.dec) : s.to}</span>{s.suf}</b><span>{s.label}</span></li>
+            ))}
+          </ul>
+          <blockquote className="xf-q">
+            <p>“{founder.quote.map((p) => (typeof p === 'string' ? p : p.hl)).join('')}”</p>
             <cite>{founder.who}</cite>
-            <Link href="/about" className="nk-link-arrow"><span>{founder.cta}</span><Arrow /></Link>
-          </div>
+          </blockquote>
         </div>
       </div>
     </section>
