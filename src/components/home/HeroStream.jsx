@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useGsap, gsap, ScrollTrigger, MQ } from '@/lib/motion'
+import { useGsap, gsap, MQ } from '@/lib/motion'
 import { hero } from '@/data/home'
 import Arrow from './Arrow'
 
@@ -55,40 +55,88 @@ export default function HeroStream() {
 
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
+      const root = ref.current
+      const pin = root.querySelector('.hs-pin')
+      const dotEl = root.querySelector('.hs-dot')
+      const flood = root.querySelector('.hs-flood')
       const icons = gsap.utils.toArray('.hs-icon')
-      tweens.current = icons.map((el, i) =>
-        gsap.fromTo(el, { offsetDistance: '0%' }, {
-          offsetDistance: '100%', duration: LOOP, ease: 'none', repeat: -1,
-          delay: -(i * LOOP) / icons.length,
-          onUpdate() {
-            // fade in at the source, shrink into the dot at the end
-            const p = this.progress()
-            const k = p > 0.8 ? 1 - (p - 0.8) / 0.2 : p < 0.06 ? p / 0.06 : 1
-            el.style.setProperty('--k', k.toFixed(3))
-          },
+      const n = icons.length
+      const kOf = (p) => (p > 0.8 ? 1 - (p - 0.8) / 0.2 : p < 0.06 ? p / 0.06 : 1)
+
+      // the endless inward flow (created paused; it starts once the stream has burst out of the dot)
+      tweens.current = icons.map((el, i) => {
+        const t = gsap.fromTo(el, { offsetDistance: '0%' }, {
+          offsetDistance: '100%', duration: LOOP, ease: 'none', repeat: -1, paused: true,
+          onUpdate() { el.style.setProperty('--k', kOf(this.progress()).toFixed(3)) },
         })
-      )
+        t.progress(i / n)
+        return t
+      })
 
-      const intro = gsap.timeline({ defaults: { ease: 'expo.out' }, delay: 0.1 })
+      // 1. INTRO — the red dot appears, then the stream pours OUT of it and unfurls to full
+      gsap.set('.hs-ribbon path', { strokeDashoffset: -1 })
+      icons.forEach((el) => { el.style.offsetDistance = '100%'; el.style.setProperty('--k', '0') })
+      const intro = gsap.timeline({ defaults: { ease: 'expo.out' }, delay: 0.15 })
       intro
-        .from('.hs-h1 .nk-line > span', { yPercent: 115, duration: 1.3, stagger: 0.09 })
-        .from('.hs-sub, .hs-ctas', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, '-=0.9')
-        .from('.hs-ribbon path', { strokeDashoffset: 1, duration: 2, ease: 'power2.inOut' }, '-=1.2')
-        .from('.hs-dot', { scale: 0, duration: 1.1, ease: 'elastic.out(1, 0.55)' }, '-=1.6')
-        .from('.hs-icons', { opacity: 0, duration: 1 }, '-=1')
-        .from('.hs-proof li', { y: 30, opacity: 0, duration: 1, stagger: 0.08 }, '-=1')
+        .from('.hs-dot', { scale: 0, duration: 1.2, ease: 'elastic.out(1, 0.5)' })
+        .from('.hs-dot img', { scale: 0.4, opacity: 0, duration: 0.8 }, '-=0.8')
+        .to('.hs-ribbon path', { strokeDashoffset: 0, duration: 2.2, ease: 'power3.inOut', stagger: 0.12 }, '-=0.5')
+      icons.forEach((el, i) => {
+        const phase = i / n
+        const k = { v: 0 }
+        intro.to(el, { offsetDistance: phase * 100 + '%', duration: 1.9, ease: 'power3.out' }, 1.15 + (n - i) * 0.07)
+        intro.to(k, { v: kOf(phase), duration: 1.2, onUpdate: () => el.style.setProperty('--k', k.v.toFixed(3)) }, 1.25 + (n - i) * 0.07)
+      })
+      intro
+        .add(() => tweens.current.forEach((t) => t.play()))
+        .from('.hs-h1 .nk-line > span', { yPercent: 115, duration: 1.3, stagger: 0.09 }, 0.45)
+        .from('.hs-sub, .hs-ctas', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, 0.9)
+        .from('.hs-proof li', { y: 30, opacity: 0, duration: 1, stagger: 0.08 }, 1.4)
 
-      // scroll velocity makes the stream rush faster, then settle
-      const st = ScrollTrigger.create({
-        trigger: ref.current, start: 'top top', end: 'bottom top',
-        onUpdate: (self) => {
-          const v = Math.min(1 + Math.abs(self.getVelocity()) / 400, 5)
-          tweens.current.forEach((t) => gsap.timeline({ overwrite: true }).to(t, { timeScale: v, duration: 0.2 }).to(t, { timeScale: 1, duration: 1.2 }))
+      // 2. SCROLL — the stream is sucked back into the dot, then the dot floods the screen
+      let g = null
+      const geo = () => {
+        const pr = pin.getBoundingClientRect()
+        const dr = dotEl.getBoundingClientRect()
+        const x = dr.left + dr.width / 2 - pr.left
+        const y = dr.top + dr.height / 2 - pr.top
+        return { x, y, r: dr.width / 2, far: Math.hypot(Math.max(x, pr.width - x), Math.max(y, pr.height - y)) + 20 }
+      }
+      const vortex = { p: 0 }
+      const floodE = gsap.parseEase('power2.in')
+      function render() {
+        const rest = vortex.p < 0.01
+        if (!g || rest) g = geo()
+        const f = Math.max(0, (vortex.p - 0.45) / 0.55)
+        flood.style.clipPath = 'circle(' + (f <= 0 ? 0 : g.r + (g.far - g.r) * floodE(f)).toFixed(1) + 'px at ' + g.x.toFixed(1) + 'px ' + g.y.toFixed(1) + 'px)'
+      }
+      const tall = () => pin.offsetHeight > window.innerHeight + 4
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: pin, start: () => (tall() ? 'bottom bottom' : 'top top'), end: '+=200%',
+          pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true,
+          onRefresh: () => { g = null; render() },
+          onUpdate: (self) => {
+            // the flow itself speeds up as it is pulled in
+            const v = 1 + self.progress * 6
+            tweens.current.forEach((t) => t.timeScale(v))
+          },
         },
       })
-      gsap.to('.hs-dot', { scale: 1.6, ease: 'none', scrollTrigger: { trigger: ref.current, start: 'top top', end: 'bottom top', scrub: true } })
-      gsap.to('.hs-copy', { y: 90, opacity: 0.2, ease: 'none', scrollTrigger: { trigger: ref.current, start: 'top top', end: 'bottom top', scrub: true } })
-      return () => st.kill()
+      tl.to(vortex, { p: 1, duration: 1, ease: 'none', onUpdate: render }, 0)
+        .to(['.hs-icons', '.hs-ribbon'], { rotate: 220, scale: 0, ease: 'power2.in', duration: 0.5 }, 0)
+        .to('.hs-copy', { x: -60, opacity: 0, ease: 'power2.in', duration: 0.4 }, 0)
+        .to('.hs-proof', { y: 40, opacity: 0, ease: 'power2.in', duration: 0.3 }, 0)
+        .to('.hs-dot', { scale: 1.25, duration: 0.45, ease: 'power2.inOut' }, 0)
+        .from('.hs-flood-a', { xPercent: -30, opacity: 0, duration: 0.3, ease: 'expo.out' }, 0.72)
+        .from('.hs-flood-b', { xPercent: 30, opacity: 0, duration: 0.3, ease: 'expo.out' }, 0.78)
+        .from('.hs-flood-dot', { scale: 0, duration: 0.3, ease: 'back.out(3)' }, 0.85)
+        .to({}, { duration: 0.25 })
+
+      gsap.set(flood, { display: 'grid' })
+      const ro = new ResizeObserver(() => { g = null; render() })
+      ro.observe(pin)
+      return () => { ro.disconnect(); flood.style.clipPath = '' }
     })
   })
 
@@ -101,6 +149,7 @@ export default function HeroStream() {
 
   return (
     <section className="hs-hero" ref={ref}>
+      <div className="hs-pin">
       <div className="mx hs-grid">
         <div className="hs-copy">
           <h1 className="hs-h1">
@@ -148,7 +197,7 @@ export default function HeroStream() {
           </div>
 
           <p className={`hs-hint${active ? ' show' : ''}`} aria-live="polite">
-            {active ? <><b>{active.name}</b><span>→</span><Link href={active.to}>{active.service}</Link></> : <>Hover a channel to see the service</>}
+            {active && <><b>{active.name}</b><span>→</span><Link href={active.to}>{active.service}</Link></>}
           </p>
         </div>
       </div>
@@ -162,6 +211,13 @@ export default function HeroStream() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="hs-flood" aria-hidden="true">
+        <p className="hs-flood-a">{hero.tagline[0]}</p>
+        <i className="hs-flood-dot" />
+        <p className="hs-flood-b">{hero.tagline[1]}</p>
+      </div>
       </div>
     </section>
   )
