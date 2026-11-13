@@ -5,7 +5,7 @@ import Results from '@/components/home/Results'
 import Mark from '@/components/home/Mark'
 import Portal from '@/components/home/Portal'
 import Founder from '@/components/home/Founder'
-import Process from '@/components/home/Process'
+import ProcessGauge from '@/components/home/ProcessGauge'
 import Faq from '@/components/home/Faq'
 import Closing from '@/components/home/Closing'
 import { faq } from '@/data/home'
@@ -32,7 +32,7 @@ export default function HomePage() {
       <Mark />
       <Portal />
       <Founder />
-      <Process />
+      <ProcessGauge />
       <Faq />
       <Closing />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

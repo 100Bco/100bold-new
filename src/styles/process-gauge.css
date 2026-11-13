@@ -1,0 +1,33 @@
+/* ═══════════ How we work — speedometer ═══════════ */
+.pg { background: radial-gradient(55% 60% at 50% 72%, #2b1215 0%, #120f0e 65%); color: #fff; }
+.pg-pin { position: relative; height: 100vh; height: 100svh; display: flex; flex-direction: column; align-items: center; padding: clamp(84px, 11vh, 120px) 20px 24px; overflow: hidden; }
+.pg-head { display: flex; align-items: flex-start; gap: 16px; }
+.pg-h2 { font-family: 'Archivo', var(--font-body); font-weight: 800; letter-spacing: -.045em; font-size: clamp(44px, 5vw, 84px); line-height: .95; }
+.pg-dot { display: inline-block; width: .2em; height: .2em; border-radius: 50%; background: var(--red); margin-left: .04em; }
+.pg-stage { position: relative; flex: 1; width: 100%; min-height: 0; margin-top: 3vh; display: flex; flex-direction: column; align-items: center; }
+.pg-svg { flex: 1; min-height: 0; width: 100%; max-width: 980px; overflow: visible; }
+.pg-node circle { fill: #1c1917; stroke: rgba(255,255,255,.2); stroke-width: 2; transition: fill .4s, stroke .4s; }
+.pg-node g { stroke: rgba(255,255,255,.55); transition: stroke .4s; }
+.pg-node text { font: 800 20px 'Archivo', sans-serif; letter-spacing: -.02em; fill: rgba(255,255,255,.35); transition: fill .4s; }
+.pg-node.done circle { fill: #3a1219; stroke: var(--red); }
+.pg-node.done g { stroke: #ff6b83; }
+.pg-node.done text { fill: rgba(255,255,255,.7); }
+.pg-node.on circle { fill: var(--red); stroke: var(--red); }
+.pg-node.on g { stroke: #fff; }
+.pg-node.on text { fill: #fff; }
+.pg-center { width: min(520px, 92%); text-align: center; margin-top: -2vh; }
+.pg-in { animation: pg-in .55s var(--ease-out) both; }
+@keyframes pg-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.pg-num { font: 900 clamp(56px, 7vh, 84px) 'Archivo', sans-serif; letter-spacing: -.06em; line-height: .85; }
+.pg-num small { font: 700 18px var(--font-body); letter-spacing: 0; color: rgba(255,255,255,.35); }
+.pg-ttl { font: 800 clamp(28px, 3.4vh, 40px) 'Archivo', sans-serif; letter-spacing: -.04em; margin: 6px 0 8px; }
+.pg-dsc { color: rgba(255,255,255,.65); font-size: clamp(14px, 1.7vh, 16px); line-height: 1.5; min-height: 3em; }
+.pg-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 760px) {
+  .pg-pin { padding-top: 96px; }
+  .pg-stage { margin-top: 4vh; max-width: none; }
+  .pg-pin { padding-bottom: 110px; }
+  .pg-svg { flex: none; height: 46vh; }
+  .pg-node text { font-size: 30px; }
+  .pg-center { margin-top: 2vh; }
+}
