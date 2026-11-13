@@ -1,12 +1,38 @@
 {
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "redirects": [
-    { "source": "/industries/law-firms", "destination": "/industries/personal-injury-law-firms", "permanent": true },
-    { "source": "/industries/rehab-chiro", "destination": "/industries/pi-medical-providers", "permanent": true },
-    { "source": "/industries/construction", "destination": "/industries/construction-trades", "permanent": true },
-    { "source": "/industries/plumbing-roofing", "destination": "/industries/construction-trades", "permanent": true },
-    { "source": "/minai", "destination": "/services", "permanent": true }
+    {
+      "source": "/industries/law-firms",
+      "destination": "/industries/personal-injury-law-firms",
+      "permanent": true
+    },
+    {
+      "source": "/industries/rehab-chiro",
+      "destination": "/industries/pi-medical-providers",
+      "permanent": true
+    },
+    {
+      "source": "/industries/construction",
+      "destination": "/industries/construction-trades",
+      "permanent": true
+    },
+    {
+      "source": "/industries/plumbing-roofing",
+      "destination": "/industries/construction-trades",
+      "permanent": true
+    },
+    {
+      "source": "/minai",
+      "destination": "/services",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/((?!assets/|.*\\..*).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ]
 }
