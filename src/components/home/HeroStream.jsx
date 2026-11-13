@@ -9,6 +9,11 @@ import Arrow from './Arrow'
 /* The ribbon: drawn in a 600×600 box, enters from the top-right and spirals into the dot */
 const PATH = 'M 700 -40 C 560 60, 170 -10, 95 190 C 30 360, 210 560, 420 500 C 590 450, 600 250, 470 200 C 360 160, 250 230, 270 320 C 285 385, 340 375, 330 330'
 const DOT = { x: 330, y: 330 }
+// the same path stretched horizontally by ex around x = ox (used so the spiral can widen into free space)
+const stretchPath = (ex, ox) => {
+  let k = 0
+  return PATH.replace(/-?\d+(\.\d+)?/g, (m) => (k++ % 2 === 0 ? (ox - (ox - parseFloat(m)) * ex).toFixed(1) : m))
+}
 
 const ic = {
   google: <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>,
@@ -65,6 +70,16 @@ export default function HeroStream() {
       const pad = 40
       return { x0: x0 - pad, x1: x1 + pad, y0: y0 - pad, y1: y1 + pad }
     }
+    const stretch = (ex, ox) => {
+      const d = stretchPath(ex, ox)
+      ref.current.querySelectorAll('.hs-icon').forEach((li) => { li.style.offsetPath = "path('" + d + "')" })
+      const ribbon = ref.current.querySelector('.hs-ribbon')
+      ribbon.style.transformOrigin = ox + 'px 0'
+      ribbon.style.transform = ex === 1 ? '' : 'scaleX(' + ex + ')'
+      ribbon.style.setProperty('--ex', String(ex))
+      const dot = ref.current.querySelector('.hs-dot')
+      dot.style.left = ox - (ox - DOT.x) * ex + 'px'
+    }
     // desktop: the whole hero fits one screen; the spiral is as large as the screen height and the
     // room right of the text allow, and the text block is centred on the spiral's vertical centre
     const place = () => {
@@ -80,7 +95,11 @@ export default function HeroStream() {
         const pr = pin.getBoundingClientRect()
         const textRight = Math.max(...[...copy.querySelectorAll('.hs-h1 .nk-line > span, .hs-sub, .hs-proof')].map((n) => n.getBoundingClientRect().right)) - pr.left
         const right = vw * 0.975
-        const k = Math.min((bottom - top) / (ext.y1 - ext.y0), (right - textRight - 28) / (ext.x1 - ext.x0))
+        const room = right - textRight - 28
+        const k = Math.min((bottom - top) / (ext.y1 - ext.y0), room / (ext.x1 - ext.x0))
+        // widen the spiral (not taller) to fill the free space between the text and the spiral
+        const ex = Math.min(1.45, Math.max(1, room / ((ext.x1 - ext.x0) * k)))
+        stretch(ex, ext.x1)
         const W = 600 * k
         visual.style.width = W + 'px'
         visual.style.left = right - ext.x1 * k + 'px'
@@ -89,6 +108,7 @@ export default function HeroStream() {
       } else {
         visual.style.width = visual.style.left = visual.style.top = ''
         pin.style.minHeight = pin.style.alignItems = pin.style.paddingTop = ''
+        stretch(1, 600)
       }
       el.style.setProperty('--s', String(visual.clientWidth / 600))
     }

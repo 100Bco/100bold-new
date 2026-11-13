@@ -16,8 +16,11 @@
 .hs-box { position: absolute; left: 0; top: 0; width: 600px; height: 600px; transform: scale(var(--s, 1)); transform-origin: 0 0; }
 
 .hs-ribbon { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.hs-ribbon path { fill: none; stroke-dasharray: 1 1; stroke-dashoffset: 0; stroke-linecap: round; }
+.hs-ribbon path { fill: none; stroke-linecap: round; }
 .hs-band { stroke-width: 74; }
+.hs-ribbon path { vector-effect: non-scaling-stroke; }
+.hs-ribbon .hs-band { stroke-width: calc(74px * var(--s, 1)); }
+.hs-ribbon .hs-thread { stroke-width: 1.2px; }
 .hs-thread { stroke: rgba(200,16,46,.35); stroke-width: 1.2; }
 
 .hs-dot {
