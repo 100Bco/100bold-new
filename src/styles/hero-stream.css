@@ -80,10 +80,29 @@
 /* growing tip of the stream during the intro */
 .hs-sweep-hand { stroke: var(--red); stroke-width: 1.5; stroke-linecap: round; opacity: 0; filter: drop-shadow(0 0 6px rgba(200,16,46,.6)); transition: opacity .3s; }
 
-/* the red thread that carries the dot into the next section */
-.hs-run { position: absolute; inset: 0; z-index: 6; pointer-events: none; }
-.hs-run svg { position: absolute; left: 0; top: 0; width: 100%; overflow: visible; }
-.hs-run path { fill: none; stroke: var(--red); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; }
-.hs-runner { position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; border-radius: 50%; background: var(--red); opacity: 0; box-shadow: 0 0 0 5px rgba(200,16,46,.15); }
-.hs-pin { overflow: visible; }
-.hs-hero { overflow-x: clip; }
+
+/* ═══ Poster layout: one tight text block left, the spiral as large as possible right ═══ */
+.hs-hero { background: radial-gradient(50% 60% at 72% 56%, rgba(200,16,46,.09), transparent 70%), #FBF8F3; overflow: hidden; }
+.hs-pin { position: relative; min-height: 100vh; min-height: 100svh; padding: 110px 0 40px; display: flex; align-items: center; overflow: visible; }
+.hs-grid { display: block; width: 100%; position: static; }
+.hs-copy { position: relative; z-index: 5; width: min(37vw, 640px); }
+.hs-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 18px; }
+.hs-h1 { font-size: clamp(44px, 4.7vw, 78px); line-height: .93; margin-bottom: 24px; }
+.hs-sub { max-width: 440px; font-size: clamp(15px, 1.2vw, 18px); margin-bottom: 26px; }
+.hs-ctas { margin-bottom: 34px; }
+.hs-proof { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; border-top: 1px solid rgba(26,24,22,.14); max-width: 500px; }
+.hs-proof li { padding: 16px 18px 0 0; }
+.hs-proof li + li { padding-left: 18px; }
+.hs-proof strong { font-size: clamp(16px, 1.35vw, 21px); line-height: 1.05; }
+.hs-proof em { font-size: 12px; }
+.hs-visual { position: absolute; z-index: 1; margin: 0; max-width: none; justify-self: auto; width: 600px; left: 55%; top: 90px; }
+
+@media (max-width: 960px) {
+  .hs-pin { display: block; padding: 110px 0 32px; min-height: 0; }
+  .hs-copy { width: 100%; }
+  .hs-h1 { font-size: clamp(42px, 11vw, 72px); }
+  .hs-visual { position: relative; left: auto; top: auto; width: 112vw; margin: 8px 0 0 -8vw; }
+  .hs-proof { grid-template-columns: 1fr; margin-top: 4px; }
+  .hs-proof li, .hs-proof li + li { padding: 12px 0; border-left: none; border-bottom: 1px solid rgba(26,24,22,.1); }
+  .hs-ctas { margin-bottom: 24px; }
+}

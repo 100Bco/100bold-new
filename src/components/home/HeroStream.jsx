@@ -46,18 +46,40 @@ export default function HeroStream() {
   useEffect(() => {
     const el = box.current
     if (!el) return
-    const fit = () => el.style.setProperty('--s', String(el.parentElement.clientWidth / 600))
-    fit()
-    const ro = new ResizeObserver(fit)
-    ro.observe(el.parentElement)
-    return () => ro.disconnect()
+    const visual = el.parentElement
+    const pin = ref.current.querySelector('.hs-pin')
+    const copy = ref.current.querySelector('.hs-copy')
+    // desktop: make the spiral as large as the space right of the text allows,
+    // its outer ring kept just inside the right edge of the screen
+    const place = () => {
+      if (window.innerWidth > 960) {
+        const vw = document.documentElement.clientWidth, vh = window.innerHeight
+        const pr = pin.getBoundingClientRect()
+        // the spiral's widest part sits level with the headline and sub-line, so only they limit it
+        const textRight = Math.max(...[...copy.querySelectorAll('.hs-h1 .nk-line > span, .hs-sub')].map((n) => {
+          const r = n.getBoundingClientRect()
+          return n.classList.contains('hs-sub') ? r.left + Math.min(r.width, 440) : r.right
+        })) - pr.left
+        const right = vw - vw * 0.014
+        const W = Math.min(vw * 0.62, vh - 40, (right - textRight - 20) / 1.02)
+        visual.style.width = W + 'px'
+        visual.style.left = right - W * 1.062 + 'px'
+        visual.style.top = Math.max(-40, pr.height / 2 + 46 - W * 0.597) + 'px'
+      } else {
+        visual.style.width = visual.style.left = visual.style.top = ''
+      }
+      el.style.setProperty('--s', String(visual.clientWidth / 600))
+    }
+    place()
+    const ro = new ResizeObserver(place)
+    ro.observe(pin)
+    window.addEventListener('resize', place)
+    return () => { ro.disconnect(); window.removeEventListener('resize', place) }
   }, [])
 
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
       const root = ref.current
-      const pin = root.querySelector('.hs-pin')
-      const dotEl = root.querySelector('.hs-dot')
       const icons = gsap.utils.toArray('.hs-icon')
       const n = icons.length
       const kOf = (p) => (p > 0.8 ? 1 - (p - 0.8) / 0.2 : p < 0.06 ? p / 0.06 : 1)
@@ -153,64 +175,12 @@ export default function HeroStream() {
         .add(() => { sweepFill.setAttribute('d', 'M-200,-200 H900 V900 H-200 Z') })
         .add(() => tweens.current.forEach((t) => t.play()))
         .from('.hs-h1 .nk-line > span', { yPercent: 115, duration: 1.3, stagger: 0.09 }, 0.35)
-        .from('.hs-sub, .hs-ctas', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, 0.8)
+        .from('.hs-label, .hs-sub, .hs-ctas', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, 0.8)
         .from('.hs-proof li', { y: 30, opacity: 0, duration: 1, stagger: 0.08 }, 1.3)
 
-      // 2. SCROLL — "the red thread": channels are pulled into the dot, the ribbon reels in,
-      //    the dot shrinks to a bead and runs down a single red thread into the next section
-      const svg = root.querySelector('.hs-run svg')
-      const runPath = root.querySelector('.hs-run path')
-      const runner = root.querySelector('.hs-runner')
-      let g = null
-      const geo = () => {
-        const pr = pin.getBoundingClientRect()
-        const dr = dotEl.getBoundingClientRect()
-        const x = dr.left + dr.width / 2 - pr.left
-        const y = dr.top + dr.height / 2 - pr.top
-        const next = document.querySelector('.nk-router .mx')
-        let tx = 24
-        if (next) {
-          const nr = next.getBoundingClientRect()
-          tx = nr.left - pr.left + parseFloat(getComputedStyle(next).paddingLeft) + (window.innerWidth > 960 ? -28 : -10)
-        }
-        const W = pr.width, H = pin.offsetHeight
-        const d = 'M' + x + ',' + y + ' C' + x + ',' + (y + (H - y) * 0.7) + ' ' + tx + ',' + (y + (H - y) * 0.35) + ' ' + tx + ',' + (H + 2)
-        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + (H + 4))
-        svg.style.height = H + 4 + 'px'
-        runPath.setAttribute('d', d)
-        return { L: runPath.getTotalLength() }
-      }
-      const run = { p: 0 }
-      function render() {
-        if (!g || run.p < 0.01) g = geo()
-        const t = Math.min(1, Math.max(0, (run.p - 0.55) / 0.45))
-        runPath.style.strokeDashoffset = String(1 - t)
-        const pt = runPath.getPointAtLength(g.L * t)
-        runner.style.transform = 'translate(' + pt.x + 'px,' + pt.y + 'px)'
-        runner.style.opacity = run.p >= 0.55 ? '1' : '0'
-        dotEl.style.visibility = run.p >= 0.55 ? 'hidden' : ''
-        const reel = Math.min(1, run.p / 0.45)
-        if (intro.progress() === 1) gsap.set(paths, { strokeDashoffset: -reel })
-      }
-      const tall = () => pin.offsetHeight > window.innerHeight + 4
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: pin, start: () => (tall() ? 'bottom bottom' : 'top top'), end: '+=150%',
-          pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true,
-          onRefresh: () => { g = null; render() },
-          onUpdate: (self) => tweens.current.forEach((tw) => tw.timeScale(1 + self.progress * 6)),
-        },
-      })
-      tl.to(run, { p: 1, duration: 1, ease: 'none', onUpdate: render }, 0)
-        .to('.hs-icons', { rotate: 200, scale: 0, ease: 'power2.in', duration: 0.45 }, 0)
-        .to('.hs-copy', { x: -60, opacity: 0, ease: 'power2.in', duration: 0.35 }, 0)
-        .to('.hs-proof', { y: 40, opacity: 0, ease: 'power2.in', duration: 0.3 }, 0)
-        .to('.hs-dot img', { opacity: 0, duration: 0.15 }, 0.3)
-        .to('.hs-dot', { scale: 0.11, boxShadow: '0 0 0 rgba(200,16,46,0)', ease: 'power2.inOut', duration: 0.22 }, 0.33)
-
-      const ro = new ResizeObserver(() => { g = null; render() })
-      ro.observe(pin)
-      return () => { ro.disconnect(); dotEl.style.visibility = '' }
+      // 2. SCROLL — gentle parallax only (the section transition is decided separately)
+      gsap.to('.hs-visual', { yPercent: -8, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true } })
+      gsap.to('.hs-copy', { y: -40, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true } })
     })
   })
 
@@ -226,6 +196,7 @@ export default function HeroStream() {
       <div className="hs-pin">
       <div className="mx hs-grid">
         <div className="hs-copy">
+          <p className="hs-label">(01) Growth agency</p>
           <h1 className="hs-h1">
             <span className="nk-line"><span>The growth agency</span></span>
             <span className="nk-line"><span>for <em>$5M+</em> service</span></span>
@@ -236,6 +207,14 @@ export default function HeroStream() {
             <Link href="/contact" className="nk-btn nk-btn-red" data-magnetic="0.3">Book a call <Arrow /></Link>
             <Link href="/work" className="nk-btn nk-btn-ghost" data-magnetic="0.3">See our work</Link>
           </div>
+          <ul className="hs-proof">
+            {hero.proof.map((p, i) => (
+              <li key={i}>
+                <strong>{p.pre}<span>{p.num}</span>{p.post}</strong>
+                <em>{p.who}</em>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="hs-visual">
@@ -282,21 +261,6 @@ export default function HeroStream() {
         </div>
       </div>
 
-      <div className="mx">
-        <ul className="hs-proof">
-          {hero.proof.map((p, i) => (
-            <li key={i}>
-              <strong>{p.pre}<span>{p.num}</span>{p.post}</strong>
-              <em>{p.who}</em>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="hs-run" aria-hidden="true">
-        <svg preserveAspectRatio="none"><path pathLength="1" /></svg>
-        <i className="hs-runner" />
-      </div>
       </div>
     </section>
   )
