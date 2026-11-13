@@ -7,7 +7,7 @@ import Arrow from './Arrow'
 
 const extraImg = { 5: '/works/LINKEDINGLENN.png' }
 
-/* "What do you run?" — six framed answers on a wheel (the middle one is active) and a result card */
+/* "What do you run?" — six framed answers, the active one in red and a result card */
 export default function RunAnswer() {
   const [active, setActive] = useState(0)
   const auto = useRef(true)
@@ -40,7 +40,7 @@ export default function RunAnswer() {
                 <button
                   type="button" role="tab" aria-selected={i === active}
                   className={'ra-row' + (i === active ? ' on' : '')}
-                  onClick={() => pick(i)} onFocus={() => pick(i)}
+                  onMouseEnter={() => pick(i)} onClick={() => pick(i)} onFocus={() => pick(i)}
                 >
                   <b>{String(i + 1).padStart(2, '0')}</b>
                   <span>{x.title}</span>

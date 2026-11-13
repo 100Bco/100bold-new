@@ -65,17 +65,15 @@
 /* ── the wheel of six framed answers ── */
 .ra-q { font-size: clamp(40px, 4.2vw, 84px); }
 .ra-wheel {
-  --h: clamp(60px, 7.4vh, 76px); --gap: 12px; --step: calc(var(--h) + var(--gap));
-  position: relative; height: calc(var(--step) * 5 - var(--gap)); overflow: hidden; margin-top: clamp(22px, 3.4vh, 40px);
-  -webkit-mask-image: linear-gradient(transparent, #000 18%, #000 82%, transparent);
-          mask-image: linear-gradient(transparent, #000 18%, #000 82%, transparent);
+  --h: clamp(52px, 6.6vh, 70px); --gap: 10px;
+  position: relative; margin-top: clamp(20px, 3vh, 36px);
 }
 .ra-list {
   list-style: none; display: flex; flex-direction: column; gap: var(--gap);
-  transform: translateY(calc(var(--step) * (2 - var(--i))));
-  transition: transform .8s cubic-bezier(.65, 0, .2, 1);
 }
-.ra-list li { opacity: calc(1 - var(--d) * .3); transform: scale(calc(1 - var(--d) * .035)); transform-origin: left center; transition: opacity .6s, transform .8s var(--ease-out); }
+.ra-list li { opacity: calc(1 - min(var(--d), 1) * .38); transition: opacity .5s, transform .6s var(--ease-out); }
+.ra-list li:hover { opacity: 1; }
+.ra-list li:has(.on) { transform: translateX(10px); }
 .ra-row {
   width: 100%; height: var(--h); display: flex; align-items: center; gap: 18px; padding: 0 22px;
   border-radius: 16px; border: 1px solid rgba(26,24,22,.12); background: #fff; color: var(--dark); cursor: pointer; text-align: left;
@@ -91,8 +89,9 @@
 .ra-row.on b { color: rgba(255,255,255,.75); }
 .ra-row.on .ra-row-arrow { opacity: 1; transform: none; }
 @media (max-width: 960px) {
-  .ra-wheel { --h: 64px; --gap: 10px; }
+  .ra-wheel { --h: 60px; --gap: 8px; }
+  .ra-list li:has(.on) { transform: none; }
   .ra-row { padding: 0 14px; gap: 12px; font-size: 15px; line-height: 1.2; }
   .ra-row span { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 }
-@media (prefers-reduced-motion: reduce) { .ra-list, .ra-list li { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .ra-list li { transition: none; } }
