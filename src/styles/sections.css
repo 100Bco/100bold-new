@@ -10,10 +10,9 @@
 .xl-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
 .xl-track { display: flex; width: max-content; }
 .xl-set { display: flex; gap: 18px; padding-right: 18px; }
-.xl-cell { width: 240px; height: 130px; border-radius: 22px; background: #fff; border: 1px solid rgba(26,24,22,.07); display: grid; place-items: center; transition: background .4s, border-color .4s; }
+.xl-cell { width: 240px; height: 130px; display: grid; place-items: center; outline: none; }
 .xl-cell img { object-fit: contain; filter: grayscale(1); opacity: .55; transition: filter .4s, opacity .4s, transform .5s var(--ease-out); }
 .xl-word { font: 800 clamp(17px, 1.5vw, 22px) 'Archivo', sans-serif; letter-spacing: -.02em; color: #8f877c; transition: color .4s; }
-.xl-cell:hover { border-color: rgba(200,16,46,.35); }
 .xl-cell:hover img, .xl-cell:focus-within img, .xl-cell.on img { filter: none; opacity: 1; transform: scale(1.08); }
 
 /* 04 What we do */
