@@ -87,8 +87,10 @@ export default function HeroStream() {
         if (!ext) ext = extents()
         const vw = document.documentElement.clientWidth, vh = window.innerHeight
         const nav = document.querySelector('.nk-nav')
-        const top = (nav ? nav.getBoundingClientRect().bottom : 90) + 18
-        const bottom = vh - 22
+        const navBottom = (nav ? nav.getBoundingClientRect().bottom : 90)
+        // the spiral may run up behind the (glass) menu bar, so it can be bigger and stay round
+        const top = 6
+        const bottom = vh - 18
         const cy = (top + bottom) / 2
         pin.style.minHeight = vh + 'px'
         pin.style.alignItems = 'flex-start'
@@ -98,13 +100,12 @@ export default function HeroStream() {
         const room = right - textRight - 28
         const k = Math.min((bottom - top) / (ext.y1 - ext.y0), room / (ext.x1 - ext.x0))
         // widen the spiral (not taller) to fill the free space between the text and the spiral
-        const ex = Math.min(1.45, Math.max(1, room / ((ext.x1 - ext.x0) * k)))
-        stretch(ex, ext.x1)
+        stretch(1, ext.x1)
         const W = 600 * k
         visual.style.width = W + 'px'
         visual.style.left = right - ext.x1 * k + 'px'
         visual.style.top = cy - ((ext.y0 + ext.y1) / 2) * k + 'px'
-        pin.style.paddingTop = Math.max(top, cy - copy.offsetHeight / 2) + 'px'
+        pin.style.paddingTop = Math.max(navBottom + 24, cy + 20 - copy.offsetHeight / 2) + 'px'
       } else {
         visual.style.width = visual.style.left = visual.style.top = ''
         pin.style.minHeight = pin.style.alignItems = pin.style.paddingTop = ''
