@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom'
-import IndustriesHeroGraphic from '../components/IndustriesHeroGraphic'
-import WaveDivider from '../components/WaveDivider'
+'use client'
+
+import Link from 'next/link'
+import IndustriesHeroGraphic from '@/components/IndustriesHeroGraphic'
+import WaveDivider from '@/components/WaveDivider'
 import { useRef, useEffect } from 'react'
 
 function LottieIcon({ src }) {
@@ -21,13 +23,13 @@ function LottieIcon({ src }) {
 
 const industries = [
   { name: 'Personal Injury Law Firms', desc: 'PI Attorneys, Trial Lawyers', lottie: '/law-red.json', path: '/industries/personal-injury-law-firms' },
-  { name: 'PI Medical Providers', desc: 'Personal Injury Chiropractors, Rehabilitation Centers', lottie: '/wheelchair-insurance-red.json', path: '/industries/pi-medical-providers' },
-  { name: 'Real Estate Developers', desc: 'Residential & Commercial Developers, Property Managers, Brokerages', lottie: '/building-red.json', path: '/industries/real-estate' },
-  { name: 'General Contractors & Construction', desc: 'Commercial GCs, Residential Builders, Construction Firms', lottie: '/repair-tools-red.json', path: '/industries/construction-trades' },
-  { name: 'Local Service Contractors', desc: 'HVAC, Plumbing, Electrical, Roofing, Solar, Painting, Pest Control', lottie: '/power-red.json', path: '/industries/local-services' },
+  { name: 'PI Medical Providers', desc: 'Chiropractors, Physical Therapy, Rehab Centers', lottie: '/wheelchair-insurance-red.json', path: '/industries/pi-medical-providers' },
+  { name: 'Real Estate & Property Management', desc: 'Developers, Property Managers, Brokerages', lottie: '/building-red.json', path: '/industries/real-estate' },
+  { name: 'Construction & Trades', desc: 'Commercial GCs, Residential Builders, Plumbers, Roofers, Electricians', lottie: '/repair-tools-red.json', path: '/industries/construction-trades' },
+  { name: 'Local Services', desc: 'HVAC, Solar, Pest Control, Painting, Landscaping', lottie: '/power-red.json', path: '/industries/local-services' },
 ]
 
-export default function IndustriesPage() {
+export default function IndustriesContent() {
   return (
     <>
       <section className="page-hero">
@@ -49,7 +51,7 @@ export default function IndustriesPage() {
         <div className="mx">
           <div className="ind-landing-grid">
             {industries.map((ind, i) => (
-              <Link to={ind.path} key={ind.name} className={`ind-landing-card rv${i > 0 ? ` rv-d${Math.min(i, 3)}` : ''}`}>
+              <Link href={ind.path} key={ind.name} className={`ind-landing-card rv${i > 0 ? ` rv-d${Math.min(i, 3)}` : ''}`}>
                 <div className="ind-landing-icon">
                   <LottieIcon src={ind.lottie} />
                 </div>
@@ -70,7 +72,7 @@ export default function IndustriesPage() {
           <h2 className="rv" style={{fontFamily: 'var(--font-head)', fontSize: 'clamp(36px, 4vw, 56px)', textTransform: 'uppercase', marginBottom: 24}}>
             Ready to <span className="accent">dominate?</span>
           </h2>
-          <Link to="/contact" className="btn btn-red rv rv-d1">
+          <Link href="/contact" className="btn btn-red rv rv-d1">
             Contact Now
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>

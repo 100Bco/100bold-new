@@ -1,4 +1,8 @@
-import { useLayoutEffect } from 'react'
+'use client'
+
+import { useEffect, useLayoutEffect } from 'react'
+
+const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -13,7 +17,7 @@ export const MQ = {
 
 /** Runs GSAP setup scoped to ref; setup(mm) receives a gsap.matchMedia instance. Reverted on unmount. */
 export function useGsap(ref, setup, deps = []) {
-  useLayoutEffect(() => {
+  useIsoLayoutEffect(() => {
     if (!ref.current) return
     const mm = gsap.matchMedia()
     const ctx = gsap.context(() => setup(mm), ref)

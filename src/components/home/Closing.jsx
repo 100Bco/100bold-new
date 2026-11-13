@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { useGsap, gsap, MQ, revealIn } from '../../lib/motion'
-import { closing } from '../../data/home'
+import Link from 'next/link'
+import { useGsap, gsap, MQ, revealIn } from '@/lib/motion'
+import { closing } from '@/data/home'
 import Arrow from './Arrow'
 
 export default function Closing() {
@@ -32,7 +34,7 @@ export default function Closing() {
       <div className="mx nk-close-inner">
         <h2 className="nk-close-h2" data-reveal>{closing.h2}</h2>
         <p data-reveal="0.1">{closing.body}</p>
-        <Link to="/contact" className="nk-close-btn" data-magnetic="0.45" data-reveal="0.2">
+        <Link href="/contact" className="nk-close-btn" data-magnetic="0.45" data-reveal="0.2">
           <span>{closing.cta}</span><Arrow />
         </Link>
       </div>

@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { useGsap, gsap, MQ, revealIn, Lines } from '../../lib/motion'
-import { work } from '../../data/home'
+import Link from 'next/link'
+import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { work } from '@/data/home'
 import Arrow from './Arrow'
 
 export default function Results() {
@@ -40,11 +42,11 @@ export default function Results() {
             <span className="nk-index" data-reveal>03</span>
             <Lines lines={[work.h2]} className="nk-h2" />
           </div>
-          <Link to="/work" className="nk-link-arrow light" data-reveal><span>See all work</span><Arrow /></Link>
+          <Link href="/work" className="nk-link-arrow light" data-reveal><span>See all work</span><Arrow /></Link>
         </div>
         <div className="nk-hs-track" ref={track}>
           {work.items.map((c) => (
-            <Link to={c.to} className="nk-case" key={c.to} data-cursor="View">
+            <Link href={c.to} className="nk-case" key={c.to} data-cursor="View">
               <div className="nk-case-img"><img src={c.img} alt={c.alt} loading="lazy" /></div>
               <div className="nk-case-body">
                 <span className="nk-case-client">{c.client}, {c.industry}</span>

@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { useGsap, gsap, MQ, revealIn, Lines } from '../../lib/motion'
-import { router } from '../../data/home'
+import Link from 'next/link'
+import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { router } from '@/data/home'
 import Arrow from './Arrow'
 
 export default function Router() {
@@ -41,7 +43,7 @@ export default function Router() {
         <ul className="nk-rows" onMouseLeave={() => setActive(null)}>
           {router.items.map((it, i) => (
             <li key={it.to} className="nk-row" onMouseEnter={() => setActive(i)}>
-              <Link to={it.to} className="nk-row-link">
+              <Link href={it.to} className="nk-row-link">
                 <span className="nk-row-num">{String(i + 1).padStart(2, '0')}</span>
                 <span className="nk-row-title">{it.title}</span>
                 <span className="nk-row-line">{it.line}</span>

@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { useGsap, gsap, MQ, revealIn, Lines } from '../../lib/motion'
-import { portal } from '../../data/home'
+import Link from 'next/link'
+import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { portal } from '@/data/home'
 import Arrow from './Arrow'
 
 export default function Portal() {
@@ -30,7 +32,7 @@ export default function Portal() {
           <p className="nk-eyebrow" data-reveal>{portal.eyebrow}</p>
           <Lines lines={['We built a law firm', 'its own superhero']} className="nk-h2 nk-h2-xl" />
           <p className="nk-portal-body" data-reveal>{portal.body}</p>
-          <Link to="/portal" className="nk-btn nk-btn-white" data-magnetic="0.3" data-reveal="0.1">
+          <Link href="/portal" className="nk-btn nk-btn-white" data-magnetic="0.3" data-reveal="0.1">
             <span className="nk-play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg></span>
             {portal.cta}
           </Link>

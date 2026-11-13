@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { TrendingUp, Award, PhoneCall, DollarSign } from 'lucide-react'
 

@@ -1,7 +1,9 @@
-import { useEffect } from 'react'
-import WaveDivider from '../components/WaveDivider'
+'use client'
 
-export default function ContactPage() {
+import { useEffect } from 'react'
+import WaveDivider from '@/components/WaveDivider'
+
+export default function ContactContent() {
   useEffect(() => {
     if (!document.querySelector('script[src="https://link.minai.biz/js/form_embed.js"]')) {
       const script = document.createElement('script')
@@ -39,7 +41,7 @@ export default function ContactPage() {
            {/* Right: Join Our List */}
             <div className="contact-form-wrap rv rv-d1">
               <h2 style={{fontFamily:'var(--font-head)',fontSize:'clamp(28px,3vw,40px)',textTransform:'uppercase',marginBottom:16}}>Join Our <span className="accent">List.</span></h2>
-              
+
               <div style={{ overflow: 'hidden' }}>
                 <iframe
                   src="https://link.minai.biz/widget/form/FWsWItRpNxvcxPDQuzSO"
@@ -55,7 +57,7 @@ export default function ContactPage() {
                   title="SIGN UP FORM - WEBSITE 100BOLD"
                 ></iframe>
               </div>
-              
+
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { serviceLinks, industryLinks } from './Nav'
+import Link from 'next/link'
+import { serviceLinks, industryLinks } from '@/data/nav'
 
 const social = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/company/100bold', path: <><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></> },
@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="mx">
         <div className="nk-f-top">
           <div className="nk-f-brand">
-            <Link to="/" aria-label="100Bold home">
+            <Link href="/" aria-label="100Bold home">
               <img src="/100BOLD - OP3-09 (1).png" alt="100Bold" className="nk-f-logo" />
             </Link>
             <p>100Bold is a growth agency for $5M+ service businesses. We get you found on Google and in AI search, turn ad spend into signed clients and booked jobs, and make your CEO the best-known name in your market.</p>
@@ -23,25 +23,25 @@ export default function Footer() {
             <div className="nk-f-col">
               <h3>Services</h3>
               <ul>
-                {serviceLinks.map(l => <li key={l.path}><Link to={l.path}>{l.name}</Link></li>)}
-                <li><Link to="/portal">Portal, AI production</Link></li>
-                <li><Link to="/the-mark">The Mark, LinkedIn for CEOs</Link></li>
+                {serviceLinks.map(l => <li key={l.path}><Link href={l.path}>{l.name}</Link></li>)}
+                <li><Link href="/portal">Portal, AI production</Link></li>
+                <li><Link href="/the-mark">The Mark, LinkedIn for CEOs</Link></li>
               </ul>
             </div>
             <div className="nk-f-col">
               <h3>Industries</h3>
               <ul>
-                {industryLinks.map(l => <li key={l.path}><Link to={l.path}>{l.name}</Link></li>)}
+                {industryLinks.map(l => <li key={l.path}><Link href={l.path}>{l.name}</Link></li>)}
               </ul>
             </div>
             <div className="nk-f-col">
               <h3>Company</h3>
               <ul>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/work">Work</Link></li>
-                <li><Link to="/insights">Insights</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/privacy">Privacy</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/work">Work</Link></li>
+                <li><Link href="/insights">Insights</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/privacy">Privacy</Link></li>
               </ul>
             </div>
             <div className="nk-f-col">

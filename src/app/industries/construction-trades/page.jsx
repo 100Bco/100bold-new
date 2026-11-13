@@ -1,6 +1,11 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
 
-export default function ConstructionTradesPage() {
+export const metadata = {
+  title: 'Construction and Trades Marketing | 100Bold',
+  alternates: { canonical: '/industries/construction-trades' },
+}
+
+export default function ConstructionPage() {
   const data = {
     label: 'GENERAL CONTRACTORS, BUILDERS, CONSTRUCTION',
     lottie: '/repair-tools-red.json',

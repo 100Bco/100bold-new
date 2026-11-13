@@ -1,6 +1,11 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
 
-export default function PILawFirmsPage() {
+export const metadata = {
+  title: 'Marketing for Personal Injury Law Firms | 100Bold',
+  alternates: { canonical: '/industries/personal-injury-law-firms' },
+}
+
+export default function LawFirmsPage() {
   const data = {
     label: 'PERSONAL INJURY ATTORNEYS, TRIAL LAWYERS',
     lottie: '/law-red.json',

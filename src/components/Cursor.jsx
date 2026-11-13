@@ -1,12 +1,14 @@
+'use client'
+
 import { useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
+import { usePathname } from 'next/navigation'
 import { gsap } from 'gsap'
 
 /** Desktop-only custom cursor + magnetic buttons ([data-magnetic]) + labelled hover ([data-cursor="View"]) */
 export default function Cursor() {
   const dot = useRef(null)
   const label = useRef(null)
-  const { pathname } = useLocation()
+  const pathname = usePathname()
 
   useEffect(() => {
     const fine = window.matchMedia('(pointer: fine) and (prefers-reduced-motion: no-preference)').matches

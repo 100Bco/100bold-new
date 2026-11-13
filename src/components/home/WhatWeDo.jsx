@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { useGsap, gsap, MQ, revealIn, Lines } from '../../lib/motion'
-import { services } from '../../data/home'
+import Link from 'next/link'
+import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { services } from '@/data/home'
 import Arrow from './Arrow'
 
 export default function WhatWeDo() {
@@ -34,9 +36,9 @@ export default function WhatWeDo() {
               <div className="nk-stack-inner">
                 <div className="nk-stack-copy">
                   <span className="nk-stack-num">0{i + 1} / 0{services.items.length}</span>
-                  <h3><Link to={s.to}>{s.title}</Link></h3>
+                  <h3><Link href={s.to}>{s.title}</Link></h3>
                   <p>{s.desc}</p>
-                  <Link to={s.to} className="nk-link-arrow" aria-label={`Learn more about ${s.title}`}>
+                  <Link href={s.to} className="nk-link-arrow" aria-label={`Learn more about ${s.title}`}>
                     <span>Learn more</span><Arrow />
                   </Link>
                 </div>

@@ -1,6 +1,8 @@
+'use client'
+
 import { useRef } from 'react'
-import { useGsap, gsap, ScrollTrigger, MQ } from '../../lib/motion'
-import { logos } from '../../data/home'
+import { useGsap, gsap, ScrollTrigger, MQ } from '@/lib/motion'
+import { logos } from '@/data/home'
 
 const Row = () => (
   <div className="nk-marquee-set">

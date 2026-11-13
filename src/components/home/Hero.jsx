@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { useGsap, gsap, MQ } from '../../lib/motion'
-import { hero } from '../../data/home'
+import Link from 'next/link'
+import { useGsap, gsap, MQ } from '@/lib/motion'
+import { hero } from '@/data/home'
 import Arrow from './Arrow'
 
 const ringText = 'START BRAVE • STAY BOLD • START BRAVE • STAY BOLD • '
@@ -47,15 +49,15 @@ export default function Hero() {
             </h1>
             <p className="nk-hero-sub">{hero.sub}</p>
             <div className="nk-hero-ctas">
-              <Link to="/contact" className="nk-btn nk-btn-red" data-magnetic="0.3">Book a call <Arrow /></Link>
-              <Link to="/work" className="nk-btn nk-btn-ghost" data-magnetic="0.3">See our work</Link>
+              <Link href="/contact" className="nk-btn nk-btn-red" data-magnetic="0.3">Book a call <Arrow /></Link>
+              <Link href="/work" className="nk-btn nk-btn-ghost" data-magnetic="0.3">See our work</Link>
             </div>
           </div>
 
           <div className="nk-hero-side">
             <div className="nk-hero-media">
               <div className="nk-hero-media-inner">
-                <wistia-player media-id="jzqrwe3t4z" style={{ width: '100%', height: '100%', display: 'block' }}></wistia-player>
+                <wistia-player media-id="futnh0kwqu" aspect="1.0" style={{ width: '100%', height: '100%', display: 'block' }}></wistia-player>
               </div>
             </div>
             <div className="nk-hero-dot" aria-label={hero.tagline.join(' ')}>

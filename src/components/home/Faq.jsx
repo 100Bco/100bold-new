@@ -1,6 +1,8 @@
+'use client'
+
 import { useRef, useState } from 'react'
-import { useGsap, MQ, revealIn, Lines } from '../../lib/motion'
-import { faq } from '../../data/home'
+import { useGsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { faq } from '@/data/home'
 
 export default function Faq() {
   const ref = useRef(null)

@@ -1,5 +1,7 @@
+'use client'
+
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { usePathname } from 'next/navigation'
 import Lenis from 'lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -13,7 +15,7 @@ let lenis = null
 export const getLenis = () => lenis
 
 export default function SmoothScroll() {
-  const { pathname } = useLocation()
+  const pathname = usePathname()
 
   useEffect(() => {
     if (prefersReducedMotion()) return

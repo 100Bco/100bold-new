@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { useGsap, gsap, MQ, revealIn, Lines } from '../../lib/motion'
-import { founder } from '../../data/home'
+import Link from 'next/link'
+import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { founder } from '@/data/home'
 import Arrow from './Arrow'
 
 export default function Founder() {
@@ -51,7 +53,7 @@ export default function Founder() {
           </blockquote>
           <div className="nk-founder-foot" data-reveal>
             <cite>{founder.who}</cite>
-            <Link to="/about" className="nk-link-arrow"><span>{founder.cta}</span><Arrow /></Link>
+            <Link href="/about" className="nk-link-arrow"><span>{founder.cta}</span><Arrow /></Link>
           </div>
         </div>
       </div>

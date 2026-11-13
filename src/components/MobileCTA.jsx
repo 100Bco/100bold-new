@@ -1,8 +1,11 @@
+'use client'
+
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function MobileCTA() {
-  const { pathname } = useLocation()
+  const pathname = usePathname()
   const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
@@ -21,7 +24,7 @@ export default function MobileCTA() {
   if (pathname === '/contact') return null
   return (
     <div className={`nk-mcta${hidden ? ' is-hidden' : ''}`}>
-      <Link to="/contact">Book a call
+      <Link href="/contact">Book a call
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
       </Link>
     </div>

@@ -1,4 +1,9 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
+
+export const metadata = {
+  title: 'Local Services Marketing | 100Bold',
+  alternates: { canonical: '/industries/local-services' },
+}
 
 export default function LocalServicesPage() {
   const data = {

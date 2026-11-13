@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { useGsap, gsap, MQ, revealIn } from '../../lib/motion'
-import { mark } from '../../data/home'
+import Link from 'next/link'
+import { useGsap, gsap, MQ, revealIn } from '@/lib/motion'
+import { mark } from '@/data/home'
 import Arrow from './Arrow'
 
 export default function Mark() {
@@ -31,7 +33,7 @@ export default function Mark() {
         <div className="nk-mark-grid">
           <div className="nk-mark-copy">
             <p data-reveal>{mark.body}</p>
-            <Link to="/the-mark" className="nk-btn nk-btn-red" data-magnetic="0.3" data-reveal="0.1">{mark.cta} <Arrow /></Link>
+            <Link href="/the-mark" className="nk-btn nk-btn-red" data-magnetic="0.3" data-reveal="0.1">{mark.cta} <Arrow /></Link>
           </div>
           <ul className="nk-mark-cards">
             {mark.results.map((r) => (

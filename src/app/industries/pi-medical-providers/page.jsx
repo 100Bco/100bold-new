@@ -1,6 +1,11 @@
-import IndustryPageTemplate from './IndustryPageTemplate'
+import IndustryPageTemplate from '@/components/IndustryPageTemplate'
 
-export default function PIMedicalPage() {
+export const metadata = {
+  title: 'Marketing for PI Medical Providers | 100Bold',
+  alternates: { canonical: '/industries/pi-medical-providers' },
+}
+
+export default function RehabChiroPage() {
   const data = {
     label: 'PI CHIROPRACTORS, REHABILITATION CENTERS',
     lottie: '/wheelchair-insurance-red.json',

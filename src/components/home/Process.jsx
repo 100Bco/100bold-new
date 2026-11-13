@@ -1,6 +1,8 @@
+'use client'
+
 import { useRef } from 'react'
-import { useGsap, gsap, MQ, revealIn, Lines } from '../../lib/motion'
-import { process } from '../../data/home'
+import { useGsap, gsap, MQ, revealIn, Lines } from '@/lib/motion'
+import { process } from '@/data/home'
 
 export default function Process() {
   const ref = useRef(null)

@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom'
-import WaveDivider from '../../components/WaveDivider'
+'use client'
+
+import Link from 'next/link'
+import WaveDivider from './WaveDivider'
 import { useRef, useEffect } from 'react'
 
 function HeroLottie({ src }) {
@@ -30,8 +32,8 @@ export default function IndustryPageTemplate({ data }) {
               <h1 className="rv vis">{data.headline}</h1>
               <p className="page-hero-body rv vis rv-d1" style={{maxWidth:560}}>{data.subtitle}</p>
               <div className="rv vis rv-d2" style={{display:'flex',gap:12,marginTop:32}}>
-                <Link to="/contact" className="btn btn-red">Contact Now <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></Link>
-                <Link to="/services" className="btn btn-outline">View Services</Link>
+                <Link href="/contact" className="btn btn-red">Contact Now <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></Link>
+                <Link href="/services" className="btn btn-outline">View Services</Link>
               </div>
             </div>
             {data.lottie && (
@@ -113,13 +115,13 @@ export default function IndustryPageTemplate({ data }) {
         <div className="mx">
           <h2 className="rv" style={{fontFamily:'var(--font-head)',fontSize:'clamp(36px,4vw,56px)',textTransform:'uppercase',marginBottom:16,color:'#fff'}}>Ready to grow your <span style={{color:'#fff'}}>{data.ctaIndustry}</span> business?</h2>
           <p className="rv rv-d1" style={{fontSize:18,color:'rgba(255,255,255,.7)',marginBottom:32}}>We'll show you exactly how the system works for your industry.</p>
-          <Link to="/contact" className="btn rv rv-d2" style={{background:'#fff',color:'var(--red)',fontWeight:700}}>Contact Now <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></Link>
+          <Link href="/contact" className="btn rv rv-d2" style={{background:'#fff',color:'var(--red)',fontWeight:700}}>Contact Now <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></Link>
         </div>
       </section>
 
       {/* Back link */}
       <section style={{padding:'32px 0',textAlign:'center'}}>
-        <Link to="/industries" style={{fontSize:15,fontWeight:600,color:'var(--text-3)',textDecoration:'none',display:'inline-flex',alignItems:'center',gap:8}}>
+        <Link href="/industries" style={{fontSize:15,fontWeight:600,color:'var(--text-3)',textDecoration:'none',display:'inline-flex',alignItems:'center',gap:8}}>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           Back to All Industries
         </Link>

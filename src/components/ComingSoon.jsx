@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 export default function ComingSoonPage({ title }) {
   return (
@@ -7,7 +7,7 @@ export default function ComingSoonPage({ title }) {
         <p className="nk-eyebrow">100Bold</p>
         <h1>{title}</h1>
         <p className="nk-soon-sub">This page is being built. Book a call and we will walk you through it.</p>
-        <Link to="/contact" className="nk-btn nk-btn-red">Book a call</Link>
+        <Link href="/contact" className="nk-btn nk-btn-red">Book a call</Link>
       </div>
     </section>
   )
