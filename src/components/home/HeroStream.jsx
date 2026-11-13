@@ -58,7 +58,6 @@ export default function HeroStream() {
       const root = ref.current
       const pin = root.querySelector('.hs-pin')
       const dotEl = root.querySelector('.hs-dot')
-      const flood = root.querySelector('.hs-flood')
       const icons = gsap.utils.toArray('.hs-icon')
       const n = icons.length
       const kOf = (p) => (p > 0.8 ? 1 - (p - 0.8) / 0.2 : p < 0.06 ? p / 0.06 : 1)
@@ -73,70 +72,96 @@ export default function HeroStream() {
         return t
       })
 
-      // 1. INTRO — the red dot appears, then the stream pours OUT of it and unfurls to full
-      gsap.set('.hs-ribbon path', { strokeDashoffset: -1 })
-      icons.forEach((el) => { el.style.offsetDistance = '100%'; el.style.setProperty('--k', '0') })
-      const intro = gsap.timeline({ defaults: { ease: 'expo.out' }, delay: 0.15 })
+      // 1. INTRO — the dot drops in, then the stream grows out of it, planting each channel as it passes
+      const paths = gsap.utils.toArray('.hs-ribbon path')
+      gsap.set(paths, { strokeDashoffset: -1 })
+      const tip = root.querySelector('.hs-tip')
+      const tipPath = root.querySelector('.hs-thread')
+      icons.forEach((el, i) => { el.style.offsetDistance = (i / n) * 100 + '%'; el.style.setProperty('--k', '0') })
+      const planted = new Array(n).fill(false)
+      const grow = { v: 0 }
+      const onGrow = () => {
+        const g1 = grow.v
+        gsap.set(paths, { strokeDashoffset: g1 - 1 })
+        const head = 1 - g1 // the growing tip, measured from the outer end of the ribbon
+        const L = tipPath.getTotalLength()
+        const pt = tipPath.getPointAtLength(L * head)
+        tip.style.transform = 'translate(' + pt.x + 'px,' + pt.y + 'px)'
+        tip.style.opacity = g1 > 0.01 && g1 < 0.995 ? '1' : '0'
+        icons.forEach((el, i) => {
+          const q = i / n
+          if (!planted[i] && head <= q + 0.005) {
+            planted[i] = true
+            const k = { v: 0 }
+            gsap.to(k, { v: kOf(q), duration: 0.7, ease: 'back.out(2.2)', onUpdate: () => el.style.setProperty('--k', k.v.toFixed(3)) })
+          }
+        })
+      }
+      const intro = gsap.timeline({ defaults: { ease: 'expo.out' }, delay: 0.2 })
       intro
-        .from('.hs-dot', { scale: 0, duration: 1.2, ease: 'elastic.out(1, 0.5)' })
-        .from('.hs-dot img', { scale: 0.4, opacity: 0, duration: 0.8 }, '-=0.8')
-        .to('.hs-ribbon path', { strokeDashoffset: 0, duration: 2.2, ease: 'power3.inOut', stagger: 0.12 }, '-=0.5')
-      icons.forEach((el, i) => {
-        const phase = i / n
-        const k = { v: 0 }
-        intro.to(el, { offsetDistance: phase * 100 + '%', duration: 1.9, ease: 'power3.out' }, 1.15 + (n - i) * 0.07)
-        intro.to(k, { v: kOf(phase), duration: 1.2, onUpdate: () => el.style.setProperty('--k', k.v.toFixed(3)) }, 1.25 + (n - i) * 0.07)
-      })
-      intro
+        .fromTo('.hs-dot', { y: -520, scaleX: 0.8, scaleY: 1.2 }, { y: 0, scaleX: 1, scaleY: 1, duration: 1.3, ease: 'bounce.out' })
+        .from('.hs-dot img', { scale: 0.3, opacity: 0, duration: 0.7 }, '-=0.35')
+        .to(grow, { v: 1, duration: 3.4, ease: 'power1.inOut', onUpdate: onGrow }, '-=0.2')
         .add(() => tweens.current.forEach((t) => t.play()))
-        .from('.hs-h1 .nk-line > span', { yPercent: 115, duration: 1.3, stagger: 0.09 }, 0.45)
-        .from('.hs-sub, .hs-ctas', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, 0.9)
-        .from('.hs-proof li', { y: 30, opacity: 0, duration: 1, stagger: 0.08 }, 1.4)
+        .from('.hs-h1 .nk-line > span', { yPercent: 115, duration: 1.3, stagger: 0.09 }, 0.35)
+        .from('.hs-sub, .hs-ctas', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, 0.8)
+        .from('.hs-proof li', { y: 30, opacity: 0, duration: 1, stagger: 0.08 }, 1.3)
 
-      // 2. SCROLL — the stream is sucked back into the dot, then the dot floods the screen
+      // 2. SCROLL — "the red thread": channels are pulled into the dot, the ribbon reels in,
+      //    the dot shrinks to a bead and runs down a single red thread into the next section
+      const svg = root.querySelector('.hs-run svg')
+      const runPath = root.querySelector('.hs-run path')
+      const runner = root.querySelector('.hs-runner')
       let g = null
       const geo = () => {
         const pr = pin.getBoundingClientRect()
         const dr = dotEl.getBoundingClientRect()
         const x = dr.left + dr.width / 2 - pr.left
         const y = dr.top + dr.height / 2 - pr.top
-        return { x, y, r: dr.width / 2, far: Math.hypot(Math.max(x, pr.width - x), Math.max(y, pr.height - y)) + 20 }
+        const next = document.querySelector('.nk-router .mx')
+        let tx = 24
+        if (next) {
+          const nr = next.getBoundingClientRect()
+          tx = nr.left - pr.left + parseFloat(getComputedStyle(next).paddingLeft) + (window.innerWidth > 960 ? -28 : -10)
+        }
+        const W = pr.width, H = pin.offsetHeight
+        const d = 'M' + x + ',' + y + ' C' + x + ',' + (y + (H - y) * 0.7) + ' ' + tx + ',' + (y + (H - y) * 0.35) + ' ' + tx + ',' + (H + 2)
+        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + (H + 4))
+        svg.style.height = H + 4 + 'px'
+        runPath.setAttribute('d', d)
+        return { L: runPath.getTotalLength() }
       }
-      const vortex = { p: 0 }
-      const floodE = gsap.parseEase('power2.in')
+      const run = { p: 0 }
       function render() {
-        const rest = vortex.p < 0.01
-        if (!g || rest) g = geo()
-        const f = Math.max(0, (vortex.p - 0.45) / 0.55)
-        flood.style.clipPath = 'circle(' + (f <= 0 ? 0 : g.r + (g.far - g.r) * floodE(f)).toFixed(1) + 'px at ' + g.x.toFixed(1) + 'px ' + g.y.toFixed(1) + 'px)'
+        if (!g || run.p < 0.01) g = geo()
+        const t = Math.min(1, Math.max(0, (run.p - 0.55) / 0.45))
+        runPath.style.strokeDashoffset = String(1 - t)
+        const pt = runPath.getPointAtLength(g.L * t)
+        runner.style.transform = 'translate(' + pt.x + 'px,' + pt.y + 'px)'
+        runner.style.opacity = run.p >= 0.55 ? '1' : '0'
+        dotEl.style.visibility = run.p >= 0.55 ? 'hidden' : ''
+        const reel = Math.min(1, run.p / 0.45)
+        if (intro.progress() === 1) gsap.set(paths, { strokeDashoffset: -reel })
       }
       const tall = () => pin.offsetHeight > window.innerHeight + 4
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: pin, start: () => (tall() ? 'bottom bottom' : 'top top'), end: '+=200%',
+          trigger: pin, start: () => (tall() ? 'bottom bottom' : 'top top'), end: '+=150%',
           pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true,
           onRefresh: () => { g = null; render() },
-          onUpdate: (self) => {
-            // the flow itself speeds up as it is pulled in
-            const v = 1 + self.progress * 6
-            tweens.current.forEach((t) => t.timeScale(v))
-          },
+          onUpdate: (self) => tweens.current.forEach((tw) => tw.timeScale(1 + self.progress * 6)),
         },
       })
-      tl.to(vortex, { p: 1, duration: 1, ease: 'none', onUpdate: render }, 0)
-        .to(['.hs-icons', '.hs-ribbon'], { rotate: 220, scale: 0, ease: 'power2.in', duration: 0.5 }, 0)
-        .to('.hs-copy', { x: -60, opacity: 0, ease: 'power2.in', duration: 0.4 }, 0)
+      tl.to(run, { p: 1, duration: 1, ease: 'none', onUpdate: render }, 0)
+        .to('.hs-icons', { rotate: 200, scale: 0, ease: 'power2.in', duration: 0.45 }, 0)
+        .to('.hs-copy', { x: -60, opacity: 0, ease: 'power2.in', duration: 0.35 }, 0)
         .to('.hs-proof', { y: 40, opacity: 0, ease: 'power2.in', duration: 0.3 }, 0)
-        .to('.hs-dot', { scale: 1.25, duration: 0.45, ease: 'power2.inOut' }, 0)
-        .from('.hs-flood-a', { xPercent: -30, opacity: 0, duration: 0.3, ease: 'expo.out' }, 0.72)
-        .from('.hs-flood-b', { xPercent: 30, opacity: 0, duration: 0.3, ease: 'expo.out' }, 0.78)
-        .from('.hs-flood-dot', { scale: 0, duration: 0.3, ease: 'back.out(3)' }, 0.85)
-        .to({}, { duration: 0.25 })
+        .to('.hs-dot img', { opacity: 0, duration: 0.15 }, 0.3)
+        .to('.hs-dot', { scale: 0.11, boxShadow: '0 0 0 rgba(200,16,46,0)', ease: 'power2.inOut', duration: 0.22 }, 0.33)
 
-      gsap.set(flood, { display: 'grid' })
       const ro = new ResizeObserver(() => { g = null; render() })
       ro.observe(pin)
-      return () => { ro.disconnect(); flood.style.clipPath = '' }
+      return () => { ro.disconnect(); dotEl.style.visibility = '' }
     })
   })
 
@@ -178,6 +203,7 @@ export default function HeroStream() {
               <path d={PATH} pathLength="1" className="hs-thread" />
             </svg>
 
+            <i className="hs-tip" aria-hidden="true" />
             <div className="hs-dot" style={{ left: DOT.x, top: DOT.y }}>
               <img src="/100BOLD - OP3-09 (1).png" alt="" />
             </div>
@@ -213,10 +239,9 @@ export default function HeroStream() {
         </ul>
       </div>
 
-      <div className="hs-flood" aria-hidden="true">
-        <p className="hs-flood-a">{hero.tagline[0]}</p>
-        <i className="hs-flood-dot" />
-        <p className="hs-flood-b">{hero.tagline[1]}</p>
+      <div className="hs-run" aria-hidden="true">
+        <svg preserveAspectRatio="none"><path pathLength="1" /></svg>
+        <i className="hs-runner" />
       </div>
       </div>
     </section>

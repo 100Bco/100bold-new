@@ -77,13 +77,13 @@
 @media (hover: none) { .hs-hint { display: none; } }
 @media (prefers-reduced-motion: reduce) { .hs-dot::before, .hs-dot::after { animation: none; } }
 
-/* flood: the dot fills the screen with the tagline */
-.hs-flood {
-  display: none; position: absolute; inset: 0; z-index: 10; background: var(--red); color: #fff;
-  place-items: center; align-content: center; gap: 2vh; padding: 0 24px; clip-path: circle(0px at 50% 50%);
-}
-.hs-flood p { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(56px, 11vw, 190px); line-height: .9; letter-spacing: -.03em; width: 100%; max-width: var(--max); }
-.hs-flood-a { text-align: left; }
-.hs-flood-b { text-align: right; }
-.hs-flood-dot { width: clamp(18px, 1.6vw, 26px); aspect-ratio: 1; border-radius: 50%; background: #fff; box-shadow: 0 0 0 0 rgba(255,255,255,.6); animation: hs-white 2s infinite; }
-@keyframes hs-white { 70% { box-shadow: 0 0 0 22px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+/* growing tip of the stream during the intro */
+.hs-tip { position: absolute; left: -9px; top: -9px; width: 18px; height: 18px; border-radius: 50%; background: var(--red); opacity: 0; z-index: 2; box-shadow: 0 0 0 6px rgba(200,16,46,.15), 0 0 24px rgba(200,16,46,.6); }
+
+/* the red thread that carries the dot into the next section */
+.hs-run { position: absolute; inset: 0; z-index: 6; pointer-events: none; }
+.hs-run svg { position: absolute; left: 0; top: 0; width: 100%; overflow: visible; }
+.hs-run path { fill: none; stroke: var(--red); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; }
+.hs-runner { position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; border-radius: 50%; background: var(--red); opacity: 0; box-shadow: 0 0 0 5px rgba(200,16,46,.15); }
+.hs-pin { overflow: visible; }
+.hs-hero { overflow-x: clip; }

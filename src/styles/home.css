@@ -306,3 +306,18 @@
   .nk-hero-ctas .nk-btn { flex: 1; justify-content: center; }
 }
 @media (min-width: 961px) { .nk-steps-line span { transform: scaleY(1); } }
+
+/* ── red thread through "What do you run?" ── */
+.nk-router { padding-top: clamp(40px, 5vw, 72px); }
+.nk-router-body { position: relative; }
+.nk-thread { position: absolute; top: calc(-1 * clamp(40px, 5vw, 72px)); bottom: 0; left: -28px; width: 2px; pointer-events: none; display: none; }
+@media (prefers-reduced-motion: no-preference) { .nk-thread { display: block; } }
+.nk-thread-line { position: absolute; inset: 0; background: var(--red); transform-origin: top; transform: scaleY(0); }
+.nk-thread-bead { position: absolute; left: -7px; top: -8px; width: 16px; height: 16px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 5px rgba(200,16,46,.15); }
+.nk-row { position: relative; }
+.nk-row::after { content: ''; position: absolute; left: -28px; right: 0; bottom: -1px; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease-out); }
+.nk-row.drawn::after { transform: scaleX(1); }
+@media (max-width: 960px) {
+  .nk-thread { left: -10px; }
+  .nk-row::after { left: -10px; }
+}
