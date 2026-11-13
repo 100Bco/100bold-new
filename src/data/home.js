@@ -14,7 +14,7 @@ export const router = {
   h2: 'What do you run?',
   items: [
     { title: 'A personal injury law firm', line: 'More signed cases. Fewer bought leads.', to: '/industries/personal-injury-law-firms', img: '/works/DANG LAW GROUP.png' },
-    { title: 'A medical practice that treats injury patients', line: 'More attorney referrals and more patients.', to: '/industries/pi-medical-providers', img: '/works/T98 REHAB & CHIROPRACTIC.png' },
+    { title: 'A medical practice that treats injury patients', line: 'More attorney referrals and more patients.', to: '/industries/pi-medical-providers', img: '/works/T98%20REHAB%20%26%20CHIROPRACTIC.png' },
     { title: 'A real estate company', line: 'Deal flow from people who already know your name.', to: '/industries/real-estate', img: '/works/LT COMMERCIAL GROUP.png' },
     { title: 'A construction or trades company', line: 'More bids and booked jobs from search.', to: '/industries/construction-trades', img: '/works/BEE CONSTRUCTION.png' },
     { title: 'A local service business', line: 'Be the first call in your city.', to: '/industries/local-services' },
@@ -47,7 +47,7 @@ export const work = {
   h2: 'Results, with names',
   items: [
     { client: 'Dang Law Group', industry: 'personal injury law', img: '/works/DANG LAW GROUP.png', alt: 'Dang Law Group billboard in Austin featuring Dang-Man', result: "Top 3 in Google's AI results for a target search", desc: "Search, Meta ads, automated intake, and Dang-Man, the firm's own AI superhero.", to: '/work/dang-law-group' },
-    { client: 'T98 Rehab', industry: 'pi medical provider', img: '/works/T98 REHAB & CHIROPRACTIC.png', alt: 'T98 Rehab clinic team with a patient', result: '12 hours from launch to first lead closed', desc: 'Google profiles, lead capture, and reviews for an injury chiropractic practice growing across three locations.', to: '/work/t98-rehab' },
+    { client: 'T98 Rehab', industry: 'pi medical provider', img: '/works/T98%20REHAB%20%26%20CHIROPRACTIC.png', alt: 'T98 Rehab clinic team with a patient', result: '12 hours from launch to first lead closed', desc: 'Google profiles, lead capture, and reviews for an injury chiropractic practice growing across three locations.', to: '/work/t98-rehab' },
     { client: 'LT Commercial Group', industry: 'real estate', img: '/works/LT COMMERCIAL GROUP.png', alt: 'Guests at the Dacy Business Park launch event', result: '3 leads for leasing within 24 hours of launch', desc: "A project brand, website, and launch campaign for Dacy Business Park, plus ongoing content and the CEO's LinkedIn.", to: '/work/lt-commercial-group' },
   ],
 }

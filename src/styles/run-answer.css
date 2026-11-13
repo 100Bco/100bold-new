@@ -1,0 +1,69 @@
+/* window layer used by the hero → section transition */
+.hs-stage { position: relative; }
+.hs-window { position: relative; background: var(--white); }
+.hs-live .hs-window { position: absolute; inset: 0; z-index: 30; clip-path: circle(0px at 50% 50%); }
+.hs-live .hs-visual { will-change: transform; }
+
+/* ═══════════ "What do you run?" — question, typed answer, choices, result card ═══════════ */
+.ra {
+  position: relative; min-height: 100vh; min-height: 100svh;
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; gap: clamp(32px, 4vw, 80px);
+  padding: 120px 4.5vw 48px;
+  background: radial-gradient(50% 60% at 78% 55%, rgba(200,16,46,.07), transparent 70%), var(--white);
+}
+.hs-live .ra { height: 100vh; min-height: 0; }
+.ra-left { min-width: 0; }
+.ra-index { display: inline-block; margin-bottom: 18px; }
+.ra-q { white-space: nowrap; font-family: 'Archivo', var(--font-body); font-weight: 800; letter-spacing: -.04em; font-size: clamp(44px, 5vw, 100px); line-height: .92; color: var(--dark); }
+.ra-a {
+  min-height: 2.1em; margin: clamp(14px, 2vh, 24px) 0 clamp(26px, 4vh, 44px);
+  font-family: 'Archivo', var(--font-body); font-weight: 700; letter-spacing: -.03em;
+  font-size: clamp(26px, 2.7vw, 48px); line-height: 1.05; color: var(--red);
+}
+.ra-caret { display: inline-block; width: .08em; height: .9em; margin-left: .06em; background: var(--red); vertical-align: -.08em; animation: ra-blink 1s steps(1) infinite; }
+@keyframes ra-blink { 50% { opacity: 0; } }
+.ra-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.ra-chip {
+  display: inline-flex; align-items: center; gap: 9px; padding: 12px 18px; border-radius: var(--r-pill);
+  border: 1px solid rgba(26,24,22,.14); background: #fff; color: var(--text-2); cursor: pointer;
+  font: 600 clamp(13px, 1vw, 15px) var(--font-body);
+  transition: background .35s, color .35s, border-color .35s, transform .5s var(--ease-out), box-shadow .35s;
+}
+.ra-chip b { font-size: .8em; color: var(--red); transition: color .35s; }
+.ra-chip:hover { border-color: rgba(200,16,46,.4); color: var(--dark); transform: translateY(-2px); }
+.ra-chip.on { background: var(--red); border-color: var(--red); color: #fff; box-shadow: 0 14px 30px -12px rgba(200,16,46,.6); }
+.ra-chip.on b { color: rgba(255,255,255,.75); }
+
+.ra-right { min-width: 0; }
+.ra-card {
+  display: block; border-radius: 26px; overflow: hidden; background: #fff;
+  box-shadow: 0 40px 80px -30px rgba(26,24,22,.35), 0 0 0 1px rgba(26,24,22,.05);
+  animation: ra-up .7s var(--ease-out) both;
+}
+@keyframes ra-up { from { opacity: 0; transform: translateY(40px) scale(.97); } to { opacity: 1; transform: none; } }
+.ra-media { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, var(--red), #8E0B21); }
+.ra-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.ra-card:hover .ra-media img { transform: scale(1.04); }
+.ra-media-num { position: absolute; left: 28px; bottom: 0; font-family: var(--font-head); font-size: clamp(120px, 14vw, 220px); line-height: .85; color: rgba(255,255,255,.22); }
+.ra-body { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 6px 20px; padding: clamp(20px, 2vw, 30px); }
+.ra-count { grid-column: 1 / -1; font-size: 12px; font-weight: 700; letter-spacing: 2px; color: var(--red); }
+.ra-line { font-family: 'Archivo', var(--font-body); font-weight: 700; letter-spacing: -.02em; font-size: clamp(18px, 1.6vw, 26px); line-height: 1.2; color: var(--dark); }
+.ra-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: var(--r-pill); background: var(--dark); color: #fff; font-weight: 700; font-size: 14px; white-space: nowrap; transition: background .35s; }
+.ra-cta svg { width: 14px; height: 14px; transition: transform .5s var(--ease-out); }
+.ra-card:hover .ra-cta { background: var(--red); }
+.ra-card:hover .ra-cta svg { transform: rotate(45deg); }
+
+/* height-limited desktops: keep the card inside the screen */
+@media (min-width: 961px) { .ra-card { max-width: min(100%, calc((100vh - 300px) * 1.6)); margin-left: auto; } }
+
+@media (max-width: 960px) {
+  .ra { grid-template-columns: 1fr; padding: 88px 18px 56px; gap: 28px; align-content: start; }
+  .ra-q { font-size: clamp(36px, 10.5vw, 64px); white-space: normal; }
+  .ra-a { font-size: 24px; min-height: 2.2em; margin: 10px 0 22px; }
+  .ra-chips { flex-wrap: nowrap; overflow-x: auto; margin: 0 -18px; padding: 4px 18px 8px; scrollbar-width: none; }
+  .ra-chips::-webkit-scrollbar { display: none; }
+  .ra-chip { white-space: nowrap; padding: 10px 14px; }
+  .ra-body { grid-template-columns: 1fr; }
+  .ra-cta { justify-self: start; }
+}
+@media (prefers-reduced-motion: reduce) { .ra-card { animation: none; } .ra-caret { animation: none; } }

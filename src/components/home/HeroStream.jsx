@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useGsap, gsap, ScrollTrigger, MQ } from '@/lib/motion'
-import { getLenis } from '@/lib/SmoothScroll'
-import RunDial from './RunDial'
+import { useGsap, gsap, MQ } from '@/lib/motion'
+import RunAnswer from './RunAnswer'
 import { hero } from '@/data/home'
 import Arrow from './Arrow'
 
@@ -48,8 +47,6 @@ export default function HeroStream() {
   const box = useRef(null)
   const tweens = useRef([])
   const [hover, setHover] = useState(null)
-  const [dial, setDial] = useState(0)
-  const dialST = useRef(null)
 
   // scale the fixed 600×600 drawing to whatever width the column has
   useEffect(() => {
@@ -229,10 +226,7 @@ export default function HeroStream() {
     })
 
     // 2. DESKTOP — "a window through the dot": the hero holds still, the camera dives into the red dot,
-    //    the dot opens as a round window onto "What do you run?", then scrolling turns the dial
-    const N = 6
-    const HEAD = 1.3 // timeline units spent on the window transition
-    const T = HEAD + (N - 1)
+    //    and the dot opens as a round window onto "What do you run?"
     mm.add(MQ.desktop, () => {
       const root = ref.current
       const stage = root.querySelector('.hs-stage')
@@ -251,60 +245,30 @@ export default function HeroStream() {
       const renderWin = () => {
         // follow the (zooming) dot live: the window always opens from inside the red dot
         g = geo()
-        const r = w.p <= 0 ? 0 : Math.max(g.r * 0.92, (g.far) * w.p)
+        const r = w.p <= 0 ? 0 : Math.max(g.r * 0.92, g.far * w.p)
         win.style.clipPath = 'circle(' + r.toFixed(1) + 'px at ' + g.x.toFixed(1) + 'px ' + g.y.toFixed(1) + 'px)'
+        win.style.pointerEvents = w.p > 0.98 ? 'auto' : 'none'
       }
       renderWin()
-      let last = 0
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: stage, start: 'top top', end: () => '+=' + window.innerHeight * (1.1 + (N - 1) * 0.7),
+          trigger: stage, start: 'top top', end: () => '+=' + window.innerHeight * 1.1,
           pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true,
-          snap: {
-            // once the visitor starts the transition, finish it; afterwards settle on the nearest industry
-            snapTo: (v, self) => {
-              const h = HEAD / T
-              if (v < h) return v < 0.01 ? 0 : self.direction > 0 ? h : 0
-              return (HEAD + Math.round(v * T - HEAD)) / T
-            },
-            duration: { min: 0.3, max: 0.9 }, delay: 0.12, ease: 'power2.inOut',
-          },
-          onRefresh: () => { g = null; renderWin() },
-          onUpdate: (self) => {
-            const t = self.progress * T
-            const i = t < HEAD ? 0 : Math.max(0, Math.min(N - 1, Math.round(t - HEAD)))
-            if (i !== last) { last = i; setDial(i) }
-          },
+          // once the visitor starts the transition, finish it (and the reverse on the way back)
+          snap: { snapTo: (v, self) => (v < 0.02 ? 0 : v > 0.98 ? 1 : self.direction > 0 ? 1 : 0), duration: { min: 0.3, max: 0.9 }, delay: 0.12, ease: 'power2.inOut' },
+          onRefresh: renderWin,
         },
       })
-      dialST.current = { st: tl.scrollTrigger, T, HEAD }
-      tl.to('.hs-copy', { x: -80, opacity: 0, duration: 0.45, ease: 'power2.in' }, 0)
-        .to('.hs-icons', { scale: 0, rotate: 140, transformOrigin: DOT.x + 'px ' + DOT.y + 'px', duration: 0.5, ease: 'power2.in' }, 0)
+      tl.to('.hs-copy', { x: -80, opacity: 0, duration: 0.35, ease: 'power2.in' }, 0)
+        .to('.hs-icons', { scale: 0, rotate: 140, transformOrigin: DOT.x + 'px ' + DOT.y + 'px', duration: 0.4, ease: 'power2.in' }, 0)
         .to(visual, {
-          scale: 5, ease: 'power2.in', duration: 1.1, onUpdate: renderWin,
+          scale: 5, ease: 'power2.in', duration: 0.85, onUpdate: renderWin,
           transformOrigin: () => { const sc = visual.clientWidth / 600; return DOT.x * sc + 'px ' + DOT.y * sc + 'px' },
-        }, 0.15)
-        .to(w, { p: 1, duration: 0.7, ease: 'power2.in', onUpdate: renderWin }, 0.5)
-        .fromTo('.rdl-wheel-wrap', { scale: 0.35, rotate: -90, opacity: 0 }, { scale: 1, rotate: 0, opacity: 1, duration: 0.55, ease: 'power3.out' }, 0.75)
-        .fromTo('.rdl-head, .rdl-panel', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: 'power3.out' }, 0.9)
-        .to({}, { duration: T - HEAD })
-      return () => { root.classList.remove('hs-live'); win.style.clipPath = ''; dialST.current = null }
-    })
-
-    // 3. MOBILE — the dial is its own section under the hero; it holds still while scrolling turns it
-    mm.add(MQ.mobile, () => {
-      const el = ref.current.querySelector('.rdl')
-      let last = 0
-      const st = ScrollTrigger.create({
-        trigger: el, start: 'top top', end: () => '+=' + window.innerHeight * (N - 1) * 0.6,
-        pin: true, scrub: 0.5, snap: { snapTo: 1 / (N - 1), duration: { min: 0.2, max: 0.5 }, delay: 0.08 },
-        onUpdate: (self) => {
-          const i = Math.round(self.progress * (N - 1))
-          if (i !== last) { last = i; setDial(i) }
-        },
-      })
-      dialST.current = { st, T: N - 1, HEAD: 0 }
-      return () => { st.kill(); dialST.current = null }
+        }, 0.1)
+        .to(w, { p: 1, duration: 0.55, ease: 'power2.in', onUpdate: renderWin }, 0.4)
+        .fromTo('.ra-left > *', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, stagger: 0.04, ease: 'power3.out' }, 0.72)
+        .fromTo('.ra-right', { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: 'power3.out' }, 0.78)
+      return () => { root.classList.remove('hs-live'); win.style.clipPath = ''; win.style.pointerEvents = '' }
     })
   })
 
@@ -321,21 +285,6 @@ export default function HeroStream() {
   }
 
   const active = hover !== null ? channels[hover] : null
-
-  const scrollToY = (y) => {
-    const l = getLenis()
-    if (l) l.scrollTo(y, { duration: 1 })
-    else window.scrollTo({ top: y, behavior: 'smooth' })
-  }
-  const pickDial = (i) => {
-    const d = dialST.current
-    if (!d) { setDial(i); return }
-    scrollToY(d.st.start + ((d.HEAD + i) / d.T) * (d.st.end - d.st.start) + 1)
-  }
-  const skipDial = () => {
-    const d = dialST.current
-    if (d) scrollToY(d.st.end + 2)
-  }
 
   return (
     <section className="hs-hero" ref={ref}>
@@ -410,7 +359,7 @@ export default function HeroStream() {
 
       </div>
       <div className="hs-window">
-        <RunDial active={dial} onPick={pickDial} onSkip={skipDial} />
+        <RunAnswer />
       </div>
       </div>
     </section>

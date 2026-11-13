@@ -10,7 +10,7 @@ import './globals.css'
 import '@/styles/kinetic.css'
 import '@/styles/home.css'
 import '@/styles/hero-stream.css'
-import '@/styles/run-dial.css'
+import '@/styles/run-answer.css'
 
 const POSITIONING = '100Bold is a growth agency for $5M+ service businesses. We get you found on Google and in AI search, turn ad spend into signed clients and booked jobs, and make your CEO the best-known name in your market.'
 

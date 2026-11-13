@@ -47,7 +47,7 @@ const activeCases = [
     title: 'T98 Rehab',
     industry: 'Auto Injury Chiropractor — Austin and Pflugerville, TX',
     services: ['Google', 'Content', 'MinAI'],
-    img: '/works/T98 REHAB & CHIROPRACTIC.png',
+    img: '/works/T98%20REHAB%20%26%20CHIROPRACTIC.png',
     metric: '12 Hours', metricLabel: 'First Lead Closed',
     desc: "Connected the Google, wired in MinAI's lead capture backend, and within 12 hours the first lead came in and closed. Now scaling content and local search across 3 locations.",
     link: 'https://t98rehab.com/',
