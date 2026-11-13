@@ -15,13 +15,7 @@
 .ra-left { min-width: 0; }
 .ra-index { display: inline-block; margin-bottom: 18px; }
 .ra-q { white-space: nowrap; font-family: 'Archivo', var(--font-body); font-weight: 800; letter-spacing: -.04em; font-size: clamp(44px, 5vw, 100px); line-height: .92; color: var(--dark); }
-.ra-a {
-  min-height: 2.1em; margin: clamp(14px, 2vh, 24px) 0 clamp(26px, 4vh, 44px);
-  font-family: 'Archivo', var(--font-body); font-weight: 700; letter-spacing: -.03em;
-  font-size: clamp(26px, 2.7vw, 48px); line-height: 1.05; color: var(--red);
-}
-.ra-caret { display: inline-block; width: .08em; height: .9em; margin-left: .06em; background: var(--red); vertical-align: -.08em; animation: ra-blink 1s steps(1) infinite; }
-@keyframes ra-blink { 50% { opacity: 0; } }
+
 .ra-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
 .ra-chip {
   display: inline-flex; align-items: center; gap: 9px; padding: 12px 18px; border-radius: var(--r-pill);
@@ -59,11 +53,46 @@
 @media (max-width: 960px) {
   .ra { grid-template-columns: 1fr; padding: 88px 18px 56px; gap: 28px; align-content: start; }
   .ra-q { font-size: clamp(36px, 10.5vw, 64px); white-space: normal; }
-  .ra-a { font-size: 24px; min-height: 2.2em; margin: 10px 0 22px; }
+  
   .ra-chips { flex-wrap: nowrap; overflow-x: auto; margin: 0 -18px; padding: 4px 18px 8px; scrollbar-width: none; }
   .ra-chips::-webkit-scrollbar { display: none; }
   .ra-chip { white-space: nowrap; padding: 10px 14px; }
   .ra-body { grid-template-columns: 1fr; }
   .ra-cta { justify-self: start; }
 }
-@media (prefers-reduced-motion: reduce) { .ra-card { animation: none; } .ra-caret { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .ra-card { animation: none; }  }
+
+/* ── the wheel of six framed answers ── */
+.ra-q { font-size: clamp(40px, 4.2vw, 84px); }
+.ra-wheel {
+  --h: clamp(60px, 7.4vh, 76px); --gap: 12px; --step: calc(var(--h) + var(--gap));
+  position: relative; height: calc(var(--step) * 5 - var(--gap)); overflow: hidden; margin-top: clamp(22px, 3.4vh, 40px);
+  -webkit-mask-image: linear-gradient(transparent, #000 18%, #000 82%, transparent);
+          mask-image: linear-gradient(transparent, #000 18%, #000 82%, transparent);
+}
+.ra-list {
+  list-style: none; display: flex; flex-direction: column; gap: var(--gap);
+  transform: translateY(calc(var(--step) * (2 - var(--i))));
+  transition: transform .8s cubic-bezier(.65, 0, .2, 1);
+}
+.ra-list li { opacity: calc(1 - var(--d) * .3); transform: scale(calc(1 - var(--d) * .035)); transform-origin: left center; transition: opacity .6s, transform .8s var(--ease-out); }
+.ra-row {
+  width: 100%; height: var(--h); display: flex; align-items: center; gap: 18px; padding: 0 22px;
+  border-radius: 16px; border: 1px solid rgba(26,24,22,.12); background: #fff; color: var(--dark); cursor: pointer; text-align: left;
+  font-family: 'Archivo', var(--font-body); font-weight: 700; letter-spacing: -.02em; font-size: clamp(17px, 1.45vw, 24px);
+  transition: background .5s, color .5s, border-color .5s, box-shadow .5s;
+}
+.ra-row b { font-family: var(--font-body); font-size: 13px; font-weight: 700; color: var(--red); min-width: 22px; transition: color .5s; }
+.ra-row span { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ra-row-arrow { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--red); opacity: 0; transform: rotate(-45deg) scale(.6); transition: opacity .4s, transform .6s var(--ease-out); }
+.ra-row-arrow svg { width: 14px; height: 14px; }
+.ra-row:hover { border-color: rgba(200,16,46,.45); }
+.ra-row.on { background: var(--red); border-color: var(--red); color: #fff; box-shadow: 0 20px 40px -18px rgba(200,16,46,.7); }
+.ra-row.on b { color: rgba(255,255,255,.75); }
+.ra-row.on .ra-row-arrow { opacity: 1; transform: none; }
+@media (max-width: 960px) {
+  .ra-wheel { --h: 64px; --gap: 10px; }
+  .ra-row { padding: 0 14px; gap: 12px; font-size: 15px; line-height: 1.2; }
+  .ra-row span { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+}
+@media (prefers-reduced-motion: reduce) { .ra-list, .ra-list li { transition: none; } }
