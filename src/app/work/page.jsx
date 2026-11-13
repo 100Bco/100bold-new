@@ -2,7 +2,8 @@ import WaveDivider from '@/components/WaveDivider'
 import WorkHeroGraphic from '@/components/WorkHeroGraphic'
 
 export const metadata = {
-  title: 'Work — 100Bold | Proven Results, Real Clients',
+  title: 'Client Results and Case Studies | 100Bold',
+  alternates: { canonical: '/work' },
 }
 
 const activeCases = [

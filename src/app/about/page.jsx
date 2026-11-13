@@ -2,7 +2,8 @@ import WaveDivider from '@/components/WaveDivider'
 import AboutHeroGraphic from '@/components/AboutHeroGraphic'
 
 export const metadata = {
-  title: 'About Us — 100Bold | Operators, Not Marketers',
+  title: 'About 100Bold | Run by Operators',
+  alternates: { canonical: '/about' },
 }
 
 export default function AboutPage() {

@@ -1,7 +1,8 @@
 import IndustryPageTemplate from '@/components/IndustryPageTemplate'
 
 export const metadata = {
-  title: 'Personal Injury Law Firms',
+  title: 'Marketing for Personal Injury Law Firms | 100Bold',
+  alternates: { canonical: '/industries/personal-injury-law-firms' },
 }
 
 export default function LawFirmsPage() {

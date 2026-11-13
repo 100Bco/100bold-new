@@ -1,7 +1,8 @@
 import IndustryPageTemplate from '@/components/IndustryPageTemplate'
 
 export const metadata = {
-  title: 'General Contractors & Construction',
+  title: 'Construction and Trades Marketing | 100Bold',
+  alternates: { canonical: '/industries/construction-trades' },
 }
 
 export default function ConstructionPage() {

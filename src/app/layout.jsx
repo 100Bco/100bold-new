@@ -2,21 +2,26 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import WaveDivider from '@/components/WaveDivider'
 import RevealObserver from '@/components/RevealObserver'
+import SmoothScroll from '@/lib/SmoothScroll'
+import Cursor from '@/components/Cursor'
+import MobileCTA from '@/components/MobileCTA'
 import './globals.css'
+import '@/styles/kinetic.css'
+import '@/styles/home.css'
+
+const POSITIONING = '100Bold is a growth agency for $5M+ service businesses. We get you found on Google and in AI search, turn ad spend into signed clients and booked jobs, and make your CEO the best-known name in your market.'
 
 export const metadata = {
   metadataBase: new URL('https://100bold.co'),
   title: {
-    default: '100Bold — Start Brave. Stay Bold.',
-    template: '%s — 100Bold',
+    default: '100Bold | Growth Agency for $5M+ Service Businesses',
+    template: '%s',
   },
-  description: "100Bold Agency is Austin's growth agency for $5M+ service businesses. We dominate Google Business Profile, build LinkedIn CEO authority, and install AI infrastructure powered by MinAI.",
-  keywords: ['100Bold', 'Austin growth agency', 'Google Business Profile', 'LinkedIn CEO Authority', 'local service marketing', 'MinAI'],
+  description: '100Bold helps $5M+ service businesses win more of the right clients through SEO and AI search, Meta ads, and LinkedIn for CEOs. Based in Austin, Texas.',
   openGraph: {
-    title: '100Bold — Start Brave. Stay Bold.',
-    description: "Austin's growth agency for $5M+ service businesses. Google domination, LinkedIn authority, and AI infrastructure.",
+    title: '100Bold | Growth Agency for $5M+ Service Businesses',
+    description: 'Growth agency for $5M+ service businesses. SEO and AI search, Meta ads, and LinkedIn for CEOs.',
     url: 'https://100bold.co',
     siteName: '100Bold',
     images: [{ url: '/100BOLD - OP3-09 (1).png', width: 1200, height: 630 }],
@@ -29,56 +34,60 @@ export const metadata = {
   icons: {
     icon: '/100BOLD - OP3-02.png',
   },
-  alternates: {
-    canonical: 'https://100bold.co',
-  },
   other: {
     'llms': '/llms.txt',
   },
 }
 
+const address = {
+  '@type': 'PostalAddress',
+  streetAddress: '12516 Walnut Park Crossing #200',
+  addressLocality: 'Austin',
+  addressRegion: 'TX',
+  postalCode: '78753',
+  addressCountry: 'US',
+}
+
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: '100Bold Agency',
-  alternateName: '100Bold',
+  name: '100Bold',
+  alternateName: '100Bold Agency',
   url: 'https://100bold.co',
   logo: 'https://100bold.co/100BOLD%20-%20OP3-09%20(1).png',
-  description: "Austin's growth agency for $5M+ service businesses. We dominate Google, build LinkedIn authority, and install AI infrastructure.",
+  description: POSITIONING,
   email: 'start@100bold.co',
-  address: { '@type': 'PostalAddress', addressLocality: 'Austin', addressRegion: 'TX', addressCountry: 'US' },
+  telephone: '+1-757-773-5707',
+  address,
+  founder: { '@type': 'Person', name: 'Minh Mac' },
   sameAs: [
     'https://www.facebook.com/100bold.co',
     'https://www.linkedin.com/company/100bold',
     'https://www.instagram.com/100bold.co/',
   ],
-  foundingLocation: 'Austin, Texas',
   slogan: 'Start Brave. Stay Bold.',
-  knowsAbout: ['Google Business Profile', 'LinkedIn Marketing', 'AI Infrastructure', 'Local SEO', 'Social Media Marketing'],
+  knowsAbout: ['AI SEO', 'Generative engine optimization', 'Local SEO', 'Web design', 'Meta ads', 'LinkedIn for CEOs', 'AI video production'],
 }
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: '100Bold Agency',
+  name: '100Bold',
   url: 'https://100bold.co',
+  description: POSITIONING,
   email: 'start@100bold.co',
-  address: { '@type': 'PostalAddress', addressLocality: 'Austin', addressRegion: 'TX', addressCountry: 'US' },
-  priceRange: '$$$',
-  areaServed: [
-    { '@type': 'City', name: 'Austin' },
-    { '@type': 'City', name: 'San Antonio' },
-    { '@type': 'City', name: 'Dallas' },
-    { '@type': 'City', name: 'Houston' },
-  ],
+  telephone: '+1-757-773-5707',
+  address,
+  areaServed: { '@type': 'Country', name: 'United States' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Services',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO', description: 'SEO strategy, website build, and full Google Business Profile takeover — local SEO, review generation, weekly content, AI chatbot installation.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paid Ads', description: 'Google Ads, Meta Ads, and ChatGPT Ads campaigns layered on an established organic foundation for maximum ROI.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Content', description: 'High-converting social media content (Meta, LinkedIn, Instagram, TikTok) and email marketing — posted on schedule.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'LinkedIn CEO Authority', description: 'Complete LinkedIn profile management for CEOs and founders — strategy, ghostwriting, engagement, and network growth.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO and AI Search', url: 'https://100bold.co/services/seo-ai-search' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web design', url: 'https://100bold.co/services/web-design' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Meta ads', url: 'https://100bold.co/services/meta-ads' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Portal, AI production', url: 'https://100bold.co/portal' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'The Mark, LinkedIn for CEOs', url: 'https://100bold.co/the-mark' } },
     ],
   },
 }
@@ -88,8 +97,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: '100Bold',
   url: 'https://100bold.co',
-  description: "Austin's growth agency for $5M+ service businesses.",
-  potentialAction: { '@type': 'SearchAction', target: 'https://100bold.co/?q={search_term_string}', 'query-input': 'required name=search_term_string' },
+  description: POSITIONING,
 }
 
 export default function RootLayout({ children }) {
@@ -101,36 +109,13 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body>
+        <SmoothScroll />
+        <Cursor />
         <RevealObserver />
         <Nav />
         {children}
-        <WaveDivider from="var(--white)" to="#1A1816" variant="wave" />
         <Footer />
-
-        {/* Static content for AI crawlers */}
-        <noscript>
-          <main>
-            <h1>100Bold — Austin&apos;s Growth Agency for $5M+ Service Businesses</h1>
-            <p>100Bold is a growth agency for established Texas service businesses and founders based in Austin, Texas. We dominate Google, build LinkedIn CEO authority, and install AI infrastructure powered by MinAI.</p>
-            <h2>Our Services</h2>
-            <ul>
-              <li>SEO — SEO strategy, website build, Google Business Profile takeover, local SEO, review generation, weekly content</li>
-              <li>Paid Ads — Google Ads, Meta Ads, and ChatGPT Ads campaigns layered on organic foundation</li>
-              <li>Content — Social media content across Meta, LinkedIn, Instagram, TikTok, plus email marketing</li>
-              <li>LinkedIn CEO Authority — Complete LinkedIn profile management for CEOs and founders, ghostwriting, engagement</li>
-            </ul>
-            <h2>Industries We Serve</h2>
-            <ul>
-              <li>General Contractors and Builders</li>
-              <li>Plumbing, Roofing and Electrical</li>
-              <li>Home Services and Solar</li>
-              <li>Real Estate and Property Management</li>
-              <li>Personal Injury Law Firms</li>
-              <li>Chiropractic and Rehabilitation</li>
-            </ul>
-            <p>Contact: start@100bold.co | Austin, Texas | https://100bold.co</p>
-          </main>
-        </noscript>
+        <MobileCTA />
 
         {/* Schema Markup */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
@@ -145,7 +130,7 @@ export default function RootLayout({ children }) {
 
         {/* Wistia Video */}
         <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
-        <Script src="https://fast.wistia.com/embed/futnh0kwqu.js" strategy="lazyOnload" />
+        <Script src="https://fast.wistia.com/embed/futnh0kwqu.js" strategy="lazyOnload" type="module" />
 
         <Analytics />
       </body>

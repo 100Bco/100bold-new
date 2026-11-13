@@ -1,7 +1,8 @@
 import IndustryPageTemplate from '@/components/IndustryPageTemplate'
 
 export const metadata = {
-  title: 'Real Estate & Property Management',
+  title: 'Real Estate Marketing | 100Bold',
+  alternates: { canonical: '/industries/real-estate' },
 }
 
 export default function RealEstatePage() {

@@ -1,7 +1,8 @@
 import IndustryPageTemplate from '@/components/IndustryPageTemplate'
 
 export const metadata = {
-  title: 'Home Services & Solar — HVAC, Solar, Pest Control',
+  title: 'Local Services Marketing | 100Bold',
+  alternates: { canonical: '/industries/local-services' },
 }
 
 export default function LocalServicesPage() {

@@ -1,7 +1,8 @@
 import IndustryPageTemplate from '@/components/IndustryPageTemplate'
 
 export const metadata = {
-  title: 'Chiropractic & Rehabilitation',
+  title: 'Marketing for PI Medical Providers | 100Bold',
+  alternates: { canonical: '/industries/pi-medical-providers' },
 }
 
 export default function RehabChiroPage() {

@@ -3,7 +3,8 @@ import WaveDivider from '@/components/WaveDivider'
 import ServicesHeroGraphic from '@/components/ServicesHeroGraphic'
 
 export const metadata = {
-  title: 'Services — 100Bold | SEO, Paid Ads, Content & LinkedIn Authority',
+  title: 'Services | SEO, AI Search, Meta Ads, Web Design | 100Bold',
+  alternates: { canonical: '/services' },
 }
 
 export default function ServicesPage() {
