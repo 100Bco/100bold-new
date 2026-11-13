@@ -10,7 +10,7 @@ export default function MobileCTA() {
 
   useEffect(() => {
     setHidden(false)
-    const targets = document.querySelectorAll('.nk-close, .nk-footer')
+    const targets = document.querySelectorAll('.xc, .nk-footer')
     if (!targets.length) return
     const seen = new Set()
     const obs = new IntersectionObserver((entries) => {
