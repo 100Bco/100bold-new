@@ -18,6 +18,7 @@ import PIMedicalPage from './pages/industries/PIMedicalPage'
 import ComingSoonPage from './pages/ComingSoonPage'
 import SmoothScroll from './lib/SmoothScroll'
 import MobileCTA from './components/MobileCTA'
+import Cursor from './components/Cursor'
 
 const pageTitles = {
   '/': '100Bold | Growth Agency for $5M+ Service Businesses',
@@ -73,6 +74,7 @@ function App() {
   return (
     <BrowserRouter>
       <SmoothScroll />
+      <Cursor />
       <PageTitle />
       <RevealObserver />
       <Nav />
@@ -94,6 +96,7 @@ function App() {
         <Route path="/insights" element={<ComingSoonPage title="Insights" />} />
         <Route path="/privacy" element={<ComingSoonPage title="Privacy" />} />
         <Route path="/work" element={<WorkPage />} />
+        <Route path="/work/:slug" element={<ComingSoonPage title="Case study" />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
