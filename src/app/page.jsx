@@ -1,5 +1,5 @@
 import HeroStream from '@/components/home/HeroStream'
-import Router from '@/components/home/Router'
+import RunDoors from '@/components/home/RunDoors'
 import Logos from '@/components/home/Logos'
 import WhatWeDo from '@/components/home/WhatWeDo'
 import Results from '@/components/home/Results'
@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <main id="main" className="nk-home">
       <HeroStream />
-      <Router />
+      <RunDoors />
       <Logos />
       <WhatWeDo />
       <Results />
