@@ -7,7 +7,7 @@ import { logos } from '@/data/home'
 const Set = () => (
   <div className="xl-set">
     {logos.items.map((l) => (
-      <div className="xl-cell" key={l.name}>
+      <div className="xl-cell" key={l.name} tabIndex={0} onClick={(e) => e.currentTarget.classList.toggle('on')}>
         <img src={l.src} alt={l.name} width={l.w} height={l.h} style={{ width: l.w, height: l.h }} loading="lazy" />
       </div>
     ))}
