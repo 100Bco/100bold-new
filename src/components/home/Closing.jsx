@@ -3,13 +3,14 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useGsap, gsap, MQ } from '@/lib/motion'
-import { closing } from '@/data/home'
+import { closing as homeClosing } from '@/data/home'
 import Arrow from './Arrow'
 
 const queries = ['best personal injury lawyer near me', 'injury chiropractor near me', 'commercial real estate austin', 'general contractor near me', 'hvac repair near me']
 
 /* Closing — a red poster: the line, one big search that always answers with you, and the call */
-export default function Closing() {
+export default function Closing({ data }) {
+  const closing = { href: '/contact', ...homeClosing, ...(data || {}) }
   const ref = useRef(null)
   const [q, setQ] = useState('')
   const [k, setK] = useState(0)
@@ -59,7 +60,7 @@ export default function Closing() {
 
         <div className="xc-foot">
           <p className="xc-body">{closing.body}</p>
-          <Link href="/contact" className="nk-btn nk-btn-white xc-btn" data-magnetic="0.3">{closing.cta} <Arrow /></Link>
+          <Link href={closing.href} className="nk-btn nk-btn-white xc-btn" data-magnetic="0.3">{closing.cta} <Arrow /></Link>
         </div>
       </div>
     </section>

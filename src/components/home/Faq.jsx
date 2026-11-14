@@ -3,11 +3,12 @@
 import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { useGsap, gsap, MQ } from '@/lib/motion'
-import { faq } from '@/data/home'
+import { faq as homeFaq } from '@/data/home'
 import Arrow from './Arrow'
 
 /* Questions — numbered list; the open one turns red */
-export default function Faq() {
+export default function Faq({ data }) {
+  const faq = data || homeFaq
   const ref = useRef(null)
   const [open, setOpen] = useState(0)
   useGsap(ref, (mm) => {
