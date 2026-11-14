@@ -10,22 +10,54 @@ export const portalPage = {
     line: 'Portal is 100Bold’s AI production studio. We make brand films, ads, and social content for service businesses without a film crew or a six-week timeline.',
     cta: 'Start a project',
   },
-  reel: { src: '/portal/dang-man-v2.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Portal reel: Dang-Man, the AI superhero made for Dang Law Group' },
 }
 
 const P = '/portal/'
-const piece = (id, file, o) => ({ id, src: P + file + '.mp4', preview: P + file + '-preview.mp4', poster: P + file + '-poster.jpg', transcript: null, turnaround: null, ...o })
+const piece = (id, file, o) => ({ id, src: P + file + '.mp4', poster: P + file + '-poster.jpg', transcript: null, turnaround: null, ...o })
 
-export const pieces = [
-  piece('dang-man-1', 'dang-man-v2', { title: 'Dang-Man, ad one', client: 'Dang Law Group', format: 'AI ad, vertical', ratio: '9/16', description: 'Dang-Man, the AI superhero made for Dang Law Group, in a short vertical ad for social.' }),
-  piece('dang-man-2', 'dlg-ad-2', { title: 'Dang-Man, ad two', client: 'Dang Law Group', format: 'AI ad, vertical', ratio: '9/16', description: 'A second Dang-Man ad: a car accident, and the firm that shows up to help.' }),
-  piece('dang-man-3', 'dlg-ad-3', { title: 'Dang-Man, ad three', client: 'Dang Law Group', format: 'AI ad, vertical', ratio: '9/16', description: 'A third Dang-Man ad, made for Facebook and Instagram.' }),
-  piece('bond-111', 'bond-111', { title: 'BOND, video 111', client: 'BOND', format: 'Social video', ratio: '16/9', description: 'A dance-led social video shot on location, part of an ongoing series for BOND.' }),
-  piece('bond-114', 'bond-114', { title: 'BOND, video 114', client: 'BOND', format: 'Social video', ratio: '16/9', description: 'Another episode in the BOND social series, shot on location.' }),
-  piece('bond-109', 'bond-109', { title: 'BOND, video 109', client: 'BOND', format: 'Social video', ratio: '16/9', description: 'A character-led episode in the BOND social series.' }),
-  piece('bond-110', 'bond-110', { title: 'BOND, video 110', client: 'BOND', format: 'Social video', ratio: '16/9', description: 'A short episode in the BOND social series.' }),
-  piece('real-vs-ai', 'portal-compare', { title: 'Real actor and client', client: 'Portal', format: 'Side-by-side', ratio: '1214/1080', description: 'The same scene side by side: a real actor on one side, the client on the other.' }),
+/* Grouped by client. ratio is the video's own shape. */
+export const groups = [
+  {
+    client: 'Dang Law Group', intro: 'Dang-Man, the personal injury firm’s own AI superhero, across ads and social.',
+    pieces: [
+      piece('dang-man-1', 'dang-man-v2', { title: 'Dang-Man, ad one', format: 'AI ad, vertical', duration: '0:33', ratio: '9/16', description: 'Dang-Man in a short vertical ad for social.' }),
+      piece('dang-man-2', 'dlg-ad-2', { title: 'Dang-Man, ad two', format: 'AI ad, vertical', duration: '0:33', ratio: '9/16', description: 'A car accident, and the firm that shows up to help.' }),
+      piece('dang-man-3', 'dlg-ad-3', { title: 'Dang-Man, ad three', format: 'AI ad, vertical', duration: '0:29', ratio: '9/16', description: 'A third Dang-Man ad, made for Facebook and Instagram.' }),
+      piece('real-vs-ai', 'portal-compare', { title: 'Real actor and client', format: 'Side by side', duration: '0:24', ratio: '1214/1080', description: 'The same scene side by side: a real actor on one side, the client on the other.' }),
+    ],
+  },
+  {
+    client: 'BOND', intro: 'A dance-led social series, shot on location around the city.',
+    pieces: [
+      piece('bond-111', 'bond-111', { title: 'BOND, video 111', format: 'Social video', duration: '0:33', ratio: '16/9', description: 'A dance-led episode shot outside a pharmacy chain store.' }),
+      piece('bond-114', 'bond-114', { title: 'BOND, video 114', format: 'Social video', duration: '0:32', ratio: '16/9', description: 'Another episode in the series, shot on location.' }),
+      piece('bond-109', 'bond-109', { title: 'BOND, video 109', format: 'Social video', duration: '0:27', ratio: '16/9', description: 'A character-led episode in the BOND series.' }),
+      piece('bond-110', 'bond-110', { title: 'BOND, video 110', format: 'Social video', duration: '0:15', ratio: '16/9', description: 'A short episode in the BOND series.' }),
+    ],
+  },
+  {
+    client: 'Miami Vice', intro: 'Short vertical films that sell a place and a feeling.',
+    pieces: [
+      piece('miami-vice-42', 'miami-vice-42', { title: 'A night in Miami Vice', format: 'AI film, vertical', duration: '0:11', ratio: '9/16', description: 'A short vertical film for Miami Vice.' }),
+      piece('miami-vice-43', 'miami-vice-43', { title: 'Miami Vice, No. 43', format: 'AI film, vertical', duration: '0:12', ratio: '9/16', description: 'Sunset, the pool, and the view, in twelve seconds.' }),
+    ],
+  },
+  {
+    client: 'LT Commercial Group', intro: 'Seasonal films for Austin’s commercial real estate group.',
+    pieces: [
+      piece('ltcg-holiday', 'video-0728', { title: 'Holiday film', format: 'AI film, vertical', duration: '0:32', ratio: '9/16', description: 'A Christmas story, made for the season.' }),
+      piece('ltcg-halloween', 'video-0728b', { title: 'Halloween film', format: 'AI film, vertical', duration: '0:51', ratio: '9/16', description: 'Trick-or-treat on the street, made for Halloween.' }),
+    ],
+  },
+  {
+    client: 'Bee Construction', intro: 'Project films for a general contractor.',
+    pieces: [
+      piece('bee-0310', 'video-0310', { title: 'Project film', format: 'AI film, vertical', duration: '0:39', ratio: '9/16', description: 'From the site to the finished building, in under a minute.' }),
+    ],
+  },
 ]
+
+export const pieces = groups.flatMap((g) => g.pieces.map((p) => ({ ...p, client: g.client })))
 
 export const make = {
   h2: 'What we make',
