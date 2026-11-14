@@ -145,7 +145,7 @@ html.nav-locked { overflow: hidden; }
   }
   .nk-mcta svg { width: 16px; height: 16px; }
   .nav-locked .nk-mcta { display: none; }
-  .nk-footer { padding-bottom: 110px !important; }
+  .nk-footer { padding-bottom: 32px !important; }
 }
 
 /* ── Coming soon ── */

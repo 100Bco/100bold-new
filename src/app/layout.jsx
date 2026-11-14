@@ -5,7 +5,6 @@ import Footer from '@/components/Footer'
 import RevealObserver from '@/components/RevealObserver'
 import SmoothScroll from '@/lib/SmoothScroll'
 import Cursor from '@/components/Cursor'
-import MobileCTA from '@/components/MobileCTA'
 import './globals.css'
 import '@/styles/kinetic.css'
 import '@/styles/home.css'
@@ -119,7 +118,6 @@ export default function RootLayout({ children }) {
         <Nav />
         {children}
         <Footer />
-        <MobileCTA />
 
         {/* Schema Markup */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
