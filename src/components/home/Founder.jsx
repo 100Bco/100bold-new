@@ -30,7 +30,7 @@ export default function Founder() {
       <div className="mx xf-grid">
         <div className="xf-port">
           <span className="xf-badge">Founder</span>
-          <div className="xf-ph" role="img" aria-label={founder.imgAlt}><span>Minh Mac · photo</span></div>
+          <img className="xf-img" src="/the-mark/images/team/minh-mac.webp" alt={founder.imgAlt} loading="lazy" width="1254" height="1254" />
           <div className="xf-nm"><div><b>Minh Mac</b><span>Founder, 100Bold</span></div><Link href="/about" className="nk-link-arrow light"><span>{founder.cta}</span><Arrow /></Link></div>
         </div>
         <div className="xf-copy">
