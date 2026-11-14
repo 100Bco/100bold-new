@@ -1018,3 +1018,17 @@ img { display: block; max-width: 100%; }
 .illus { position: absolute; z-index: 5; right: 14px; top: -11px; font-size: 10px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-3); background: #fff; border: 1px solid rgba(26,24,22,.12); border-radius: 20px; padding: 4px 10px; pointer-events: none; }
 .xc-box, .sds-card, .sdt-vis { position: relative; }
 .xc-box { overflow: visible !important; }
+
+/* mobile one-card slider (MobileSlider) */
+.msl-arw, .msl-dots { display: none; }
+@media (max-width: 960px) {
+  .msl-wrap { position: relative; }
+  .msl-track { display: flex !important; flex-direction: row !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px !important; margin: 0 -16px; padding: 4px 9vw 10px !important; scrollbar-width: none; height: auto !important; min-height: 0 !important; }
+  .msl-track::-webkit-scrollbar { display: none; }
+  .msl-track > * { flex: 0 0 82vw !important; width: 82vw !important; max-width: none !important; scroll-snap-align: center; }
+  .msl-arw { display: grid; place-items: center; position: absolute; top: 30%; z-index: 3; width: 42px; height: 42px; border-radius: 50%; border: none; background: #fff; color: #1A1816; font-size: 18px; box-shadow: 0 10px 24px -8px rgba(26,24,22,.35); cursor: pointer; }
+  .msl-arw.prev { left: -8px; } .msl-arw.next { right: -8px; }
+  .msl-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+  .msl-dots button { width: 9px; height: 9px; padding: 0; border: none; border-radius: 10px; background: rgba(26,24,22,.2); cursor: pointer; transition: width .35s, background .35s; }
+  .msl-dots button.on { width: 26px; background: #C8102E; }
+}

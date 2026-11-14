@@ -205,7 +205,7 @@ html.nav-locked { overflow: hidden; }
 .nk-drop-group:not(:first-child) { margin-top: 6px; border-top: 1px solid var(--border); padding-top: 12px; }
 .nk-m-group-t { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--text-3); margin-top: 8px; }
 
-@media (max-width: 1100px) { .nk-tag { font-size: 10px; } .nk-m-group-t { font-size: 11px; } }
+@media (max-width: 1100px) { .nk-tag { font-size: 10px; } .nk-m-group-t { display: none; } }
 
 /* mobile footer: tighter */
 @media (max-width: 960px) {
@@ -217,4 +217,15 @@ html.nav-locked { overflow: hidden; }
   .nk-f-col ul { gap: 7px; }
   .nk-f-col a, .nk-f-col address { font-size: 13px; }
   .nk-mcta { transition: transform .5s var(--ease-out), opacity .3s; }
+}
+
+/* mobile menu fits one screen */
+.nk-mobile { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+@media (max-width: 1100px) {
+  .nk-mobile-inner { padding: 88px 24px 28px; }
+  .nk-m-link { font-size: 32px; }
+  .nk-m-group { padding: 12px 0 !important; }
+  .nk-m-sub { margin-top: 8px; gap: 4px 14px; }
+  .nk-m-sub a { font-size: 13.5px; }
+  .nk-m-foot { padding-top: 20px; }
 }

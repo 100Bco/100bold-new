@@ -6,6 +6,7 @@ import { isLive } from '@/lib/cases'
 import { useGsap, gsap, MQ } from '@/lib/motion'
 import { cases } from '@/data/work'
 import Arrow from '@/components/home/Arrow'
+import MobileSlider from '@/components/MobileSlider'
 
 /* The four case studies: picture, then the number, then the story; two by two */
 export default function WorkCases() {
@@ -13,13 +14,14 @@ export default function WorkCases() {
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
       ref.current.querySelectorAll('.wkc').forEach((c, i) => {
-        gsap.from(c, { y: 70, opacity: 0, duration: 1.2, ease: 'expo.out', delay: (i % 2) * 0.12, clearProps: 'transform,opacity', scrollTrigger: { trigger: c, start: 'top 88%', once: true } })
+        gsap.from(c, { y: window.innerWidth <= 960 ? 0 : 70, opacity: 0, duration: 1.2, ease: 'expo.out', delay: (i % 2) * 0.12, clearProps: 'transform,opacity', scrollTrigger: { trigger: c, start: 'top 88%', once: true } })
       })
     })
   })
   return (
     <section className="wkcs" ref={ref} aria-label="Case studies">
-      <div className="mx wkcs-grid">
+      <div className="mx">
+      <MobileSlider trackClass="wkcs-grid" labels={cases.map((c) => c.client)}>
         {cases.map((c) => {
           const live = isLive(c.to)
           const Card = live ? Link : 'article'
@@ -41,6 +43,7 @@ export default function WorkCases() {
           </Card>
           )
         })}
+      </MobileSlider>
       </div>
     </section>
   )

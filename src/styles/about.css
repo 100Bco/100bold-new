@@ -141,8 +141,16 @@
   .abw-row i { display: none; }
 }
 @media (max-width: 600px) {
-  .abf-path { grid-template-columns: 1fr; }
-  .abn-grid, .inst-grid { grid-template-columns: 1fr; }
+  .abf-path b { font-size: 18px; }
+  .abf-path span { font-size: 13px; }
+  .abn-grid, .inst-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .abn-grid article { padding: 18px 14px; }
+  .abn-n { font-size: 30px; }
+  .abn-grid h3 { margin: 10px 0 6px; font-size: 16px; }
+  .abn-grid p, .inst-grid p { font-size: 13px; }
+  .inst-grid article { padding: 18px 14px; }
+  .inst-grid h3 { font-size: 16px; }
+  .inst-grid article:last-child { grid-column: 1 / -1; }
   .insl-list li { grid-template-columns: 34px 1fr; }
   .insl-topic, .insl-soon { grid-column: 2; justify-self: start; }
 }

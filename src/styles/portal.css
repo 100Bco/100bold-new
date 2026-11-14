@@ -62,6 +62,9 @@ html.pt-lock, html.pt-lock body { overflow: hidden; }
   .ptv small { font-size: 12.5px; }
   .ptv p { font-size: 13px; }
   .ptv-play { width: 46px; height: 46px; margin: -23px 0 0 -23px; }
-  .ptm-list { grid-template-columns: 1fr; }
-  .ptm-list h3 { margin-top: 22px; }
+  .ptm-list { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ptm-list li { padding: 18px 14px 20px; border-radius: 20px; }
+  .ptm-n { font-size: 36px; }
+  .ptm-list h3 { margin: 18px 0 6px; font-size: 17px; }
+  .ptm-list p { font-size: 13px; }
 }

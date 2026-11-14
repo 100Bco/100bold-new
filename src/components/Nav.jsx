@@ -86,7 +86,7 @@ export default function Nav() {
         </button>
       </nav>
 
-      <div className="nk-mobile" aria-hidden={!mobileOpen}>
+      <div className="nk-mobile" aria-hidden={!mobileOpen} data-lenis-prevent>
         <div className="nk-mobile-inner">
           {menu.map((item, i) => (
             <div key={item.name} className="nk-m-group" style={{ '--i': i }}>
