@@ -6,13 +6,13 @@
 .pg-dot { display: inline-block; width: .2em; height: .2em; border-radius: 50%; background: var(--red); margin-left: .04em; }
 .pg-stage { position: relative; flex: 1; width: 100%; min-height: 0; margin-top: 3vh; display: flex; flex-direction: column; align-items: center; }
 .pg-svg { flex: 1; min-height: 0; width: 100%; max-width: 980px; overflow: visible; }
-.pg-node circle { fill: #1c1917; stroke: rgba(255,255,255,.2); stroke-width: 2; transition: fill .4s, stroke .4s; }
+.pg-node > circle { fill: #1c1917; stroke: rgba(255,255,255,.2); stroke-width: 2; transition: fill .4s, stroke .4s; }
 .pg-node g { stroke: rgba(255,255,255,.55); transition: stroke .4s; }
 .pg-node text { font: 800 20px 'Archivo', sans-serif; letter-spacing: -.02em; fill: rgba(255,255,255,.35); transition: fill .4s; }
-.pg-node.done circle { fill: #3a1219; stroke: var(--red); }
+.pg-node.done > circle { fill: #3a1219; stroke: var(--red); }
 .pg-node.done g { stroke: #ff6b83; }
 .pg-node.done text { fill: rgba(255,255,255,.7); }
-.pg-node.on circle { fill: var(--red); stroke: var(--red); }
+.pg-node.on > circle { fill: var(--red); stroke: var(--red); }
 .pg-node.on g { stroke: #fff; }
 .pg-node.on text { fill: #fff; }
 .pg-center { width: min(520px, 92%); text-align: center; margin-top: -2vh; }

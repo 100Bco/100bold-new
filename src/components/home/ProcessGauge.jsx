@@ -79,8 +79,8 @@ export default function ProcessGauge() {
         <div className="pg-stage">
           <svg className="pg-svg" viewBox="-40 -100 880 470" aria-hidden="true">
             <defs>
-              <linearGradient id="pg-arc" x1="0" x2="1"><stop offset="0" stopColor="#5a0a17" /><stop offset="1" stopColor="#ff2b4f" /></linearGradient>
-              <filter id="pg-glow"><feGaussianBlur stdDeviation="7" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+              <linearGradient id="pg-arc" gradientUnits="userSpaceOnUse" x1={CX - R} y1="0" x2={CX + R} y2="0"><stop offset="0" stopColor="#8a0c22" /><stop offset="1" stopColor="#ff2b4f" /></linearGradient>
+              <filter id="pg-glow" filterUnits="userSpaceOnUse" x="-40" y="-100" width="880" height="470"><feGaussianBlur stdDeviation="7" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
             </defs>
             {ticks.map((t, i) => (
               <line key={i} x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} stroke={'rgba(255,255,255,' + (t.big ? 0.35 : 0.14) + ')'} strokeWidth={t.big ? 2 : 1} />
@@ -88,7 +88,7 @@ export default function ProcessGauge() {
             <path d={arc(A0, A1)} fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="28" strokeLinecap="round" />
             <path ref={fill} fill="none" stroke="url(#pg-arc)" strokeWidth="28" strokeLinecap="round" filter="url(#pg-glow)" />
             {STOPS.map((a, i) => {
-              const [x, y] = pt(a, R + 84), [lx, ly] = pt(a, R + 138)
+              const [x, y] = pt(a, R + 84), lx = x, ly = y - 50
               const on = i === step, done = a <= angle + 1
               return (
                 <g key={i} className={'pg-node' + (on ? ' on' : done ? ' done' : '')}>
