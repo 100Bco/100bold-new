@@ -6,14 +6,6 @@
 .pth-p { color: rgba(255,255,255,.7); }
 .pth-ghost { border: 1px solid rgba(255,255,255,.3); color: #fff; }
 .pth-ghost:hover { background: #fff; color: var(--dark); }
-/* tilted strip of stills */
-.pts { margin-top: clamp(56px, 8vw, 100px); transform: rotate(-4deg); width: 120%; margin-left: -10%; }
-.pts-row { display: flex; gap: 14px; width: max-content; }
-.pts-card { flex: none; width: clamp(130px, 13vw, 200px); aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; background: #1a1816; box-shadow: 0 30px 60px -30px rgba(0,0,0,.8); }
-.pts-card:nth-child(odd) { transform: translateY(26px); }
-.pts-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.9) brightness(.85); transition: filter .4s; }
-.pts-card:hover img { filter: none; }
-
 /* selected pieces */
 .ptps { background: #0d0c0b; color: #fff; padding: 0 0 clamp(90px, 11vw, 150px); }
 .ptps-head { text-align: center; margin-bottom: clamp(36px, 4vw, 56px); }
@@ -60,7 +52,6 @@ html.pt-lock, html.pt-lock body { overflow: hidden; }
 @media (max-width: 960px) {
   .pth { padding-top: 112px; }
   .ptgrid { grid-template-columns: repeat(3, 1fr); }
-  .pts { margin-top: 50px; }
   .ptm-list { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
