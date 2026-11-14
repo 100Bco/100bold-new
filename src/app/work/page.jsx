@@ -1,5 +1,8 @@
 import WaveDivider from '@/components/WaveDivider'
 import WorkHeroGraphic from '@/components/WorkHeroGraphic'
+import WorkMark from '@/components/WorkMark'
+import Closing from '@/components/home/Closing'
+import '@/styles/work-mark.css'
 
 export const metadata = {
   title: 'Client Results and Case Studies | 100Bold',
@@ -221,7 +224,8 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <WaveDivider from="#F7F3ED" to="#FEFCF9" variant="slant" />
+      <WorkMark />
+      <Closing />
     </>
   )
 }

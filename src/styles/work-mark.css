@@ -1,0 +1,29 @@
+/* Work page: The Mark founders list */
+.wm { background: #141210; color: #fff; padding: clamp(90px, 11vw, 150px) 0; }
+.wm-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 10px 30px; margin-bottom: clamp(30px, 4vw, 50px); }
+.wm-eyebrow { width: 100%; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff5a75; }
+.wm-h2 { font: 800 clamp(40px, 4.6vw, 76px) 'Archivo', sans-serif; letter-spacing: -.05em; line-height: .95; }
+.wm-all { font-weight: 700; font-size: 15px; color: #fff; border-bottom: 2px solid var(--red); padding-bottom: 3px; transition: color .3s; }
+.wm-all:hover { color: #ff5a75; }
+.wm-list { list-style: none; border-top: 1px solid rgba(255,255,255,.85); }
+.wm-list li { border-bottom: 1px solid rgba(255,255,255,.14); }
+.wm-row { display: grid; grid-template-columns: 76px 1fr 1.6fr 190px 52px; align-items: center; gap: clamp(18px, 2.4vw, 36px); padding: clamp(22px, 2.6vw, 32px) 8px; color: #fff; border-radius: 18px; transition: background .45s, padding .5s var(--ease-out); }
+.wm-photo { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; filter: grayscale(1); transition: filter .5s, transform .6s var(--ease-out); }
+.wm-who b { display: block; font: 800 clamp(24px, 2.4vw, 36px) 'Archivo', sans-serif; letter-spacing: -.04em; line-height: 1; }
+.wm-who small { display: block; margin-top: 8px; font-size: 14px; color: rgba(255,255,255,.55); }
+.wm-text { font-size: clamp(15px, 1.15vw, 17px); line-height: 1.6; color: rgba(255,255,255,.7); }
+.wm-stat { text-align: right; }
+.wm-stat b { display: block; font: 900 clamp(36px, 3.4vw, 56px) 'Archivo', sans-serif; letter-spacing: -.05em; line-height: .9; color: #ff5a75; }
+.wm-stat small { display: block; margin-top: 6px; font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.wm-go { font-style: normal; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); display: grid; place-items: center; font-size: 20px; transition: all .45s var(--ease-out); }
+.wm-row:hover { background: rgba(255,255,255,.04); padding-left: 22px; }
+.wm-row:hover .wm-photo { filter: none; transform: scale(1.06); }
+.wm-row:hover .wm-go { background: var(--red); border-color: var(--red); transform: rotate(-45deg); }
+@media (max-width: 960px) {
+  .wm-row { grid-template-columns: 64px 1fr auto !important; grid-template-areas: 'p w s' 't t t'; row-gap: 16px; }
+  .wm-photo { grid-area: p; width: 64px; height: 64px; filter: none; }
+  .wm-who { grid-area: w; }
+  .wm-stat { grid-area: s; }
+  .wm-text { grid-area: t; }
+  .wm-go { display: none; }
+}
