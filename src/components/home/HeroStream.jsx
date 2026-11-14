@@ -40,6 +40,7 @@ const channels = [
   { k: 'gemini', name: 'Gemini', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
 ]
 
+const clamp01 = (v) => Math.max(0, Math.min(1, v))
 const LOOP = 16 // seconds for one icon to travel the whole ribbon
 
 export default function HeroStream() {
@@ -144,7 +145,6 @@ export default function HeroStream() {
       const paths = gsap.utils.toArray('.hs-ribbon path')
       const thread = root.querySelector('.hs-thread')
       const sweepFill = root.querySelector('.hs-sweep-fill')
-      const sweepHand = root.querySelector('.hs-sweep-hand')
       const L = thread.getTotalLength()
       // sample the spiral from the dot outward: cumulative angle (0 = up, clockwise) and radius
       const S = 240
@@ -178,28 +178,34 @@ export default function HeroStream() {
         for (let j = 0; j < ss.length; j++) if (Math.abs(ss[j] - q) < Math.abs(ss[best] - q)) best = j
         return th[best]
       })
+      // the revealed area is a fan from the dot through the spiral; its leading edge fades out softly
+      const FADE = 60, SLICES = 28
+      const sweepSlices = root.querySelector('.hs-sweep-slices')
+      const rAt = (ang) => {
+        let j = 0
+        while (j < th.length - 2 && th[j + 1] < ang) j++
+        const f = clamp01((ang - th[j]) / (th[j + 1] - th[j] || 1))
+        return rr[j] + (rr[j + 1] - rr[j]) * f + 70
+      }
+      const fan = (a1, a2) => {
+        if (a2 <= a1) return ''
+        let d = 'M' + DOT.x + ',' + DOT.y
+        const add = (ang) => { const [ux, uy] = at(ang), R = rAt(ang); d += ' L' + (DOT.x + ux * R).toFixed(1) + ',' + (DOT.y + uy * R).toFixed(1) }
+        add(a1)
+        for (let j = 0; j < th.length; j++) if (th[j] > a1 && th[j] < a2) add(th[j])
+        add(a2)
+        return d + ' Z'
+      }
       const onSweep = () => {
         const a = sweep.a
-        let d = 'M' + DOT.x + ',' + DOT.y
-        let last = null
-        for (let j = 0; j < th.length && th[j] <= a; j++) {
-          const [ux, uy] = at(th[j])
-          const R = rr[j] + 70
-          d += ' L' + (DOT.x + ux * R).toFixed(1) + ',' + (DOT.y + uy * R).toFixed(1)
-          last = j
+        sweepFill.setAttribute('d', fan(t0 - 1, a - FADE) || 'M0,0')
+        let html = ''
+        for (let i = 0; i < SLICES; i++) {
+          const hi = a - (FADE * i) / SLICES, lo = a - (FADE * (i + 1)) / SLICES
+          const d = fan(Math.max(t0 - 1, lo), hi)
+          if (d) html += '<path d="' + d + '" style="fill:#fff;stroke:none;stroke-dasharray:none;fill-opacity:' + ((i + 0.5) / SLICES).toFixed(2) + '"/>'
         }
-        let hx = DOT.x, hy = DOT.y
-        if (last !== null && last < th.length - 1) {
-          const f = (a - th[last]) / (th[last + 1] - th[last] || 1)
-          const R = rr[last] + (rr[last + 1] - rr[last]) * f + 70
-          const [ux, uy] = at(a)
-          hx = DOT.x + ux * R; hy = DOT.y + uy * R
-          d += ' L' + hx.toFixed(1) + ',' + hy.toFixed(1)
-        }
-        sweepFill.setAttribute('d', d + ' Z')
-        sweepHand.setAttribute('x2', hx.toFixed(1))
-        sweepHand.setAttribute('y2', hy.toFixed(1))
-        sweepHand.style.opacity = a > t0 + 2 && a < t1 - 2 ? '1' : '0'
+        sweepSlices.innerHTML = html
         icons.forEach((el, i) => {
           if (!planted[i] && a >= iconAngle[i]) {
             planted[i] = true
@@ -216,8 +222,8 @@ export default function HeroStream() {
       intro
         .fromTo('.hs-dot', { y: -520, scaleX: 0.8, scaleY: 1.2 }, { y: 0, scaleX: 1, scaleY: 1, duration: 1.3, ease: 'bounce.out' })
         .from('.hs-dot img', { scale: 0.3, opacity: 0, duration: 0.7 }, '-=0.35')
-        .to(sweep, { a: t1, duration: 3, ease: 'power1.inOut', onUpdate: onSweep }, '-=0.2')
-        .add(() => { sweepFill.setAttribute('d', 'M-200,-200 H900 V900 H-200 Z') })
+        .to(sweep, { a: t1 + FADE, duration: 1.9, ease: 'power1.inOut', onUpdate: onSweep }, '-=0.2')
+        .add(() => { sweepFill.setAttribute('d', 'M-200,-200 H900 V900 H-200 Z'); root.querySelector('.hs-sweep-slices').innerHTML = '' })
         .add(() => tweens.current.forEach((t) => t.play()))
         .from('.hs-h1 .nk-line > span', { yPercent: 115, duration: 1.3, stagger: 0.09 }, 0.35)
         .from('.hs-label, .hs-sub, .hs-ctas', { y: 24, opacity: 0, duration: 1, stagger: 0.08 }, 0.8)
@@ -325,12 +331,12 @@ export default function HeroStream() {
               </defs>
               <mask id="hs-sweep" maskUnits="userSpaceOnUse" x="-300" y="-300" width="1300" height="1300">
                 <path className="hs-sweep-fill" style={{ fill: "#fff", stroke: "none", strokeDasharray: "none" }} d="M-200,-200 H900 V900 H-200 Z" />
+                <g className="hs-sweep-slices" />
               </mask>
               <g mask="url(#hs-sweep)">
                 <path d={PATH} pathLength="1" className="hs-band" stroke="url(#hs-band)" />
                 <path d={PATH} pathLength="1" className="hs-thread" />
               </g>
-              <line className="hs-sweep-hand" x1={DOT.x} y1={DOT.y} x2={DOT.x} y2={DOT.y} />
             </svg>
 
             <div className="hs-dot" style={{ left: DOT.x, top: DOT.y }}>
