@@ -289,11 +289,11 @@
 .sdw-head p { max-width: 400px; color: var(--text-2); font-size: 17px; line-height: 1.6; }
 .sdw-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
 .sdw-card { position: relative; display: flex; flex-direction: column; min-height: 320px; background: var(--white); border-radius: 26px; padding: 26px 22px 24px; color: var(--dark); transition: transform .55s var(--ease-out), background .45s, color .45s, box-shadow .55s; }
-.sdw-ic { width: 64px; height: 64px; border-radius: 18px; background: rgba(200,16,46,.07); display: grid; place-items: center; padding: 8px; margin-bottom: auto; transition: background .45s; }
+.sdw-ic { width: 64px; height: 64px; border-radius: 18px; background: rgba(200,16,46,.07); display: grid; place-items: center; padding: 8px; transition: background .45s; }
 .sdw-ic svg { width: 100% !important; height: 100% !important; }
 .sdw-card h3 { font: 800 clamp(19px, 1.5vw, 23px) 'Archivo', sans-serif; letter-spacing: -.03em; line-height: 1.1; margin: 34px 0 10px; }
-.sdw-card p { font-size: 14.5px; line-height: 1.5; color: var(--text-2); transition: color .45s; }
-.sdw-go { font-style: normal; margin-top: 20px; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(26,24,22,.16); font-size: 18px; transition: all .45s var(--ease-out); }
+.sdw-card p { font-size: 14.5px; line-height: 1.5; color: var(--text-2); transition: color .45s; margin-bottom: 24px; }
+.sdw-go { font-style: normal; margin-top: auto; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(26,24,22,.16); font-size: 18px; transition: all .45s var(--ease-out); }
 .sdw-card:hover { transform: translateY(-10px); background: var(--red); color: #fff; box-shadow: 0 40px 70px -35px rgba(200,16,46,.65); }
 .sdw-card:hover p { color: rgba(255,255,255,.85); }
 .sdw-card:hover .sdw-ic { background: #fff; }
@@ -335,7 +335,7 @@
   .sdw-grid { grid-template-columns: 1fr; }
   .sdw-card { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0 16px; }
   .sdw-card h3 { margin: 0; flex: 1; }
-  .sdw-card p { width: 100%; margin-top: 12px; }
+  .sdw-card p { width: 100%; margin: 12px 0 0; }
   .sdw-ic { margin: 0; width: 54px; height: 54px; }
   .sdw-go { display: none; }
   .sdh-ctas { flex-direction: column; }
