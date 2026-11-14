@@ -1,11 +1,11 @@
 /* Service detail pages. Structure and headlines follow the Content Blueprint. Proof uses only named, confirmed results. */
 
 const industries = [
-  { name: 'Personal injury law firms', to: '/industries/personal-injury-law-firms' },
-  { name: 'PI medical providers', to: '/industries/pi-medical-providers' },
-  { name: 'Real estate', to: '/industries/real-estate' },
-  { name: 'Construction and trades', to: '/industries/construction-trades' },
-  { name: 'Local services', to: '/industries/local-services' },
+  { name: 'Personal injury law firms', want: 'More signed cases at a lower cost per case', icon: '/law-red.json', to: '/industries/personal-injury-law-firms' },
+  { name: 'PI medical providers', want: 'More attorney referrals and more injury patients', icon: '/wheelchair-insurance-red.json', to: '/industries/pi-medical-providers' },
+  { name: 'Real estate', want: 'Deal flow, leasing inquiries, and credibility with investors', icon: '/building-red.json', to: '/industries/real-estate' },
+  { name: 'Construction and trades', want: 'More bids and booked jobs from search, not just referrals', icon: '/repair-tools-red.json', to: '/industries/construction-trades' },
+  { name: 'Local services', want: 'More booked jobs from people searching nearby', icon: '/power-red.json', to: '/industries/local-services' },
 ]
 
 export const seo = {
@@ -22,7 +22,13 @@ export const seo = {
   shift: {
     eyebrow: 'The shift',
     h2: 'Buyers now ask AI who to hire',
-    text: 'Your next client may never scroll a page of results. They ask ChatGPT or Google’s AI who to call, and they get one or two names back. If your business is not one of them, you are not in the running.',
+    query: 'best personal injury lawyer austin',
+    steps: [
+      { k: 'Then', t: 'Buyers typed a search and scrolled through ten results.' },
+      { k: 'Now', t: 'They ask ChatGPT or Google’s AI who to call, and get one or two names back.' },
+      { k: 'The risk', t: 'If your business is not one of them, you are not in the running.' },
+    ],
+    answer: 'is a top choice for injury cases in Austin, with strong reviews and a local team.',
   },
   get: {
     h2: 'What you get',
@@ -36,9 +42,9 @@ export const seo = {
   terms: {
     h2: 'SEO, GEO, and AEO in plain English',
     items: [
-      { k: 'SEO', full: 'Search engine optimization', d: 'Getting your business to rank in Google search and Google Maps when buyers look for what you do.' },
-      { k: 'GEO', full: 'Generative engine optimization', d: 'Getting AI tools like ChatGPT, Gemini, and Google’s AI Overviews to name and cite your business in their answers.' },
-      { k: 'AEO', full: 'Answer engine optimization', d: 'Shaping your content so it becomes the direct answer to the questions buyers type or ask out loud.' },
+      { k: 'SEO', full: 'Search engine optimization', d: 'Getting your business to rank in Google search and Google Maps when buyers look for what you do.', where: 'Google search and Google Maps' },
+      { k: 'GEO', full: 'Generative engine optimization', d: 'Getting AI tools like ChatGPT, Gemini, and Google’s AI Overviews to name and cite your business in their answers.', where: 'ChatGPT, Gemini, and Google’s AI Overviews' },
+      { k: 'AEO', full: 'Answer engine optimization', d: 'Shaping your content so it becomes the direct answer to the questions buyers type or ask out loud.', where: 'Answer boxes and voice assistants' },
     ],
   },
   measure: {
