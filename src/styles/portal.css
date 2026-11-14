@@ -21,7 +21,7 @@
 .ptv-play { position: absolute; left: 50%; top: 50%; z-index: 2; width: 58px; height: 58px; margin: -29px 0 0 -29px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: rgba(255,255,255,.18); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: background .35s, transform .45s var(--ease-out); }
 .ptv-play svg { width: 22px; height: 22px; margin-left: 3px; }
 .ptv-thumb:hover .ptv-play, .ptv-thumb:focus-visible .ptv-play { background: var(--red); transform: scale(1.1); }
-.ptv h3 { margin-top: 18px; font: 800 clamp(18px, 1.4vw, 21px) 'Archivo', sans-serif; letter-spacing: -.025em; line-height: 1.15; }
+.ptv h3 { margin-top: 18px; font: 800 clamp(15px, 1.15vw, 19px) 'Archivo', sans-serif; letter-spacing: -.025em; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ptv small { display: block; margin-top: 6px; font-size: 14px; font-weight: 600; color: #ff5a75; line-height: 1.4; }
 .ptv-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .ptv p:not(.ptv-sr) { margin-top: 10px; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.75); }
@@ -58,7 +58,7 @@ html.pt-lock, html.pt-lock body { overflow: hidden; }
 @media (max-width: 600px) {
   .ptgrid { grid-template-columns: 1fr 1fr; gap: 30px 12px; }
   .ptv-thumb { border-radius: 16px; }
-  .ptv h3 { font-size: 16px; margin-top: 12px; }
+  .ptv h3 { font-size: 14.5px; margin-top: 12px; }
   .ptv small { font-size: 12.5px; }
   .ptv p { font-size: 13px; }
   .ptv-play { width: 46px; height: 46px; margin: -23px 0 0 -23px; }
