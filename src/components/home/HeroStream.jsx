@@ -298,7 +298,6 @@ export default function HeroStream() {
       <div className="hs-pin">
       <div className="mx hs-grid">
         <div className="hs-copy">
-          <p className="hs-label">(01) Growth agency</p>
           <h1 className="hs-h1">
             <span className="nk-line"><span>The growth agency</span></span>
             <span className="nk-line"><span>for <em>$5M+</em> service</span></span>
