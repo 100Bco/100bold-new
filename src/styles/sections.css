@@ -196,7 +196,7 @@
 .xc { position: relative; overflow: hidden; background: var(--red); color: #fff; padding: clamp(96px, 12vw, 170px) 0 clamp(80px, 10vw, 140px); }
 .xc::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 55% at 50% 0%, rgba(255,255,255,.16), transparent 70%), radial-gradient(50% 50% at 50% 110%, rgba(0,0,0,.28), transparent 70%); }
 .xc-in { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
-.xc-h2 { font: 800 clamp(52px, 8.6vw, 148px) 'Archivo', sans-serif; letter-spacing: -.055em; line-height: .9; }
+.xc-h2 { font: 800 clamp(42px, 6vw, 100px) 'Archivo', sans-serif; letter-spacing: -.055em; line-height: .9; }
 .xc-line { display: block; overflow: hidden; padding-bottom: .06em; }
 .xc-line > span { display: inline-block; }
 .xc-box { width: min(760px, 100%); margin-top: clamp(40px, 5vw, 64px); background: #fff; color: var(--dark); border-radius: 28px; text-align: left; box-shadow: 0 50px 90px -40px rgba(60,0,10,.7); overflow: hidden; }
@@ -212,7 +212,10 @@
 .xc-rk { font: 800 15px var(--font-body); background: var(--red); color: #fff; border-radius: 20px; padding: 6px 14px; }
 .xc-foot { display: flex; flex-direction: column; align-items: center; margin-top: clamp(36px, 4vw, 52px); }
 .xc-body { font-size: clamp(17px, 1.4vw, 20px); color: rgba(255,255,255,.85); max-width: 520px; margin-bottom: 28px; }
+.xc-btn { font-size: clamp(17px, 1.4vw, 20px); padding: 22px 40px; gap: 14px; box-shadow: 0 24px 50px -20px rgba(60,0,10,.6); }
+.xc-btn svg { width: 20px; height: 20px; }
 .xc-btn:hover { background: var(--dark); color: #fff; }
+@media (max-width: 600px) { .xc-btn { width: 100%; justify-content: center; padding: 20px 28px; } }
 @media (max-width: 600px) {
   .xc-bar { padding: 18px 20px; gap: 12px; }
   .xc-hit { grid-template-columns: 40px 1fr auto; gap: 12px; padding: 0 20px; }
