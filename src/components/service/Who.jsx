@@ -40,7 +40,7 @@ export default function Who({ d }) {
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
       gsap.from(ref.current.querySelectorAll('.sdw-head > *'), { y: 40, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: ref.current, start: 'top 75%', once: true } })
-      gsap.from(ref.current.querySelectorAll('.sdw-card'), { y: 40, opacity: 0, duration: 0.8, ease: 'power3.out', stagger: 0.05, clearProps: 'transform,opacity', scrollTrigger: { trigger: ref.current, start: 'top 68%', once: true } })
+      gsap.from(ref.current.querySelector('.sdw-grid'), { y: 50, opacity: 0, duration: 1, ease: 'expo.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: ref.current, start: 'top 68%', once: true } })
     })
   })
   return (

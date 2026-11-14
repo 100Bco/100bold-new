@@ -30,7 +30,7 @@ export default function Journey({ d, children, className = '' }) {
     })
   })
   return (
-    <section className={'svt ' + className} ref={ref}>
+    <section className={'svt svt-center ' + className} ref={ref}>
       <div className="mx">
         <div className="svt-head">
           <h2 className="svt-h2">{d.h2Lines ? d.h2Lines.map((l, i) => <span key={l}>{i > 0 && <br />}{l}</span>) : d.h2}</h2>

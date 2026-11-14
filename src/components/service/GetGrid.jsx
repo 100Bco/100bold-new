@@ -9,7 +9,7 @@ export default function GetGrid({ d, tone = 'light' }) {
   const ref = useRef(null)
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
-      gsap.from(ref.current.querySelectorAll('.sdg-head > *, .sdg-card'), { y: 50, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: ref.current, start: 'top 72%', once: true } })
+      gsap.from(ref.current.querySelectorAll('.sdg-head > *, .sdg-grid'), { y: 50, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.1, clearProps: 'transform,opacity', scrollTrigger: { trigger: ref.current, start: 'top 72%', once: true } })
     })
   })
   return (

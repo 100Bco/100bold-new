@@ -352,3 +352,10 @@
   .sdv-speed .arc { animation: none; stroke-dashoffset: 4; }
   .sdv-track i { animation: none; }
 }
+
+/* centred section heads on service pages */
+.sdg-head, .sdw-head { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 18px; }
+.sdg-head p, .sdw-head p { margin: 0 auto; }
+.svt-center .svt-head { margin: 0 auto; text-align: center; }
+.svt-center .svt-head p { margin-left: auto; margin-right: auto; }
+.sd-h2, .svt-h2, .svt-head p, .sdg-head p, .sdw-head p { text-wrap: balance; }
