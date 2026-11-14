@@ -138,3 +138,6 @@
   .idw-grid li { padding: 16px 18px; }
   .idf-card, .idf-in { min-height: 280px; }
 }
+
+.idp-mode { margin-top: 10px; font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #ff5a75; }
+.idx-mode { margin-top: 18px; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); background: rgba(200,16,46,.07); border-radius: 30px; padding: 7px 14px; }

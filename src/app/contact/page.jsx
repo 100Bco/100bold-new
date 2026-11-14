@@ -14,7 +14,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'ContactPage', name:
 export default function ContactPage() {
   return (
     <main id="main" className="sd-page">
-      <Hero d={contact.hero} cta={false} />
+      <Hero d={{ ...contact.hero, bySource: contact.heroBySource }} cta={false} />
       <ContactBody />
       <ContactForm />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

@@ -66,7 +66,7 @@ export default function Terms({ d }) {
             <p>{t.d}</p>
             <span className="sdt-where"><small>Where you show up</small>{t.where}</span>
           </div>
-          <div className="sdt-vis" key={'v' + on}><Visual k={t.k} /></div>
+          <div className="sdt-vis" key={'v' + on}><span className="illus">Illustration</span><Visual k={t.k} /></div>
         </div>
       </div>
     </section>

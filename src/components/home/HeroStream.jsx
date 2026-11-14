@@ -311,7 +311,8 @@ export default function HeroStream() {
           <ul className="hs-proof">
             {hero.proof.map((p, i) => (
               <li key={i}>
-                <strong>{p.pre}<span>{p.num}</span>{p.post}</strong>
+                <strong>{p.big}</strong>
+                <span>{p.label}</span>
                 <em>{p.who}</em>
               </li>
             ))}

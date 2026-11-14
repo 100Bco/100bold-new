@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { router } from '@/data/home'
 import Arrow from './Arrow'
 
-const extraImg = { 5: '/works/LINKEDINGLENN.png' }
+const extraImg = {}
 
-/* "What do you run?" — six framed answers, the active one in red and a result card */
+/* "What do you run?" — five framed answers, the active one in red and a result card */
 export default function RunAnswer() {
   const [active, setActive] = useState(0)
   const auto = useRef(true)
@@ -50,10 +50,11 @@ export default function RunAnswer() {
             ))}
           </ul>
         </div>
+        <p className="ra-founder">{router.founder.q} <Link href={router.founder.to}>{router.founder.cta} <Arrow /></Link></p>
       </div>
 
       <div className="ra-right">
-        <Link href={it.to} className="ra-card" key={active} aria-label={it.title}>
+        <Link href={it.to} className="ra-card" key={active} aria-label={'Explore marketing for ' + it.title.replace(/^(A|An) /, '').replace(/^I'm /, '')}>
           <span className="ra-media">
             {img ? <img src={img} alt="" /> : <span className="ra-media-num">{String(active + 1).padStart(2, '0')}</span>}
           </span>

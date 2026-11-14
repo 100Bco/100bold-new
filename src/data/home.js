@@ -4,9 +4,9 @@ export const hero = {
   sub: 'We get you found on Google and in AI search, turn ad spend into signed clients, and make your CEO the best-known name in your market.',
   tagline: ['Start Brave.', 'Stay Bold.'],
   proof: [
-    { pre: 'Top ', num: 3, post: " in Google's AI results", who: 'Dang Law Group, personal injury law' },
-    { pre: '$', num: 2, post: 'M+ lead in 72 hours', who: 'Bee Construction, general contractor' },
-    { pre: 'First lead closed in ', num: 12, post: ' hours', who: 'T98 Rehab, injury chiropractic' },
+    { big: 'Top 3', label: "in Google's AI results for a target search", who: 'Dang Law Group' },
+    { big: '$2M+', label: 'development lead within 72 hours', who: 'Bee Construction' },
+    { big: '12 hrs', label: 'from launch to first lead closed', who: 'T98 Rehab' },
   ],
 }
 
@@ -18,8 +18,8 @@ export const router = {
     { title: 'A real estate company', line: 'Deal flow from people who already know your name.', to: '/industries/real-estate', img: '/works/LT COMMERCIAL GROUP.png' },
     { title: 'A construction or trades company', line: 'More bids and booked jobs from search.', to: '/industries/construction-trades', img: '/works/BEE CONSTRUCTION.png' },
     { title: 'A local service business', line: 'Be the first call in your city.', to: '/industries/local-services' },
-    { title: "I'm the founder or CEO", line: "Build your own name, not just the company's.", to: '/the-mark' },
   ],
+  founder: { q: 'Building your own presence as a founder?', cta: 'Explore The Mark', to: '/the-mark' },
 }
 
 export const logos = {
@@ -36,10 +36,11 @@ export const logos = {
 export const services = {
   h2: 'What we do',
   items: [
-    { title: 'SEO and AI Search', to: '/services/seo-ai-search', gif: '/works/GIF 1.gif', desc: 'Your buyers ask Google and ChatGPT who to hire. We make your business the answer and keep you at the top of Google Maps.' },
-    { title: 'Web design', to: '/services/web-design', gif: '/works/GIF 2.gif', desc: 'A fast website that wins the client before the first call, built so Google and AI can read every page.' },
-    { title: 'Meta ads', to: '/services/meta-ads', gif: '/works/GIF 3.gif', desc: 'Facebook and Instagram ads tracked to the calls and clients they bring in. You see cost per signed client, not cost per click.' },
-    { title: 'Portal', to: '/portal', gif: '/works/GIF 4.gif', desc: 'Our AI production studio. Short films, ads, and social content people choose to watch, delivered in days.' },
+    { title: 'SEO and AI Search', to: '/services/seo-ai-search', group: 'Growth services', scene: 0, gif: '/works/GIF 1.gif', desc: 'Your buyers ask Google and ChatGPT who to hire. We make your business the answer and keep you at the top of Google Maps.' },
+    { title: 'Web design', to: '/services/web-design', scene: 1, gif: '/works/GIF 2.gif', desc: 'A fast website that wins the client before the first call, built so Google and AI can read every page.' },
+    { title: 'Meta ads', to: '/services/meta-ads', scene: 2, gif: '/works/GIF 3.gif', desc: 'Facebook and Instagram ads tracked to the calls and clients they bring in. You see cost per signed client, not cost per click.' },
+    { title: 'The Mark', to: '/the-mark', group: 'Specialist studios', img: '/the-mark/images/tung-cao/Tung%20Cao%20Photo.png', desc: 'Our fully managed LinkedIn service for founders and CEOs, built in your voice so decision-makers know your name.' },
+    { title: 'Portal', to: '/portal', scene: 3, gif: '/works/GIF 4.gif', desc: 'Our AI production studio. Short films, ads, and social content people choose to watch, delivered in days.' },
   ],
 }
 

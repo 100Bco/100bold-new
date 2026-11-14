@@ -67,4 +67,4 @@ export const portalFaq = {
   ],
 }
 
-export const portalClosing = { h2: 'Make something people watch', body: 'Tell us what you want to make. We will come back with an idea, a script outline, and a timeline.', cta: 'Start a project' }
+export const portalClosing = { href: '/contact?from=video#form', h2: 'Make something people watch', body: 'Tell us what you want to make. We will come back with an idea, a script outline, and a timeline.', cta: 'Start a project' }

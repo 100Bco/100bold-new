@@ -23,9 +23,10 @@ export default function IndPanels() {
             {d.img && <img className="idp-bg" src={d.img} alt="" style={{ objectPosition: d.imgPos }} loading="lazy" />}
             <div className="idp-shade" />
             <div className="idp-top"><Lottie className="idp-ic" src={d.icon} play={on === i} /></div>
-            <h2 className="idp-v">{d.name}</h2>
+            <span className="idp-v" aria-hidden="true">{d.name}</span>
             <div className="idp-body">
               <h2 className="idp-name">{d.name}</h2>
+              {d.mode && <p className="idp-mode">{d.mode}</p>}
               <p className="idp-who">{d.who.items.slice(0, 4).join(' · ')}</p>
               {d.proof && d.proof.big && <div className="idp-proof"><b>{d.proof.big}</b><span>{d.proof.label}{d.result ? ' · ' + d.result.client : ''}</span></div>}
               <Link href={'/industries/' + d.slug} className="nk-btn nk-btn-white idp-go">Explore {d.short} <i aria-hidden="true">→</i></Link>

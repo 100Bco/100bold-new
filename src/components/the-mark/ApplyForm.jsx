@@ -87,12 +87,12 @@ export default function ApplyForm() {
         <textarea name="Notes" rows={4} />
       </label>
       <button type="submit" className="btn-primary ap-submit" disabled={status === 'sending'}>
-        {status === 'sending' ? 'Sending...' : 'Submit application'}
+        {status === 'sending' ? 'Sending...' : 'Continue in your email app'}
       </button>
       {status === 'error' && (
         <p className="ap-error">Something went wrong. Please email us at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
       )}
-      <p className="ap-note">Takes about 2 minutes.</p>
+      <p className="ap-note">Takes about 2 minutes. Submitting opens your email app with your answers filled in, addressed to {EMAIL}. Press send there.</p>
     </form>
   )
 }

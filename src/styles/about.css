@@ -166,3 +166,11 @@
 .ctf-sent { grid-column: 1 / -1; padding: 16px 18px; border-radius: 14px; background: rgba(31,157,85,.1); color: #17713e; font-weight: 600; font-size: 15px; }
 @media (max-width: 960px) { .ctf-card { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .ctf-form { grid-template-columns: 1fr; } }
+
+.ctb-open { padding: 14px 10px 4px; font-size: 14px; color: var(--text-2); text-align: center; border-top: 1px solid rgba(26,24,22,.08); }
+.ctb-open a { font-weight: 700; color: var(--red); border-bottom: 1px solid currentColor; }
+.ctf-note { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.5; color: var(--text-2); background: #FBF8F3; border: 1px dashed rgba(26,24,22,.18); border-radius: 12px; padding: 12px 14px; }
+.ctf-video { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 18px; border-radius: 16px; background: rgba(200,16,46,.05); }
+.ctf-video .full { grid-column: 1 / -1; }
+.ctf-foot small a { color: var(--dark); font-weight: 700; text-decoration: underline; }
+@media (max-width: 600px) { .ctf-video { grid-template-columns: 1fr; } }

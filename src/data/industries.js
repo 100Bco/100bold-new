@@ -124,6 +124,7 @@ export const industries = [
     slug: 'construction-trades',
     name: 'Construction and trades',
     short: 'Construction',
+    mode: 'You bid on projects and contracts',
     title: 'Contractor SEO and Construction Marketing Agency | 100Bold',
     description: 'Marketing for contractors that want more bids and booked jobs: SEO and AI search, websites, reviews, and Meta ads tracked to real work.',
     icon: '/repair-tools-red.json',
@@ -135,7 +136,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'Contractors doing $5M+ a year, led by the owner.',
-      items: ['General contractors', 'Commercial builders', 'Roofing', 'HVAC', 'Plumbing', 'Electrical'],
+      items: ['General contractors', 'Commercial builders', 'Design-build firms', 'Roofing contractors', 'Concrete and site work', 'Specialty subcontractors'],
     },
     pains: [
       { q: 'Almost all our work comes from referrals.', fix: 'Rankings in Google, Maps, and AI answers for the jobs you want, so new owners and buyers find you directly.', svc: svc.seo },
@@ -149,7 +150,7 @@ export const industries = [
     faq: [
       { q: 'What is contractor SEO?', a: 'Getting your company to rank in Google and Google Maps, and be named by AI assistants, when owners and buyers search for the work you do in the areas you serve.' },
       { q: 'How do contractors get more jobs online?', a: 'A clear page for each service and area, real project photos, steady reviews, and a fast way to request a bid. Then ads aimed at real project owners.' },
-      { q: 'Do you work with roofing and HVAC companies?', a: 'Yes. We work with general contractors, commercial builders, roofing, HVAC, plumbing, and electrical companies.' },
+      { q: 'Do you work with roofing and specialty contractors?', a: 'Yes. We work with general contractors, commercial builders, design-build firms, roofing contractors, and specialty subcontractors. HVAC, plumbing, and electrical companies that book local service calls fit our Local services page.' },
       { q: 'Do Facebook ads work for contractors?', a: 'They can when they target real project owners and every lead is tracked to the bid or job it brings in.' },
       { q: 'Who owns the website and the ad account?', a: 'You do. The site, the domain, the ad account, and every login are yours.' },
     ],
@@ -158,6 +159,7 @@ export const industries = [
     slug: 'local-services',
     name: 'Local services',
     short: 'Local services',
+    mode: 'Customers call you to book local jobs',
     title: 'Local Service Marketing: HVAC, Plumbing, Towing, Auto | 100Bold',
     description: 'Marketing for high-ticket local service companies that want booked jobs: Google Maps, AI search, reviews, and ads tracked to real jobs.',
     icon: '/power-red.json',

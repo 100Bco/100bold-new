@@ -87,7 +87,7 @@ export default function ServiceStack() {
         <article key={o.id} id={o.id} className={'svc t-' + o.tone} style={{ '--i': i }}>
           <div className="svc-in">
             <div className="svc-copy">
-              <span className="svc-tag">{o.name}</span>
+              <span className="svc-tag">{i < 3 ? 'Growth services' : 'Specialist studio'} · {o.name}</span>
               <h2 className="svc-h">{o.h3}</h2>
               <p className="svc-line">{o.line}</p>
               <ul className="svc-points">{o.points.map((p) => <li key={p}>{p}</li>)}</ul>

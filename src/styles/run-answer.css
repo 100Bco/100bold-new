@@ -95,3 +95,7 @@
   .ra-row span { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 }
 @media (prefers-reduced-motion: reduce) { .ra-list li { transition: none; } }
+
+.ra-founder { margin-top: 22px; font-size: 15px; color: var(--text-2); }
+.ra-founder a { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--red); border-bottom: 1px solid currentColor; }
+.ra-founder a svg { width: 13px; height: 13px; }

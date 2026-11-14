@@ -29,7 +29,7 @@ export default function WhatWeDo() {
       canvases.current.forEach((cv, i) => {
         if (!cv) return
         cv.width = 640; cv.height = Math.round(640 * 428 / 712)
-        draws.current[i] = isoScenes[i](cv)
+        draws.current[i] = isoScenes[services.items[i].scene](cv)
         draws.current[i](4.6)
       })
     }
@@ -63,14 +63,14 @@ export default function WhatWeDo() {
         </div>
         <ul className="xw-list">
           {services.items.map((s, i) => (
-            <li key={s.to} className={'xw-row' + (open === i ? ' open' : '')} onMouseEnter={() => setOpen(i)} onFocus={() => setOpen(i)} onClick={() => setOpen(i)}>
+            <li key={s.to} className={'xw-row' + (open === i ? ' open' : '') + (s.group ? ' has-group' : '')} data-group={s.group} onMouseEnter={() => setOpen(i)} onFocus={() => setOpen(i)} onClick={() => setOpen(i)}>
               <span className="xw-n">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="xw-t"><Link href={s.to}>{s.title}</Link></h3>
               <div className="xw-d">
                 <p>{s.desc}</p>
                 <Link href={s.to} className="xw-more" aria-label={'Learn more about ' + s.title}>Learn more <Arrow /></Link>
               </div>
-              <span className="xw-g" aria-hidden="true"><canvas ref={(el) => { canvases.current[i] = el }} /></span>
+              <span className="xw-g" aria-hidden="true">{s.scene != null ? <canvas ref={(el) => { canvases.current[i] = el }} /> : <img src={s.img} alt="" loading="lazy" />}</span>
             </li>
           ))}
         </ul>

@@ -112,3 +112,12 @@
   .hs-proof li, .hs-proof li + li { padding: 12px 0; border-left: none; border-bottom: 1px solid rgba(26,24,22,.1); }
   .hs-ctas { margin-bottom: 24px; }
 }
+
+/* proof: three big numbers, the result and the client under each */
+.hs-proof { max-width: 560px; }
+.hs-proof li { gap: 6px; }
+.hs-proof strong { font-family: 'Archivo', var(--font-body); font-weight: 900; font-size: clamp(30px, 2.6vw, 42px); letter-spacing: -.05em; line-height: .9; text-transform: none; color: var(--red); }
+.hs-proof li > span { font-size: 13.5px; line-height: 1.4; color: var(--text-2); }
+.hs-proof em { font-size: 12.5px; font-weight: 700; color: var(--dark); }
+@media (min-width: 961px) { .hs-pin { padding-bottom: clamp(120px, 17vh, 180px); } }
+@media (max-width: 960px) { .hs-proof li { flex-direction: column; } .hs-proof strong { font-size: 30px; } }

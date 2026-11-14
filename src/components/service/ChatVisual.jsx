@@ -41,6 +41,7 @@ export default function ChatVisual() {
   const it = asks[k]
   return (
     <div className="sdv sdv-chat" aria-hidden="true">
+      <span className="illus">Illustration</span>
       <div className="sdv-win">
         <div className="sdv-top"><i /><i /><i /><span>AI assistant</span></div>
         <div className="sdv-body">

@@ -24,7 +24,7 @@ export default function PortalHero() {
         <h1 className="idx-h1 pth-h1">{hero.h1.map((l, i) => <span className="idx-line" key={l}><span className={i === hero.h1.length - 1 ? 'r' : ''}>{l}</span></span>)}</h1>
         <p className="idx-p pth-p">{hero.line}</p>
         <div className="idx-ctas">
-          <Link href="/contact" className="nk-btn nk-btn-red" data-magnetic="0.3">{hero.cta} <Arrow /></Link>
+          <Link href="/contact?from=video#form" className="nk-btn nk-btn-red" data-magnetic="0.3">{hero.cta} <Arrow /></Link>
           <a href="#pieces" className="nk-btn pth-ghost">See the work</a>
         </div>
       </div>

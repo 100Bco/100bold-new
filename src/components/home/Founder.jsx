@@ -29,16 +29,14 @@ export default function Founder() {
     <section className="xf" ref={ref}>
       <div className="mx xf-grid">
         <div className="xf-port">
-          <span className="xf-badge">Founder</span>
           <img className="xf-img" src="/the-mark/images/team/minh-mac.webp" alt={founder.imgAlt} loading="lazy" width="1254" height="1254" />
           <div className="xf-nm"><div><b>Minh Mac</b><span>Founder, 100Bold</span></div><Link href="/about" className="nk-link-arrow light"><span>{founder.cta}</span><Arrow /></Link></div>
         </div>
         <div className="xf-copy">
-          <p className="x-eyebrow">{founder.h2}</p>
           <h2 className="x-h2">{founder.h2}</h2>
           <ul className="xf-stats">
             {stats.map((s) => (
-              <li key={s.label}><b><span className="xf-num" data-to={s.to} data-dec={s.dec || 0}>{s.dec ? s.to.toFixed(s.dec) : s.to}</span>{s.suf}</b><span>{s.label}</span></li>
+              <li key={s.label}><b aria-label={(s.dec ? s.to.toFixed(s.dec) : s.to) + s.suf}><span className="xf-num" aria-hidden="true" data-to={s.to} data-dec={s.dec || 0}>{s.dec ? s.to.toFixed(s.dec) : s.to}</span><span aria-hidden="true">{s.suf}</span></b><span>{s.label}</span></li>
             ))}
           </ul>
           <blockquote className="xf-q">

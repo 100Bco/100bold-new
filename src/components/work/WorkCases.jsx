@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
+import { isLive } from '@/lib/cases'
 import { useGsap, gsap, MQ } from '@/lib/motion'
 import { cases } from '@/data/work'
 import Arrow from '@/components/home/Arrow'
@@ -19,8 +20,11 @@ export default function WorkCases() {
   return (
     <section className="wkcs" ref={ref} aria-label="Case studies">
       <div className="mx wkcs-grid">
-        {cases.map((c) => (
-          <Link href={c.to} className="wkc" key={c.client}>
+        {cases.map((c) => {
+          const live = isLive(c.to)
+          const Card = live ? Link : 'article'
+          return (
+          <Card {...(live ? { href: c.to, 'aria-label': 'Read the ' + c.client + ' case study' } : {})} className="wkc" key={c.client}>
             <div className="wkc-img">
               <img src={c.img} alt={c.alt} loading="lazy" width="1280" height="800" />
               <span className="wkc-ind">{c.industry}</span>
@@ -32,10 +36,11 @@ export default function WorkCases() {
                 <p>{c.desc}</p>
                 <ul>{c.services.map((s) => <li key={s}>{s}</li>)}</ul>
               </div>
-              <span className="wkc-more">Read the case study <i><Arrow /></i></span>
+              {live && <span className="wkc-more" aria-hidden="true">Read the case study <i><Arrow /></i></span>}
             </div>
-          </Link>
-        ))}
+          </Card>
+          )
+        })}
       </div>
     </section>
   )

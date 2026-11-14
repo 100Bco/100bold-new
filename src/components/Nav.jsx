@@ -9,7 +9,7 @@ const menu = [
   { name: 'Services', path: '/services', children: serviceLinks },
   { name: 'Industries', path: '/industries', children: industryLinks },
   { name: 'Work', path: '/work' },
-  { name: 'Portal', path: '/portal' },
+  { name: 'Portal', path: '/portal', tag: 'AI Studio' },
   { name: 'The Mark', path: '/the-mark', tag: 'For CEOs' },
   { name: 'About', path: '/about', children: aboutLinks, match: ['/about', '/insights', '/contact'] },
 ]
@@ -64,7 +64,7 @@ export default function Nav() {
               </Link>
               {item.children && (
                 <div className="nk-drop">
-                  {item.children.map(c => (
+                  {item.children.map(c => c.group ? <p key={c.group} className="nk-drop-group">{c.group}</p> : (
                     <Link key={c.path} href={c.path} className={`nk-drop-item${pathname === c.path ? ' active' : ''}`}>
                       {c.name}
                       <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -77,8 +77,8 @@ export default function Nav() {
         </ul>
 
         <div className="nk-btns">
-          <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nk-login">Log In</a>
-          <Link href="/contact" className="nk-cta"><span data-text="Book a call">Book a call</span></Link>
+          <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nk-login">Client login</a>
+          <Link href="/contact" className="nk-cta" aria-label="Book a call"><span data-text="Book a call" aria-hidden="true">Book a call</span></Link>
         </div>
 
         <button className="nk-burger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu" aria-expanded={mobileOpen}>
@@ -95,14 +95,14 @@ export default function Nav() {
               </Link>
               {item.children && (
                 <div className="nk-m-sub">
-                  {item.children.map(c => <Link key={c.path} href={c.path}>{c.name}</Link>)}
+                  {item.children.map(c => c.group ? <p key={c.group} className="nk-m-group-t">{c.group}</p> : <Link key={c.path} href={c.path}>{c.name}</Link>)}
                 </div>
               )}
             </div>
           ))}
           <div className="nk-m-foot">
             <Link href="/contact" className="nk-m-cta">Book a call</Link>
-            <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nk-m-login">Log In</a>
+            <a href="https://app.minai.biz/" target="_blank" rel="noopener noreferrer" className="nk-m-login">Client login</a>
           </div>
         </div>
       </div>

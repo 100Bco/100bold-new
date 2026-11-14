@@ -46,6 +46,7 @@ export default function Shift({ d }) {
           </ol>
         </div>
         <div className="sds-card" aria-hidden="true">
+          <span className="illus">Illustration</span>
           <div className="sds-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg>{d.query}</div>
           <p className="sds-count">About 10 results on page one</p>
           <ul className="sds-list">

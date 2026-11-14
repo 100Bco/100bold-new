@@ -47,6 +47,7 @@ export default function Closing({ data }) {
         </h2>
 
         <div className="xc-box" aria-hidden="true">
+          <span className="illus">Illustration</span>
           <div className="xc-bar">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg>
             <span className="xc-q">{q}</span><i />

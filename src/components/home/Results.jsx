@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
+import { isLive } from '@/lib/cases'
 import { useGsap, gsap, MQ } from '@/lib/motion'
 import { work } from '@/data/home'
 import Arrow from './Arrow'
@@ -31,8 +32,11 @@ export default function Results() {
           <Link href="/work" className="nk-link-arrow"><span>See all work</span><Arrow /></Link>
         </div>
         <div className="xr-grid">
-          {work.items.map((c, i) => (
-            <Link href={c.to} className="xr-card" key={c.to} data-cursor="View">
+          {work.items.map((c, i) => {
+            const live = isLive(c.to)
+            const Card = live ? Link : 'article'
+            return (
+            <Card {...(live ? { href: c.to, 'data-cursor': 'View', 'aria-label': 'Read the ' + c.client + ' case study' } : {})} className="xr-card" key={c.to}>
               <span className="xr-im"><img src={c.img} alt={c.alt} loading="lazy" /></span>
               <span className="xr-bd">
                 <span className="xr-name">{c.client}</span>
@@ -42,10 +46,11 @@ export default function Results() {
                   <strong className="xr-k">{headline[i].k}</strong>
                   <span className="xr-u">{headline[i].u}</span>
                 </span>
-                <span className="xr-btn">Read the case study<i><Arrow /></i></span>
+                {live && <span className="xr-btn" aria-hidden="true">Read the case study<i><Arrow /></i></span>}
               </span>
-            </Link>
-          ))}
+            </Card>
+            )
+          })}
         </div>
       </div>
     </section>

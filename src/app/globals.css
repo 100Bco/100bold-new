@@ -1013,3 +1013,8 @@ img { display: block; max-width: 100%; }
     grid-template-columns: 1fr !important; /* Mobile nhỏ thì icon xếp dọc */
   }
 }
+
+/* marks a mock-up so it is not read as a real result */
+.illus { position: absolute; z-index: 5; right: 14px; top: -11px; font-size: 10px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-3); background: #fff; border: 1px solid rgba(26,24,22,.12); border-radius: 20px; padding: 4px 10px; pointer-events: none; }
+.xc-box, .sds-card, .sdt-vis { position: relative; }
+.xc-box { overflow: visible !important; }

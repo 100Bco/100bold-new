@@ -41,7 +41,7 @@ export default function Mark() {
                 <div><b>{r.who.split(',')[0]}</b><span>{r.who.split(',').slice(1).join(',').trim()}</span></div>
                 <svg className="xm-in" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4" fill="#0A66C2"/><path fill="#fff" d="M6.9 9.5h-3v9.6h3zM5.4 4.6a1.7 1.7 0 1 0 0 3.5 1.7 1.7 0 0 0 0-3.5zM19.6 13.6c0-2.6-.6-4.4-3.6-4.4-1.5 0-2.4.8-2.8 1.5V9.5h-2.9v9.6h3v-4.8c0-1.3.2-2.5 1.8-2.5s1.6 1.5 1.6 2.6v4.7h3z"/></svg>
               </div>
-              <strong className="xm-k"><span className="xm-num" data-to={r.count} data-unit={r.unit}>{r.big}</span><em>{r.bigLabel}</em></strong>
+              <strong className="xm-k" aria-label={r.big + ' ' + r.bigLabel}><span className="xm-num" aria-hidden="true" data-to={r.count} data-unit={r.unit}>{r.big}</span><em aria-hidden="true">{r.bigLabel}</em></strong>
               <p>{r.text}</p>
               <div className="xm-ft"><span className="xm-re"><i>👍</i><i>❤️</i><i>👏</i></span></div>
             </li>

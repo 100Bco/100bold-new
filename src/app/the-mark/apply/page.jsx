@@ -25,6 +25,10 @@ export default function ApplyPage() {
             <h1 className="ap-title">Apply to work <span className="tm-accent">with us.</span></h1>
             <p className="ap-lead">Limited spots. Tell us a little about you and your business, and we will be in touch.</p>
           </div>
+          <div className="ap-know">
+            <div><b>What to have ready</b><p>Your LinkedIn profile, your company website, and the one or two things you want LinkedIn to bring you.</p></div>
+            <div><b>What happens next</b><p>We read every application and reply by email. If it looks like a fit, we set up a short call to plan your first 90 days.</p></div>
+          </div>
           <ApplyForm />
           <p className="ap-alt">Prefer email? Reach us directly at <a href="mailto:start@100bold.co">start@100bold.co</a></p>
         </div>

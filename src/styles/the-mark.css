@@ -5182,3 +5182,10 @@ body:has(.tm .apply-bar.is-visible) .nk-mcta{transform:translateY(140%);opacity:
     font-size: 25px;
   }
 }
+
+.tm .cta2-know { max-width: 560px; margin: 0 auto 26px; font-size: 15px; line-height: 1.6; opacity: .75; }
+.ap-know { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 28px; }
+.ap-know > div { border: 1px solid rgba(128,120,110,.3); border-radius: 14px; padding: 16px 18px; }
+.ap-know b { display: block; font-size: 14px; margin-bottom: 6px; }
+.ap-know p { font-size: 14px; line-height: 1.55; opacity: .8; }
+@media (max-width: 640px) { .ap-know { grid-template-columns: 1fr; } }

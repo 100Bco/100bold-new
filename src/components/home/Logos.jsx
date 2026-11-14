@@ -4,11 +4,11 @@ import { useRef } from 'react'
 import { useGsap, gsap, ScrollTrigger, MQ } from '@/lib/motion'
 import { logos } from '@/data/home'
 
-const Set = () => (
-  <div className="xl-set">
+const Set = ({ copy }) => (
+  <div className="xl-set" aria-hidden={copy || undefined}>
     {logos.items.map((l) => (
-      <div className="xl-cell" key={l.name} tabIndex={0} onClick={(e) => e.currentTarget.classList.toggle('on')}>
-        <img src={l.src} alt={l.name} width={l.w} height={l.h} style={{ width: l.w, height: l.h }} loading="lazy" />
+      <div className="xl-cell" key={l.name} tabIndex={copy ? -1 : 0} onClick={(e) => e.currentTarget.classList.toggle('on')}>
+        <img src={l.src} alt={copy ? '' : l.name} width={l.w} height={l.h} style={{ width: l.w, height: l.h }} loading="lazy" />
       </div>
     ))}
   </div>
@@ -34,7 +34,7 @@ export default function Logos() {
   return (
     <section className="xl" ref={ref}>
       <p className="xl-label">{logos.label}</p>
-      <div className="xl-marquee"><div className="xl-track"><Set /><Set /><Set /><Set /></div></div>
+      <div className="xl-marquee"><div className="xl-track"><Set /><Set copy /><Set copy /><Set copy /></div></div>
     </section>
   )
 }

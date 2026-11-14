@@ -82,7 +82,11 @@ export const insights = {
 export const contact = {
   title: 'Contact 100Bold | Book a Call',
   description: 'Book a 30-minute call with 100Bold. We will review where you stand and tell you what we would do first. Based in Austin, Texas.',
-  hero: { eyebrow: 'Contact', h1: ['Let’s talk'], line: 'Book a 30-minute call. We will review where you stand and tell you what we would do first.' },
+  hero: { eyebrow: 'Contact', h1: ['Let’s talk'], line: 'In 30 minutes, we’ll review where clients are dropping off and give you the first three things we’d fix.' },
+  heroBySource: {
+    video: 'Tell us what you want to make. We’ll come back with an idea, a script outline, and a timeline.',
+    mark: 'In 30 minutes, we’ll look at your LinkedIn and tell you the first three things we’d change.',
+  },
   steps: [
     { k: 'Before the call', d: 'We look at your site, your Google profile, and how you show up in AI search.' },
     { k: 'On the call', d: 'We walk you through what we found and where clients are being lost.' },
@@ -92,7 +96,9 @@ export const contact = {
   place: 'Austin, Texas',
   phone: '757-773-5707',
   address: '12516 Walnut Park Crossing #200, Austin, TX 78753',
-  needs: ['SEO and AI Search', 'Web design', 'Meta ads', 'The Mark (LinkedIn for CEOs)', 'Portal (AI video)', 'Not sure yet'],
+  needs: ['SEO and AI Search', 'Web design', 'Meta ads', 'The Mark (LinkedIn for CEOs)', 'AI video (Portal)', 'Not sure yet'],
+  videoTypes: ['Brand film', 'Ad creative', 'Social series', 'Explainer', 'Not sure yet'],
+  channels: ['Facebook and Instagram', 'TikTok', 'YouTube', 'LinkedIn', 'Website', 'TV or billboard'],
   revenue: ['Under $5M', '$5M to $10M', '$10M to $25M', '$25M+'],
   booking: 'https://link.minai.biz/widget/booking/oPdza9BB7isKUhMkkyw2',
   socials: [

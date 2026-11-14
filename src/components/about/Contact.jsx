@@ -16,6 +16,7 @@ export default function ContactBody() {
       <div className="mx ctb-grid">
         <div className="ctb-cal">
           <iframe src={d.booking} title="Book a call with 100Bold" scrolling="no" />
+          <p className="ctb-open">Calendar not loading? <a href={d.booking} target="_blank" rel="noopener">Open booking calendar</a></p>
         </div>
         <aside className="ctb-side">
           <div className="ctb-steps">
@@ -25,7 +26,7 @@ export default function ContactBody() {
           <div className="ctb-reach">
             <h2>Prefer to write?</h2>
             <a href={'mailto:' + d.email} className="ctb-mail">{d.email}</a>
-            <p><a href={'tel:' + d.phone.replace(/-/g, '')}>{d.phone}</a><br />{d.address}</p>
+            <p><a href={'tel:+1' + d.phone.replace(/-/g, '')}>{d.phone}</a><br />{d.address}</p>
             <ul>{d.socials.map((s) => <li key={s.k}><a href={s.href} target="_blank" rel="noopener noreferrer">{s.k}</a></li>)}</ul>
           </div>
         </aside>

@@ -24,6 +24,7 @@ export default function IndHero({ d }) {
       <div className="mx idx-in">
         <p className="idx-eyebrow"><Link href="/industries">Industries</Link><span>·</span>{d.name}</p>
         <h1 className="idx-h1">{d.hero.h1.map((l, i) => <span className="idx-line" key={l}><span className={i === d.hero.h1.length - 1 ? 'r' : ''}>{l}</span></span>)}</h1>
+        {d.mode && <p className="idx-mode">{d.mode}</p>}
         <p className="idx-p">{d.hero.line}</p>
         <div className="idx-ctas">
           <Link href="/contact" className="nk-btn nk-btn-red" data-magnetic="0.3">Book a call <Arrow /></Link>

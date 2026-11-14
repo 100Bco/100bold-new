@@ -23,9 +23,7 @@ export default function Footer() {
             <div className="nk-f-col">
               <h3>Services</h3>
               <ul>
-                {serviceLinks.map(l => <li key={l.path}><Link href={l.path}>{l.name}</Link></li>)}
-                <li><Link href="/portal">Portal, AI production</Link></li>
-                <li><Link href="/the-mark">The Mark, LinkedIn for CEOs</Link></li>
+                {serviceLinks.filter(l => l.path).map(l => <li key={l.path}><Link href={l.path}>{l.name}</Link></li>)}
               </ul>
             </div>
             <div className="nk-f-col">
