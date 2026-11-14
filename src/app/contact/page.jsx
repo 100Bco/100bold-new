@@ -1,5 +1,6 @@
 import Hero from '@/components/about/Hero'
 import ContactBody from '@/components/about/Contact'
+import ContactForm from '@/components/about/ContactForm'
 import { contact } from '@/data/about'
 import '@/styles/services.css'
 import '@/styles/service-detail.css'
@@ -15,6 +16,7 @@ export default function ContactPage() {
     <main id="main" className="sd-page">
       <Hero d={contact.hero} cta={false} />
       <ContactBody />
+      <ContactForm />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </main>
   )

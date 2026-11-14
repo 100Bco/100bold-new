@@ -34,9 +34,9 @@ export const about = {
   principles: {
     h2: 'How we work',
     items: [
-      { k: 'You own everything', d: 'Your website, domain, ad accounts, data, and logins are yours from day one.' },
-      { k: 'Results in clients and jobs', d: 'We report calls, signed clients, and booked jobs, not just rankings and clicks.' },
-      { k: 'No long lock-ins', d: 'We earn the next month by what we deliver this month.' },
+      { k: 'You own it all', d: 'Your website, domain, ad accounts, data, and logins are yours from day one.' },
+      { k: 'Results, not clicks', d: 'We report calls, signed clients, and booked jobs, not just rankings and clicks.' },
+      { k: 'No lock-ins', d: 'We earn the next month by what we deliver this month.' },
     ],
   },
   network: {
@@ -92,6 +92,8 @@ export const contact = {
   place: 'Austin, Texas',
   phone: '757-773-5707',
   address: '12516 Walnut Park Crossing #200, Austin, TX 78753',
+  needs: ['SEO and AI Search', 'Web design', 'Meta ads', 'The Mark (LinkedIn for CEOs)', 'Portal (AI video)', 'Not sure yet'],
+  revenue: ['Under $5M', '$5M to $10M', '$10M to $25M', '$25M+'],
   booking: 'https://link.minai.biz/widget/booking/oPdza9BB7isKUhMkkyw2',
   socials: [
     { k: 'LinkedIn', href: 'https://www.linkedin.com/company/100bold' },

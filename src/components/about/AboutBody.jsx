@@ -80,15 +80,15 @@ export function Principles() {
     <section className="abp" ref={ref}>
       <div className="mx">
         <div className="abp-head"><h2 className="sd-h2">{p.h2}</h2></div>
-        <div className="abp-grid">
+        <ol className="abp-row">
           {p.items.map((it, i) => (
-            <article className="abp-card" key={it.k}>
-              <span className="abp-ic"><Icon name={icons[i]} /></span>
+            <li className="abp-card" key={it.k}>
+              <div className="abp-top"><span className="abp-ic"><Icon name={icons[i]} /></span><span className="abp-n">{String(i + 1).padStart(2, '0')}</span></div>
               <h3>{it.k}</h3>
               <p>{it.d}</p>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   )
