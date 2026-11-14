@@ -58,8 +58,8 @@ export const mark = {
   body: 'The Mark is our fully managed LinkedIn service for founders and CEOs. We build your presence in your voice, so decision-makers know your name before the first meeting.',
   cta: 'Explore The Mark',
   results: [
-    { who: 'Tung Cao, Co-Founder, 100B Global', text: 'Zero to 1M+ impressions in 12 months, with 2 speaking invitations.', big: '1M+', bigLabel: 'impressions' },
-    { who: 'Loc Dang, Founder, Dang Law Group', text: '3,596 followers in 4 months, starting from no social media presence.', big: '3,596', bigLabel: 'followers' },
+    { who: 'Tung Cao, Co-Founder, 100B Global', text: 'Zero to 1M+ impressions in 12 months, with 2 speaking invitations.', big: '1M+', bigLabel: 'impressions', count: 1, unit: 'M+', photo: '/the-mark/images/tung-cao/Tung%20Cao%20Photo.png' },
+    { who: 'Loc Dang, Founder, Dang Law Group', text: '3,596 followers in 4 months, starting from no social media presence.', big: '3,596', bigLabel: 'followers', count: 3596, unit: '', photo: '/the-mark/images/loc-dang/loc-dang-headshot.webp' },
   ],
 }
 
