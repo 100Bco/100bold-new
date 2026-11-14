@@ -1,54 +1,44 @@
-import IndustryPageTemplate from '@/components/IndustryPageTemplate'
+import IndHero from '@/components/industry/IndHero'
+import IndWho from '@/components/industry/IndWho'
+import IndFlip from '@/components/industry/IndFlip'
+import IndServices from '@/components/industry/IndServices'
+import CaseCard from '@/components/service/CaseCard'
+import Faq from '@/components/home/Faq'
+import Closing from '@/components/home/Closing'
+import { bySlug } from '@/data/industries'
+import '@/styles/services.css'
+import '@/styles/service-detail.css'
+import '@/styles/industries.css'
+
+const d = bySlug['pi-medical-providers']
 
 export const metadata = {
-  title: 'Marketing for PI Medical Providers | 100Bold',
-  alternates: { canonical: '/industries/pi-medical-providers' },
+  title: d.title,
+  description: d.description,
+  alternates: { canonical: '/industries/' + d.slug },
 }
 
-export default function RehabChiroPage() {
-  const data = {
-    label: 'PI CHIROPRACTORS, REHABILITATION CENTERS',
-    lottie: '/wheelchair-insurance-red.json',
-    headline: <>Get More Attorney<br/>Referrals <span className="accent">On Autopilot.</span></>,
-    subtitle: "Attorneys refer to clinics they trust — and trust starts with a dominant Google presence and 5-star reviews they can see themselves.",
-    stats: [
-      { num: '12 Hrs', label: 'First Lead Closed' },
-      { num: '47+', label: '5-Star Reviews Generated' },
-      { num: '3', label: 'Locations Scaling' },
-    ],
-    painPoints: [
-      "Attorneys don't know you exist",
-      'Your Google profile has fewer reviews than competitors',
-      'No system to collect reviews after every patient visit',
-      "Relying on word-of-mouth alone isn't scalable",
-    ],
-    solutionIntro: 'We dominate your Google profile so attorneys refer to you first.',
-    solutions: [
-      {
-        title: 'Google Domination',
-        desc: "Full profile optimization, weekly posts, and local SEO. When attorneys search for PI chiropractors, you're the first name they see.",
-        iconPath: '<path d="M11 19a8 8 0 100-16 8 8 0 000 16z"/><path d="M21 21l-4.35-4.35"/>',
-      },
-      {
-        title: 'Review Engine',
-        desc: 'Automated review requests after every visit. Build the 5-star reputation that makes attorneys confident sending their clients to you.',
-        iconPath: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
-      },
-      {
-        title: 'Social Content',
-        desc: 'Turn your best reviews and patient outcomes into scroll-stopping content across all platforms.',
-        iconPath: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
-      },
-      {
-        title: 'MinAI Lead Capture',
-        desc: 'AI chatbot on your website qualifies leads 24/7. CRM keeps every referral organized and followed up.',
-        iconPath: '<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>',
-      },
-    ],
-    services: ['Google Domination', 'Review Engine', 'Social Content', 'MinAI'],
-    shortName: 'Rehab & Chiro',
-    ctaIndustry: 'rehab clinic',
-  }
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'Service', name: 'Marketing for ' + d.name.toLowerCase(), description: d.hero.line, url: 'https://100bold.co/industries/' + d.slug, audience: { '@type': 'BusinessAudience', name: d.name }, provider: { '@type': 'Organization', name: '100Bold', url: 'https://100bold.co' }, areaServed: 'United States' },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: d.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://100bold.co/' },
+    { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://100bold.co/industries' },
+    { '@type': 'ListItem', position: 3, name: d.name, item: 'https://100bold.co/industries/' + d.slug },
+  ] },
+]
 
-  return <IndustryPageTemplate data={data} />
+export default function Page() {
+  return (
+    <main id="main" className="sd-page">
+      <IndHero d={d} />
+      <IndWho d={d.who} />
+      <IndFlip items={d.pains} />
+      <IndServices items={d.services} name={d.name} />
+      {d.result && <CaseCard d={d.result} />}
+      <Faq data={{ h2: 'Questions', items: d.faq }} />
+      <Closing />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    </main>
+  )
 }

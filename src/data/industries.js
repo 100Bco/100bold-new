@@ -1,0 +1,192 @@
+/* Industries hub and pages. Structure follows the Content Blueprint industry template. Proof uses only named, confirmed results. */
+
+const svc = {
+  seo: { name: 'SEO and AI Search', to: '/services/seo-ai-search' },
+  web: { name: 'Web design', to: '/services/web-design' },
+  ads: { name: 'Meta ads', to: '/services/meta-ads' },
+  mark: { name: 'The Mark', to: '/the-mark' },
+  portal: { name: 'Portal', to: '/portal' },
+  minai: { name: 'MinAI', to: 'https://minai.biz' },
+}
+
+export const hub = {
+  eyebrow: 'Industries',
+  h1: ['We work in industries', 'we know from the inside'],
+  body: 'Five kinds of service businesses, each with its own buyers and its own way of winning work. We build for the way your clients actually choose.',
+  floor: 'We work with service businesses doing $5M+ a year, led by an owner, founder, or managing partner.',
+}
+
+export const industries = [
+  {
+    slug: 'personal-injury-law-firms',
+    name: 'Personal injury law firms',
+    short: 'PI law',
+    title: 'Marketing for Personal Injury Law Firms | 100Bold',
+    description: 'Marketing for personal injury law firms that want more signed cases: SEO and AI search, Meta ads tracked to signed cases, and LinkedIn for the founding partner.',
+    icon: '/law-red.json',
+    img: '/works/DANG LAW GROUP.png', imgAlt: 'Dang Law Group founder Loc T. Dang', imgPos: '75% 30%',
+    hero: {
+      h1: ['Marketing for personal', 'injury law firms that', 'want more signed cases'],
+      line: 'We help personal injury firms get found on Google and in AI search, turn ad spend into signed cases, and depend less on lead vendors.',
+    },
+    who: {
+      h2: 'Who we work with',
+      lead: 'Personal injury and trial firms doing $5M+ a year, led by a founder or managing partner.',
+      items: ['Personal injury firms', 'Trial firms', 'Car and truck accident practices', 'Workplace injury practices', 'Wrongful death practices', 'Multi-office firms'],
+    },
+    pains: [
+      { q: 'We pay lead vendors for cases that never sign.', fix: 'Build your own pipeline. We rank you in Google, Maps, and AI answers, so cases come to you instead of through a vendor.', svc: svc.seo },
+      { q: 'Our website looks like every other firm in town.', fix: 'A site built around your firm and your wins, written for injured people and readable by Google and AI.', svc: svc.web },
+      { q: 'Calls after hours go to voicemail, then to another firm.', fix: 'Automated intake that answers, qualifies, and books every call and form, day or night.', svc: svc.minai },
+      { q: 'Our ads bring clicks, but we can’t tell which became cases.', fix: 'Facebook and Instagram ads tracked from the click to the signed case, with cost per signed case every month.', svc: svc.ads },
+    ],
+    services: [svc.seo, svc.ads, svc.mark, svc.web],
+    result: { client: 'Dang Law Group', industry: 'Personal injury law', big: 'Top 3', label: "in Google's AI results for a target search", text: 'Search, Meta ads, automated intake, and Dang-Man, the firm’s own AI superhero.', img: '/works/DANG LAW GROUP.png', alt: 'Dang Law Group billboard in Austin featuring Dang-Man', to: '/work/dang-law-group' },
+    proof: { big: 'Top 3', label: 'in Google’s AI results' },
+    faq: [
+      { q: 'What is the best marketing for a personal injury law firm?', a: 'A mix that builds your own pipeline: strong rankings in Google and Google Maps, being named in AI answers, reviews that keep coming, and ads tracked to signed cases. It means you rely less on lead vendors.' },
+      { q: 'How do personal injury firms get more signed cases?', a: 'By showing up first when injured people search, answering every inquiry fast, and tracking which channels produce cases that sign. We measure cost per signed case, not cost per lead.' },
+      { q: 'Do you do SEO for law firms?', a: 'Yes. We run SEO and AI search optimization for personal injury firms, including local SEO for Google Maps and GEO so ChatGPT and Google’s AI name your firm.' },
+      { q: 'Do Facebook ads work for personal injury lawyers?', a: 'They can, when the ads, the intake, and the tracking work together. We judge every campaign by what each signed case costs.' },
+      { q: 'Can you build the founding partner’s personal brand?', a: 'Yes. The Mark is our fully managed LinkedIn service for founders and managing partners, built in their own voice.' },
+    ],
+  },
+  {
+    slug: 'pi-medical-providers',
+    name: 'PI medical providers',
+    short: 'PI medical',
+    title: 'Marketing for PI Medical Providers and Injury Clinics | 100Bold',
+    description: 'Marketing for the medical practices that treat injury patients: chiropractic, pain management, imaging, surgery centers, and more. More attorney referrals and more injury patients.',
+    icon: '/wheelchair-insurance-red.json',
+    img: '/works/T98%20REHAB%20%26%20CHIROPRACTIC.png', imgAlt: 'T98 Rehab and Chiropractic clinic', imgPos: '80% 50%',
+    hero: {
+      h1: ['Marketing for the', 'medical practices that', 'treat injury patients'],
+      line: 'We help injury clinics, surgery centers, and imaging practices win more attorney referrals and more injury patients from Google, Maps, and AI search.',
+    },
+    who: {
+      h2: 'Who we work with',
+      lead: 'Practices that treat injury patients, run by an owner, physician-owner, or practice administrator.',
+      items: ['Ambulatory surgery centers', 'Pain management', 'MRI and diagnostic imaging', 'Urgent care', 'Orthopedics and spine', 'Multi-specialty injury clinics', 'Chiropractic and rehab', 'Emergency rooms'],
+      note: { h: 'How these practices grow', t: 'Most injury patients reach you through an attorney or a search. We make your practice the one attorneys trust to refer and the one patients find first: clear pages for every injury and service, strong reviews, and fast follow-up.' },
+    },
+    pains: [
+      { q: 'Attorneys refer to the clinic down the street.', fix: 'A site and profile that show attorneys what you treat, how fast you see patients, and how you document care.', svc: svc.web },
+      { q: 'Patients search “injury doctor near me” and don’t find us.', fix: 'Rankings in Google, Maps, and AI answers for every injury and service you offer, in every city you serve.', svc: svc.seo },
+      { q: 'We have several locations, but only one shows up.', fix: 'A Google Business Profile, local page, and review plan for each location, so every clinic can be found.', svc: svc.seo },
+      { q: 'New patients call, and nobody follows up fast enough.', fix: 'Calls and forms routed and answered quickly, with reminders and follow-up handled automatically.', svc: svc.minai },
+    ],
+    services: [svc.seo, svc.web, svc.ads],
+    result: { client: 'T98 Rehab', industry: 'PI medical provider', big: '12 hrs', label: 'from launch to first lead closed', text: 'Google profiles, lead capture, and reviews for an injury chiropractic practice growing across three locations.', img: '/works/T98%20REHAB%20%26%20CHIROPRACTIC.png', alt: 'T98 Rehab and Chiropractic clinic', to: '/work/t98-rehab' },
+    proof: { big: '12 hrs', label: 'from launch to first lead closed' },
+    faq: [
+      { q: 'How do injury clinics get more attorney referrals?', a: 'Attorneys refer to practices they trust and can see clearly: what you treat, how fast you see patients, and how you document care. We build that picture across your site, your profiles, and your reviews.' },
+      { q: 'Do you do chiropractor SEO?', a: 'Yes. We run SEO and AI search for chiropractic and rehab practices, including Google Maps rankings for each location.' },
+      { q: 'Which medical practices do you work with?', a: 'Ambulatory surgery centers, pain management, MRI and diagnostic imaging, urgent care, orthopedics and spine, multi-specialty injury clinics, chiropractic and rehab, and emergency rooms.' },
+      { q: 'Can you market several locations?', a: 'Yes. Each location gets its own Google Business Profile, local page, and review plan, so each one can rank on its own.' },
+      { q: 'Do you run ads for medical practices?', a: 'Yes. We run Facebook and Instagram ads and track every lead to the patient it brings in.' },
+    ],
+  },
+  {
+    slug: 'real-estate',
+    name: 'Real estate',
+    short: 'Real estate',
+    title: 'Real Estate Marketing Agency for Developers and Brokerages | 100Bold',
+    description: 'Marketing for developers, brokerages, and property managers: project launches, websites, AI-made video, and LinkedIn for the CEO.',
+    icon: '/building-red.json',
+    img: '/works/DACY BUSINESS PARK.png', imgAlt: 'Dacy Business Park', imgPos: '80% 45%',
+    hero: {
+      h1: ['Marketing for developers,', 'brokerages, and', 'property managers'],
+      line: 'We help real estate companies fill projects and earn credibility with investors through launch campaigns, websites, AI-made video, and the CEO’s own LinkedIn.',
+    },
+    who: {
+      h2: 'Who we work with',
+      lead: 'Real estate companies led by a principal or CEO.',
+      items: ['Commercial developers', 'Business parks and industrial projects', 'Mixed-use projects', 'Brokerages', 'Property managers', 'Multifamily communities'],
+    },
+    pains: [
+      { q: 'Our project launches to silence.', fix: 'A project brand, website, and launch campaign ready before day one, so inquiries start when the doors open.', svc: svc.web },
+      { q: 'Investors don’t know our name.', fix: 'The CEO’s LinkedIn, fully managed in their voice, so investors and partners know you before the first meeting.', svc: svc.mark },
+      { q: 'Leasing depends on one broker’s network.', fix: 'Targeted ads that put the space in front of the right tenants, tracked to every inquiry.', svc: svc.ads },
+      { q: 'Our marketing looks like every other listing.', fix: 'Film-quality video and content made with AI, delivered in days, that makes the project stand out.', svc: svc.portal },
+    ],
+    services: [svc.mark, svc.portal, svc.web, svc.ads],
+    result: { client: 'LT Commercial Group', industry: 'Real estate', big: '3 leads', label: 'for leasing within 24 hours of launch', text: 'A project brand, website, and launch campaign for Dacy Business Park, plus ongoing content and the CEO’s LinkedIn.', img: '/works/LT COMMERCIAL GROUP.png', alt: 'LT Commercial Group', to: '/work/lt-commercial-group' },
+    proof: { big: '3 leads', label: 'within 24 hours of launch' },
+    faq: [
+      { q: 'What does a real estate marketing agency do for developers?', a: 'We launch projects: the brand, the website, the campaign, and the content, plus the CEO’s presence on LinkedIn so investors and partners know the name behind the project.' },
+      { q: 'Do you market commercial real estate?', a: 'Yes. We work with commercial developers, business parks, industrial and mixed-use projects, brokerages, and property managers.' },
+      { q: 'How do you get leasing inquiries for a new project?', a: 'A project website and launch campaign ready before opening, ads aimed at the right tenants, and content that shows the space. Every inquiry is tracked.' },
+      { q: 'Can you build the CEO’s personal brand?', a: 'Yes. The Mark is our fully managed LinkedIn service for founders and CEOs, written in their voice.' },
+      { q: 'Do you make video for real estate projects?', a: 'Yes. Portal, our AI production studio, makes brand films and social content without a film crew or a long timeline.' },
+    ],
+  },
+  {
+    slug: 'construction-trades',
+    name: 'Construction and trades',
+    short: 'Construction',
+    title: 'Contractor SEO and Construction Marketing Agency | 100Bold',
+    description: 'Marketing for contractors that want more bids and booked jobs: SEO and AI search, websites, reviews, and Meta ads tracked to real work.',
+    icon: '/repair-tools-red.json',
+    img: '/works/BEE CONSTRUCTION.png', imgAlt: 'Bee Construction project', imgPos: '80% 45%',
+    hero: {
+      h1: ['Marketing for contractors', 'that want more bids', 'and booked jobs'],
+      line: 'We help general contractors and trades get found by owners and buyers on Google, Maps, and AI search, so work comes from search, not just referrals.',
+    },
+    who: {
+      h2: 'Who we work with',
+      lead: 'Contractors doing $5M+ a year, led by the owner.',
+      items: ['General contractors', 'Commercial builders', 'Roofing', 'HVAC', 'Plumbing', 'Electrical'],
+    },
+    pains: [
+      { q: 'Almost all our work comes from referrals.', fix: 'Rankings in Google, Maps, and AI answers for the jobs you want, so new owners and buyers find you directly.', svc: svc.seo },
+      { q: 'We lose bids to companies with better websites.', fix: 'A site that shows your projects, your crew, and your process, built to turn visits into bid requests.', svc: svc.web },
+      { q: 'Our Google profile has a handful of reviews.', fix: 'A steady flow of new reviews after every job, each one answered, feeding both Maps and AI answers.', svc: svc.seo },
+      { q: 'We tried ads and got tire-kickers.', fix: 'Ads aimed at real project owners, tracked to the bids and jobs they bring in.', svc: svc.ads },
+    ],
+    services: [svc.seo, svc.web, svc.ads],
+    result: { client: 'Bee Construction', industry: 'Construction', label: 'Meta ads for a general contractor', text: 'Facebook and Instagram campaigns built to bring in project leads for Bee Construction.', img: '/works/BEE CONSTRUCTION.png', alt: 'Bee Construction project', to: '/work/bee-construction' },
+    proof: { label: 'Bee Construction' },
+    faq: [
+      { q: 'What is contractor SEO?', a: 'Getting your company to rank in Google and Google Maps, and be named by AI assistants, when owners and buyers search for the work you do in the areas you serve.' },
+      { q: 'How do contractors get more jobs online?', a: 'A clear page for each service and area, real project photos, steady reviews, and a fast way to request a bid. Then ads aimed at real project owners.' },
+      { q: 'Do you work with roofing and HVAC companies?', a: 'Yes. We work with general contractors, commercial builders, roofing, HVAC, plumbing, and electrical companies.' },
+      { q: 'Do Facebook ads work for contractors?', a: 'They can when they target real project owners and every lead is tracked to the bid or job it brings in.' },
+      { q: 'Who owns the website and the ad account?', a: 'You do. The site, the domain, the ad account, and every login are yours.' },
+    ],
+  },
+  {
+    slug: 'local-services',
+    name: 'Local services',
+    short: 'Local services',
+    title: 'Local Service Marketing: HVAC, Plumbing, Towing, Auto | 100Bold',
+    description: 'Marketing for high-ticket local service companies that want booked jobs: Google Maps, AI search, reviews, and ads tracked to real jobs.',
+    icon: '/power-red.json',
+    scene: 0,
+    hero: {
+      h1: ['Marketing for local', 'service companies that', 'want booked jobs'],
+      line: 'We help high-ticket local service businesses, from HVAC to towing, show up first on Google Maps and in AI answers when people nearby need help now.',
+    },
+    who: {
+      h2: 'Who we work with',
+      lead: 'High-ticket local service companies led by the owner.',
+      items: ['HVAC', 'Plumbing', 'Electrical', 'Towing and roadside', 'Auto repair', 'Auto salvage'],
+    },
+    pains: [
+      { q: 'When someone needs help now, they call whoever shows up first.', fix: 'Top spots on Google Maps and in AI answers for “near me” searches in every area you serve.', svc: svc.seo },
+      { q: 'We miss calls on nights and weekends.', fix: 'Every call and form answered and booked, day or night, with automation that never sleeps.', svc: svc.minai },
+      { q: 'Big franchises outspend us on ads.', fix: 'Tight, local ads aimed at the people who need you now, tracked to every booked job.', svc: svc.ads },
+      { q: 'Our reviews don’t match the work we do.', fix: 'A review request after every job, each review answered, so your reputation keeps up with your work.', svc: svc.seo },
+    ],
+    services: [svc.seo, svc.web, svc.ads],
+    proof: { label: 'HVAC, towing, auto' },
+    faq: [
+      { q: 'How do local service companies get more calls?', a: 'By ranking at the top of Google Maps for “near me” searches, being named in AI answers, keeping reviews coming, and answering every call fast.' },
+      { q: 'Do you work with towing and auto companies?', a: 'Yes. We work with towing and roadside, auto repair, and auto salvage companies, as well as HVAC, plumbing, and electrical.' },
+      { q: 'What matters most for Google Maps rankings?', a: 'A complete and active Google Business Profile, steady new reviews, a site with a page for each service and area, and consistent details across the web.' },
+      { q: 'Can you help us answer calls after hours?', a: 'Yes. Automation powered by MinAI answers, qualifies, and books calls and forms at any hour.' },
+      { q: 'Do you run ads for local services?', a: 'Yes. We run local Facebook and Instagram ads and track every lead to the job it books.' },
+    ],
+  },
+]
+
+export const bySlug = Object.fromEntries(industries.map((i) => [i.slug, i]))
