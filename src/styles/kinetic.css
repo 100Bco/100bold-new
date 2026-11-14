@@ -189,3 +189,14 @@ html.nav-locked { overflow: hidden; }
 .menu-open .nk-logo img { filter: brightness(0) invert(1); }
 .nk-mcta { transition: transform .6s var(--ease-out), opacity .4s; }
 .nk-mcta.is-hidden { transform: translateY(140%); opacity: 0; pointer-events: none; }
+
+/* Full-width nav bar: flush to the top, logo left, menu centred, buttons right */
+.nk-nav-wrap, .nk-nav-wrap.scrolled { padding: 0; }
+.nk-nav {
+  max-width: none; height: 72px; padding: 0 clamp(20px, 2.4vw, 40px);
+  border: none; border-bottom: 1px solid rgba(26,24,22,.08); border-radius: 0; box-shadow: none;
+  background: rgba(251,248,243,.86);
+}
+.nk-nav-wrap.scrolled .nk-nav { box-shadow: 0 10px 30px -18px rgba(26,24,22,.25); }
+@media (min-width: 1101px) { .nk-links { position: absolute; left: 50%; transform: translateX(-50%); } }
+@media (max-width: 1100px) { .nk-nav { height: 64px; padding: 0 12px 0 18px; } }
