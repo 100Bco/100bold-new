@@ -52,7 +52,7 @@ export default function Closing() {
           </div>
           <div className={'xc-hit' + (done ? ' on' : '')}>
             <span className="xc-logo">Y</span>
-            <span className="xc-hit-t"><b>Your business</b><small>★★★★★ · Open now · Recommended by AI</small></span>
+            <span className="xc-hit-t"><b>Your business</b><small>★★★★★<span className="xc-open"> · Open now</span> · Recommended by AI</small></span>
             <span className="xc-rk">#1</span>
           </div>
         </div>

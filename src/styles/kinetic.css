@@ -195,7 +195,7 @@ html.nav-locked { overflow: hidden; }
 .nk-nav {
   max-width: none; height: 72px; padding: 0 clamp(20px, 2.4vw, 40px);
   border: none; border-bottom: 1px solid rgba(26,24,22,.08); border-radius: 0; box-shadow: none;
-  background: rgba(251,248,243,.86);
+  background: #FBF8F3; backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 .nk-nav-wrap.scrolled .nk-nav { box-shadow: 0 10px 30px -18px rgba(26,24,22,.25); }
 @media (min-width: 1101px) { .nk-links { position: absolute; left: 50%; transform: translateX(-50%); } }

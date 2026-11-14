@@ -218,6 +218,7 @@
   .xc-hit { grid-template-columns: 40px 1fr auto; gap: 12px; padding: 0 20px; }
   .xc-hit.on { padding: 16px 20px 18px; }
   .xc-logo { width: 40px; height: 40px; font-size: 18px; border-radius: 12px; }
-  .xc-hit-t small { font-size: 12px; }
+  .xc-hit-t small { font-size: 12px; white-space: nowrap; }
+  .xc-open { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .xc-bar i { animation: none; } .xc-hit { transition: none; } }
