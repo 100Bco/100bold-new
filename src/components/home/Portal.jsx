@@ -69,8 +69,8 @@ export default function Portal() {
           <div className="xp-phone" ref={phone}>
             <video
               ref={vid}
-              data-src="/portal/dang-man.mp4"
-              poster="/portal/dang-man-poster.jpg"
+              data-src="/portal/dang-man-v2.mp4"
+              poster="/portal/dang-man-v2-poster.jpg"
               muted
               loop
               playsInline
