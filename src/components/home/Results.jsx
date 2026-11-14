@@ -52,6 +52,7 @@ export default function Results() {
             )
           })}
         </div>
+        <p className="xr-swipe" aria-hidden="true">Swipe to see more →</p>
       </div>
     </section>
   )

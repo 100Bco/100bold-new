@@ -121,3 +121,16 @@
 .hs-proof em { font-size: 12.5px; font-weight: 700; color: var(--dark); }
 @media (min-width: 961px) { .hs-pin { padding-bottom: clamp(120px, 17vh, 180px); } }
 @media (max-width: 960px) { .hs-proof li { flex-direction: column; } .hs-proof strong { font-size: 30px; } }
+
+/* mobile: spiral becomes a soft backdrop behind the copy; three proof numbers in one row */
+@media (max-width: 960px) {
+  .hs-pin { padding-bottom: 28px; }
+  .hs-visual { position: absolute !important; z-index: 0; width: 100vw !important; left: 46vw !important; top: 40px !important; margin: 0 !important; opacity: .16; pointer-events: none; }
+  .hs-copy { position: relative; z-index: 2; }
+  .hs-proof { grid-template-columns: repeat(3, 1fr) !important; margin-top: 0; }
+  .hs-proof li, .hs-proof li + li { padding: 14px 8px 0 0; border-bottom: none; }
+  .hs-proof li + li { padding-left: 10px; border-left: 1px solid rgba(26,24,22,.12); }
+  .hs-proof strong { font-size: 24px !important; }
+  .hs-proof li > span { font-size: 11.5px; line-height: 1.35; }
+  .hs-proof em { font-size: 11px; }
+}

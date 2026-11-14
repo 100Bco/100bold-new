@@ -10,10 +10,11 @@ export default function MobileCTA() {
 
   useEffect(() => {
     setHidden(false)
-    const targets = document.querySelectorAll('.xc, .nk-footer')
+    const targets = [...document.querySelectorAll('.xc, .nk-footer, .hs-hero, .idx, .sdh, .svh, .pth')]
     if (!targets.length) return
     const seen = new Set()
     const obs = new IntersectionObserver((entries) => {
+      // hidden while a page's own hero (which has its own call button), the closing band, or the footer is in view
       entries.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)))
       setHidden(seen.size > 0)
     }, { threshold: 0.15 })
