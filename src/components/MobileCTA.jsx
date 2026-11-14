@@ -21,7 +21,7 @@ export default function MobileCTA() {
     return () => obs.disconnect()
   }, [pathname])
 
-  if (pathname === '/contact') return null
+  if (pathname === '/contact' || pathname.startsWith('/the-mark')) return null
   return (
     <div className={`nk-mcta${hidden ? ' is-hidden' : ''}`}>
       <Link href="/contact">Book a call
