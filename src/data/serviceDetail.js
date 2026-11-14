@@ -177,8 +177,8 @@ export const ads = {
     video: '/portal/dang-man-v2.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Dang-Man, the AI superhero made for Dang Law Group',
   },
   result: {
-    client: 'Bee Construction', industry: 'Construction', label: 'Meta ads for a general contractor',
-    text: 'Facebook and Instagram campaigns built to bring in project leads for Bee Construction.',
+    client: 'Bee Construction', industry: 'Construction', big: '$2M+', label: 'development lead within 72 hours',
+    text: 'From no website and no social presence to a $2M+ development lead from a single ad.',
     img: '/works/BEE CONSTRUCTION.png', alt: 'Bee Construction project', to: '/work/bee-construction',
   },
   chatgpt: {

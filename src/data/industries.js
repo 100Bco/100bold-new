@@ -144,8 +144,8 @@ export const industries = [
       { q: 'We tried ads and got tire-kickers.', fix: 'Ads aimed at real project owners, tracked to the bids and jobs they bring in.', svc: svc.ads },
     ],
     services: [svc.seo, svc.web, svc.ads],
-    result: { client: 'Bee Construction', industry: 'Construction', label: 'Meta ads for a general contractor', text: 'Facebook and Instagram campaigns built to bring in project leads for Bee Construction.', img: '/works/BEE CONSTRUCTION.png', alt: 'Bee Construction project', to: '/work/bee-construction' },
-    proof: { label: 'Bee Construction' },
+    result: { client: 'Bee Construction', industry: 'Construction', big: '$2M+', label: 'development lead within 72 hours', text: 'From no website and no social presence to a $2M+ development lead from a single ad.', img: '/works/BEE CONSTRUCTION.png', alt: 'Bee Construction project', to: '/work/bee-construction' },
+    proof: { big: '$2M+', label: 'development lead within 72 hours' },
     faq: [
       { q: 'What is contractor SEO?', a: 'Getting your company to rank in Google and Google Maps, and be named by AI assistants, when owners and buyers search for the work you do in the areas you serve.' },
       { q: 'How do contractors get more jobs online?', a: 'A clear page for each service and area, real project photos, steady reviews, and a fast way to request a bid. Then ads aimed at real project owners.' },
