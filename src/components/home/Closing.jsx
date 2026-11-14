@@ -34,7 +34,7 @@ export default function Closing() {
     <section className="xc" ref={ref}>
       <div className="mx xc-grid">
         <div className="xc-copy">
-          <h2 className="x-h2 xc-h2">{closing.h2}<i className="x-dot" aria-hidden="true" /></h2>
+          <h2 className="x-h2 xc-h2">{closing.h2}</h2>
           <p className="xc-body">{closing.body}</p>
           <Link href="/contact" className="nk-btn nk-btn-red" data-magnetic="0.3">{closing.cta} <Arrow /></Link>
         </div>

@@ -27,7 +27,7 @@ export default function Results() {
     <section className="xr" ref={ref}>
       <div className="mx">
         <div className="xr-head">
-          <div className="xw-head"><span className="nk-index">03</span><h2 className="x-h2">{work.h2}<i className="x-dot" aria-hidden="true" /></h2></div>
+          <div className="xw-head"><span className="nk-index">03</span><h2 className="x-h2">{work.h2}</h2></div>
           <Link href="/work" className="nk-link-arrow"><span>See all work</span><Arrow /></Link>
         </div>
         <div className="xr-grid">

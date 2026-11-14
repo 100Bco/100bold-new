@@ -35,7 +35,7 @@ export default function Founder() {
         </div>
         <div className="xf-copy">
           <p className="x-eyebrow">{founder.h2}</p>
-          <h2 className="x-h2">{founder.h2}<i className="x-dot" aria-hidden="true" /></h2>
+          <h2 className="x-h2">{founder.h2}</h2>
           <ul className="xf-stats">
             {stats.map((s) => (
               <li key={s.label}><b><span className="xf-num" data-to={s.to} data-dec={s.dec || 0}>{s.dec ? s.to.toFixed(s.dec) : s.to}</span>{s.suf}</b><span>{s.label}</span></li>

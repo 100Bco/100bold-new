@@ -59,7 +59,7 @@ export default function WhatWeDo() {
       <div className="mx">
         <div className="xw-head">
           <span className="nk-index">02</span>
-          <h2 className="x-h2">{services.h2}<i className="x-dot" aria-hidden="true" /></h2>
+          <h2 className="x-h2">{services.h2}</h2>
         </div>
         <ul className="xw-list">
           {services.items.map((s, i) => (

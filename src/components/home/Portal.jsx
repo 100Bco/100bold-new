@@ -60,7 +60,7 @@ export default function Portal() {
       <div className="mx xp-grid">
         <div className="xp-copy">
           <p className="x-eyebrow">{portal.eyebrow}</p>
-          <h2 className="x-h2">{portal.h2}<i className="x-dot" aria-hidden="true" /></h2>
+          <h2 className="x-h2">{portal.h2}</h2>
           <p className="xp-body">{portal.body}</p>
           <Link href="/portal" className="nk-btn nk-btn-red" data-magnetic="0.3">{portal.cta} <Arrow /></Link>
         </div>

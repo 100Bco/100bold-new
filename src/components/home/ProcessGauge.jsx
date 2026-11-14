@@ -73,7 +73,7 @@ export default function ProcessGauge() {
       <div className="pg-pin">
         <div className="pg-head">
           <span className="nk-index">05</span>
-          <h2 className="pg-h2">{howWeWork.h2}<i className="pg-dot" aria-hidden="true" /></h2>
+          <h2 className="pg-h2">{howWeWork.h2}</h2>
         </div>
 
         <div className="pg-stage">

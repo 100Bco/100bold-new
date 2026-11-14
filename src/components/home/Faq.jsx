@@ -20,7 +20,7 @@ export default function Faq() {
       <div className="mx xq-grid">
         <div className="xq-side">
           <span className="nk-index">06</span>
-          <h2 className="x-h2">{faq.h2}<i className="x-dot" aria-hidden="true" /></h2>
+          <h2 className="x-h2">{faq.h2}</h2>
           <Link href="/contact" className="nk-btn nk-btn-red" data-magnetic="0.3">Book a call <Arrow /></Link>
         </div>
         <div className="xq-list">
