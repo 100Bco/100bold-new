@@ -98,8 +98,16 @@ export default function ProcessGauge() {
                 </g>
               )
             })}
+            {/* desktop: the step text sits inside the dial, above a short needle */}
+            <foreignObject className="pg-fo" x={CX - 215} y={CY - 236} width="430" height="140">
+              <div className="pg-in pg-in-dial" key={step}>
+                <div className="pg-num">{'0' + (step + 1)}<small> / 04</small></div>
+                <div className="pg-ttl">{it.title}</div>
+                <p className="pg-dsc">{it.text}</p>
+              </div>
+            </foreignObject>
             <g ref={needle}>
-              <line x1="0" y1="0" x2="0" y2="-222" stroke="#fff" strokeWidth="5" strokeLinecap="round" />
+              <line className="pg-needle" x1="0" y1="0" x2="0" y2="-222" stroke="#fff" strokeWidth="5" strokeLinecap="round" />
               <circle r="22" fill="#C8102E" />
               <circle r="8" fill="#fff" />
             </g>
