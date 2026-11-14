@@ -356,6 +356,9 @@
 .tm{--font-inter:"TM Inter","TM Inter Fallback";--font-display:"TM Sora","TM Sora Fallback";line-height:normal;-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto}
 .tm a{color:revert;text-decoration:revert}
 .tm img{display:revert;max-width:revert}
+/* 100bold's mobile "Book a call" pill would cover The Mark's own sticky apply bar:
+   hide it while that bar is showing (only matches while a .tm page is mounted). */
+body:has(.tm .apply-bar.is-visible) .nk-mcta{transform:translateY(140%);opacity:0;pointer-events:none}
 
 /* ── Original stylesheet (scoped) ── */
 
