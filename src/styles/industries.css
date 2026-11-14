@@ -107,13 +107,20 @@
 
 @media (max-width: 960px) {
   .idhh-grid { grid-template-columns: 1fr; }
-  .idps-row { flex-direction: column; height: auto; min-height: 0; }
-  .idp, .idp.on { flex: none; height: 420px; }
-  .idp-bg { filter: none; transform: none; }
-  .idp-shade { background: linear-gradient(to top, rgba(14,12,11,.92) 0%, rgba(14,12,11,.4) 55%, rgba(14,12,11,.1) 100%) !important; }
-  .idp-top { left: 22px !important; translate: 0 0 !important; }
+  .idps-row { flex-direction: column; height: auto; min-height: 0; gap: 14px; }
+  .idp, .idp.on { flex: none; height: auto; display: flex; flex-direction: column; background: #1A1816; border-radius: 24px; cursor: default; }
+  .idp.noimg { background: #1A1816; }
+  .idp-bg { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 16 / 10; filter: none !important; transform: none !important; }
+  .idp.noimg::before { content: ''; display: block; aspect-ratio: 16 / 10; background: radial-gradient(80% 70% at 70% 20%, #e11a3c, #8a0c22 60%, #3a0710); }
+  .idp-shade { display: none; }
+  .idp-top { left: 16px !important; top: 16px; translate: 0 0 !important; }
+  .idp-ic { width: 48px; height: 48px; border-radius: 14px; padding: 6px; }
   .idp-v { display: none; }
-  .idp-body { opacity: 1; transform: none; pointer-events: auto; min-width: 0; }
+  .idp-body { position: relative; opacity: 1; transform: none; pointer-events: auto; min-width: 0; padding: 22px 20px 24px; }
+  .idp-name { font-size: 30px; }
+  .idp-proof { margin-top: 16px; padding-top: 14px; }
+  .idp-proof b { font-size: 34px; }
+  .idp-go { margin-top: 18px; }
   .idx { padding-top: 112px; }
   .idx-line { display: inline; }
   .idx-line > span { display: inline; }
@@ -125,6 +132,7 @@
   .idx-stats { flex-direction: column; gap: 22px; }
   .idx-stats li + li { border-left: none; border-top: 1px solid rgba(26,24,22,.12); padding-top: 22px; }
   .idw-grid, .idw-grid.n8 { grid-template-columns: 1fr 1fr; }
+
   .idw-note { grid-template-columns: 1fr; gap: 14px; }
   .idf-grid { grid-template-columns: 1fr; }
   .ids-row { grid-template-columns: 1fr 44px; padding: 22px 4px; }

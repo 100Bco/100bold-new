@@ -133,6 +133,7 @@
   .abt-in { grid-template-columns: 1fr; }
   .insf-art { min-height: 220px; }
   .ctb-side { position: static; }
+  .insn-form iframe { height: 700px; }
   .insn-grid > div:first-child { position: static; padding-top: 0; }
   .ctb-cal iframe { min-height: 760px; }
   .abw-cols { display: none; }
