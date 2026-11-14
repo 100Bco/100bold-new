@@ -13,18 +13,18 @@ export const portalPage = {
   reel: { src: '/portal/dang-man-v2.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Portal reel: Dang-Man, the AI superhero made for Dang Law Group' },
 }
 
+const P = '/portal/'
+const piece = (id, file, o) => ({ id, src: P + file + '.mp4', preview: P + file + '-preview.mp4', poster: P + file + '-poster.jpg', transcript: null, turnaround: null, ...o })
+
 export const pieces = [
-  {
-    id: 'dang-man',
-    title: 'Dang-Man',
-    client: 'Dang Law Group',
-    format: 'Vertical short film',
-    turnaround: null,
-    src: '/portal/dang-man-v2.mp4',
-    poster: '/portal/dang-man-v2-poster.jpg',
-    description: 'Dang-Man started as an idea for one personal injury firm. He now stars in the firm’s social content, ads, billboards, and short films.',
-    transcript: null,
-  },
+  piece('dang-man-1', 'dang-man-v2', { title: 'Dang-Man, ad one', client: 'Dang Law Group', format: 'AI ad, vertical', ratio: '9/16', description: 'Dang-Man, the AI superhero made for Dang Law Group, in a short vertical ad for social.' }),
+  piece('dang-man-2', 'dlg-ad-2', { title: 'Dang-Man, ad two', client: 'Dang Law Group', format: 'AI ad, vertical', ratio: '9/16', description: 'A second Dang-Man ad: a car accident, and the firm that shows up to help.' }),
+  piece('dang-man-3', 'dlg-ad-3', { title: 'Dang-Man, ad three', client: 'Dang Law Group', format: 'AI ad, vertical', ratio: '9/16', description: 'A third Dang-Man ad, made for Facebook and Instagram.' }),
+  piece('bond-111', 'bond-111', { title: 'BOND, video 111', client: 'BOND', format: 'Social video', ratio: '16/9', description: 'A dance-led social video shot on location, part of an ongoing series for BOND.' }),
+  piece('bond-114', 'bond-114', { title: 'BOND, video 114', client: 'BOND', format: 'Social video', ratio: '16/9', description: 'Another episode in the BOND social series, shot on location.' }),
+  piece('bond-109', 'bond-109', { title: 'BOND, video 109', client: 'BOND', format: 'Social video', ratio: '16/9', description: 'A character-led episode in the BOND social series.' }),
+  piece('bond-110', 'bond-110', { title: 'BOND, video 110', client: 'BOND', format: 'Social video', ratio: '16/9', description: 'A short episode in the BOND social series.' }),
+  piece('real-vs-ai', 'portal-compare', { title: 'Real actor and client', client: 'Portal', format: 'Side-by-side', ratio: '1214/1080', description: 'The same scene side by side: a real actor on one side, the client on the other.' }),
 ]
 
 export const make = {
