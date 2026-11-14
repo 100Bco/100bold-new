@@ -1,0 +1,88 @@
+/* Services hub content. Headlines and answer lines follow the Content Blueprint; proof uses only named, real results. */
+export const hub = {
+  eyebrow: 'Services',
+  h1: ['How we grow', 'a service business'],
+  body: 'We get you found on Google and in AI search, turn ad spend into signed clients and booked jobs, and make your CEO the best-known name in your market.',
+  cta: 'Book a call',
+  cta2: 'See our work',
+}
+
+export const offers = [
+  {
+    id: 'seo-ai-search',
+    name: 'SEO and AI Search',
+    h3: 'Be the business Google and ChatGPT recommend',
+    line: 'We run SEO and AI search optimization, also called GEO or AEO. You rank in Google and Google Maps, and AI assistants name you when buyers ask who to hire.',
+    points: ['Google and Google Maps rankings', 'Named in ChatGPT and Google AI answers', 'Review generation', 'A site AI can read'],
+    suits: 'Law firms, clinics, contractors, local services',
+    proof: { big: 'Top 3', label: "in Google's AI results for a target search", who: 'Dang Law Group' },
+    to: '/services/seo-ai-search',
+    more: 'See SEO and AI Search',
+    media: { kind: 'scene', i: 0 },
+    tone: 'light',
+  },
+  {
+    id: 'web-design',
+    name: 'Web design',
+    h3: 'A website that wins the client before the first call',
+    line: 'We design and build fast websites for service businesses, structured so Google and AI can read every page.',
+    points: ['Built for search and AI from day one', 'Made to turn visits into calls', 'You own the site, the domain, and the logins'],
+    suits: 'Law firms, clinics, real estate, contractors',
+    proof: { big: '3 leads', label: 'for leasing within 24 hours of launch', who: 'Dacy Business Park, LT Commercial Group' },
+    to: '/services/web-design',
+    more: 'See Web design',
+    media: { kind: 'scene', i: 1 },
+    tone: 'dark',
+  },
+  {
+    id: 'meta-ads',
+    name: 'Meta ads',
+    h3: 'Stop paying for leads that never sign',
+    line: 'We run Facebook and Instagram ads for service businesses and track every dollar to the calls and clients it brings in.',
+    points: ['Tracking from ad to signed client', 'You own the ad account', 'Creative made by our Portal studio', 'Early access to ChatGPT ads'],
+    suits: 'Law firms, clinics, contractors',
+    to: '/services/meta-ads',
+    more: 'See Meta ads',
+    media: { kind: 'scene', i: 2 },
+    tone: 'sand',
+  },
+  {
+    id: 'the-mark',
+    name: 'The Mark',
+    h3: 'Your company has a brand. Do you?',
+    line: 'Our fully managed LinkedIn service for founders and CEOs. We build your presence in your voice, so decision-makers know your name before the first meeting.',
+    points: ['Fully managed, in your voice', 'Built around your market and your buyers', 'Works with or without the company buying anything else'],
+    suits: 'Founders, CEOs, managing partners',
+    proof: { big: '1M+', label: 'impressions in 12 months, from zero', who: 'Tung Cao, Co-Founder, 100B Global' },
+    to: '/the-mark',
+    more: 'Explore The Mark',
+    media: { kind: 'img', src: '/the-mark/images/tung-cao/Tung%20Cao%20Photo.png', alt: 'Tung Cao, Co-Founder of 100B Global' },
+    tone: 'red',
+  },
+  {
+    id: 'portal',
+    name: 'Portal',
+    h3: 'Film-quality video, made with AI, delivered in days',
+    line: "Portal is 100Bold's AI production studio. We make brand films, ads, and social content without a film crew or a six-week timeline.",
+    points: ['Brand films', 'Ad creative', 'Social series'],
+    suits: 'Any service brand that needs video',
+    proof: { big: 'Dang-Man', label: "a law firm's own AI superhero", who: 'Dang Law Group' },
+    to: '/portal',
+    more: 'Visit Portal',
+    media: { kind: 'video', src: '/portal/dang-man-v2.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Dang-Man, the AI superhero made for Dang Law Group' },
+    tone: 'dark',
+  },
+]
+
+export const together = {
+  h2: 'How the services work together',
+  body: 'Each one stands on its own. Together they cover every moment between a buyer’s first search and a signed client.',
+  steps: [
+    { k: 'Found', by: 'SEO and AI Search', text: 'You show up when buyers search Google, Maps, and AI assistants.' },
+    { k: 'Trusted', by: 'Web design', text: 'Your site turns that visit into a call.' },
+    { k: 'Chosen', by: 'Meta ads', text: 'Ads keep you in front of buyers until they are ready, tracked to signed clients.' },
+    { k: 'Remembered', by: 'The Mark and Portal', text: 'Your CEO and your story become the names people know.' },
+  ],
+}
+
+export const minai = { text: 'Automation and CRM powered by', name: 'MinAI', href: 'https://minai.biz' }
