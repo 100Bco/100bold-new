@@ -12,6 +12,8 @@ const headline = [
   { k: '3 leads', u: 'for leasing within 24 hours of launch' },
 ]
 
+const industry = ['Personal injury law', 'PI medical provider', 'Real estate']
+
 /* Results, with names — three cards, each with its 16:10 case image and one big number */
 export default function Results() {
   const ref = useRef(null)
@@ -31,14 +33,16 @@ export default function Results() {
         <div className="xr-grid">
           {work.items.map((c, i) => (
             <Link href={c.to} className="xr-card" key={c.to} data-cursor="View">
-              <span className="xr-im"><img src={c.img} alt={c.alt} loading="lazy" /><span className="xr-tag">{c.industry}</span></span>
+              <span className="xr-im"><img src={c.img} alt={c.alt} loading="lazy" /></span>
               <span className="xr-bd">
-                <strong className="xr-k">{headline[i].k}</strong>
-                <span className="xr-u">{c.result}</span>
-                <span className="xr-ft">
-                  <span><b>{c.client}</b><em>{c.desc}</em></span>
-                  <span className="xr-go"><Arrow /></span>
+                <span className="xr-name">{c.client}</span>
+                <span className="xr-ind">{industry[i]}</span>
+                <span className="xr-desc">{c.desc}</span>
+                <span className="xr-stat">
+                  <strong className="xr-k">{headline[i].k}</strong>
+                  <span className="xr-u">{headline[i].u}</span>
                 </span>
+                <span className="xr-btn">Read the case study<i><Arrow /></i></span>
               </span>
             </Link>
           ))}
