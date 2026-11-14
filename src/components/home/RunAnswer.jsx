@@ -31,7 +31,7 @@ export default function RunAnswer() {
   return (
     <div className="ra" ref={root}>
       <div className="ra-left">
-        <span className="nk-index ra-index">01</span>
+        
         <h2 className="ra-q">{router.h2}</h2>
         <div className="ra-wheel" style={{ '--i': active }}>
           <ul className="ra-list" role="tablist" aria-label={router.h2}>

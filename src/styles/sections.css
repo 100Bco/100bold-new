@@ -146,22 +146,7 @@
 .xq-a p { padding: 0 50px 24px 84px; font-size: 16px; line-height: 1.7; color: var(--text-2); }
 
 /* 11 Closing */
-.xc { background: var(--white); padding: clamp(80px, 10vw, 140px) 0; border-top: 1px solid rgba(26,24,22,.06); }
-.xc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 5vw, 80px); align-items: center; }
-.xc-h2 { font-size: clamp(52px, 7vw, 116px); }
-.xc-body { font-size: clamp(17px, 1.4vw, 20px); color: var(--text-2); max-width: 520px; margin: 24px 0 34px; }
-.xc-bar { display: flex; align-items: center; gap: 14px; background: #fff; border-radius: 40px; padding: 18px 26px; box-shadow: 0 20px 50px -20px rgba(0,0,0,.25); font-size: 18px; color: var(--text-2); }
-.xc-bar svg { width: 20px; height: 20px; color: var(--text-3); flex: none; }
-.xc-bar i { width: 2px; height: 22px; background: var(--red); animation: ra-blink 1s steps(1) infinite; }
 @keyframes ra-blink { 50% { opacity: 0; } }
-.xc-res { position: relative; margin-top: 16px; border-radius: 20px; padding: 20px 24px; background: #fff; border: 1px solid rgba(0,0,0,.06); }
-.xc-res b { display: block; font: 800 21px 'Archivo', sans-serif; letter-spacing: -.02em; }
-.xc-res span { font-size: 14px; opacity: .7; }
-.xc-res.one { background: var(--red); color: #fff; border-color: var(--red); box-shadow: 0 30px 60px -24px rgba(200,16,46,.6); transform: scale(1.03); }
-.xc-res.one.pop { animation: xc-pop .7s var(--ease-out); }
-@keyframes xc-pop { 0% { transform: translateY(16px) scale(.97); } 100% { transform: scale(1.03); } }
-.xc-res.two { opacity: .4; } .xc-res.three { opacity: .2; }
-.xc-rk { position: absolute; right: 22px; top: 50%; translate: 0 -50%; font: 800 14px var(--font-body); background: #fff; color: var(--red); border-radius: 20px; padding: 5px 13px; opacity: 1 !important; }
 
 /* 12 Footer wordmark */
 .nk-f-word { color: #fff; -webkit-text-stroke: 0; font-family: 'Archivo', sans-serif; font-weight: 900; letter-spacing: -.07em; font-size: clamp(64px, 17.5vw, 290px); line-height: .8; white-space: nowrap; text-align: left; margin-left: -.04em; }
@@ -180,7 +165,7 @@
   .xr-head { flex-direction: column; align-items: flex-start; }
   .xr-grid { grid-template-columns: 1fr; }
   .xr-u { min-height: 0; }
-  .xm-grid, .xf-grid, .xq-grid, .xc-grid { grid-template-columns: 1fr; }
+  .xm-grid, .xf-grid, .xq-grid { grid-template-columns: 1fr; }
   .xm-posts { min-height: 0; display: flex; flex-direction: column; gap: 18px; }
   .xm-post { position: relative; width: 100%; left: auto !important; right: auto !important; top: auto !important; }
   .xf-port { max-width: 420px; }
@@ -188,12 +173,10 @@
   .xq-side { position: static; }
   .xq-item button { grid-template-columns: 52px 1fr 38px; }
   .xq-a p { padding: 0 0 22px 64px; }
-  .xc-res b { font-size: 18px; }
 }
 @media (max-width: 480px) {
-  .xc-bar { font-size: 15px; padding: 14px 18px; }
 }
-@media (prefers-reduced-motion: reduce) { .xm-re i, .xp-play, .xc-res.one { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .xm-re i, .xp-play { animation: none; } }
 
 @media (max-width: 640px) { .xl-cell { width: 180px; height: 104px; } .xl-cell img { transform: scale(.8); } .xl-cell:hover img, .xl-cell.on img { transform: scale(.86); } }
 
@@ -208,3 +191,33 @@
   .xm-post.p0 { rotate: -3deg; margin-top: 0; }
   .xm-post.p1 { rotate: 3deg; margin-top: 46px; }
 }
+
+/* 10 Closing — red poster with one big search */
+.xc { position: relative; overflow: hidden; background: var(--red); color: #fff; padding: clamp(96px, 12vw, 170px) 0 clamp(80px, 10vw, 140px); }
+.xc::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 55% at 50% 0%, rgba(255,255,255,.16), transparent 70%), radial-gradient(50% 50% at 50% 110%, rgba(0,0,0,.28), transparent 70%); }
+.xc-in { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.xc-h2 { font: 800 clamp(52px, 8.6vw, 148px) 'Archivo', sans-serif; letter-spacing: -.055em; line-height: .9; }
+.xc-line { display: block; overflow: hidden; padding-bottom: .06em; }
+.xc-line > span { display: inline-block; }
+.xc-box { width: min(760px, 100%); margin-top: clamp(40px, 5vw, 64px); background: #fff; color: var(--dark); border-radius: 28px; text-align: left; box-shadow: 0 50px 90px -40px rgba(60,0,10,.7); overflow: hidden; }
+.xc-bar { display: flex; align-items: center; gap: 16px; padding: 24px 30px; font-size: clamp(17px, 1.6vw, 22px); }
+.xc-bar svg { width: 22px; height: 22px; color: var(--text-3); flex: none; }
+.xc-q { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.xc-bar i { flex: none; width: 2px; height: 26px; background: var(--red); animation: ra-blink 1s steps(1) infinite; }
+.xc-hit { display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 16px; padding: 0 30px; max-height: 0; opacity: 0; border-top: 1px solid transparent; transition: max-height .6s var(--ease-out), opacity .4s, padding .6s var(--ease-out), border-color .4s; }
+.xc-hit.on { max-height: 120px; opacity: 1; padding: 20px 30px 24px; border-color: rgba(26,24,22,.08); }
+.xc-logo { width: 48px; height: 48px; border-radius: 14px; background: var(--red); color: #fff; display: grid; place-items: center; font: 800 22px 'Archivo', sans-serif; }
+.xc-hit-t b { display: block; font: 800 clamp(19px, 1.7vw, 24px) 'Archivo', sans-serif; letter-spacing: -.02em; }
+.xc-hit-t small { font-size: 14px; color: var(--text-2); }
+.xc-rk { font: 800 15px var(--font-body); background: var(--red); color: #fff; border-radius: 20px; padding: 6px 14px; }
+.xc-foot { display: flex; flex-direction: column; align-items: center; margin-top: clamp(36px, 4vw, 52px); }
+.xc-body { font-size: clamp(17px, 1.4vw, 20px); color: rgba(255,255,255,.85); max-width: 520px; margin-bottom: 28px; }
+.xc-btn:hover { background: var(--dark); color: #fff; }
+@media (max-width: 600px) {
+  .xc-bar { padding: 18px 20px; gap: 12px; }
+  .xc-hit { grid-template-columns: 40px 1fr auto; gap: 12px; padding: 0 20px; }
+  .xc-hit.on { padding: 16px 20px 18px; }
+  .xc-logo { width: 40px; height: 40px; font-size: 18px; border-radius: 12px; }
+  .xc-hit-t small { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .xc-bar i { animation: none; } .xc-hit { transition: none; } }

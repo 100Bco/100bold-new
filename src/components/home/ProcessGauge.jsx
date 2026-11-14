@@ -72,7 +72,7 @@ export default function ProcessGauge() {
     <section className="pg" ref={ref}>
       <div className="pg-pin">
         <div className="pg-head">
-          <span className="nk-index">05</span>
+          
           <h2 className="pg-h2">{howWeWork.h2}</h2>
         </div>
 

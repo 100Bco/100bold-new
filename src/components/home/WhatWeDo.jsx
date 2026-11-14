@@ -58,7 +58,7 @@ export default function WhatWeDo() {
     <section className="xw" ref={ref} id="services">
       <div className="mx">
         <div className="xw-head">
-          <span className="nk-index">02</span>
+          
           <h2 className="x-h2">{services.h2}</h2>
         </div>
         <ul className="xw-list">
