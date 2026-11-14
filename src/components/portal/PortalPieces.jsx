@@ -44,8 +44,8 @@ export default function PortalPieces() {
                 <span className="ptv-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
               </button>
               <h3>{p.title}</h3>
-              <small>{p.client}, {p.format}, {p.duration}</small>
-              <p>{p.description}</p>
+              <small>{p.client}</small>
+              <p className="ptv-sr">{p.format}, {p.duration}. {p.description}</p>
             </article>
           ))}
         </div>

@@ -22,8 +22,9 @@
 .ptv-play svg { width: 22px; height: 22px; margin-left: 3px; }
 .ptv-thumb:hover .ptv-play, .ptv-thumb:focus-visible .ptv-play { background: var(--red); transform: scale(1.1); }
 .ptv h3 { margin-top: 18px; font: 800 clamp(18px, 1.4vw, 21px) 'Archivo', sans-serif; letter-spacing: -.025em; line-height: 1.15; }
-.ptv small { display: block; margin-top: 8px; font-size: 14px; color: rgba(255,255,255,.55); line-height: 1.4; }
-.ptv p { margin-top: 10px; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.75); }
+.ptv small { display: block; margin-top: 6px; font-size: 14px; font-weight: 600; color: #ff5a75; line-height: 1.4; }
+.ptv-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ptv p:not(.ptv-sr) { margin-top: 10px; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.75); }
 
 /* player: video only */
 html.pt-lock, html.pt-lock body { overflow: hidden; }
