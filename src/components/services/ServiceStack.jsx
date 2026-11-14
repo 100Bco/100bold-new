@@ -91,8 +91,10 @@ export default function ServiceStack() {
               <h2 className="svc-h">{o.h3}</h2>
               <p className="svc-line">{o.line}</p>
               <ul className="svc-points">{o.points.map((p) => <li key={p}>{p}</li>)}</ul>
-              <p className="svc-suits"><span>Best for</span>{o.suits}</p>
-              <Link href={o.to} className="svc-more" data-magnetic="0.2">{o.more} <i><Arrow /></i></Link>
+              <div className="svc-foot">
+                <p className="svc-suits"><span>Best for</span>{o.suits}</p>
+                <Link href={o.to} className="svc-more" data-magnetic="0.2">{o.more} <i><Arrow /></i></Link>
+              </div>
             </div>
             <div className="svc-media">
               {o.media.kind === 'scene' && <canvas ref={(el) => { canvases.current[o.media.i] = el }} data-scene={o.media.i} aria-hidden="true" />}

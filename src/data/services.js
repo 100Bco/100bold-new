@@ -5,11 +5,13 @@ export const hub = {
   body: 'We get you found on Google and in AI search, turn ad spend into signed clients and booked jobs, and make your CEO the best-known name in your market.',
   cta: 'Book a call',
   cta2: 'See our work',
+  index: 'Five ways we grow you',
 }
 
 export const offers = [
   {
     id: 'seo-ai-search',
+    short: 'Get named by Google and ChatGPT',
     name: 'SEO and AI Search',
     h3: 'Be the business Google and ChatGPT recommend',
     line: 'We run SEO and AI search optimization, also called GEO or AEO. You rank in Google and Google Maps, and AI assistants name you when buyers ask who to hire.',
@@ -23,6 +25,7 @@ export const offers = [
   },
   {
     id: 'web-design',
+    short: 'Win the client before the first call',
     name: 'Web design',
     h3: 'A website that wins the client before the first call',
     line: 'We design and build fast websites for service businesses, structured so Google and AI can read every page.',
@@ -36,6 +39,7 @@ export const offers = [
   },
   {
     id: 'meta-ads',
+    short: 'Ads tracked to signed clients',
     name: 'Meta ads',
     h3: 'Stop paying for leads that never sign',
     line: 'We run Facebook and Instagram ads for service businesses and track every dollar to the calls and clients it brings in.',
@@ -48,6 +52,7 @@ export const offers = [
   },
   {
     id: 'the-mark',
+    short: 'LinkedIn for founders and CEOs',
     name: 'The Mark',
     h3: 'Your company has a brand. Do you?',
     line: 'Our fully managed LinkedIn service for founders and CEOs. We build your presence in your voice, so decision-makers know your name before the first meeting.',
@@ -61,6 +66,7 @@ export const offers = [
   },
   {
     id: 'portal',
+    short: 'AI films, delivered in days',
     name: 'Portal',
     h3: 'Film-quality video, made with AI, delivered in days',
     line: "Portal is 100Bold's AI production studio. We make brand films, ads, and social content without a film crew or a six-week timeline.",
