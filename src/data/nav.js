@@ -15,7 +15,6 @@ export const industryLinks = [
 ]
 
 export const aboutLinks = [
-  { path: '/about', name: 'About 100Bold' },
   { path: '/insights', name: 'Insights' },
   { path: '/contact', name: 'Contact' },
 ]

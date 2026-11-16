@@ -183,3 +183,9 @@
 .ctf-video .full { grid-column: 1 / -1; }
 .ctf-foot small a { color: var(--dark); font-weight: 700; text-decoration: underline; }
 @media (max-width: 600px) { .ctf-video { grid-template-columns: 1fr; } }
+
+.ctf-embed { background: #fff; border-radius: 20px; overflow: hidden; }
+.ctf-embed iframe { width: 100%; height: 760px; border: none; display: block; }
+.ctf-mail { margin-top: 18px !important; font-size: 15px; }
+.ctf-mail a { color: var(--dark); font-weight: 700; border-bottom: 2px solid var(--red); }
+.ctf-card { align-items: start; }
