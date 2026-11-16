@@ -106,7 +106,6 @@ export const faq = {
     { q: 'Where are you based?', a: 'Austin, Texas. We work with clients across the United States.' },
     { q: 'What is AI search optimization?', a: "It is the work of getting your business named when people ask ChatGPT, Google's AI, and other assistants who to hire. It is also called GEO, for generative engine optimization." },
     { q: 'How do you measure results?', a: 'By signed clients and booked jobs. We track every lead from the first search or ad click to the signed contract.' },
-    { q: 'Do I own my website and ad accounts?', a: 'Yes. Your website, domain, ad accounts, and data are yours from day one.' },
     { q: 'How do we start?', a: 'Book a 30-minute call. We will review where you stand and tell you what we would do first.' },
   ],
 }
