@@ -2,22 +2,29 @@
 
 import { useRef } from 'react'
 import { useGsap, gsap, MQ } from '@/lib/motion'
-import Icon from '@/components/service/Icon'
+import WhoIcon from './WhoIcon'
 
-/* Who we work with: the business types by name */
+/* Who we work with: one card per business type, each with its own icon and what it needs; the first one leads in red */
 export default function IndWho({ d }) {
   const ref = useRef(null)
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
-      gsap.from(ref.current.querySelectorAll('.idw-head > *, .idw-grid, .idw-note'), { y: 40, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.1, clearProps: 'transform,opacity', scrollTrigger: { trigger: ref.current, start: 'top 72%', once: true } })
+      gsap.from(ref.current.querySelectorAll('.idw-head > *, .iwc-grid, .idw-note'), { y: 40, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.1, clearProps: 'transform,opacity', scrollTrigger: { trigger: ref.current, start: 'top 72%', once: true } })
     })
   })
   return (
     <section className="idw" ref={ref}>
       <div className="mx">
-        <div className="idw-head"><h2 className="sd-h2">{d.h2}</h2><p>{d.lead}</p></div>
-        <ul className={'idw-grid n' + d.items.length}>
-          {d.items.map((t) => <li key={t}><i><Icon name="check" /></i>{t}</li>)}
+        <div className="idw-head"><p className="sd-eyebrow">Who we work with</p><h2 className="sd-h2">Built for your kind of business</h2><p>{d.lead}</p></div>
+        <ul className={'iwc-grid n' + d.items.length}>
+          {d.items.map((t, i) => (
+            <li className={'iwc' + (i === 0 ? ' lead' : '')} key={t.k}>
+              <span className="iwc-ic"><WhoIcon name={t.i} /></span>
+              <span className="iwc-n">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{t.k}</h3>
+              <p>{t.d}</p>
+            </li>
+          ))}
         </ul>
         {d.note && <div className="idw-note"><h3>{d.note.h}</h3><p>{d.note.t}</p></div>}
       </div>

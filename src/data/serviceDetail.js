@@ -1,7 +1,7 @@
 /* Service detail pages. Structure and headlines follow the Content Blueprint. Proof uses only named, confirmed results. */
 
 const industries = [
-  { name: 'Personal injury law firms', want: 'More signed cases at a lower cost per case', icon: '/law-red.json', to: '/industries/personal-injury-law-firms' },
+  { name: 'Law firms', want: 'More signed cases at a lower cost per case', icon: '/law-red.json', to: '/industries/personal-injury-law-firms' },
   { name: 'PI medical providers', want: 'More attorney referrals and more injury patients', icon: '/wheelchair-insurance-red.json', to: '/industries/pi-medical-providers' },
   { name: 'Real estate', want: 'Deal flow, leasing inquiries, and credibility with investors', icon: '/building-red.json', to: '/industries/real-estate' },
   { name: 'Construction and trades', want: 'More bids and booked jobs from search, not just referrals', icon: '/repair-tools-red.json', to: '/industries/construction-trades' },

@@ -7,7 +7,7 @@ export const serviceLinks = [
 ]
 
 export const industryLinks = [
-  { path: '/industries/personal-injury-law-firms', name: 'Personal injury law firms' },
+  { path: '/industries/personal-injury-law-firms', name: 'Law firms' },
   { path: '/industries/pi-medical-providers', name: 'PI medical providers' },
   { path: '/industries/real-estate', name: 'Real estate' },
   { path: '/industries/construction-trades', name: 'Construction and trades' },

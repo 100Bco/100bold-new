@@ -19,20 +19,21 @@ export const hub = {
 export const industries = [
   {
     slug: 'personal-injury-law-firms',
-    name: 'Personal injury law firms',
-    short: 'PI law',
+    heroImg: '/industries/law.jpg',
+    name: 'Law firms',
+    short: 'Law firms',
     title: 'Marketing for Personal Injury Law Firms | 100Bold',
     description: 'Marketing for personal injury law firms that want more signed cases: SEO and AI search, Meta ads tracked to signed cases, and LinkedIn for the founding partner.',
     icon: '/law-red.json',
     img: '/works/DANG LAW GROUP.png', imgAlt: 'Dang Law Group founder Loc T. Dang', imgPos: '75% 30%',
     hero: {
-      h1: ['Marketing for personal', 'injury law firms that', 'want more signed cases'],
+      h1: ['Marketing for law firms', 'that want more', 'signed cases'],
       line: 'We help personal injury firms get found on Google and in AI search, turn ad spend into signed cases, and depend less on lead vendors.',
     },
     who: {
       h2: 'Who we work with',
       lead: 'Personal injury and trial firms doing $5M+ a year, led by a founder or managing partner.',
-      items: ['Personal injury firms', 'Trial firms', 'Car and truck accident practices', 'Workplace injury practices', 'Wrongful death practices', 'Multi-office firms'],
+      items: [{ k: 'Personal injury firms', i: 'scale', d: 'Cases that come to you, not through lead vendors.' }, { k: 'Trial firms', i: 'gavel', d: 'Visibility that matches the verdicts you win.' }, { k: 'Car and truck accident practices', i: 'truck', d: 'Found first in the hours after a crash.' }, { k: 'Workplace injury practices', i: 'hardhat', d: 'Reach injured workers before the insurer does.' }, { k: 'Wrongful death practices', i: 'heart', d: 'Careful, respectful outreach to families.' }, { k: 'Multi-office firms', i: 'pin', d: 'Every office ranking in its own city.' }],
     },
     pains: [
       { q: 'We pay lead vendors for cases that never sign.', fix: 'Build your own pipeline. We rank you in Google, Maps, and AI answers, so cases come to you instead of through a vendor.', svc: svc.seo },
@@ -53,6 +54,7 @@ export const industries = [
   },
   {
     slug: 'pi-medical-providers',
+    heroImg: '/industries/medical.jpg',
     name: 'PI medical providers',
     short: 'PI medical',
     title: 'Marketing for PI Medical Providers and Injury Clinics | 100Bold',
@@ -66,7 +68,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'Practices that treat injury patients, run by an owner, physician-owner, or practice administrator.',
-      items: ['Ambulatory surgery centers', 'Pain management', 'MRI and diagnostic imaging', 'Urgent care', 'Orthopedics and spine', 'Multi-specialty injury clinics', 'Chiropractic and rehab', 'Emergency rooms'],
+      items: [{ k: 'Ambulatory surgery centers', i: 'scalpel', d: 'Attorneys who know where to send surgical cases.' }, { k: 'Pain management', i: 'pulse', d: 'Patients and referrals for long-term care.' }, { k: 'MRI and diagnostic imaging', i: 'scan', d: 'Fast imaging that attorneys can count on.' }, { k: 'Urgent care', i: 'cross', d: 'The first stop after an accident.' }, { k: 'Orthopedics and spine', i: 'spine', d: 'Specialist care that attorneys refer to by name.' }, { k: 'Multi-specialty injury clinics', i: 'clinic', d: 'One place for every stage of recovery.' }, { k: 'Chiropractic and rehab', i: 'hand', d: 'Injury patients from search and referrals.' }, { k: 'Emergency rooms', i: 'siren', d: 'Seen first by people who need care now.' }],
       note: { h: 'How these practices grow', t: 'Most injury patients reach you through an attorney or a search. We make your practice the one attorneys trust to refer and the one patients find first: clear pages for every injury and service, strong reviews, and fast follow-up.' },
     },
     pains: [
@@ -88,6 +90,7 @@ export const industries = [
   },
   {
     slug: 'real-estate',
+    heroImg: '/industries/realestate.jpg',
     name: 'Real estate',
     short: 'Real estate',
     title: 'Real Estate Marketing Agency for Developers and Brokerages | 100Bold',
@@ -101,7 +104,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'Real estate companies led by a principal or CEO.',
-      items: ['Commercial developers', 'Business parks and industrial projects', 'Mixed-use projects', 'Brokerages', 'Property managers', 'Multifamily communities'],
+      items: [{ k: 'Commercial developers', i: 'crane', d: 'Demand before the ribbon is cut.' }, { k: 'Business parks and industrial projects', i: 'factory', d: 'Tenants for every bay and suite.' }, { k: 'Mixed-use projects', i: 'layers', d: 'Residents, shoppers, and tenants at once.' }, { k: 'Brokerages', i: 'key', d: 'Listings and a broker brand people trust.' }, { k: 'Property managers', i: 'building', d: 'Fewer vacancies, better tenants.' }, { k: 'Multifamily communities', i: 'home', d: 'Leases from people searching nearby.' }],
     },
     pains: [
       { q: 'Our project launches to silence.', fix: 'A project brand, website, and launch campaign ready before day one, so inquiries start when the doors open.', svc: svc.web },
@@ -122,6 +125,7 @@ export const industries = [
   },
   {
     slug: 'construction-trades',
+    heroImg: '/industries/construction.jpg',
     name: 'Construction and trades',
     short: 'Construction',
     mode: 'You bid on projects and contracts',
@@ -136,7 +140,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'Contractors doing $5M+ a year, led by the owner.',
-      items: ['General contractors', 'Commercial builders', 'Roofing', 'HVAC', 'Plumbing', 'Electrical'],
+      items: [{ k: 'General contractors', i: 'crane', d: 'Bids from owners, not just referrals.' }, { k: 'Commercial builders', i: 'building', d: 'Credibility with developers and owners.' }, { k: 'Roofing', i: 'roof', d: 'Jobs from search after every storm.' }, { k: 'HVAC', i: 'fan', d: 'Calls when it is too hot or too cold.' }, { k: 'Plumbing', i: 'drop', d: 'The first call when something leaks.' }, { k: 'Electrical', i: 'bolt', d: 'Service and project work from search.' }],
     },
     pains: [
       { q: 'Almost all our work comes from referrals.', fix: 'Rankings in Google, Maps, and AI answers for the jobs you want, so new owners and buyers find you directly.', svc: svc.seo },
@@ -157,6 +161,7 @@ export const industries = [
   },
   {
     slug: 'local-services',
+    heroImg: '/industries/local.jpg',
     name: 'Local services',
     short: 'Local services',
     mode: 'Customers call you to book local jobs',
@@ -171,7 +176,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'High-ticket local service companies led by the owner.',
-      items: ['HVAC', 'Plumbing', 'Electrical', 'Towing and roadside', 'Auto repair', 'Auto salvage'],
+      items: [{ k: 'HVAC', i: 'fan', d: 'Calls when it is too hot or too cold.' }, { k: 'Plumbing', i: 'drop', d: 'The first call when something leaks.' }, { k: 'Electrical', i: 'bolt', d: 'Service and project work from search.' }, { k: 'Towing and roadside', i: 'truck', d: 'The first name drivers find at the roadside.' }, { k: 'Auto repair', i: 'wrench', d: 'Booked bays from people nearby.' }, { k: 'Auto salvage', i: 'car', d: 'Sellers and buyers who find you first.' }],
     },
     pains: [
       { q: 'When someone needs help now, they call whoever shows up first.', fix: 'Top spots on Google Maps and in AI answers for “near me” searches in every area you serve.', svc: svc.seo },

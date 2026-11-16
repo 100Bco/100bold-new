@@ -13,7 +13,7 @@ export const hero = {
 export const router = {
   h2: 'What do you run?',
   items: [
-    { title: 'A personal injury law firm', line: 'More signed cases. Fewer bought leads.', to: '/industries/personal-injury-law-firms', img: '/works/DANG LAW GROUP.png' },
+    { title: 'A law firm', line: 'More signed cases. Fewer bought leads.', to: '/industries/personal-injury-law-firms', img: '/works/DANG LAW GROUP.png' },
     { title: 'A medical practice that treats injury patients', line: 'More attorney referrals and more patients.', to: '/industries/pi-medical-providers', img: '/works/T98%20REHAB%20%26%20CHIROPRACTIC.png' },
     { title: 'A real estate company', line: 'Deal flow from people who already know your name.', to: '/industries/real-estate', img: '/works/LT COMMERCIAL GROUP.png' },
     { title: 'A construction or trades company', line: 'More bids and booked jobs from search.', to: '/industries/construction-trades', img: '/works/BEE CONSTRUCTION.png' },

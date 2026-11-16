@@ -28,7 +28,7 @@ export default function IndPanels() {
             <div className="idp-body">
               <h2 className="idp-name">{d.name}</h2>
               {d.mode && <p className="idp-mode">{d.mode}</p>}
-              <p className="idp-who">{d.who.items.slice(0, 4).join(' · ')}</p>
+              <p className="idp-who">{d.who.items.slice(0, 4).map((x) => x.k).join(' · ')}</p>
               {d.proof && d.proof.big && <div className="idp-proof"><b>{d.proof.big}</b><span>{d.proof.label}{d.result ? ' · ' + d.result.client : ''}</span></div>}
               <Link href={'/industries/' + d.slug} className="nk-btn nk-btn-white idp-go">Explore {d.short} <i aria-hidden="true">→</i></Link>
             </div>

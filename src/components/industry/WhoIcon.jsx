@@ -1,0 +1,31 @@
+const P = {
+  scale: <><path d="M12 3v18M7 21h10M5 7h14" /><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z" /></>,
+  gavel: <><path d="M14 4l6 6M11 7l6 6M8.5 9.5l6 6" /><path d="M10 12l-7 7M3 21h10" /></>,
+  truck: <><path d="M2 6h11v10H2zM13 9h4l3 3v4h-7" /><circle cx="6" cy="18" r="2" /><circle cx="17" cy="18" r="2" /></>,
+  hardhat: <><path d="M3 17h18M5 17a7 7 0 0 1 14 0" /><path d="M10 10V6h4v4" /></>,
+  heart: <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" />,
+  pin: <><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></>,
+  scalpel: <><path d="M3 21l9-9M12 12l7-9 2 2-9 7" /></>,
+  pulse: <path d="M2 12h4l3-7 4 14 3-7h6" />,
+  scan: <><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4" /><circle cx="12" cy="12" r="3" /></>,
+  cross: <path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" />,
+  spine: <><path d="M12 2v20" /><path d="M8 5h8M7 9h10M8 13h8M7 17h10" /></>,
+  clinic: <><path d="M3 21V8l9-5 9 5v13z" /><path d="M10 13h4M12 11v4M9 21v-4h6v4" /></>,
+  hand: <path d="M7 11V6a1.5 1.5 0 0 1 3 0v4M10 10V4.5a1.5 1.5 0 0 1 3 0V10M13 10V5.5a1.5 1.5 0 0 1 3 0V12M16 9.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-1a6 6 0 0 1-5-3l-2.5-4a1.5 1.5 0 0 1 2.5-1.6L7 14" />,
+  siren: <><path d="M6 18v-6a6 6 0 0 1 12 0v6M4 21h16M12 2v2M4 6l1.5 1.5M20 6l-1.5 1.5" /></>,
+  crane: <><path d="M5 21V3l14 4H5M9 21V7M5 9l4-2M15 7v5" /><path d="M13 12h4v3h-4zM3 21h8" /></>,
+  factory: <><path d="M2 21V10l6 4V10l6 4V6h4l2 15z" /><path d="M7 18h2M12 18h2" /></>,
+  layers: <><path d="M12 3l9 5-9 5-9-5z" /><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5" /></>,
+  key: <><circle cx="8" cy="15" r="4" /><path d="M11 12l9-9M17 6l3 3M15 8l2 2" /></>,
+  building: <><path d="M4 21V5l8-3v19M12 9h8v12" /><path d="M7 8h2M7 12h2M7 16h2M15 13h2M15 17h2M2 21h20" /></>,
+  home: <><path d="M3 11l9-8 9 8" /><path d="M5 10v11h14V10M10 21v-6h4v6" /></>,
+  roof: <><path d="M2 13L12 4l10 9" /><path d="M5 11v9h14v-9M15 6V3h3v6" /></>,
+  fan: <><circle cx="12" cy="12" r="2" /><path d="M12 10c0-4 1-7 4-7 2 0 2 3-1 5M14 12c4 0 7 1 7 4 0 2-3 2-5-1M12 14c0 4-1 7-4 7-2 0-2-3 1-5M10 12c-4 0-7-1-7-4 0-2 3-2 5 1" /></>,
+  drop: <path d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12z" />,
+  bolt: <path d="M13 2L4 14h7l-1 8 9-12h-7z" />,
+  wrench: <path d="M14.7 6.3a4 4 0 0 0 5 5L22 14l-8 8-2.3-2.3a4 4 0 0 0-5-5L2 10l8-8z" />,
+  car: <><path d="M3 16v-4l2-5h14l2 5v4z" /><circle cx="7" cy="17" r="2" /><circle cx="17" cy="17" r="2" /><path d="M3 12h18" /></>,
+}
+export default function WhoIcon({ name }) {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{P[name] || P.pin}</svg>
+}
