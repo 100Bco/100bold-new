@@ -31,7 +31,7 @@ export default function Together() {
     })
   })
   return (
-    <section className="svt" ref={ref}>
+    <section className="svt svt-center" ref={ref}>
       <div className="mx">
         <div className="svt-head">
           <h2 className="svt-h2">{together.h2.replace(' work together', '')}<br />work together</h2>

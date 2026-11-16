@@ -40,6 +40,7 @@ export default function Page() {
       <Journey d={d.steps} className="svt-sand" />
       <Creative d={d.creative} />
       <CaseCard d={d.result} />
+      {d.result2 && <CaseCard d={d.result2} hideHead />}
       <ChatgptBand d={d.chatgpt} />
       <Who d={d.who} />
       <Faq data={d.faq} />

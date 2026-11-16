@@ -61,7 +61,7 @@ export const offers = [
     proof: { big: 'Dang-Man', label: "a law firm's own AI superhero", who: 'Dang Law Group' },
     to: '/portal',
     more: 'Visit the AI Production Studio',
-    media: { kind: 'video', src: '/portal/dang-man-v2.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Dang-Man, the AI superhero made for Dang Law Group' },
+    media: { kind: 'scene', i: 3 },
     tone: 'dark',
   },
   {
@@ -75,7 +75,7 @@ export const offers = [
     proof: { big: '1M+', label: 'impressions in 12 months, from zero', who: 'Tung Cao, Co-Founder, 100B Global' },
     to: '/the-mark',
     more: 'Explore LinkedIn for CEOs',
-    media: { kind: 'img', src: '/the-mark/images/tung-cao/Tung%20Cao%20Photo.png', alt: 'Tung Cao, Co-Founder of 100B Global' },
+    media: { kind: 'scene', i: 4 },
     tone: 'red',
   },
 ]

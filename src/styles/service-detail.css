@@ -359,3 +359,8 @@
 .svt-center .svt-head { margin: 0 auto; text-align: center; }
 .svt-center .svt-head p { margin-left: auto; margin-right: auto; }
 .sd-h2, .svt-h2, .svt-head p, .sdg-head p, .sdw-head p { text-wrap: balance; }
+
+.sdr-next { padding-top: 0; }
+.sdc-phone { position: relative; }
+.sdc-phone .xp-sound { top: 16px; right: 16px; }
+.sdc-phone .xp-play-btn { left: 16px; right: auto !important; }

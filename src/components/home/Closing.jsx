@@ -14,9 +14,20 @@ export default function Closing({ data }) {
   const ref = useRef(null)
   const [q, setQ] = useState('')
   const [k, setK] = useState(0)
+  const [seen, setSeen] = useState(false)
+
+  // start typing only when the section scrolls into view
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSeen(true); io.disconnect() } }, { threshold: 0.35 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   const done = q.length === queries[k].length
 
   useEffect(() => {
+    if (!seen) return
     const full = queries[k]
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setQ(full); return }
     let i = 0
@@ -24,7 +35,7 @@ export default function Closing({ data }) {
     const id = setInterval(() => { i++; setQ(full.slice(0, i)); if (i >= full.length) clearInterval(id) }, 45)
     const next = setTimeout(() => setK((x) => (x + 1) % queries.length), 4400)
     return () => { clearInterval(id); clearTimeout(next) }
-  }, [k])
+  }, [k, seen])
 
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {

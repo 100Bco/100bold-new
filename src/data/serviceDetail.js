@@ -127,10 +127,8 @@ export const web = {
   faq: {
     h2: 'Questions',
     items: [
-      { q: 'Who builds websites for personal injury law firms?', a: '100Bold designs and builds websites for personal injury law firms and other service businesses, written for clients and built so Google and AI can read every page.' },
       { q: 'What should a contractor website include?', a: 'A clear page for each service and each area you cover, real project photos, reviews, a fast way to call or request a bid, and the details Google and AI need to recommend you.' },
       { q: 'How much does a law firm website cost?', a: 'It depends on the number of pages, locations, and features. We give you a fixed quote after a short call.' },
-      { q: 'Who owns the website?', a: 'You do. The site, the domain, the content, and every login are yours from day one.' },
       { q: 'Can you redesign our site without losing rankings?', a: 'Yes. We map your current pages, keep what already ranks, and redirect old addresses so you keep the traffic you have earned.' },
       { q: 'Do you write the content?', a: 'Yes. We write every page around what your buyers search for and ask AI, and you approve it before launch.' },
     ],
@@ -181,6 +179,10 @@ export const ads = {
     text: 'From no website and no social presence to a $2M+ development lead from a single ad.',
     img: '/works/BEE CONSTRUCTION.png', alt: 'Bee Construction project', to: '/work/bee-construction',
   },
+  result2: {
+    client: 'Dang Law Group', industry: 'Personal injury law', big: '', label: '', text: '',
+    img: '/works/DANG LAW GROUP.png', alt: 'Dang Law Group', to: '/work/dang-law-group',
+  },
   chatgpt: {
     tag: 'Early access',
     h2: 'ChatGPT ads',
@@ -192,8 +194,6 @@ export const ads = {
     h2: 'Questions',
     items: [
       { q: 'Do Facebook ads work for law firms?', a: 'They can, when the ads, the intake, and the tracking work together. We judge every campaign by cost per signed client, not by clicks or leads.' },
-      { q: 'Who runs Meta ads for contractors?', a: '100Bold runs Facebook and Instagram ads for contractors and other service businesses, with every lead tracked to the bid or job it brings in.' },
-      { q: 'Who owns the ad account?', a: 'You do. The ad account, the pixel, the audiences, and the data stay with you.' },
       { q: 'Who makes the ads?', a: 'Our AI Production Studio makes the video and image ads, so new creative is ready in days.' },
       { q: 'Can you advertise on ChatGPT?', a: 'Ads in ChatGPT are new and still rolling out. We are setting up early access for clients and will tell you when it fits your market.' },
       { q: 'How do you report results?', a: 'Every month you see spend, leads, consults, and signed clients, and what each signed client cost.' },
