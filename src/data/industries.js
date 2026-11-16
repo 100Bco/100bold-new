@@ -5,7 +5,7 @@ const svc = {
   web: { name: 'Web design', to: '/services/web-design' },
   ads: { name: 'Meta ads', to: '/services/meta-ads' },
   mark: { name: 'LinkedIn for CEOs', to: '/the-mark' },
-  portal: { name: 'AI Production Studio', to: '/portal' },
+  portal: { name: 'AI Production', to: '/portal' },
   minai: { name: 'MinAI', to: 'https://minai.biz' },
 }
 
@@ -120,7 +120,7 @@ export const industries = [
       { q: 'Do you market commercial real estate?', a: 'Yes. We work with commercial developers, business parks, industrial and mixed-use projects, brokerages, and property managers.' },
       { q: 'How do you get leasing inquiries for a new project?', a: 'A project website and launch campaign ready before opening, ads aimed at the right tenants, and content that shows the space. Every inquiry is tracked.' },
       { q: 'Can you build the CEO’s personal brand?', a: 'Yes. LinkedIn for CEOs is our fully managed LinkedIn service for founders and CEOs, written in their voice.' },
-      { q: 'Do you make video for real estate projects?', a: 'Yes. Our AI Production Studio makes brand films and social content without a film crew or a long timeline.' },
+      { q: 'Do you make video for real estate projects?', a: 'Yes. Our AI Production team makes brand films and social content without a film crew or a long timeline.' },
     ],
   },
   {

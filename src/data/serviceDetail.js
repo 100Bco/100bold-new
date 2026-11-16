@@ -151,7 +151,7 @@ export const ads = {
     h2: 'What you get',
     items: [
       { t: 'Campaigns built to sign', d: 'Targeting, offers, and forms set up for the clients you want, not the cheapest clicks.', icon: 'target' },
-      { t: 'Creative that stops the scroll', d: 'Video and image ads made by our AI Production Studio.', icon: 'play' },
+      { t: 'Creative that stops the scroll', d: 'Video and image ads made by our AI Production team.', icon: 'play' },
       { t: 'Tracking to the signed client', d: 'Every lead followed from the ad to the call, the consult, and the signed client.', icon: 'chart' },
       { t: 'A report you can read', d: 'Cost per signed client, every month, in plain numbers.', icon: 'doc' },
     ],
@@ -168,10 +168,10 @@ export const ads = {
   },
   own: { h2: 'You own the ad account', text: 'Your account, your pixel, your data, and your audiences. If we ever part ways, everything stays with you.' },
   creative: {
-    eyebrow: 'Creative made by our AI Production Studio',
+    eyebrow: 'Creative made by our AI Production team',
     h2: 'Ads people actually watch',
-    text: 'Our AI Production Studio makes the video and image ads. Film-quality work, delivered in days, so you can test more ideas for less.',
-    cta: 'Visit the AI Production Studio', to: '/portal',
+    text: 'Our AI Production team makes the video and image ads. Film-quality work, delivered in days, so you can test more ideas for less.',
+    cta: 'Visit AI Production', to: '/portal',
     video: 'https://embed-ssl.wistia.com/deliveries/a4e15380a1821f0c0409031eaf87a21c0ac1868f.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Dang-Man, the AI superhero made for Dang Law Group',
   },
   result: {
@@ -194,7 +194,7 @@ export const ads = {
     h2: 'Questions',
     items: [
       { q: 'Do Facebook ads work for law firms?', a: 'They can, when the ads, the intake, and the tracking work together. We judge every campaign by cost per signed client, not by clicks or leads.' },
-      { q: 'Who makes the ads?', a: 'Our AI Production Studio makes the video and image ads, so new creative is ready in days.' },
+      { q: 'Who makes the ads?', a: 'Our AI Production team makes the video and image ads, so new creative is ready in days.' },
       { q: 'Can you advertise on ChatGPT?', a: 'Ads in ChatGPT are new and still rolling out. We are setting up early access for clients and will tell you when it fits your market.' },
       { q: 'How do you report results?', a: 'Every month you see spend, leads, consults, and signed clients, and what each signed client cost.' },
     ],

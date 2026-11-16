@@ -74,7 +74,7 @@ export const insights = {
     { k: 'Personal injury growth', d: 'For law firms and the practices that treat their clients.' },
     { k: 'Contractors and local services', d: 'Search, Maps, reviews, and websites.' },
     { k: 'The CEO’s name', d: 'LinkedIn and personal brand for founders.' },
-    { k: 'AI video', d: 'What is possible now, with AI Production Studio work as examples.' },
+    { k: 'AI video', d: 'What is possible now, with AI Production work as examples.' },
   ],
   newsletter: { h: 'Get new guides by email', d: 'One useful email when a new guide is out. No spam.' },
 }
@@ -96,7 +96,7 @@ export const contact = {
   place: 'Austin, Texas',
   phone: '757-773-5707',
   address: '12516 Walnut Park Crossing #200, Austin, TX 78753',
-  needs: ['SEO and AI Search', 'Web design', 'Meta ads', 'LinkedIn for CEOs', 'AI video (AI Production Studio)', 'Not sure yet'],
+  needs: ['SEO and AI Search', 'Web design', 'Meta ads', 'LinkedIn for CEOs', 'AI video (AI Production)', 'Not sure yet'],
   videoTypes: ['Brand film', 'Ad creative', 'Social series', 'Explainer', 'Not sure yet'],
   channels: ['Facebook and Instagram', 'TikTok', 'YouTube', 'LinkedIn', 'Website', 'TV or billboard'],
   revenue: ['Under $5M', '$5M to $10M', '$10M to $25M', '$25M+'],

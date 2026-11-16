@@ -42,7 +42,7 @@ export const services = {
     { title: 'SEO and AI Search', to: '/services/seo-ai-search', scene: 0, gif: '/works/GIF 1.gif', desc: 'Your buyers ask Google and ChatGPT who to hire. We make your business the answer and keep you at the top of Google Maps.' },
     { title: 'Web design', to: '/services/web-design', scene: 1, gif: '/works/GIF 2.gif', desc: 'A fast website that wins the client before the first call, built so Google and AI can read every page.' },
     { title: 'Meta ads', to: '/services/meta-ads', scene: 2, gif: '/works/GIF 3.gif', desc: 'Facebook and Instagram ads tracked to the calls and clients they bring in. You see cost per signed client, not cost per click.' },
-    { title: 'AI Production Studio', to: '/portal', scene: 3, gif: '/works/GIF 4.gif', desc: 'Short films, ads, and social content people choose to watch, delivered in days.' },
+    { title: 'AI Production', to: '/portal', scene: 3, gif: '/works/GIF 4.gif', desc: 'Short films, ads, and social content people choose to watch, delivered in days.' },
     { title: 'LinkedIn for CEOs', to: '/the-mark', scene: 4, desc: 'Our fully managed LinkedIn service for founders and CEOs, built in your voice so decision-makers know your name.' },
   ],
 }
@@ -68,9 +68,9 @@ export const mark = {
 }
 
 export const portal = {
-  eyebrow: 'AI Production Studio',
+  eyebrow: 'AI Production',
   h2: 'We built a law firm its own superhero',
-  body: 'Dang-Man started as an idea for one personal injury firm. He now stars in their social content, ads, billboards, and short films. Our AI Production Studio made him.',
+  body: 'Dang-Man started as an idea for one personal injury firm. He now stars in their social content, ads, billboards, and short films. Our AI Production team made him.',
   cta: 'Watch the work',
   imgAlt: 'Dang-Man, the AI superhero created for Dang Law Group',
 }
@@ -100,7 +100,7 @@ export const process = {
 export const faq = {
   h2: 'Questions',
   items: [
-    { q: 'What does 100Bold do?', a: '100Bold is a growth agency for service businesses. We run SEO and AI search optimization, web design, and Meta ads, manage LinkedIn for founders and CEOs through LinkedIn for CEOs, and produce video through our AI Production Studio.' },
+    { q: 'What does 100Bold do?', a: '100Bold is a growth agency for service businesses. We run SEO and AI search optimization, web design, and Meta ads, manage LinkedIn for founders and CEOs through LinkedIn for CEOs, and produce video through our AI Production team.' },
     { q: 'Who do you work with?', a: 'Service businesses with $5M or more in annual revenue. Our clients are personal injury law firms, the medical practices that treat injury patients, real estate companies, construction and trades companies, and local service businesses.' },
     { q: 'Do you work with businesses under $5M?', a: 'Our services are built for companies at $5M and above. If you are close and growing fast, book a call and we will tell you honestly whether we are a fit.' },
     { q: 'Where are you based?', a: 'Austin, Texas. We work with clients across the United States.' },

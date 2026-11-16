@@ -2,12 +2,12 @@
    To add a piece: drop the mp4 and a poster jpg in /public/portal and add an entry to `pieces`.
    Every piece needs a written description; add `transcript` when it has spoken words. */
 export const portalPage = {
-  title: 'AI Production Studio | AI Video Production for Brands | 100Bold',
-  description: 'The AI Production Studio is 100Bold’s in-house video studio. Brand films, ads, and social content for service businesses, without a film crew or a six-week timeline.',
+  title: 'AI Production | AI Video Production for Brands | 100Bold',
+  description: 'AI Production is 100Bold’s in-house video studio. Brand films, ads, and social content for service businesses, without a film crew or a six-week timeline.',
   hero: {
-    eyebrow: 'AI Production Studio',
+    eyebrow: 'AI Production',
     h1: ['Film-quality video,', 'made with AI,', 'delivered in days'],
-    line: 'The AI Production Studio is 100Bold’s in-house video studio. We make brand films, ads, and social content for service businesses without a film crew or a six-week timeline.',
+    line: 'AI Production is 100Bold’s in-house video studio. We make brand films, ads, and social content for service businesses without a film crew or a six-week timeline.',
     cta: 'Start a project',
   },
 }
@@ -69,7 +69,7 @@ export const how = {
 export const portalFaq = {
   h2: 'Questions',
   items: [
-    { q: 'What is an AI production studio?', a: 'A studio that makes film-quality video with AI tools and a human creative team, instead of a film crew and a long shoot. The AI Production Studio is 100Bold’s in-house video studio.' },
+    { q: 'What is an AI production studio?', a: 'A studio that makes film-quality video with AI tools and a human creative team, instead of a film crew and a long shoot. AI Production is 100Bold’s in-house video studio.' },
     { q: 'How fast can you deliver a video?', a: 'Most pieces are delivered in days, not weeks. The timeline depends on the length and the number of versions.' },
     { q: 'How do you handle real people and likenesses?', a: 'We only use a real person’s face, voice, or likeness with their written permission, and you approve every version before it is published.' },
     { q: 'What kinds of video do you make?', a: 'Brand films, ad creative, social series, and explainers, plus ongoing content and social for brands that want to post every week.' },

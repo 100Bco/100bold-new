@@ -89,7 +89,7 @@ const localBusinessSchema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO and AI Search', url: 'https://100bold.co/services/seo-ai-search' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web design', url: 'https://100bold.co/services/web-design' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Meta ads', url: 'https://100bold.co/services/meta-ads' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Production Studio', url: 'https://100bold.co/portal' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Production', url: 'https://100bold.co/portal' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'LinkedIn for CEOs', url: 'https://100bold.co/the-mark' } },
     ],
   },

@@ -7,7 +7,7 @@ import '@/styles/services.css'
 
 export const metadata = {
   title: 'Services | SEO, AI Search, Meta Ads, Web Design | 100Bold',
-  description: 'How 100Bold grows $5M+ service businesses: SEO and AI search, web design, Meta ads, LinkedIn for CEOs, and our AI Production Studio.',
+  description: 'How 100Bold grows $5M+ service businesses: SEO and AI search, web design, Meta ads, LinkedIn for CEOs, and our AI Production team.',
   alternates: { canonical: '/services' },
 }
 

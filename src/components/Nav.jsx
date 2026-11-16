@@ -6,11 +6,9 @@ import { usePathname } from 'next/navigation'
 import { serviceLinks, industryLinks, aboutLinks } from '@/data/nav'
 
 const menu = [
-  { name: 'Services', path: '/services', children: serviceLinks },
+  { name: 'Services', path: '/services', children: serviceLinks, match: ['/services', '/portal', '/the-mark'] },
   { name: 'Industries', path: '/industries', children: industryLinks },
   { name: 'Work', path: '/work' },
-  { name: 'AI Production Studio', path: '/portal' },
-  { name: 'LinkedIn for CEOs', path: '/the-mark' },
   { name: 'About', path: '/about', children: aboutLinks, match: ['/about', '/insights', '/contact'] },
 ]
 

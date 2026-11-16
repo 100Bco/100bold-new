@@ -90,7 +90,7 @@ const screens = [
   { key: 'ai', label: 'AI Search', side: 'l', pos: 'p2', depth: 1, Comp: ScreenAI },
   { key: 'web', label: 'Web design', side: 'l', pos: 'p3', depth: 0.8, Comp: ScreenWeb },
   { key: 'ads', label: 'Meta ads', side: 'r', pos: 'p4', depth: 0.7, Comp: ScreenAd },
-  { key: 'portal', label: 'AI Production Studio', side: 'r', pos: 'p5', depth: 1, Comp: ScreenFilm },
+  { key: 'portal', label: 'AI Production', side: 'r', pos: 'p5', depth: 1, Comp: ScreenFilm },
   { key: 'mark', label: 'LinkedIn for CEOs', side: 'r', pos: 'p6', depth: 0.6, Comp: ScreenLinkedIn },
 ]
 

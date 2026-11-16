@@ -34,7 +34,7 @@ const channels = [
   { k: 'chatgpt', name: 'ChatGPT', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
   { k: 'instagram', name: 'Instagram', service: 'Meta ads', to: '/services/meta-ads' },
   { k: 'maps', name: 'Google Maps', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
-  { k: 'youtube', name: 'YouTube', service: 'AI Production Studio', to: '/portal' },
+  { k: 'youtube', name: 'YouTube', service: 'AI Production', to: '/portal' },
   { k: 'web', name: 'Your website', service: 'Web design', to: '/services/web-design' },
   { k: 'facebook', name: 'Facebook', service: 'Meta ads', to: '/services/meta-ads' },
   { k: 'gemini', name: 'Gemini', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
