@@ -79,7 +79,7 @@ export default function Portal() {
           <div className="xp-phone" ref={phone}>
             <video
               ref={vid}
-              data-src="/portal/dang-man-v2.mp4"
+              data-src="https://embed-ssl.wistia.com/deliveries/a4e15380a1821f0c0409031eaf87a21c0ac1868f.mp4"
               poster="/portal/dang-man-v2-poster.jpg"
               muted
               loop

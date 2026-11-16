@@ -32,7 +32,7 @@ html.pt-lock, html.pt-lock body { overflow: hidden; }
 @keyframes ptl-in { from { opacity: 0; } }
 .ptl-media { aspect-ratio: var(--r); width: min(94vw, calc((100vh - 110px) * var(--r))); max-height: calc(100vh - 110px); border-radius: 18px; overflow: hidden; background: #000; animation: ptl-pop .5s var(--ease-out) both; }
 @keyframes ptl-pop { from { transform: scale(.94); } }
-.ptl-media video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.ptl-media video, .ptl-media iframe { width: 100%; height: 100%; object-fit: contain; display: block; border: 0; }
 .ptl-x { position: absolute; right: 20px; top: 18px; width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: none; color: #fff; font-size: 18px; cursor: pointer; transition: all .3s; }
 .ptl-x:hover { background: var(--red); border-color: var(--red); }
 
@@ -81,10 +81,17 @@ html.pt-lock, html.pt-lock body { overflow: hidden; }
 .ptgrid.n6 .ptv h3 { font-size: clamp(14px, 1.05vw, 17px); }
 .pttk { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
 .pttk-cell { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.pttk-cell iframe, .pttk-ph { width: 100%; max-width: 340px; aspect-ratio: 325 / 578; height: auto; border: none; border-radius: 18px; background: #000; display: block; }
+.pttk-cell iframe, .pttk-ph { width: 100%; max-width: 330px; height: 760px; border: none; border-radius: 18px; background: #fff; display: block; }
 .pttk-ph { display: grid; place-items: center; background: #1f1c1a; color: #ff5a75; font-weight: 700; }
 .pttk-link { font-size: 13px; font-weight: 700; color: rgba(255,255,255,.65); }
 .pttk-link:hover { color: #ff5a75; }
 @media (max-width: 1200px) { .ptgrid.n6 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 960px) { .pttk { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; } .ptgrid.n3 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 600px) { .ptgrid.n6, .ptgrid.n3 { grid-template-columns: 1fr 1fr; } .ptgp-head p { padding-left: 0; } }
+
+/* equal cards: groups 1 and 2 share the same 6-column track, so every card is the same size */
+.ptgrid.n6, .ptgrid.n3 { grid-template-columns: repeat(6, minmax(0, 1fr)); max-width: none; }
+.ptv { min-width: 0; }
+.ptv h3 { white-space: normal !important; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.4em; line-height: 1.2; }
+@media (max-width: 1200px) { .ptgrid.n6, .ptgrid.n3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .ptgrid.n6, .ptgrid.n3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

@@ -13,7 +13,9 @@ export const portalPage = {
 }
 
 const P = '/portal/'
-const piece = (id, file, o) => ({ id, src: P + file + '.mp4', poster: P + file + '-poster.jpg', transcript: null, turnaround: null, ...o })
+/* Videos stream from Wistia (wid = Wistia media id); posters stay on the site */
+const W = {"paperwork": "29oyagspnu", "bills-stacking": "bcb5jimxoh", "low-offer": "81wko7xvvp", "actor-to-client": "64gji135oj", "santa": "ir9zpj91ii", "halloween": "ob713ko3eu", "night-in": "pqxh1z0h28", "golden-hour": "ot3rnxtdd2", "clinic": "u5k7ksohvs"}
+const piece = (id, file, o) => ({ id, wid: W[id], src: 'https://fast.wistia.net/embed/iframe/' + W[id], poster: P + file + '-poster.jpg', transcript: null, turnaround: null, ...o })
 
 /* Every piece, in the order shown. ratio is the video's own shape (used by the pop-up player). */
 export const pieces = [
@@ -69,7 +71,6 @@ export const portalFaq = {
   items: [
     { q: 'What is an AI production studio?', a: 'A studio that makes film-quality video with AI tools and a human creative team, instead of a film crew and a long shoot. The AI Production Studio is 100Bold’s in-house video studio.' },
     { q: 'How fast can you deliver a video?', a: 'Most pieces are delivered in days, not weeks. The timeline depends on the length and the number of versions.' },
-    { q: 'Who owns the footage?', a: 'You do. The finished videos are yours to use on your site, your social channels, and your ads.' },
     { q: 'How do you handle real people and likenesses?', a: 'We only use a real person’s face, voice, or likeness with their written permission, and you approve every version before it is published.' },
     { q: 'What kinds of video do you make?', a: 'Brand films, ad creative, social series, and explainers, plus ongoing content and social for brands that want to post every week.' },
     { q: 'Do I need to be on camera?', a: 'No. Many pieces use characters, voice-over, or visuals only. If you want to appear, we can work with footage of you.' },
@@ -77,3 +78,6 @@ export const portalFaq = {
 }
 
 export const portalClosing = { href: '/contact?from=video#form', h2: 'Make something people watch', body: 'Tell us what you want to make. We will come back with an idea, a script outline, and a timeline.', cta: 'Start a project' }
+
+/* Direct Wistia MP4 (540p) of the Dang-Man film, for inline autoplay players */
+export const dangManMp4 = 'https://embed-ssl.wistia.com/deliveries/a4e15380a1821f0c0409031eaf87a21c0ac1868f.mp4'

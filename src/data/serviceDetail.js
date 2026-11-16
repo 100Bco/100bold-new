@@ -172,7 +172,7 @@ export const ads = {
     h2: 'Ads people actually watch',
     text: 'Our AI Production Studio makes the video and image ads. Film-quality work, delivered in days, so you can test more ideas for less.',
     cta: 'Visit the AI Production Studio', to: '/portal',
-    video: '/portal/dang-man-v2.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Dang-Man, the AI superhero made for Dang Law Group',
+    video: 'https://embed-ssl.wistia.com/deliveries/a4e15380a1821f0c0409031eaf87a21c0ac1868f.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Dang-Man, the AI superhero made for Dang Law Group',
   },
   result: {
     client: 'Bee Construction', industry: 'Construction', big: '$2M+', label: 'development lead within 72 hours',

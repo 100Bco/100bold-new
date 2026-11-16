@@ -15,7 +15,7 @@ function Player({ p, onClose }) {
   return (
     <div className="ptl" role="dialog" aria-modal="true" aria-label={p.title} data-lenis-prevent onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
       <div className="ptl-media" style={{ '--r': p.ratio }}>
-        <video src={p.src} poster={p.poster} controls autoPlay playsInline />
+        <iframe src={'https://fast.wistia.net/embed/iframe/' + p.wid + '?autoPlay=true&playbar=true&playerColor=C8102E&settingsControl=false&fullscreenButton=true&videoFoam=false'} title={p.title} allow="autoplay; fullscreen" allowFullScreen />
       </div>
       <button type="button" className="ptl-x" onClick={onClose} aria-label="Close">✕</button>
     </div>
@@ -37,7 +37,7 @@ function TikTokPosts() {
       {tiktoks.map((t) => (
         <div className="pttk-cell" key={t.id}>
           {on
-            ? <iframe src={'https://www.tiktok.com/player/v1/' + t.id + '?music_info=1&description=1&rel=0'} title="TikTok post by @bond.gift247" allow="encrypted-media; fullscreen; picture-in-picture" allowFullScreen loading="lazy" />
+            ? <iframe src={'https://www.tiktok.com/embed/v2/' + t.id + '?lang=en-US'} title="TikTok post by @bond.gift247" allow="encrypted-media; fullscreen; picture-in-picture" allowFullScreen loading="lazy" />
             : <a href={t.url} target="_blank" rel="noopener noreferrer" className="pttk-ph">Watch on TikTok</a>}
           <a href={t.url} target="_blank" rel="noopener noreferrer" className="pttk-link">Open on TikTok ↗</a>
         </div>
