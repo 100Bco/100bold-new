@@ -33,7 +33,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'Personal injury and trial firms doing $5M+ a year, led by a founder or managing partner.',
-      items: [{ k: 'Personal injury firms', i: 'scale', d: 'Cases that come to you, not through lead vendors.' }, { k: 'Trial firms', i: 'gavel', d: 'Visibility that matches the verdicts you win.' }, { k: 'Car and truck accident practices', i: 'truck', d: 'Found first in the hours after a crash.' }, { k: 'Workplace injury practices', i: 'hardhat', d: 'Reach injured workers before the insurer does.' }, { k: 'Wrongful death practices', i: 'heart', d: 'Careful, respectful outreach to families.' }, { k: 'Multi-office firms', i: 'pin', d: 'Every office ranking in its own city.' }],
+      items: [{ k: 'Personal injury firms', img: '/industries/who/pi-firms.jpg', i: 'scale', d: 'Cases that come to you, not through lead vendors.' }, { k: 'Trial firms', img: '/industries/who/trial.jpg', i: 'gavel', d: 'Visibility that matches the verdicts you win.' }, { k: 'Car and truck accident practices', img: '/industries/who/truck.jpg', i: 'truck', d: 'Found first in the hours after a crash.' }, { k: 'Workplace injury practices', img: '/industries/who/workplace.jpg', i: 'hardhat', d: 'Reach injured workers before the insurer does.' }, { k: 'Wrongful death practices', img: '/industries/who/wrongful.jpg', i: 'heart', d: 'Careful, respectful outreach to families.' }, { k: 'Multi-office firms', img: '/industries/who/multi-office.jpg', i: 'pin', d: 'Every office ranking in its own city.' }],
     },
     pains: [
       { q: 'We pay lead vendors for cases that never sign.', fix: 'Build your own pipeline. We rank you in Google, Maps, and AI answers, so cases come to you instead of through a vendor.', svc: svc.seo },
@@ -68,7 +68,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'Practices that treat injury patients, run by an owner, physician-owner, or practice administrator.',
-      items: [{ k: 'Ambulatory surgery centers', i: 'scalpel', d: 'Attorneys who know where to send surgical cases.' }, { k: 'Pain management', i: 'pulse', d: 'Patients and referrals for long-term care.' }, { k: 'MRI and diagnostic imaging', i: 'scan', d: 'Fast imaging that attorneys can count on.' }, { k: 'Urgent care', i: 'cross', d: 'The first stop after an accident.' }, { k: 'Orthopedics and spine', i: 'spine', d: 'Specialist care that attorneys refer to by name.' }, { k: 'Multi-specialty injury clinics', i: 'clinic', d: 'One place for every stage of recovery.' }, { k: 'Chiropractic and rehab', i: 'hand', d: 'Injury patients from search and referrals.' }, { k: 'Emergency rooms', i: 'siren', d: 'Seen first by people who need care now.' }],
+      items: [{ k: 'Ambulatory surgery centers', img: '/industries/who/asc.jpg', i: 'scalpel', d: 'Attorneys who know where to send surgical cases.' }, { k: 'Pain management', img: '/industries/who/pain.jpg', i: 'pulse', d: 'Patients and referrals for long-term care.' }, { k: 'MRI and diagnostic imaging', img: '/industries/who/mri.jpg', i: 'scan', d: 'Fast imaging that attorneys can count on.' }, { k: 'Urgent care', img: '/industries/who/urgent.jpg', i: 'cross', d: 'The first stop after an accident.' }, { k: 'Orthopedics and spine', img: '/industries/who/ortho.jpg', i: 'spine', d: 'Specialist care that attorneys refer to by name.' }, { k: 'Multi-specialty injury clinics', img: '/industries/who/multi-clinic.jpg', i: 'clinic', d: 'One place for every stage of recovery.' }, { k: 'Chiropractic and rehab', img: '/industries/who/chiro.jpg', i: 'hand', d: 'Injury patients from search and referrals.' }, { k: 'Emergency rooms', img: '/industries/who/er.jpg', i: 'siren', d: 'Seen first by people who need care now.' }],
       note: { h: 'How these practices grow', t: 'Most injury patients reach you through an attorney or a search. We make your practice the one attorneys trust to refer and the one patients find first: clear pages for every injury and service, strong reviews, and fast follow-up.' },
     },
     pains: [
@@ -104,7 +104,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'Real estate companies led by a principal or CEO.',
-      items: [{ k: 'Commercial developers', i: 'crane', d: 'Demand before the ribbon is cut.' }, { k: 'Business parks and industrial projects', i: 'factory', d: 'Tenants for every bay and suite.' }, { k: 'Mixed-use projects', i: 'layers', d: 'Residents, shoppers, and tenants at once.' }, { k: 'Brokerages', i: 'key', d: 'Listings and a broker brand people trust.' }, { k: 'Property managers', i: 'building', d: 'Fewer vacancies, better tenants.' }, { k: 'Multifamily communities', i: 'home', d: 'Leases from people searching nearby.' }],
+      items: [{ k: 'Commercial developers', img: '/industries/who/developer.jpg', i: 'crane', d: 'Demand before the ribbon is cut.' }, { k: 'Business parks and industrial projects', img: '/industries/who/bizpark.jpg', i: 'factory', d: 'Tenants for every bay and suite.' }, { k: 'Mixed-use projects', img: '/industries/who/mixed.jpg', i: 'layers', d: 'Residents, shoppers, and tenants at once.' }, { k: 'Brokerages', img: '/industries/who/broker.jpg', i: 'key', d: 'Listings and a broker brand people trust.' }, { k: 'Property managers', img: '/industries/who/pm.jpg', i: 'building', d: 'Fewer vacancies, better tenants.' }, { k: 'Multifamily communities', img: '/industries/who/multifamily.jpg', i: 'home', d: 'Leases from people searching nearby.' }],
     },
     pains: [
       { q: 'Our project launches to silence.', fix: 'A project brand, website, and launch campaign ready before day one, so inquiries start when the doors open.', svc: svc.web },
@@ -140,7 +140,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'Contractors doing $5M+ a year, led by the owner.',
-      items: [{ k: 'General contractors', i: 'crane', d: 'Bids from owners, not just referrals.' }, { k: 'Commercial builders', i: 'building', d: 'Credibility with developers and owners.' }, { k: 'Roofing', i: 'roof', d: 'Jobs from search after every storm.' }, { k: 'HVAC', i: 'fan', d: 'Calls when it is too hot or too cold.' }, { k: 'Plumbing', i: 'drop', d: 'The first call when something leaks.' }, { k: 'Electrical', i: 'bolt', d: 'Service and project work from search.' }],
+      items: [{ k: 'General contractors', img: '/industries/who/gc.jpg', i: 'crane', d: 'Bids from owners, not just referrals.' }, { k: 'Commercial builders', img: '/industries/who/builder.jpg', i: 'building', d: 'Credibility with developers and owners.' }, { k: 'Roofing', img: '/industries/who/roofing.jpg', i: 'roof', d: 'Jobs from search after every storm.' }, { k: 'HVAC', img: '/industries/who/hvac.jpg', i: 'fan', d: 'Calls when it is too hot or too cold.' }, { k: 'Plumbing', img: '/industries/who/plumbing.jpg', i: 'drop', d: 'The first call when something leaks.' }, { k: 'Electrical', img: '/industries/who/electrical.jpg', i: 'bolt', d: 'Service and project work from search.' }],
     },
     pains: [
       { q: 'Almost all our work comes from referrals.', fix: 'Rankings in Google, Maps, and AI answers for the jobs you want, so new owners and buyers find you directly.', svc: svc.seo },
@@ -176,7 +176,7 @@ export const industries = [
     who: {
       h2: 'Who we work with',
       lead: 'High-ticket local service companies led by the owner.',
-      items: [{ k: 'HVAC', i: 'fan', d: 'Calls when it is too hot or too cold.' }, { k: 'Plumbing', i: 'drop', d: 'The first call when something leaks.' }, { k: 'Electrical', i: 'bolt', d: 'Service and project work from search.' }, { k: 'Towing and roadside', i: 'truck', d: 'The first name drivers find at the roadside.' }, { k: 'Auto repair', i: 'wrench', d: 'Booked bays from people nearby.' }, { k: 'Auto salvage', i: 'car', d: 'Sellers and buyers who find you first.' }],
+      items: [{ k: 'HVAC', img: '/industries/who/hvac.jpg', i: 'fan', d: 'Calls when it is too hot or too cold.' }, { k: 'Plumbing', img: '/industries/who/plumbing.jpg', i: 'drop', d: 'The first call when something leaks.' }, { k: 'Electrical', img: '/industries/who/electrical.jpg', i: 'bolt', d: 'Service and project work from search.' }, { k: 'Towing and roadside', img: '/industries/who/towing.jpg', i: 'truck', d: 'The first name drivers find at the roadside.' }, { k: 'Auto repair', img: '/industries/who/autorepair.jpg', i: 'wrench', d: 'Booked bays from people nearby.' }, { k: 'Auto salvage', img: '/industries/who/salvage.jpg', i: 'car', d: 'Sellers and buyers who find you first.' }],
     },
     pains: [
       { q: 'When someone needs help now, they call whoever shows up first.', fix: 'Top spots on Google Maps and in AI answers for “near me” searches in every area you serve.', svc: svc.seo },

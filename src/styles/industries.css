@@ -178,21 +178,25 @@
 .ihx-stats li:first-child b { color: #ff5a75; }
 .ihx-stats span { font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,.65); max-width: 190px; }
 
-/* who we work with: icon cards */
-.idw .idw-head .sd-eyebrow { margin-bottom: 14px; }
-.iwc-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+/* who we work with: photo cards (icon, name, red bar; the photo fades in from the right) */
+.iwc-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .iwc-grid.n8 { grid-template-columns: repeat(4, 1fr); }
-.iwc { position: relative; background: var(--white); border-radius: 26px; padding: 26px 24px 28px; transition: transform .5s var(--ease-out), box-shadow .5s, background .4s, color .4s; }
-.iwc:hover { transform: translateY(-6px); box-shadow: 0 40px 70px -45px rgba(26,24,22,.5); }
-.iwc-ic { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 18px; background: rgba(200,16,46,.08); color: var(--red); transition: background .4s, color .4s, transform .5s var(--ease-out); }
+.iwc { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; min-height: 300px; padding: 28px 28px 30px; border-radius: 22px; background: #F4F2EF; box-shadow: 0 30px 60px -45px rgba(26,24,22,.45); transition: transform .55s var(--ease-out), box-shadow .55s; }
+.iwc:hover { transform: translateY(-6px); box-shadow: 0 40px 70px -40px rgba(26,24,22,.5); }
+.iwc-img { position: absolute; top: 0; right: 0; height: 100%; width: 72%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.iwc:hover .iwc-img { transform: scale(1.05); }
+.iwc-fade { position: absolute; inset: 0; background: linear-gradient(90deg, #F4F2EF 0%, #F4F2EF 30%, rgba(244,242,239,.85) 48%, rgba(244,242,239,.15) 80%, rgba(244,242,239,0) 100%), linear-gradient(0deg, rgba(244,242,239,.95) 0%, rgba(244,242,239,0) 45%); }
+.iwc-ic { position: absolute; left: 28px; top: 28px; z-index: 1; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: rgba(200,16,46,.12); color: var(--red); transition: background .4s, color .4s, transform .5s var(--ease-out); }
 .iwc-ic svg { width: 28px; height: 28px; }
-.iwc:hover .iwc-ic { background: var(--red); color: #fff; transform: rotate(-6deg); }
-.iwc-n { position: absolute; right: 24px; top: 26px; font: 800 13px 'Archivo', sans-serif; color: var(--text-3); }
-.iwc h3 { margin-top: 30px; font: 800 clamp(19px, 1.5vw, 23px) 'Archivo', sans-serif; letter-spacing: -.03em; line-height: 1.12; }
-.iwc p { margin-top: 8px; font-size: 14.5px; line-height: 1.55; color: var(--text-2); }
-.iwc.lead { background: var(--red); color: #fff; }
-.iwc.lead .iwc-ic { background: rgba(255,255,255,.16); color: #fff; }
-.iwc.lead .iwc-n, .iwc.lead p { color: rgba(255,255,255,.8); }
+.iwc:hover .iwc-ic { background: var(--red); color: #fff; transform: scale(1.06); }
+.iwc h3 { position: relative; z-index: 1; max-width: 70%; font: 800 clamp(20px, 1.6vw, 25px) 'Archivo', sans-serif; letter-spacing: -.03em; line-height: 1.15; color: var(--dark); }
+.iwc-bar { position: relative; z-index: 1; display: block; width: 32px; height: 3px; border-radius: 2px; background: var(--red); margin: 14px 0 0; transition: width .5s var(--ease-out); }
+.iwc:hover .iwc-bar { width: 56px; }
+.iwc p { position: relative; z-index: 1; max-width: 62%; margin-top: 12px; font-size: 14px; line-height: 1.5; color: var(--text-2); }
+.iwc-grid.n8 .iwc { min-height: 280px; padding: 24px 22px 26px; }
+.iwc-grid.n8 .iwc-ic { left: 22px; top: 22px; width: 56px; height: 56px; }
+.iwc-grid.n8 .iwc h3 { font-size: clamp(18px, 1.4vw, 21px); max-width: 78%; }
+.iwc-grid.n8 .iwc p { max-width: 72%; font-size: 13px; }
 
 /* what we do for you: 3D service cards */
 .ids-head .sd-eyebrow { color: #ff5a75; margin-bottom: 14px; }
@@ -221,10 +225,12 @@
   .ihx-stats b { font-size: 24px; }
   .ihx-stats span { font-size: 9.5px; letter-spacing: .8px; }
   .iwc-grid, .iwc-grid.n8 { gap: 10px; }
-  .iwc { padding: 16px 14px 18px; border-radius: 20px; }
-  .iwc-ic { width: 42px; height: 42px; border-radius: 14px; }
-  .iwc-ic svg { width: 22px; height: 22px; }
-  .iwc-n { right: 14px; top: 16px; }
-  .iwc h3 { margin-top: 16px; font-size: 16px; }
-  .iwc p { font-size: 12.5px; }
+  .iwc, .iwc-grid.n8 .iwc { min-height: 210px; padding: 16px 14px 16px; border-radius: 18px; }
+  .iwc-img { width: 100%; opacity: .55; }
+  .iwc-fade { background: linear-gradient(0deg, #F4F2EF 0%, rgba(244,242,239,.9) 50%, rgba(244,242,239,.4) 100%); }
+  .iwc-ic, .iwc-grid.n8 .iwc-ic { left: 14px; top: 14px; width: 44px; height: 44px; }
+  .iwc-ic svg { width: 21px; height: 21px; }
+  .iwc h3, .iwc-grid.n8 .iwc h3 { font-size: 15.5px; max-width: 100%; }
+  .iwc-bar { margin-top: 8px; width: 24px; }
+  .iwc p, .iwc-grid.n8 .iwc p { max-width: 100%; font-size: 12px; margin-top: 8px; }
 }

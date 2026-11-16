@@ -18,10 +18,12 @@ export default function IndWho({ d }) {
         <div className="idw-head"><p className="sd-eyebrow">Who we work with</p><h2 className="sd-h2">Built for your kind of business</h2><p>{d.lead}</p></div>
         <ul className={'iwc-grid n' + d.items.length}>
           {d.items.map((t, i) => (
-            <li className={'iwc' + (i === 0 ? ' lead' : '')} key={t.k}>
+            <li className="iwc" key={t.k}>
+              {t.img && <img className="iwc-img" src={t.img} alt="" loading="lazy" aria-hidden="true" />}
+              <span className="iwc-fade" aria-hidden="true" />
               <span className="iwc-ic"><WhoIcon name={t.i} /></span>
-              <span className="iwc-n">{String(i + 1).padStart(2, '0')}</span>
               <h3>{t.k}</h3>
+              <i className="iwc-bar" aria-hidden="true" />
               <p>{t.d}</p>
             </li>
           ))}
