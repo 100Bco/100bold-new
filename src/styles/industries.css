@@ -181,11 +181,12 @@
 /* who we work with: photo cards (icon, name, red bar; the photo fades in from the right) */
 .iwc-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .iwc-grid.n8 { grid-template-columns: repeat(4, 1fr); }
-.iwc { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; min-height: 300px; padding: 28px 28px 30px; border-radius: 22px; background: #F4F2EF; box-shadow: 0 30px 60px -45px rgba(26,24,22,.45); transition: transform .55s var(--ease-out), box-shadow .55s; }
+.iwc { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; min-height: 300px; padding: 28px 28px 30px; border-radius: 22px; background: #F8F3EC; box-shadow: 0 30px 60px -45px rgba(26,24,22,.45); transition: transform .55s var(--ease-out), box-shadow .55s; }
 .iwc:hover { transform: translateY(-6px); box-shadow: 0 40px 70px -40px rgba(26,24,22,.5); }
-.iwc-img { position: absolute; top: 0; right: 0; height: 100%; width: 72%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.iwc-img { position: absolute; top: 0; right: 0; height: 100%; width: 72%; object-fit: cover; filter: sepia(.28) saturate(.8) brightness(.9) contrast(1.04); transition: transform 1.2s var(--ease-out), filter .6s; }
+.iwc:hover .iwc-img { filter: sepia(.12) saturate(.95) brightness(.95) contrast(1.04); }
 .iwc:hover .iwc-img { transform: scale(1.05); }
-.iwc-fade { position: absolute; inset: 0; background: linear-gradient(90deg, #F4F2EF 0%, #F4F2EF 30%, rgba(244,242,239,.85) 48%, rgba(244,242,239,.15) 80%, rgba(244,242,239,0) 100%), linear-gradient(0deg, rgba(244,242,239,.95) 0%, rgba(244,242,239,0) 45%); }
+.iwc-fade { position: absolute; inset: 0; background: linear-gradient(90deg, #F8F3EC 0%, #F8F3EC 30%, rgba(248,243,236,.85) 48%, rgba(248,243,236,.12) 80%, rgba(248,243,236,0) 100%), linear-gradient(0deg, rgba(248,243,236,.95) 0%, rgba(248,243,236,0) 45%), linear-gradient(180deg, rgba(200,120,80,.06), rgba(200,16,46,.04)); }
 .iwc-ic { position: absolute; left: 28px; top: 28px; z-index: 1; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: rgba(200,16,46,.12); color: var(--red); transition: background .4s, color .4s, transform .5s var(--ease-out); }
 .iwc-ic svg { width: 28px; height: 28px; }
 .iwc:hover .iwc-ic { background: var(--red); color: #fff; transform: scale(1.06); }
@@ -227,7 +228,7 @@
   .iwc-grid, .iwc-grid.n8 { gap: 10px; }
   .iwc, .iwc-grid.n8 .iwc { min-height: 210px; padding: 16px 14px 16px; border-radius: 18px; }
   .iwc-img { width: 100%; opacity: .55; }
-  .iwc-fade { background: linear-gradient(0deg, #F4F2EF 0%, rgba(244,242,239,.9) 50%, rgba(244,242,239,.4) 100%); }
+  .iwc-fade { background: linear-gradient(0deg, #F8F3EC 0%, rgba(248,243,236,.9) 50%, rgba(248,243,236,.4) 100%); }
   .iwc-ic, .iwc-grid.n8 .iwc-ic { left: 14px; top: 14px; width: 44px; height: 44px; }
   .iwc-ic svg { width: 21px; height: 21px; }
   .iwc h3, .iwc-grid.n8 .iwc h3 { font-size: 15.5px; max-width: 100%; }
