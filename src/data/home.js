@@ -30,6 +30,9 @@ export const logos = {
     { name: 'T98 Rehab', src: '/logos/t98.png', w: 101, h: 75 },
     { name: 'Bee Construction', src: '/logos/bee-construction.png', w: 112, h: 68 },
     { name: 'Dacy Business Park', src: '/logos/dacy.png', w: 160, h: 47 },
+    { name: 'Miami Vice', src: '/logos/miami-vice.png', w: 158, h: 46 },
+    { name: 'Subele Tequila', src: '/logos/subele.png', w: 101, h: 66 },
+    { name: 'Taco Man 512', src: '/logos/taco-man-512.png', w: 166, h: 36 },
   ],
 }
 
