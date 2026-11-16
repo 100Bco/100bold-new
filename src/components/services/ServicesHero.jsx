@@ -35,7 +35,6 @@ export default function ServicesHero() {
           <ul>
             {offers.map((o, i) => (
               <li key={o.id}>
-                {(i === 0 || i === 3) && <p className="svh-group">{i === 0 ? 'Growth services' : 'Specialist studios'}</p>}
                 <a href={'#' + o.id} className="svh-row">
                   <span className="svh-row-t"><b>{o.name}</b><small>{o.short}</small></span>
                   <i aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" /></svg></i>

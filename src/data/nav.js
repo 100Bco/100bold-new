@@ -1,9 +1,7 @@
 export const serviceLinks = [
-  { group: 'Growth services' },
   { path: '/services/seo-ai-search', name: 'SEO and AI Search' },
   { path: '/services/web-design', name: 'Web design' },
   { path: '/services/meta-ads', name: 'Meta ads' },
-  { group: 'Specialist studios' },
   { path: '/portal', name: 'AI Production Studio' },
   { path: '/the-mark', name: 'LinkedIn for CEOs' },
 ]
