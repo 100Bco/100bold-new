@@ -8,6 +8,7 @@ import OwnBand from '@/components/service/OwnBand'
 import Journey from '@/components/service/Journey'
 import Creative from '@/components/service/Creative'
 import CaseCard from '@/components/service/CaseCard'
+import CaseRow from '@/components/service/CaseRow'
 import ChatgptBand from '@/components/service/ChatgptBand'
 import Who from '@/components/service/Who'
 import Faq from '@/components/home/Faq'
@@ -39,8 +40,7 @@ export default function Page() {
       <GetGrid d={d.get} />
       <Journey d={d.steps} className="svt-sand" />
       <Creative d={d.creative} />
-      <CaseCard d={d.result} />
-      {d.result2 && <CaseCard d={d.result2} hideHead />}
+      <CaseRow items={[d.result, d.result2].filter(Boolean)} />
       <ChatgptBand d={d.chatgpt} />
       <Who d={d.who} />
       <Faq data={d.faq} />
