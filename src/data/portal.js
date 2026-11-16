@@ -21,15 +21,24 @@ export const pieces = [
   piece('bills-stacking', 'dlg-ad-2', { client: 'Dang Law Group', title: 'Bills stacking up', format: 'Short film, vertical', duration: '0:33', ratio: '9/16', description: 'After a crash, medical bills and statements take shape as a storm. Dang-Man answers the call and holds the line.' }),
   piece('low-offer', 'dlg-ad-3', { client: 'Dang Law Group', title: 'The low offer', format: 'Short film, vertical', duration: '0:29', ratio: '9/16', description: 'An insurance adjuster rolls a boulder marked “low offer” at an injured driver. Dang-Man pushes back with the facts of the case.' }),
   piece('actor-to-client', 'portal-compare', { client: 'Dang Law Group', title: 'Actor to client', format: 'Side by side', duration: '0:24', ratio: '1214/1080', description: 'Each scene is played by a real actor, then rebuilt with the founder in his place. The same performance, now in his own office and city.' }),
-  piece('pharmacy', 'bond-111', { client: 'BOND', title: 'Dance at the pharmacy', format: 'TikTok', duration: '0:33', ratio: '16/9', description: 'A crew in black suits turns a busy pharmacy storefront into a stage, part of a dance series shot across the city.' }),
-  piece('milk-store', 'bond-114', { client: 'BOND', title: 'Dance at the dairy', format: 'TikTok', duration: '0:32', ratio: '16/9', description: 'The crew takes the routine to the sidewalk outside a dairy shop, in red socks and black suits.' }),
-  piece('office', 'bond-109', { client: 'BOND', title: 'Dance at the office', format: 'TikTok', duration: '0:27', ratio: '16/9', description: 'A selfie, then a full routine through a bright pink-and-white tech office.' }),
-  piece('bank', 'bond-110', { client: 'BOND', title: 'Solo at the bank', format: 'TikTok', duration: '0:15', ratio: '16/9', description: 'One dancer, one bank lobby, fifteen seconds.' }),
-  piece('night-in', 'miami-vice-42', { client: 'Miami Vice', title: 'A night in', format: 'Brand film, vertical', duration: '0:11', ratio: '9/16', description: 'Neon light, a glass of wine, and the pool after dark: one evening at the property, told in eleven seconds.' }),
-  piece('golden-hour', 'miami-vice-43', { client: 'Miami Vice', title: 'Golden hour', format: 'Brand film, vertical', duration: '0:12', ratio: '9/16', description: 'From the bedroom to the pool deck to the skyline, as hot-air balloons drift over the sunset.' }),
   piece('santa', 'video-0728', { client: 'LT Commercial Group', title: 'Christmas AI Film', format: 'Holiday film, vertical', duration: '0:32', ratio: '9/16', description: 'Santa sits down with the team to plan a new home, a holiday card for the real estate group’s clients and partners.' }),
   piece('halloween', 'video-0728b', { client: 'LT Commercial Group', title: 'Halloween AI Film', format: 'Holiday film, vertical', duration: '0:51', ratio: '9/16', description: 'Trick-or-treaters stop at an abandoned building. One redevelopment later, it is bright, leased, and open for business.' }),
+  piece('night-in', 'miami-vice-42', { client: 'Miami Vice', title: 'A night in', format: 'Brand film, vertical', duration: '0:11', ratio: '9/16', description: 'Neon light, a glass of wine, and the pool after dark: one evening at the property, told in eleven seconds.' }),
+  piece('golden-hour', 'miami-vice-43', { client: 'Miami Vice', title: 'Golden hour', format: 'Brand film, vertical', duration: '0:12', ratio: '9/16', description: 'From the bedroom to the pool deck to the skyline, as hot-air balloons drift over the sunset.' }),
   piece('clinic', 'video-0310', { client: 'Bee Construction', title: 'Built for care', format: 'Project film, vertical', duration: '0:39', ratio: '9/16', description: 'A finished clinic project, from the storm outside to the skylight ceilings and exam rooms inside.' }),
+]
+
+/* The three pieces shown as live TikTok posts (official embeds, in this order) */
+export const tiktoks = [
+  { id: '7700923038044507412', url: 'https://www.tiktok.com/@bond.gift247/video/7700923038044507412' },
+  { id: '7700465086887922964', url: 'https://www.tiktok.com/@bond.gift247/video/7700465086887922964' },
+  { id: '7700105320852442420', url: 'https://www.tiktok.com/@bond.gift247/video/7700105320852442420' },
+]
+
+export const pieceGroups = [
+  { key: 'film', n: '01', h: 'AI Film Production', d: 'Short films and ads with characters people remember.', ids: ['paperwork', 'bills-stacking', 'low-offer', 'actor-to-client', 'santa', 'halloween'] },
+  { key: 'show', n: '02', h: 'Property & Project Showcase', d: 'Places and projects, shown at their best.', ids: ['night-in', 'golden-hour', 'clinic'] },
+  { key: 'viral', n: '03', h: 'Viral Clips', d: 'Made for the feed. Real posts from TikTok.' },
 ]
 
 export const make = {
