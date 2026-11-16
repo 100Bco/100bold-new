@@ -153,7 +153,7 @@ export const ads = {
     h2: 'What you get',
     items: [
       { t: 'Campaigns built to sign', d: 'Targeting, offers, and forms set up for the clients you want, not the cheapest clicks.', icon: 'target' },
-      { t: 'Creative that stops the scroll', d: 'Video and image ads made by Portal, our AI production studio.', icon: 'play' },
+      { t: 'Creative that stops the scroll', d: 'Video and image ads made by our AI Production Studio.', icon: 'play' },
       { t: 'Tracking to the signed client', d: 'Every lead followed from the ad to the call, the consult, and the signed client.', icon: 'chart' },
       { t: 'A report you can read', d: 'Cost per signed client, every month, in plain numbers.', icon: 'doc' },
     ],
@@ -170,10 +170,10 @@ export const ads = {
   },
   own: { h2: 'You own the ad account', text: 'Your account, your pixel, your data, and your audiences. If we ever part ways, everything stays with you.' },
   creative: {
-    eyebrow: 'Creative made by Portal',
+    eyebrow: 'Creative made by our AI Production Studio',
     h2: 'Ads people actually watch',
-    text: 'Portal, our AI production studio, makes the video and image ads. Film-quality work, delivered in days, so you can test more ideas for less.',
-    cta: 'Visit Portal', to: '/portal',
+    text: 'Our AI Production Studio makes the video and image ads. Film-quality work, delivered in days, so you can test more ideas for less.',
+    cta: 'Visit the AI Production Studio', to: '/portal',
     video: '/portal/dang-man-v2.mp4', poster: '/portal/dang-man-v2-poster.jpg', alt: 'Dang-Man, the AI superhero made for Dang Law Group',
   },
   result: {
@@ -194,7 +194,7 @@ export const ads = {
       { q: 'Do Facebook ads work for law firms?', a: 'They can, when the ads, the intake, and the tracking work together. We judge every campaign by cost per signed client, not by clicks or leads.' },
       { q: 'Who runs Meta ads for contractors?', a: '100Bold runs Facebook and Instagram ads for contractors and other service businesses, with every lead tracked to the bid or job it brings in.' },
       { q: 'Who owns the ad account?', a: 'You do. The ad account, the pixel, the audiences, and the data stay with you.' },
-      { q: 'Who makes the ads?', a: 'Portal, our AI production studio, makes the video and image ads, so new creative is ready in days.' },
+      { q: 'Who makes the ads?', a: 'Our AI Production Studio makes the video and image ads, so new creative is ready in days.' },
       { q: 'Can you advertise on ChatGPT?', a: 'Ads in ChatGPT are new and still rolling out. We are setting up early access for clients and will tell you when it fits your market.' },
       { q: 'How do you report results?', a: 'Every month you see spend, leads, consults, and signed clients, and what each signed client cost.' },
     ],

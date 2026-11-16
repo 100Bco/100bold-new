@@ -332,4 +332,62 @@
     }
   }
 
-export const isoScenes = [seo, web, ads, portal]
+  /* 05 — LinkedIn for CEOs: a profile board, posts stacking up, reactions rising, followers climbing */
+  function linkedin(cv) {
+    const c = setup(cv, 24, 300, 190)
+    return (t) => {
+      const { g, P, box, shadow, onFront, onTop, card, pill, stage, cam } = c
+      const T = t % 7
+      stage(); cam(t)
+      // profile board at the back
+      shadow(1, -1.4, 8, 0.6, 14, 0.22, 0.6)
+      box(1, -1.4, 0, 8, 0.35, 5.6, 'white')
+      onFront(1, -1.05, 0, 8, 5.6, (q) => {
+        q.fillStyle = '#fff'; q.fillRect(0, 0, 8, 5.6)
+        const bg = q.createLinearGradient(0, 0, 8, 0); bg.addColorStop(0, '#1A1816'); bg.addColorStop(1, '#4a1520'); q.fillStyle = bg; q.fillRect(0.25, 0.25, 7.5, 1.3)
+        q.fillStyle = '#fff'; q.beginPath(); q.arc(1.3, 1.6, 0.62, 0, 7); q.fill()
+        q.fillStyle = '#C8102E'; q.beginPath(); q.arc(1.3, 1.6, 0.5, 0, 7); q.fill()
+        q.fillStyle = '#fff'; q.beginPath(); q.arc(1.3, 1.45, 0.17, 0, 7); q.fill(); q.beginPath(); q.ellipse(1.3, 1.85, 0.28, 0.16, 0, Math.PI, 0); q.fill()
+        q.fillStyle = '#1A1816'; q.fillRect(0.7, 2.45, 2.8, 0.32)
+        q.fillStyle = '#c9c2b8'; q.fillRect(0.7, 2.95, 3.8, 0.18); q.fillRect(0.7, 3.25, 2.6, 0.18)
+        q.fillStyle = '#0A66C2'; q.beginPath(); q.roundRect(6.4, 0.45, 0.95, 0.95, 0.15); q.fill()
+        q.fillStyle = '#fff'; q.font = '900 0.62px Arial'; q.fillText('in', 6.55, 1.15)
+        // follower bar
+        const f = Math.min(1, T / 5.5)
+        q.fillStyle = '#efe7dc'; q.fillRect(0.7, 4.3, 6.6, 0.3); q.fillStyle = '#C8102E'; q.fillRect(0.7, 4.3, 6.6 * (0.25 + 0.75 * f), 0.3)
+      })
+      // posts stacking on a desk in front
+      shadow(2.3, 3.2, 5, 3.4, 12, 0.22, 0.4)
+      box(2.3, 3.2, 0, 5, 3.4, 0.5, 'white')
+      for (let i = 0; i < 4; i++) {
+        const tt = easeOut((T - 0.4 - i * 0.6) / 0.7)
+        if (tt <= 0) continue
+        const z = 0.5 + i * 0.32, drop = (1 - tt) * 2.4
+        box(2.8 + i * 0.12, 3.6 - i * 0.1, z + drop, 3.6, 2.4, 0.22, i === 3 ? 'red' : 'silver', tt)
+        if (i === 3) onTop(2.8 + i * 0.12, 3.6 - i * 0.1, z + drop + 0.22, 3.6, 2.4, (q) => { q.globalAlpha = tt; q.fillStyle = '#fff'; q.fillRect(0.3, 0.4, 2.4, 0.22); q.fillRect(0.3, 0.8, 1.6, 0.18); q.globalAlpha = 1 })
+      }
+      // reactions rising from the stack
+      const icons = [['#0A66C2', '👍'], ['#C8102E', '❤'], ['#e7a33e', '👏']]
+      for (let i = 0; i < 6; i++) {
+        const ph = ((T * 0.55) + i / 6) % 1
+        if (T < 2.6) continue
+        const base = P(4.4 + (i % 3) * 0.9, 4.2, 2)
+        const x = base[0] + Math.sin(ph * 6 + i) * 10, y = base[1] - ph * 150
+        g.globalAlpha = Math.sin(ph * Math.PI)
+        const [col, em] = icons[i % 3]
+        g.fillStyle = col; g.beginPath(); g.arc(x, y, 13, 0, 7); g.fill()
+        g.fillStyle = '#fff'; g.font = '13px sans-serif'; g.textAlign = 'center'; g.fillText(em, x, y + 5)
+        g.globalAlpha = 1
+      }
+      g.textAlign = 'left'
+      // chips
+      const n = Math.round(3596 * Math.min(1, T / 5.5))
+      card(492, 286, 170, 44, 22); g.fillStyle = '#0A66C2'; g.beginPath(); g.arc(516, 308, 10, 0, 7); g.fill()
+      g.fillStyle = '#fff'; g.font = '900 11px Arial'; g.fillText('in', 510, 312)
+      g.fillStyle = '#1A1816'; g.font = '800 15px Outfit'; g.fillText(n.toLocaleString('en-US'), 534, 306); g.font = '600 11px Outfit'; g.fillStyle = '#8b847d'; g.fillText('followers', 534, 321)
+      const pop = easeOut((T - 4.2) / 0.6)
+      if (pop > 0) { g.globalAlpha = pop; card(44, 52, 196, 36, 18); g.fillStyle = '#C8102E'; g.beginPath(); g.arc(64, 70, 7, 0, 7); g.fill(); g.fillStyle = '#1A1816'; g.font = '700 13px Outfit'; g.fillText('Speaking invitation', 78, 75); g.globalAlpha = 1 }
+    }
+  }
+
+export const isoScenes = [seo, web, ads, portal, linkedin]

@@ -1,5 +1,5 @@
 import Hero from '@/components/about/Hero'
-import { Founder, Why, Principles, Network, Tech } from '@/components/about/AboutBody'
+import { Founder, Why, Network, Tech } from '@/components/about/AboutBody'
 import Closing from '@/components/home/Closing'
 import { about } from '@/data/about'
 import '@/styles/services.css'
@@ -22,7 +22,6 @@ export default function AboutPage() {
       <Hero d={about.hero} />
       <Founder />
       <Why />
-      <Principles />
       <Network />
       <Tech />
       <Closing />

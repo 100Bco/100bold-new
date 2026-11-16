@@ -38,7 +38,6 @@ export default function Page() {
       <DetailHero d={d} />
       <GetGrid d={d.get} />
       <Journey d={d.steps} className="svt-sand" />
-      <OwnBand d={d.own} />
       <Creative d={d.creative} />
       <CaseCard d={d.result} />
       <ChatgptBand d={d.chatgpt} />

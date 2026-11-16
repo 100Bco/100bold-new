@@ -9,8 +9,8 @@ const menu = [
   { name: 'Services', path: '/services', children: serviceLinks },
   { name: 'Industries', path: '/industries', children: industryLinks },
   { name: 'Work', path: '/work' },
-  { name: 'Portal', path: '/portal', tag: 'AI Studio' },
-  { name: 'The Mark', path: '/the-mark', tag: 'For CEOs' },
+  { name: 'AI Production Studio', path: '/portal' },
+  { name: 'LinkedIn for CEOs', path: '/the-mark' },
   { name: 'About', path: '/about', children: aboutLinks, match: ['/about', '/insights', '/contact'] },
 ]
 

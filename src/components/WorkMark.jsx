@@ -21,9 +21,9 @@ export default function WorkMark() {
     <section className="wm" ref={ref}>
       <div className="mx">
         <div className="wm-head">
-          <p className="wm-eyebrow">The Mark</p>
+          <p className="wm-eyebrow">LinkedIn for CEOs</p>
           <h2 className="wm-h2">Founders and CEOs</h2>
-          <Link href="/the-mark" className="wm-all">Explore The Mark →</Link>
+          <Link href="/the-mark" className="wm-all">Explore LinkedIn for CEOs →</Link>
         </div>
         <ul className="wm-list">
           {people.map((p) => (

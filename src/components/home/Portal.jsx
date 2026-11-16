@@ -12,6 +12,8 @@ export default function Portal() {
   const vid = useRef(null)
   const phone = useRef(null)
   const [muted, setMuted] = useState(true)
+  const [paused, setPaused] = useState(false)
+  const userPaused = useRef(false)
 
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
@@ -40,12 +42,20 @@ export default function Portal() {
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting) {
         if (!v.src) { v.src = v.dataset.src; v.load() }
-        if (!reduce) v.play().catch(() => {})
+        if (!reduce && !userPaused.current) v.play().then(() => setPaused(false)).catch(() => {})
       } else v.pause()
     }, { rootMargin: '200px 0px', threshold: 0.15 })
     io.observe(v)
     return () => io.disconnect()
   }, [])
+
+  const togglePlay = () => {
+    const v = vid.current
+    if (!v) return
+    if (!v.src) { v.src = v.dataset.src; v.load() }
+    if (v.paused) { userPaused.current = false; v.play().catch(() => {}); setPaused(false) }
+    else { userPaused.current = true; v.pause(); setPaused(true) }
+  }
 
   const toggleSound = () => {
     const v = vid.current
@@ -77,6 +87,11 @@ export default function Portal() {
               preload="none"
               aria-label={portal.imgAlt}
             />
+            <button type="button" className="xp-sound xp-play-btn" onClick={togglePlay} aria-label={paused ? 'Play video' : 'Pause video'}>
+              {paused
+                ? <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                : <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>}
+            </button>
             <button type="button" className="xp-sound" onClick={toggleSound} aria-label={muted ? 'Turn sound on' : 'Turn sound off'}>
               {muted
                 ? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>

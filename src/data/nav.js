@@ -4,8 +4,8 @@ export const serviceLinks = [
   { path: '/services/web-design', name: 'Web design' },
   { path: '/services/meta-ads', name: 'Meta ads' },
   { group: 'Specialist studios' },
-  { path: '/the-mark', name: 'The Mark, LinkedIn for CEOs' },
-  { path: '/portal', name: 'Portal, AI video studio' },
+  { path: '/portal', name: 'AI Production Studio' },
+  { path: '/the-mark', name: 'LinkedIn for CEOs' },
 ]
 
 export const industryLinks = [

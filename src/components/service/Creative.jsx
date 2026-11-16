@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useGsap, gsap, MQ } from '@/lib/motion'
 import Arrow from '@/components/home/Arrow'
 
-/* Creative made by Portal: the film on the left, the reason on the right */
+/* Creative made by our AI Production Studio: the film on the left, the reason on the right */
 export default function Creative({ d }) {
   const ref = useRef(null)
   const vid = useRef(null)

@@ -6,7 +6,7 @@ import { useGsap, gsap, MQ } from '@/lib/motion'
 import { closing as homeClosing } from '@/data/home'
 import Arrow from './Arrow'
 
-const queries = ['best personal injury lawyer near me', 'injury chiropractor near me', 'commercial real estate austin', 'general contractor near me', 'hvac repair near me']
+const queries = ['general contractor near me', 'best personal injury lawyer near me', 'injury chiropractor near me', 'commercial real estate austin', 'hvac repair near me']
 
 /* Closing — a red poster: the line, one big search that always answers with you, and the call */
 export default function Closing({ data }) {

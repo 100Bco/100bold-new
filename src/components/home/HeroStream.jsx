@@ -30,11 +30,11 @@ const ic = {
 
 const channels = [
   { k: 'google', name: 'Google', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
-  { k: 'linkedin', name: 'LinkedIn', service: 'The Mark', to: '/the-mark' },
+  { k: 'linkedin', name: 'LinkedIn', service: 'LinkedIn for CEOs', to: '/the-mark' },
   { k: 'chatgpt', name: 'ChatGPT', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
   { k: 'instagram', name: 'Instagram', service: 'Meta ads', to: '/services/meta-ads' },
   { k: 'maps', name: 'Google Maps', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
-  { k: 'youtube', name: 'YouTube', service: 'Portal', to: '/portal' },
+  { k: 'youtube', name: 'YouTube', service: 'AI Production Studio', to: '/portal' },
   { k: 'web', name: 'Your website', service: 'Web design', to: '/services/web-design' },
   { k: 'facebook', name: 'Facebook', service: 'Meta ads', to: '/services/meta-ads' },
   { k: 'gemini', name: 'Gemini', service: 'SEO and AI Search', to: '/services/seo-ai-search' },

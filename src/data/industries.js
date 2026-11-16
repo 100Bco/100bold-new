@@ -4,8 +4,8 @@ const svc = {
   seo: { name: 'SEO and AI Search', to: '/services/seo-ai-search' },
   web: { name: 'Web design', to: '/services/web-design' },
   ads: { name: 'Meta ads', to: '/services/meta-ads' },
-  mark: { name: 'The Mark', to: '/the-mark' },
-  portal: { name: 'Portal', to: '/portal' },
+  mark: { name: 'LinkedIn for CEOs', to: '/the-mark' },
+  portal: { name: 'AI Production Studio', to: '/portal' },
   minai: { name: 'MinAI', to: 'https://minai.biz' },
 }
 
@@ -48,7 +48,7 @@ export const industries = [
       { q: 'How do personal injury firms get more signed cases?', a: 'By showing up first when injured people search, answering every inquiry fast, and tracking which channels produce cases that sign. We measure cost per signed case, not cost per lead.' },
       { q: 'Do you do SEO for law firms?', a: 'Yes. We run SEO and AI search optimization for personal injury firms, including local SEO for Google Maps and GEO so ChatGPT and Google’s AI name your firm.' },
       { q: 'Do Facebook ads work for personal injury lawyers?', a: 'They can, when the ads, the intake, and the tracking work together. We judge every campaign by what each signed case costs.' },
-      { q: 'Can you build the founding partner’s personal brand?', a: 'Yes. The Mark is our fully managed LinkedIn service for founders and managing partners, built in their own voice.' },
+      { q: 'Can you build the founding partner’s personal brand?', a: 'Yes. LinkedIn for CEOs is our fully managed LinkedIn service for founders and managing partners, built in their own voice.' },
     ],
   },
   {
@@ -116,8 +116,8 @@ export const industries = [
       { q: 'What does a real estate marketing agency do for developers?', a: 'We launch projects: the brand, the website, the campaign, and the content, plus the CEO’s presence on LinkedIn so investors and partners know the name behind the project.' },
       { q: 'Do you market commercial real estate?', a: 'Yes. We work with commercial developers, business parks, industrial and mixed-use projects, brokerages, and property managers.' },
       { q: 'How do you get leasing inquiries for a new project?', a: 'A project website and launch campaign ready before opening, ads aimed at the right tenants, and content that shows the space. Every inquiry is tracked.' },
-      { q: 'Can you build the CEO’s personal brand?', a: 'Yes. The Mark is our fully managed LinkedIn service for founders and CEOs, written in their voice.' },
-      { q: 'Do you make video for real estate projects?', a: 'Yes. Portal, our AI production studio, makes brand films and social content without a film crew or a long timeline.' },
+      { q: 'Can you build the CEO’s personal brand?', a: 'Yes. LinkedIn for CEOs is our fully managed LinkedIn service for founders and CEOs, written in their voice.' },
+      { q: 'Do you make video for real estate projects?', a: 'Yes. Our AI Production Studio makes brand films and social content without a film crew or a long timeline.' },
     ],
   },
   {

@@ -38,7 +38,6 @@ export default function Page() {
       <DetailHero d={d} />
       <GetGrid d={d.get} />
       <AiReady d={d.ai} />
-      <OwnBand d={d.own} />
       <Journey d={d.steps} />
       <CaseCard d={d.result} />
       <Who d={d.who} />

@@ -6,7 +6,7 @@ import { useGsap, gsap, MQ } from '@/lib/motion'
 import { contact } from '@/data/about'
 import Arrow from '@/components/home/Arrow'
 
-const VIDEO = 'AI video (Portal)'
+const VIDEO = 'AI video (AI Production Studio)'
 
 /* Short contact form: name, company, revenue range, what you need. It opens an email to the team with the details filled in. */
 export default function ContactForm() {
@@ -20,7 +20,7 @@ export default function ContactForm() {
   useEffect(() => {
     const q = new URLSearchParams(window.location.search)
     if (q.get('need') === 'video' || q.get('from') === 'video') setNeeds([VIDEO])
-    if (q.get('from') === 'mark') setNeeds(['The Mark (LinkedIn for CEOs)'])
+    if (q.get('from') === 'mark') setNeeds(['LinkedIn for CEOs'])
   }, [])
   const toggle = (n) => setNeeds((x) => (x.includes(n) ? x.filter((y) => y !== n) : [...x, n]))
   const video = needs.includes(VIDEO)

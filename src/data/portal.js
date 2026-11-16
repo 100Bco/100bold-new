@@ -2,12 +2,12 @@
    To add a piece: drop the mp4 and a poster jpg in /public/portal and add an entry to `pieces`.
    Every piece needs a written description; add `transcript` when it has spoken words. */
 export const portalPage = {
-  title: 'Portal | AI Video Production for Brands | 100Bold',
-  description: 'Portal is 100Bold’s AI production studio. Brand films, ads, and social content for service businesses, without a film crew or a six-week timeline.',
+  title: 'AI Production Studio | AI Video Production for Brands | 100Bold',
+  description: 'The AI Production Studio is 100Bold’s in-house video studio. Brand films, ads, and social content for service businesses, without a film crew or a six-week timeline.',
   hero: {
-    eyebrow: 'Portal · AI production studio',
+    eyebrow: 'AI Production Studio',
     h1: ['Film-quality video,', 'made with AI,', 'delivered in days'],
-    line: 'Portal is 100Bold’s AI production studio. We make brand films, ads, and social content for service businesses without a film crew or a six-week timeline.',
+    line: 'The AI Production Studio is 100Bold’s in-house video studio. We make brand films, ads, and social content for service businesses without a film crew or a six-week timeline.',
     cta: 'Start a project',
   },
 }
@@ -58,7 +58,7 @@ export const how = {
 export const portalFaq = {
   h2: 'Questions',
   items: [
-    { q: 'What is an AI production studio?', a: 'A studio that makes film-quality video with AI tools and a human creative team, instead of a film crew and a long shoot. Portal is 100Bold’s AI production studio.' },
+    { q: 'What is an AI production studio?', a: 'A studio that makes film-quality video with AI tools and a human creative team, instead of a film crew and a long shoot. The AI Production Studio is 100Bold’s in-house video studio.' },
     { q: 'How fast can you deliver a video?', a: 'Most pieces are delivered in days, not weeks. The timeline depends on the length and the number of versions.' },
     { q: 'Who owns the footage?', a: 'You do. The finished videos are yours to use on your site, your social channels, and your ads.' },
     { q: 'How do you handle real people and likenesses?', a: 'We only use a real person’s face, voice, or likeness with their written permission, and you approve every version before it is published.' },
