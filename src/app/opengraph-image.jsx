@@ -6,9 +6,7 @@ export const contentType = ogContentType
 
 export default function Image() {
   return renderOg({
-    eyebrow: 'Growth agency · Austin, TX',
-    title: 'The growth agency for $5M+ service businesses',
-    desc: 'SEO and AI search, web design, Meta ads, LinkedIn for CEOs, and AI video.',
+    title: 'Start Brave. Stay Bold.',
     img: 'founder.jpg',
     imgPos: '60% 30%',
   })

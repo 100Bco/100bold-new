@@ -6,9 +6,7 @@ export const contentType = ogContentType
 
 export default function Image() {
   return renderOg({
-    eyebrow: 'Services · SEO and AI Search',
-    title: 'Be the business Google and ChatGPT recommend',
-    desc: 'Rank in Google and Maps, and get named when buyers ask AI who to hire.',
+    title: 'SEO and AI Search',
     img: 'seo.jpg',
     imgPos: '70% 30%',
   })
