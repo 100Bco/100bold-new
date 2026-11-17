@@ -27,12 +27,10 @@ export const metadata = {
     description: 'Growth agency for $5M+ service businesses. SEO and AI search, Meta ads, and LinkedIn for CEOs.',
     url: 'https://100bold.co',
     siteName: '100Bold',
-    images: [{ url: '/100BOLD - OP3-09 (1).png', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/100BOLD - OP3-09 (1).png'],
   },
   icons: {
     icon: '/100BOLD - OP3-02.png',
