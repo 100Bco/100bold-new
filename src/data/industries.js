@@ -161,6 +161,7 @@ export const industries = [
   {
     slug: 'local-services',
     heroImg: '/industries/local.jpg',
+    img: '/works/thumbs/local.jpg', imgAlt: 'Local service van at a client home', imgPos: '80% 45%',
     name: 'Local services',
     short: 'Local services',
     mode: 'Customers call you to book local jobs',
