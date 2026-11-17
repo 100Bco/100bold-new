@@ -29,8 +29,10 @@ export default function Founder() {
     <section className="xf" ref={ref}>
       <div className="mx xf-grid">
         <div className="xf-port">
-          <img className="xf-img" src="/the-mark/images/team/minh-mac.webp" alt={founder.imgAlt} loading="lazy" width="1254" height="1254" />
-          <div className="xf-nm"><div><b>Minh Mac</b><span>Founder, 100Bold</span></div><Link href="/about" className="nk-link-arrow light"><span>{founder.cta}</span><Arrow /></Link></div>
+          <img className="xf-img" src="/founder/minh-mac-glass.webp" alt={founder.imgAlt} loading="lazy" width="928" height="1152" />
+          <div className="xf-who"><b>Minh Mac</b><span>Founder, 100Bold</span></div>
+          <p className="xf-hl">Most brands<br />are a blur<i>.</i></p>
+          <Link href="/about" className="nk-link-arrow light xf-more"><span>{founder.cta}</span><Arrow /></Link>
         </div>
         <div className="xf-copy">
           <h2 className="x-h2">{founder.h2}</h2>
