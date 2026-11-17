@@ -28,10 +28,10 @@ export default function WorkCases() {
           return (
           <Card {...(live ? { href: c.to, 'aria-label': 'Read the ' + c.client + ' case study' } : {})} className="wkc" key={c.client}>
             <div className="wkc-img">
-              <img src={c.img} alt={c.alt} loading="lazy" width="1280" height="800" />
-              <span className="wkc-ind">{c.industry}</span>
+              <img src={c.img} alt={c.alt} loading="lazy" width="1376" height="774" />
             </div>
             <div className="wkc-body">
+              <span className="wkc-ind">{c.industry}</span>
               <div className="wkc-num"><b>{c.big}</b><span>{c.label}</span></div>
               <div className="wkc-txt">
                 <h2>{c.client}</h2>
