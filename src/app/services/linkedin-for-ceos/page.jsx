@@ -4,7 +4,6 @@ import Journey from '@/components/the-mark/Journey'
 import CaseCard from '@/components/the-mark/CaseCard'
 import Reveal from '@/components/the-mark/Reveal'
 import ApplyBar from '@/components/the-mark/ApplyBar'
-import { OG_IMAGES } from '@/components/the-mark/meta'
 
 // Ported from https://themark.100bold.co/ (markup converted from the live SSR output).
 export const metadata = {
@@ -15,9 +14,8 @@ export const metadata = {
     title: "The Mark | Done-for-you LinkedIn Growth for Founders & CEOs",
     description: "Fully managed LinkedIn service that builds your authority and turns attention into deals, partnerships, and speaking invitations. By 100Bold.",
     url: '/services/linkedin-for-ceos',
-    images: OG_IMAGES,
   },
-  twitter: { card: 'summary_large_image', images: OG_IMAGES },
+  twitter: { card: 'summary_large_image' },
 }
 
 export default function TheMarkHome() {
