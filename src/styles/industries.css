@@ -244,7 +244,7 @@
 
 /* industry hero v4: always one screen; text aligned to the page edge, not floating in a centred column */
 .ihx { height: 100svh; min-height: 0; padding: 72px 0 0; align-items: center; }
-.ihx .mx.ihx-in { max-width: none; padding: clamp(16px, 3.5vh, 40px) clamp(20px, 6vw, 120px); }
+.ihx .mx.ihx-in { max-width: 1480px; padding: clamp(16px, 3.5vh, 40px) clamp(20px, 4vw, 56px); }
 .ihx-eyebrow { margin-bottom: clamp(10px, 2vh, 22px); }
 .ihx-h1 { font-size: clamp(30px, min(5vw, 8.2vh), 92px); max-width: min(980px, 62vw); line-height: .97; }
 .ihx-mode { margin-top: clamp(10px, 1.6vh, 18px); }
