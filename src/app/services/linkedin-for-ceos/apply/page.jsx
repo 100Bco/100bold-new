@@ -5,11 +5,11 @@ import { OG_IMAGES } from '@/components/the-mark/meta'
 export const metadata = {
   title: "Apply | The Mark",
   description: "Apply to work with The Mark. Tell us about your business and your goals on LinkedIn.",
-  alternates: { canonical: '/the-mark/apply' },
+  alternates: { canonical: '/services/linkedin-for-ceos/apply' },
   openGraph: {
     title: "Apply | The Mark",
     description: "Apply to work with The Mark. Tell us about your business and your goals on LinkedIn.",
-    url: '/the-mark/apply',
+    url: '/services/linkedin-for-ceos/apply',
     images: OG_IMAGES,
   },
   twitter: { card: 'summary_large_image', images: OG_IMAGES },

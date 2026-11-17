@@ -73,7 +73,7 @@ export const offers = [
     points: ['Fully managed, in your voice', 'Built around your market and your buyers', 'Works with or without the company buying anything else'],
     suits: 'Founders, CEOs, managing partners',
     proof: { big: '1M+', label: 'impressions in 12 months, from zero', who: 'Tung Cao, Co-Founder, 100B Global' },
-    to: '/the-mark',
+    to: '/services/linkedin-for-ceos',
     more: 'Explore LinkedIn for CEOs',
     media: { kind: 'scene', i: 4 },
     tone: 'red',

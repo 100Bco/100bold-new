@@ -46,7 +46,7 @@ export default function ApplyForm() {
         <div className="ap-done-icon" aria-hidden>✓</div>
         <h2 className="ap-done-title">Thank you. We received your application.</h2>
         <p className="ap-done-text">We review every application personally and will be in touch.</p>
-        <Link href="/the-mark" className="founder-btn">Back to home <span aria-hidden>→</span></Link>
+        <Link href="/services/linkedin-for-ceos" className="founder-btn">Back to home <span aria-hidden>→</span></Link>
       </div>
     )
   }

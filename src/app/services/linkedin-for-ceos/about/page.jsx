@@ -7,11 +7,11 @@ import { OG_IMAGES } from '@/components/the-mark/meta'
 export const metadata = {
   title: "About | The Mark",
   description: "The Mark is built by Minh Mac, Founder of 100Bold. 15 years building brands across Austin and Southeast Asia.",
-  alternates: { canonical: '/the-mark/about' },
+  alternates: { canonical: '/services/linkedin-for-ceos/about' },
   openGraph: {
     title: "About | The Mark",
     description: "The Mark is built by Minh Mac, Founder of 100Bold. 15 years building brands across Austin and Southeast Asia.",
-    url: '/the-mark/about',
+    url: '/services/linkedin-for-ceos/about',
     images: OG_IMAGES,
   },
   twitter: { card: 'summary_large_image', images: OG_IMAGES },
@@ -99,7 +99,7 @@ export default function AboutPage() {
       <section id="apply" className="cta2-section">
         <h2 className="cta2-title reveal">Become the<br className="br-m" /> <span className="nowrap">best-known</span> name<br /><span className="tm-accent">in your industry.</span></h2>
         <p className="cta2-sub reveal">Limited spots. Application only.</p>
-        <Link href="/the-mark/apply" className="btn-primary cta2-btn reveal">Apply to Work With Us</Link>
+        <Link href="/services/linkedin-for-ceos/apply" className="btn-primary cta2-btn reveal">Apply to Work With Us</Link>
         <p className="cta2-mail reveal">Or reach us directly at <a href="mailto:start@100bold.co">start@100bold.co</a></p>
       </section>
       <Reveal />

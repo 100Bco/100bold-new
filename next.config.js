@@ -14,6 +14,9 @@ const nextConfig = {
       { source: '/industries/plumbing-roofing', destination: '/industries/construction-trades', permanent: true },
       { source: '/minai', destination: '/services', permanent: true },
       { source: '/portal', destination: '/services/ai-production', permanent: true },
+      { source: '/the-mark', destination: '/services/linkedin-for-ceos', permanent: true },
+      { source: '/the-mark/:page(apply|about|case-studies)', destination: '/services/linkedin-for-ceos/:page', permanent: true },
+      { source: '/the-mark/case-studies/:slug(tung-cao|loc-dang)', destination: '/services/linkedin-for-ceos/case-studies/:slug', permanent: true },
     ]
   },
 }

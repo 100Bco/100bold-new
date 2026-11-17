@@ -8,11 +8,11 @@ import { OG_IMAGES } from '@/components/the-mark/meta'
 export const metadata = {
   title: "Loc Dang: 49K+ Impressions in 4 Months From Zero | The Mark",
   description: "How The Mark took Loc Dang from zero social media presence to 49K+ impressions, 3,596 followers, and a stream of inbound opportunities in just 4 months.",
-  alternates: { canonical: '/the-mark/case-studies/loc-dang' },
+  alternates: { canonical: '/services/linkedin-for-ceos/case-studies/loc-dang' },
   openGraph: {
     title: "Loc Dang: 49K+ Impressions in 4 Months From Zero | The Mark",
     description: "How The Mark took Loc Dang from zero social media presence to 49K+ impressions, 3,596 followers, and a stream of inbound opportunities in just 4 months.",
-    url: '/the-mark/case-studies/loc-dang',
+    url: '/services/linkedin-for-ceos/case-studies/loc-dang',
     images: OG_IMAGES,
   },
   twitter: { card: 'summary_large_image', images: OG_IMAGES },
@@ -24,7 +24,7 @@ export default function LocDangCaseStudy() {
       <main className="csx">
         <section className="csx-hero">
           <div className="csx-wide">
-            <Link href="/the-mark/case-studies" className="csx-back">← Go back</Link>
+            <Link href="/services/linkedin-for-ceos/case-studies" className="csx-back">← Go back</Link>
             <div className="csx-hero-frame">
               <img src="/the-mark/images/loc-dang/ld-billboard.webp" alt="Dang Law Group billboard in Austin, Texas" style={{ objectPosition: "center 38%" }} />
               <div className="csx-hero-shade" />
@@ -196,7 +196,7 @@ export default function LocDangCaseStudy() {
       <section id="apply" className="cta2-section">
         <h2 className="cta2-title reveal">Want results like <span className="tm-accent">Loc?</span></h2>
         <p className="cta2-sub reveal">We take on a limited number of clients at a time. Tell us your goal and we&#x27;ll show you what we&#x27;d build.</p>
-        <Link href="/the-mark/apply" className="btn-primary cta2-btn reveal">Apply to Work With Us</Link>
+        <Link href="/services/linkedin-for-ceos/apply" className="btn-primary cta2-btn reveal">Apply to Work With Us</Link>
       </section>
       <Reveal />
       <ApplyBar />

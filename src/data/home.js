@@ -19,7 +19,7 @@ export const router = {
     { title: 'A construction or trades company', line: 'More bids and booked jobs from search.', to: '/industries/construction-trades', img: '/works/BEE CONSTRUCTION.png' },
     { title: 'A local service business', line: 'Be the first call in your city.', to: '/industries/local-services' },
   ],
-  founder: { q: 'Building your own presence as a founder?', cta: 'Explore LinkedIn for CEOs', to: '/the-mark' },
+  founder: { q: 'Building your own presence as a founder?', cta: 'Explore LinkedIn for CEOs', to: '/services/linkedin-for-ceos' },
 }
 
 export const logos = {
@@ -43,7 +43,7 @@ export const services = {
     { title: 'Web design', to: '/services/web-design', scene: 1, gif: '/works/GIF 2.gif', desc: 'A fast website that wins the client before the first call, built so Google and AI can read every page.' },
     { title: 'Meta ads', to: '/services/meta-ads', scene: 2, gif: '/works/GIF 3.gif', desc: 'Facebook and Instagram ads tracked to the calls and clients they bring in. You see cost per signed client, not cost per click.' },
     { title: 'AI Production', to: '/services/ai-production', scene: 3, gif: '/works/GIF 4.gif', desc: 'Short films, ads, and social content people choose to watch, delivered in days.' },
-    { title: 'LinkedIn for CEOs', to: '/the-mark', scene: 4, desc: 'Our fully managed LinkedIn service for founders and CEOs, built in your voice so decision-makers know your name.' },
+    { title: 'LinkedIn for CEOs', to: '/services/linkedin-for-ceos', scene: 4, desc: 'Our fully managed LinkedIn service for founders and CEOs, built in your voice so decision-makers know your name.' },
   ],
 }
 

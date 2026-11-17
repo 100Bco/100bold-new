@@ -10,11 +10,11 @@ import { OG_IMAGES } from '@/components/the-mark/meta'
 export const metadata = {
   title: "The Mark | Done-for-you LinkedIn Growth for Founders & CEOs",
   description: "Fully managed LinkedIn service that builds your authority and turns attention into deals, partnerships, and speaking invitations. By 100Bold.",
-  alternates: { canonical: '/the-mark' },
+  alternates: { canonical: '/services/linkedin-for-ceos' },
   openGraph: {
     title: "The Mark | Done-for-you LinkedIn Growth for Founders & CEOs",
     description: "Fully managed LinkedIn service that builds your authority and turns attention into deals, partnerships, and speaking invitations. By 100Bold.",
-    url: '/the-mark',
+    url: '/services/linkedin-for-ceos',
     images: OG_IMAGES,
   },
   twitter: { card: 'summary_large_image', images: OG_IMAGES },
@@ -28,7 +28,7 @@ export default function TheMarkHome() {
         <h1 className="hero-headline">Done-for-you<br className="br-m" /> LinkedIn growth for <br className="br-m" /><span style={{ color: "var(--gold)" }}>founders and CEOs.</span></h1>
         <p className="hero-sub">We build your LinkedIn, generate inbound leads, and turn your profile into a pipeline of deals and partnerships.</p>
         <div className="hero-cta-group">
-          <Link href="/the-mark/apply" className="btn-primary">Apply to Work With Us</Link>
+          <Link href="/services/linkedin-for-ceos/apply" className="btn-primary">Apply to Work With Us</Link>
           <a href="#results" className="btn-ghost">See Client Results</a>
         </div>
         <div className="stats-bar-wrap" style={{ display: "flex", gap: "64px", justifyContent: "center", marginTop: "64px", opacity: 0, animation: "tm-fadeUp 0.8s 0.9s forwards" }}>
@@ -74,7 +74,7 @@ export default function TheMarkHome() {
           <div className="tm-section-label reveal">The Results</div>
           <h2 className="what-headline reveal" style={{ marginBottom: "64px", maxWidth: "none" }}>Real founders. <em>Real outcomes.</em></h2>
           <div className="reveal cards-2col case-grid">
-            <CaseCard href="/the-mark/case-studies/tung-cao">
+            <CaseCard href="/services/linkedin-for-ceos/case-studies/tung-cao">
               <div className="case-card-media">
                 <img src="/the-mark/images/tung-cao/tc-imc-group.webp" alt="Tung Cao at International Manufacturing Congress" className="case-card-img" style={{ objectPosition: "66% 64%", transformOrigin: "66% 64%", "--zoom": "1.9" }} />
                 <div className="case-card-shade" />
@@ -96,7 +96,7 @@ export default function TheMarkHome() {
                 <span className="case-card-link">Read the case study <span className="case-card-arrow" aria-hidden="true">→</span></span>
               </div>
             </CaseCard>
-            <CaseCard href="/the-mark/case-studies/loc-dang">
+            <CaseCard href="/services/linkedin-for-ceos/case-studies/loc-dang">
               <div className="case-card-media">
                 <img src="/the-mark/images/loc-dang/ld-office-portrait.webp" alt="Loc Dang at his office in Austin" className="case-card-img" style={{ objectPosition: "62% 22%", transformOrigin: "62% 22%", "--zoom": "1.15" }} />
                 <div className="case-card-shade" />
@@ -121,7 +121,7 @@ export default function TheMarkHome() {
           </div>
           <p className="case-note reveal">Every client starts from a different place. Results depend on industry, audience, and consistency.</p>
           <div className="reveal" style={{ textAlign: "center", marginTop: "40px" }}>
-            <Link href="/the-mark/case-studies" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "2px", color: "var(--gold)", textTransform: "uppercase", textDecoration: "none" }}>View all case studies →</Link>
+            <Link href="/services/linkedin-for-ceos/case-studies" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "2px", color: "var(--gold)", textTransform: "uppercase", textDecoration: "none" }}>View all case studies →</Link>
           </div>
         </div>
       </section>
@@ -162,7 +162,7 @@ export default function TheMarkHome() {
             <div className="founder-role f-line" style={{ transitionDelay: "0.85s" }}>Founder, 100Bold</div>
             <span className="founder-rule f-line" style={{ transitionDelay: "1s" }} aria-hidden="true" />
             <p className="founder-bio f-line" style={{ transitionDelay: "1.1s" }}>15 years building businesses and scaling brands across Austin and Southeast Asia. The Mark is the system he built to turn a founder&#x27;s LinkedIn into a real growth channel.</p>
-            <Link href="/the-mark/about" className="founder-btn f-line" style={{ transitionDelay: "1.3s" }}>Learn more <span aria-hidden="true">→</span></Link>
+            <Link href="/services/linkedin-for-ceos/about" className="founder-btn f-line" style={{ transitionDelay: "1.3s" }}>Learn more <span aria-hidden="true">→</span></Link>
           </div>
         </div>
       </section>
@@ -170,7 +170,7 @@ export default function TheMarkHome() {
         <h2 className="cta2-title reveal">Become the<br className="br-m" /> <span className="nowrap">best-known</span> name<br /><span className="tm-accent">in your industry.</span></h2>
         <p className="cta2-sub reveal">Limited spots. Application only.</p>
         <p className="cta2-know reveal">Have your LinkedIn profile and company website ready. We read every application and reply by email. If it looks like a fit, we set up a short call.</p>
-        <Link href="/the-mark/apply" className="btn-primary cta2-btn reveal">Apply to Work With Us</Link>
+        <Link href="/services/linkedin-for-ceos/apply" className="btn-primary cta2-btn reveal">Apply to Work With Us</Link>
         <p className="cta2-mail reveal">Or reach us directly at <a href="mailto:start@100bold.co">start@100bold.co</a></p>
       </section>
       <Reveal />

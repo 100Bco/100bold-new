@@ -31,7 +31,7 @@ export default function Mark() {
           <p className="x-eyebrow">{mark.eyebrow}</p>
           <h2 className="x-h2 xm-h2">{mark.h2.replace(' Do you?', '')} <span>Do you?</span></h2>
           <p className="xm-body">{mark.body}</p>
-          <Link href="/the-mark" className="nk-btn nk-btn-red" data-magnetic="0.3">{mark.cta} <Arrow /></Link>
+          <Link href="/services/linkedin-for-ceos" className="nk-btn nk-btn-red" data-magnetic="0.3">{mark.cta} <Arrow /></Link>
         </div>
         <ul className="xm-posts">
           {mark.results.map((r, i) => (

@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { useGsap, gsap, MQ } from '@/lib/motion'
 
 const people = [
-  { name: 'Tung Cao', role: 'Co-Founder, 100B Global', big: '1M+', unit: 'impressions', text: 'From zero to 1M+ impressions in 12 months. Two speaker invitations and daily inbound from decision-makers worldwide.', photo: '/the-mark/images/tung-cao/Tung%20Cao%20Photo.png', to: '/the-mark/case-studies/tung-cao' },
-  { name: 'Loc Dang', role: 'Founder, Dang Law Group', big: '3,596', unit: 'followers', text: 'Never used social media. 49K+ impressions and 3,596 followers in 4 months, reaching attorneys, founders, and CEOs.', photo: '/the-mark/images/loc-dang/loc-dang-headshot.webp', to: '/the-mark/case-studies/loc-dang' },
+  { name: 'Tung Cao', role: 'Co-Founder, 100B Global', big: '1M+', unit: 'impressions', text: 'From zero to 1M+ impressions in 12 months. Two speaker invitations and daily inbound from decision-makers worldwide.', photo: '/the-mark/images/tung-cao/Tung%20Cao%20Photo.png', to: '/services/linkedin-for-ceos/case-studies/tung-cao' },
+  { name: 'Loc Dang', role: 'Founder, Dang Law Group', big: '3,596', unit: 'followers', text: 'Never used social media. 49K+ impressions and 3,596 followers in 4 months, reaching attorneys, founders, and CEOs.', photo: '/the-mark/images/loc-dang/loc-dang-headshot.webp', to: '/services/linkedin-for-ceos/case-studies/loc-dang' },
 ]
 
 /* Work page: The Mark results for founders and CEOs */
@@ -23,7 +23,7 @@ export default function WorkMark() {
         <div className="wm-head">
           <p className="wm-eyebrow">LinkedIn for CEOs</p>
           <h2 className="wm-h2">Founders and CEOs</h2>
-          <Link href="/the-mark" className="wm-all">Explore LinkedIn for CEOs →</Link>
+          <Link href="/services/linkedin-for-ceos" className="wm-all">Explore LinkedIn for CEOs →</Link>
         </div>
         <ul className="wm-list">
           {people.map((p) => (

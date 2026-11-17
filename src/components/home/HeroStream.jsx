@@ -30,7 +30,7 @@ const ic = {
 
 const channels = [
   { k: 'google', name: 'Google', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
-  { k: 'linkedin', name: 'LinkedIn', service: 'LinkedIn for CEOs', to: '/the-mark' },
+  { k: 'linkedin', name: 'LinkedIn', service: 'LinkedIn for CEOs', to: '/services/linkedin-for-ceos' },
   { k: 'chatgpt', name: 'ChatGPT', service: 'SEO and AI Search', to: '/services/seo-ai-search' },
   { k: 'instagram', name: 'Instagram', service: 'Meta ads', to: '/services/meta-ads' },
   { k: 'maps', name: 'Google Maps', service: 'SEO and AI Search', to: '/services/seo-ai-search' },

@@ -25,7 +25,7 @@ export default function ApplyBar() {
 
   return (
     <div className={`apply-bar${visible ? ' is-visible' : ''}`} aria-hidden={!visible}>
-      <Link href="/the-mark/apply" className="btn-primary apply-bar-btn" tabIndex={visible ? 0 : -1}>
+      <Link href="/services/linkedin-for-ceos/apply" className="btn-primary apply-bar-btn" tabIndex={visible ? 0 : -1}>
         Apply to Work With Us
       </Link>
     </div>

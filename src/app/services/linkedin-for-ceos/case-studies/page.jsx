@@ -8,11 +8,11 @@ import { OG_IMAGES } from '@/components/the-mark/meta'
 export const metadata = {
   title: "Case Studies | The Mark",
   description: "Real results from real founders. See how The Mark turned zero LinkedIn presence into 1M+ impressions, speaker invitations, and inbound deals.",
-  alternates: { canonical: '/the-mark/case-studies' },
+  alternates: { canonical: '/services/linkedin-for-ceos/case-studies' },
   openGraph: {
     title: "Case Studies | The Mark",
     description: "Real results from real founders. See how The Mark turned zero LinkedIn presence into 1M+ impressions, speaker invitations, and inbound deals.",
-    url: '/the-mark/case-studies',
+    url: '/services/linkedin-for-ceos/case-studies',
     images: OG_IMAGES,
   },
   twitter: { card: 'summary_large_image', images: OG_IMAGES },
@@ -31,7 +31,7 @@ export default function CaseStudiesPage() {
       <section style={{ background: "#091020", padding: "0 64px 120px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <div className="reveal cards-2col case-grid">
-            <CaseCard href="/the-mark/case-studies/tung-cao">
+            <CaseCard href="/services/linkedin-for-ceos/case-studies/tung-cao">
               <div className="case-card-media">
                 <img src="/the-mark/images/tung-cao/tc-imc-group.webp" alt="Tung Cao at International Manufacturing Congress" className="case-card-img" style={{ objectPosition: "66% 64%", transformOrigin: "66% 64%", "--zoom": "1.9" }} />
                 <div className="case-card-shade" />
@@ -53,7 +53,7 @@ export default function CaseStudiesPage() {
                 <span className="case-card-link">Read the case study <span className="case-card-arrow" aria-hidden="true">→</span></span>
               </div>
             </CaseCard>
-            <CaseCard href="/the-mark/case-studies/loc-dang">
+            <CaseCard href="/services/linkedin-for-ceos/case-studies/loc-dang">
               <div className="case-card-media">
                 <img src="/the-mark/images/loc-dang/ld-office-portrait.webp" alt="Loc Dang at his office in Austin" className="case-card-img" style={{ objectPosition: "62% 22%", transformOrigin: "62% 22%", "--zoom": "1.15" }} />
                 <div className="case-card-shade" />
@@ -82,7 +82,7 @@ export default function CaseStudiesPage() {
       <section id="apply" className="cta2-section">
         <h2 className="cta2-title reveal">Become the<br className="br-m" /> <span className="nowrap">best-known</span> name<br /><span className="tm-accent">in your industry.</span></h2>
         <p className="cta2-sub reveal">Limited spots. Application only.</p>
-        <Link href="/the-mark/apply" className="btn-primary cta2-btn reveal">Apply to Work With Us</Link>
+        <Link href="/services/linkedin-for-ceos/apply" className="btn-primary cta2-btn reveal">Apply to Work With Us</Link>
         <p className="cta2-mail reveal">Or reach us directly at <a href="mailto:start@100bold.co">start@100bold.co</a></p>
       </section>
       <Reveal />

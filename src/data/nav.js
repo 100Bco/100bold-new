@@ -3,7 +3,7 @@ export const serviceLinks = [
   { path: '/services/web-design', name: 'Web design' },
   { path: '/services/meta-ads', name: 'Meta ads' },
   { path: '/services/ai-production', name: 'AI Production' },
-  { path: '/the-mark', name: 'LinkedIn for CEOs' },
+  { path: '/services/linkedin-for-ceos', name: 'LinkedIn for CEOs' },
 ]
 
 export const industryLinks = [

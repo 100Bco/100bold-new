@@ -106,7 +106,7 @@ export default function HeroDot() {
             </div>
             <ul className="rd-services">
               {services.items.map((s) => <li key={s.to}><Link href={s.to}>{s.title}</Link></li>)}
-              <li><Link href="/the-mark">LinkedIn for CEOs</Link></li>
+              <li><Link href="/services/linkedin-for-ceos">LinkedIn for CEOs</Link></li>
             </ul>
           </div>
         </div>
