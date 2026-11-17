@@ -13,6 +13,7 @@ const nextConfig = {
       { source: '/industries/construction', destination: '/industries/construction-trades', permanent: true },
       { source: '/industries/plumbing-roofing', destination: '/industries/construction-trades', permanent: true },
       { source: '/minai', destination: '/services', permanent: true },
+      { source: '/portal', destination: '/services/ai-production', permanent: true },
     ]
   },
 }

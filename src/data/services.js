@@ -59,7 +59,7 @@ export const offers = [
     points: ['Brand films', 'Ad creative', 'Social series'],
     suits: 'Any service brand that needs video',
     proof: { big: 'Dang-Man', label: "a law firm's own AI superhero", who: 'Dang Law Group' },
-    to: '/portal',
+    to: '/services/ai-production',
     more: 'Visit AI Production',
     media: { kind: 'scene', i: 3 },
     tone: 'dark',

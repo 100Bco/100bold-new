@@ -42,7 +42,7 @@ export const services = {
     { title: 'SEO and AI Search', to: '/services/seo-ai-search', scene: 0, gif: '/works/GIF 1.gif', desc: 'Your buyers ask Google and ChatGPT who to hire. We make your business the answer and keep you at the top of Google Maps.' },
     { title: 'Web design', to: '/services/web-design', scene: 1, gif: '/works/GIF 2.gif', desc: 'A fast website that wins the client before the first call, built so Google and AI can read every page.' },
     { title: 'Meta ads', to: '/services/meta-ads', scene: 2, gif: '/works/GIF 3.gif', desc: 'Facebook and Instagram ads tracked to the calls and clients they bring in. You see cost per signed client, not cost per click.' },
-    { title: 'AI Production', to: '/portal', scene: 3, gif: '/works/GIF 4.gif', desc: 'Short films, ads, and social content people choose to watch, delivered in days.' },
+    { title: 'AI Production', to: '/services/ai-production', scene: 3, gif: '/works/GIF 4.gif', desc: 'Short films, ads, and social content people choose to watch, delivered in days.' },
     { title: 'LinkedIn for CEOs', to: '/the-mark', scene: 4, desc: 'Our fully managed LinkedIn service for founders and CEOs, built in your voice so decision-makers know your name.' },
   ],
 }

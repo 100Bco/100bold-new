@@ -7,7 +7,7 @@ import { offers } from '@/data/services'
 import { isoScenes } from '@/lib/isoScenes'
 import MobileSlider from '@/components/MobileSlider'
 
-const sceneFor = { '/services/seo-ai-search': 0, '/services/web-design': 1, '/services/meta-ads': 2, '/portal': 3, '/the-mark': 4 }
+const sceneFor = { '/services/seo-ai-search': 0, '/services/web-design': 1, '/services/meta-ads': 2, '/services/ai-production': 3, '/the-mark': 4 }
 
 /* What we do for you: the services that fit this industry, each a card with its live 3D scene */
 export default function IndServices({ items, name }) {

@@ -72,7 +72,7 @@ export default function Portal() {
           <p className="x-eyebrow">{portal.eyebrow}</p>
           <h2 className="x-h2">{portal.h2}</h2>
           <p className="xp-body">{portal.body}</p>
-          <Link href="/portal" className="nk-btn nk-btn-red" data-magnetic="0.3">{portal.cta} <Arrow /></Link>
+          <Link href="/services/ai-production" className="nk-btn nk-btn-red" data-magnetic="0.3">{portal.cta} <Arrow /></Link>
         </div>
 
         <div className="xp-stage">

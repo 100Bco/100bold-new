@@ -5,7 +5,7 @@ const svc = {
   web: { name: 'Web design', to: '/services/web-design' },
   ads: { name: 'Meta ads', to: '/services/meta-ads' },
   mark: { name: 'LinkedIn for CEOs', to: '/the-mark' },
-  portal: { name: 'AI Production', to: '/portal' },
+  portal: { name: 'AI Production', to: '/services/ai-production' },
   minai: { name: 'MinAI', to: 'https://minai.biz' },
 }
 
