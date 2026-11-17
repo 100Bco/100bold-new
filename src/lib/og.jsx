@@ -49,20 +49,21 @@ export async function renderOg({ title, img, imgPos = '50% 30%' }) {
   )
 }
 
-/* Service variant: the service's own isometric scene on the site's cream stage */
-export async function renderSceneOg({ title, scene }) {
-  const [a900, logo, art] = await Promise.all([
+/* Full-bleed photo variant: realistic picture of the page's subject, logo and short title on a soft left shade */
+export async function renderPhotoOg({ title, img }) {
+  const [a900, logo, photo] = await Promise.all([
     file('fonts/Archivo-wght-900.ttf'),
-    dataUrl('logo-dark.png', 'image/png'),
-    dataUrl('img/scene-' + scene + '.jpg', 'image/jpeg'),
+    dataUrl('logo-light.png', 'image/png'),
+    dataUrl('img/' + img, 'image/jpeg'),
   ])
   return new ImageResponse(
     (
-      <div style={{ width: '100%', height: '100%', display: 'flex', background: '#F3ECE3', position: 'relative' }}>
-        <img src={art} width={1200} height={630} style={{ position: 'absolute', left: 0, top: 0, width: 1200, height: 630 }} />
-        <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: 480, height: '100%', padding: '60px 0 60px 68px' }}>
+      <div style={{ width: '100%', height: '100%', display: 'flex', position: 'relative', background: '#141210' }}>
+        <img src={photo} width={1200} height={630} style={{ position: 'absolute', left: 0, top: 0, width: 1200, height: 630 }} />
+        <div style={{ position: 'absolute', left: 0, top: 0, width: 760, height: 630, display: 'flex', backgroundImage: 'linear-gradient(to right, rgba(20,18,16,.82), rgba(20,18,16,.45) 55%, rgba(20,18,16,0))' }} />
+        <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: 520, height: '100%', padding: '60px 0 60px 68px' }}>
           <img src={logo} width={120} height={74} style={{ width: 120, height: 74 }} />
-          <div style={{ display: 'flex', fontFamily: 'Archivo', fontWeight: 900, fontSize: 66, lineHeight: 0.98, letterSpacing: -2.5, color: '#1A1816', maxWidth: 420 }}>
+          <div style={{ display: 'flex', fontFamily: 'Archivo', fontWeight: 900, fontSize: 68, lineHeight: 0.98, letterSpacing: -2.5, color: '#F7F3ED', maxWidth: 440 }}>
             {title}
           </div>
         </div>
