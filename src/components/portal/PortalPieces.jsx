@@ -37,7 +37,7 @@ function TikTokPosts() {
       {tiktoks.map((t) => (
         <div className="pttk-cell" key={t.id}>
           {on
-            ? <iframe src={'https://www.tiktok.com/embed/v2/' + t.id + '?lang=en-US'} title="TikTok post by @bond.gift247" allow="encrypted-media; fullscreen; picture-in-picture" allowFullScreen loading="lazy" />
+            ? <div className="pttk-frame"><iframe src={'https://www.tiktok.com/embed/v2/' + t.id + '?lang=en-US'} title="TikTok post by @bond.gift247" allow="encrypted-media; fullscreen; picture-in-picture" allowFullScreen loading="lazy" /></div>
             : <a href={t.url} target="_blank" rel="noopener noreferrer" className="pttk-ph">Watch on TikTok</a>}
           <a href={t.url} target="_blank" rel="noopener noreferrer" className="pttk-link">Open on TikTok ↗</a>
         </div>
