@@ -32,7 +32,7 @@
 .wkm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .wkm-card { display: flex; flex-direction: column; background: var(--white); border-radius: 24px; padding: 10px; color: var(--dark); transition: transform .5s var(--ease-out), box-shadow .5s; }
 .wkm-card:hover { transform: translateY(-6px); box-shadow: 0 40px 70px -45px rgba(26,24,22,.5); }
-.wkm-img { aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; }
+.wkm-img { aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; }
 .wkm-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1s var(--ease-out); }
 .wkm-card:hover .wkm-img img { transform: scale(1.04); }
 .wkm-body { padding: 18px 12px 12px; display: flex; flex-direction: column; flex: 1; }

@@ -96,7 +96,7 @@ export const industries = [
     title: 'Real Estate Marketing Agency for Developers and Brokerages | 100Bold',
     description: 'Marketing for developers, brokerages, and property managers: project launches, websites, AI-made video, and LinkedIn for the CEO.',
     icon: '/building-red.json',
-    img: '/works/DACY BUSINESS PARK.png', imgAlt: 'Dacy Business Park', imgPos: '80% 45%',
+    img: '/works/thumbs/dacy.jpg', imgAlt: 'Dacy Business Park', imgPos: '80% 45%',
     hero: {
       h1: ['Marketing for developers,', 'brokerages, and', 'property managers'],
       line: 'We help real estate companies fill projects and earn credibility with investors through launch campaigns, websites, AI-made video, and the CEO’s own LinkedIn.',
