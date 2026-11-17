@@ -261,3 +261,7 @@
 }
 @media (max-width: 960px) and (max-height: 700px) { .ihx-mode { display: none; } .ihx-p { font-size: 14px; } }
 @media (max-width: 960px) { .ihx-ctas .nk-btn { white-space: nowrap; padding-left: 14px; padding-right: 14px; } }
+
+.idhh2 { padding-bottom: clamp(40px, 6vh, 70px); }
+.idhh2-h1 { font-size: clamp(40px, 5.2vw, 90px); }
+#industries-list { scroll-margin-top: 90px; }

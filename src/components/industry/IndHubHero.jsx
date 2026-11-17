@@ -6,26 +6,25 @@ import { useGsap, gsap, MQ } from '@/lib/motion'
 import { hub } from '@/data/industries'
 import Arrow from '@/components/home/Arrow'
 
-/* Industries hub hero: the line, then straight into the panels */
+/* Industries hub hero: centred line, short body and the call underneath */
 export default function IndHubHero() {
   const ref = useRef(null)
   useGsap(ref, (mm) => {
     mm.add(MQ.motion, () => {
       const tl = gsap.timeline({ delay: 0.1 })
-      tl.from(ref.current.querySelectorAll('.svh-line > span'), { yPercent: 110, duration: 1.2, ease: 'expo.out', stagger: 0.1 })
-        .from(ref.current.querySelectorAll('.svh-eyebrow, .idhh-side > *'), { y: 30, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.08 }, '-=.8')
+      tl.from(ref.current.querySelectorAll('.idx-line > span'), { yPercent: 110, duration: 1.2, ease: 'expo.out', stagger: 0.1 })
+        .from(ref.current.querySelectorAll('.idx-eyebrow, .idx-p, .idx-ctas'), { y: 30, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.08 }, '-=.8')
     })
   })
   return (
-    <section className="idhh" ref={ref}>
-      <div className="mx idhh-grid">
-        <div>
-          <p className="svh-eyebrow">{hub.eyebrow}</p>
-          <h1 className="svh-h1">{hub.h1.map((l) => <span className="svh-line" key={l}><span>{l}</span></span>)}</h1>
-        </div>
-        <div className="idhh-side">
-          <p className="idhh-body">{hub.body}</p>
+    <section className="idx idhh2" ref={ref}>
+      <div className="mx idx-in">
+        <p className="idx-eyebrow">{hub.eyebrow}</p>
+        <h1 className="idx-h1 idhh2-h1">{hub.h1.map((l, i) => <span className="idx-line" key={l}><span className={i === 1 ? 'r' : ''}>{l}</span></span>)}</h1>
+        <p className="idx-p">{hub.body}</p>
+        <div className="idx-ctas">
           <Link href="/contact" className="nk-btn nk-btn-red" data-magnetic="0.3">Book a call <Arrow /></Link>
+          <a href="#industries-list" className="nk-btn nk-btn-ghost">Explore industries</a>
         </div>
       </div>
     </section>

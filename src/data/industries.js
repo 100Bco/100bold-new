@@ -156,7 +156,6 @@ export const industries = [
       { q: 'How do contractors get more jobs online?', a: 'A clear page for each service and area, real project photos, steady reviews, and a fast way to request a bid. Then ads aimed at real project owners.' },
       { q: 'Do you work with roofing and HVAC companies?', a: 'Yes. We work with general contractors, commercial builders, roofing, HVAC, plumbing, and electrical companies.' },
       { q: 'Do Facebook ads work for contractors?', a: 'They can when they target real project owners and every lead is tracked to the bid or job it brings in.' },
-      { q: 'Who owns the website and the ad account?', a: 'You do. The site, the domain, the ad account, and every login are yours.' },
     ],
   },
   {
@@ -165,18 +164,18 @@ export const industries = [
     name: 'Local services',
     short: 'Local services',
     mode: 'Customers call you to book local jobs',
-    title: 'Local Service Marketing: HVAC, Plumbing, Towing, Auto | 100Bold',
+    title: 'Local Service Marketing: Landscaping, Pools, Solar, Towing | 100Bold',
     description: 'Marketing for high-ticket local service companies that want booked jobs: Google Maps, AI search, reviews, and ads tracked to real jobs.',
     icon: '/power-red.json',
     scene: 0,
     hero: {
       h1: ['Marketing for local', 'service companies that', 'want booked jobs'],
-      line: 'We help high-ticket local service businesses, from HVAC to towing, show up first on Google Maps and in AI answers when people nearby need help now.',
+      line: 'We help high-ticket local service businesses, from landscaping to towing, show up first on Google Maps and in AI answers when people nearby need help now.',
     },
     who: {
       h2: 'Who we work with',
       lead: 'High-ticket local service companies led by the owner.',
-      items: [{ k: 'HVAC', img: '/industries/who/hvac.jpg', i: 'fan', d: 'Calls when it is too hot or too cold.' }, { k: 'Plumbing', img: '/industries/who/plumbing.jpg', i: 'drop', d: 'The first call when something leaks.' }, { k: 'Electrical', img: '/industries/who/electrical.jpg', i: 'bolt', d: 'Service and project work from search.' }, { k: 'Towing and roadside', img: '/industries/who/towing.jpg', i: 'truck', d: 'The first name drivers find at the roadside.' }, { k: 'Auto repair', img: '/industries/who/autorepair.jpg', i: 'wrench', d: 'Booked bays from people nearby.' }, { k: 'Auto salvage', img: '/industries/who/salvage.jpg', i: 'car', d: 'Sellers and buyers who find you first.' }, { k: 'Landscaping and lawn care', img: '/industries/who/lawn.jpg', i: 'leaf', d: 'Recurring clients for every season.' }, { k: 'Pool service', img: '/industries/who/pool.jpg', i: 'wave', d: 'Weekly routes filled with nearby homes.' }, { k: 'Solar installation', img: '/industries/who/solar.jpg', i: 'sun', d: 'Qualified homeowners ready to install.' }, { k: 'House cleaning', img: '/industries/who/cleaning.jpg', i: 'sparkle', d: 'Booked visits and repeat customers.' }, { k: 'Moving companies', img: '/industries/who/moving.jpg', i: 'box', d: 'Moves booked weeks ahead, not last minute.' }],
+      items: [{ k: 'Towing and roadside', img: '/industries/who/towing.jpg', i: 'truck', d: 'The first name drivers find at the roadside.' }, { k: 'Auto repair', img: '/industries/who/autorepair.jpg', i: 'wrench', d: 'Booked bays from people nearby.' }, { k: 'Auto salvage', img: '/industries/who/salvage.jpg', i: 'car', d: 'Sellers and buyers who find you first.' }, { k: 'Landscaping and lawn care', img: '/industries/who/lawn.jpg', i: 'leaf', d: 'Recurring clients for every season.' }, { k: 'Pool service', img: '/industries/who/pool.jpg', i: 'wave', d: 'Weekly routes filled with nearby homes.' }, { k: 'Solar installation', img: '/industries/who/solar.jpg', i: 'sun', d: 'Qualified homeowners ready to install.' }, { k: 'House cleaning', img: '/industries/who/cleaning.jpg', i: 'sparkle', d: 'Booked visits and repeat customers.' }, { k: 'Pest control', img: '/industries/who/pest.jpg', i: 'bug', d: 'Recurring service plans, not one-off calls.' }, { k: 'Moving companies', img: '/industries/who/moving.jpg', i: 'box', d: 'Moves booked weeks ahead, not last minute.' }],
     },
     pains: [
       { q: 'When someone needs help now, they call whoever shows up first.', fix: 'Top spots on Google Maps and in AI answers for “near me” searches in every area you serve.', svc: svc.seo },

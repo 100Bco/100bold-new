@@ -17,7 +17,7 @@ export default function IndPanels() {
     })
   })
   return (
-    <section className="idps" ref={ref} aria-label="Industries">
+    <section className="idps" ref={ref} aria-label="Industries" id="industries-list">
       <MobileSlider trackClass="idps-row" labels={industries.map((d) => d.name)}>
         {industries.map((d, i) => (
           <article key={d.slug} className={'idp' + (on === i ? ' on' : '') + (d.img ? '' : ' noimg')} onMouseEnter={() => setOn(i)} onFocus={() => setOn(i)} onClick={() => setOn(i)}>
