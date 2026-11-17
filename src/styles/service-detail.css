@@ -270,7 +270,7 @@
 .sdr-who { font-size: 15px; color: var(--text-2); }
 .sdr-who b { color: var(--dark); }
 .sdr-wrap { position: relative; }
-.sdr-img { display: block; width: 72%; aspect-ratio: 16 / 10; border-radius: 30px; overflow: hidden; box-shadow: 0 60px 100px -60px rgba(26,24,22,.6); }
+.sdr-img { display: block; width: 72%; aspect-ratio: 16 / 9; border-radius: 30px; overflow: hidden; box-shadow: 0 60px 100px -60px rgba(26,24,22,.6); }
 .sdr-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease-out); }
 .sdr-img:hover img { transform: scale(1.03); }
 .sdr-info { position: absolute; right: 0; bottom: clamp(-80px, -6vw, -40px); width: 40%; background: #fff; border-radius: 30px; padding: clamp(28px, 3vw, 44px); box-shadow: 0 50px 90px -50px rgba(26,24,22,.55); border: 1px solid rgba(26,24,22,.06); }
@@ -368,7 +368,7 @@
 /* results side by side */
 .crw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2vw, 28px); }
 .crw-card { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(26,24,22,.07); border-radius: 30px; padding: 12px; box-shadow: 0 50px 90px -60px rgba(26,24,22,.45); }
-.crw-img { aspect-ratio: 16 / 10; border-radius: 22px; overflow: hidden; }
+.crw-img { aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; }
 .crw-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .crw-body { flex: 1; display: flex; flex-direction: column; padding: 22px 14px 12px; }
 .crw-big { display: block; margin-top: 18px; font: 900 clamp(48px, 4.6vw, 76px) 'Archivo', sans-serif; letter-spacing: -.055em; line-height: .85; color: var(--red); }

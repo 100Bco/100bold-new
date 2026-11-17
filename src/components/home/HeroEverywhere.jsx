@@ -40,7 +40,7 @@ function ScreenWeb() {
   return (
     <div className="ev-ui ev-web">
       <div className="ev-chrome"><i /><i /><i /><span /></div>
-      <div className="ev-web-view"><img src="/works/LT COMMERCIAL GROUP.png" alt="" loading="eager" /></div>
+      <div className="ev-web-view"><img src="/works/thumbs/ltcg.jpg" alt="" loading="eager" /></div>
     </div>
   )
 }
@@ -52,7 +52,7 @@ function ScreenAd() {
         <span className="ev-ad-av">B</span>
         <div><strong>Bee Construction</strong><em>Sponsored</em></div>
       </div>
-      <div className="ev-ad-img"><img src="/works/BEE CONSTRUCTION.png" alt="" loading="eager" /></div>
+      <div className="ev-ad-img"><img src="/works/thumbs/bee.jpg" alt="" loading="eager" /></div>
       <div className="ev-ad-cta"><span>Learn more</span><Arrow /></div>
     </div>
   )
@@ -61,7 +61,7 @@ function ScreenAd() {
 function ScreenFilm() {
   return (
     <div className="ev-ui ev-film">
-      <img src="/works/DANG LAW GROUP.png" alt="" loading="eager" />
+      <img src="/works/thumbs/dlg.jpg" alt="" loading="eager" />
       <span className="ev-film-play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg></span>
       <div className="ev-film-bar"><i /></div>
       <span className="ev-film-title">Dang-Man</span>

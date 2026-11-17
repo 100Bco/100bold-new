@@ -469,7 +469,7 @@ img { display: block; max-width: 100%; }
 .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .case-card { background: rgba(255,255,255,.06); border-radius: var(--r-lg); overflow: hidden; border: 1px solid rgba(255,255,255,.08); transition: all .4s; cursor: pointer; }
 .case-card:hover { transform: translateY(-4px); box-shadow: 0 20px 56px rgba(0,0,0,.2); border-color: rgba(255,255,255,.15); }
-.case-thumb { aspect-ratio: 16/10; background: var(--dark); position: relative; overflow: hidden; }
+.case-thumb { aspect-ratio: 16/9; background: var(--dark); position: relative; overflow: hidden; }
 .case-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .7; transition: all .5s; }
 .case-card:hover .case-thumb img { opacity: .85; transform: scale(1.03); }
 .case-metric { position: absolute; top: 14px; left: 14px; padding: 10px 16px; background: rgba(0,0,0,.7); backdrop-filter: blur(12px); border-radius: 14px; }

@@ -25,7 +25,7 @@ export const industries = [
     title: 'Marketing for Personal Injury Law Firms | 100Bold',
     description: 'Marketing for personal injury law firms that want more signed cases: SEO and AI search, Meta ads tracked to signed cases, and LinkedIn for the founding partner.',
     icon: '/law-red.json',
-    img: '/works/DANG LAW GROUP.png', imgAlt: 'Dang Law Group founder Loc T. Dang', imgPos: '75% 30%',
+    img: '/works/thumbs/dlg.jpg', imgAlt: 'Dang Law Group founder Loc T. Dang', imgPos: '75% 30%',
     hero: {
       h1: ['Marketing for law firms', 'that want more', 'signed cases'],
       line: 'We help personal injury firms get found on Google and in AI search, turn ad spend into signed cases, and depend less on lead vendors.',
@@ -42,7 +42,7 @@ export const industries = [
       { q: 'Our ads bring clicks, but we can’t tell which became cases.', fix: 'Facebook and Instagram ads tracked from the click to the signed case, with cost per signed case every month.', svc: svc.ads },
     ],
     services: [svc.seo, svc.ads, svc.mark, svc.web],
-    result: { client: 'Dang Law Group', industry: 'Personal injury law', big: 'Top 3', label: "in Google's AI results for a target search", text: 'Search, Meta ads, automated intake, and Dang-Man, the firm’s own AI superhero.', img: '/works/DANG LAW GROUP.png', alt: 'Dang Law Group billboard in Austin featuring Dang-Man', to: '/work/dang-law-group' },
+    result: { client: 'Dang Law Group', industry: 'Personal injury law', big: 'Top 3', label: "in Google's AI results for a target search", text: 'Search, Meta ads, automated intake, and Dang-Man, the firm’s own AI superhero.', img: '/works/thumbs/dlg.jpg', alt: 'Dang Law Group billboard in Austin featuring Dang-Man', to: '/work/dang-law-group' },
     proof: { big: 'Top 3', label: 'in Google’s AI results' },
     faq: [
       { q: 'What is the best marketing for a personal injury law firm?', a: 'A mix that builds your own pipeline: strong rankings in Google and Google Maps, being named in AI answers, reviews that keep coming, and ads tracked to signed cases. It means you rely less on lead vendors.' },
@@ -60,7 +60,7 @@ export const industries = [
     title: 'Marketing for PI Medical Providers and Injury Clinics | 100Bold',
     description: 'Marketing for the medical practices that treat injury patients: chiropractic, pain management, imaging, surgery centers, and more. More attorney referrals and more injury patients.',
     icon: '/wheelchair-insurance-red.json',
-    img: '/works/T98%20REHAB%20%26%20CHIROPRACTIC.png', imgAlt: 'T98 Rehab and Chiropractic clinic', imgPos: '80% 50%',
+    img: '/works/thumbs/t98.jpg', imgAlt: 'T98 Rehab and Chiropractic clinic', imgPos: '80% 50%',
     hero: {
       h1: ['Marketing for the', 'medical practices that', 'treat injury patients'],
       line: 'We help injury clinics, surgery centers, and imaging practices win more attorney referrals and more injury patients from Google, Maps, and AI search.',
@@ -78,7 +78,7 @@ export const industries = [
       { q: 'New patients call, and nobody follows up fast enough.', fix: 'Calls and forms routed and answered quickly, with reminders and follow-up handled automatically.', svc: svc.minai },
     ],
     services: [svc.seo, svc.web, svc.ads],
-    result: { client: 'T98 Rehab', industry: 'PI medical provider', big: '12 hrs', label: 'from launch to first lead closed', text: 'Google profiles, lead capture, and reviews for an injury chiropractic practice growing across three locations.', img: '/works/T98%20REHAB%20%26%20CHIROPRACTIC.png', alt: 'T98 Rehab and Chiropractic clinic', to: '/work/t98-rehab' },
+    result: { client: 'T98 Rehab', industry: 'PI medical provider', big: '12 hrs', label: 'from launch to first lead closed', text: 'Google profiles, lead capture, and reviews for an injury chiropractic practice growing across three locations.', img: '/works/thumbs/t98.jpg', alt: 'T98 Rehab and Chiropractic clinic', to: '/work/t98-rehab' },
     proof: { big: '12 hrs', label: 'from launch to first lead closed' },
     faq: [
       { q: 'How do injury clinics get more attorney referrals?', a: 'Attorneys refer to practices they trust and can see clearly: what you treat, how fast you see patients, and how you document care. We build that picture across your site, your profiles, and your reviews.' },
@@ -113,7 +113,7 @@ export const industries = [
       { q: 'Our marketing looks like every other listing.', fix: 'Film-quality video and content made with AI, delivered in days, that makes the project stand out.', svc: svc.portal },
     ],
     services: [svc.mark, svc.portal, svc.web, svc.ads],
-    result: { client: 'LT Commercial Group', industry: 'Real estate', big: '3 leads', label: 'for leasing within 24 hours of launch', text: 'A project brand, website, and launch campaign for Dacy Business Park, plus ongoing content and the CEO’s LinkedIn.', img: '/works/LT COMMERCIAL GROUP.png', alt: 'LT Commercial Group', to: '/work/lt-commercial-group' },
+    result: { client: 'LT Commercial Group', industry: 'Real estate', big: '3 leads', label: 'for leasing within 24 hours of launch', text: 'A project brand, website, and launch campaign for Dacy Business Park, plus ongoing content and the CEO’s LinkedIn.', img: '/works/thumbs/ltcg.jpg', alt: 'LT Commercial Group', to: '/work/lt-commercial-group' },
     proof: { big: '3 leads', label: 'within 24 hours of launch' },
     faq: [
       { q: 'What does a real estate marketing agency do for developers?', a: 'We launch projects: the brand, the website, the campaign, and the content, plus the CEO’s presence on LinkedIn so investors and partners know the name behind the project.' },
@@ -132,7 +132,7 @@ export const industries = [
     title: 'Contractor SEO and Construction Marketing Agency | 100Bold',
     description: 'Marketing for contractors that want more bids and booked jobs: SEO and AI search, websites, reviews, and Meta ads tracked to real work.',
     icon: '/repair-tools-red.json',
-    img: '/works/BEE CONSTRUCTION.png', imgAlt: 'Bee Construction project', imgPos: '80% 45%',
+    img: '/works/thumbs/bee.jpg', imgAlt: 'Bee Construction project', imgPos: '80% 45%',
     hero: {
       h1: ['Marketing for contractors', 'that want more bids', 'and booked jobs'],
       line: 'We help general contractors and trades get found by owners and buyers on Google, Maps, and AI search, so work comes from search, not just referrals.',
@@ -149,7 +149,7 @@ export const industries = [
       { q: 'We tried ads and got tire-kickers.', fix: 'Ads aimed at real project owners, tracked to the bids and jobs they bring in.', svc: svc.ads },
     ],
     services: [svc.seo, svc.web, svc.ads],
-    result: { client: 'Bee Construction', industry: 'Construction', big: '$2M+', label: 'development lead within 72 hours', text: 'From no website and no social presence to a $2M+ development lead from a single ad.', img: '/works/BEE CONSTRUCTION.png', alt: 'Bee Construction project', to: '/work/bee-construction' },
+    result: { client: 'Bee Construction', industry: 'Construction', big: '$2M+', label: 'development lead within 72 hours', text: 'From no website and no social presence to a $2M+ development lead from a single ad.', img: '/works/thumbs/bee.jpg', alt: 'Bee Construction project', to: '/work/bee-construction' },
     proof: { big: '$2M+', label: 'development lead within 72 hours' },
     faq: [
       { q: 'What is contractor SEO?', a: 'Getting your company to rank in Google and Google Maps, and be named by AI assistants, when owners and buyers search for the work you do in the areas you serve.' },

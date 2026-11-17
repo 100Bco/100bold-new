@@ -60,7 +60,7 @@ export const seo = {
   result: {
     client: 'Dang Law Group', industry: 'Personal injury law', big: 'Top 3', label: "in Google's AI results for a target search",
     text: 'Search, Meta ads, automated intake, and Dang-Man, the firm’s own AI superhero.',
-    img: '/works/DANG LAW GROUP.png', alt: 'Dang Law Group billboard in Austin featuring Dang-Man', to: '/work/dang-law-group',
+    img: '/works/thumbs/dlg.jpg', alt: 'Dang Law Group billboard in Austin featuring Dang-Man', to: '/work/dang-law-group',
   },
   who: { h2: 'Who this is for', items: industries },
   faq: {
@@ -121,7 +121,7 @@ export const web = {
   result: {
     client: 'LT Commercial Group', industry: 'Real estate', big: '3 leads', label: 'for leasing within 24 hours of launch',
     text: 'A project brand, website, and launch campaign for Dacy Business Park.',
-    img: '/works/LT COMMERCIAL GROUP.png', alt: 'Guests at the Dacy Business Park launch event', to: '/work/lt-commercial-group',
+    img: '/works/thumbs/ltcg.jpg', alt: 'Guests at the Dacy Business Park launch event', to: '/work/lt-commercial-group',
   },
   who: { h2: 'Who this is for', items: industries },
   faq: {
@@ -177,11 +177,11 @@ export const ads = {
   result: {
     client: 'Bee Construction', industry: 'Construction', big: '$2M+', label: 'development lead within 72 hours',
     text: 'From no website and no social presence to a $2M+ development lead from a single ad.',
-    img: '/works/BEE CONSTRUCTION.png', alt: 'Bee Construction project', to: '/work/bee-construction',
+    img: '/works/thumbs/bee.jpg', alt: 'Bee Construction project', to: '/work/bee-construction',
   },
   result2: {
     client: 'Dang Law Group', industry: 'Personal injury law', big: '', label: '', text: '',
-    img: '/works/DANG LAW GROUP.png', alt: 'Dang Law Group', to: '/work/dang-law-group',
+    img: '/works/thumbs/dlg.jpg', alt: 'Dang Law Group', to: '/work/dang-law-group',
   },
   chatgpt: {
     tag: 'Early access',

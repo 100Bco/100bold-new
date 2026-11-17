@@ -35,7 +35,7 @@
   animation: ra-up .7s var(--ease-out) both;
 }
 @keyframes ra-up { from { opacity: 0; transform: translateY(40px) scale(.97); } to { opacity: 1; transform: none; } }
-.ra-media { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, var(--red), #8E0B21); }
+.ra-media { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: linear-gradient(135deg, var(--red), #8E0B21); }
 .ra-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
 .ra-card:hover .ra-media img { transform: scale(1.04); }
 .ra-media-num { position: absolute; left: 28px; bottom: 0; font-family: var(--font-head); font-size: clamp(120px, 14vw, 220px); line-height: .85; color: rgba(255,255,255,.22); }
