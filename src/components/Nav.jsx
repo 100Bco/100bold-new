@@ -3,13 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { serviceLinks, industryLinks, aboutLinks } from '@/data/nav'
+import { serviceLinks, industryLinks } from '@/data/nav'
 
 const menu = [
   { name: 'Services', path: '/services', children: serviceLinks, match: ['/services', '/services/ai-production', '/services/linkedin-for-ceos'] },
   { name: 'Industries', path: '/industries', children: industryLinks },
   { name: 'Work', path: '/work' },
-  { name: 'About', path: '/about', children: aboutLinks, match: ['/about', '/insights', '/contact'] },
+  { name: 'Insights', path: '/insights' },
+  { name: 'About', path: '/about' },
 ]
 
 const Chevron = () => (

@@ -55,7 +55,7 @@ export const offers = [
     short: 'AI films, delivered in days',
     name: 'AI Production',
     h3: 'Film-quality video, made with AI, delivered in days',
-    line: "AI Production is 100Bold's in-house video studio. We make brand films, ads, and social content without a film crew or a six-week timeline.",
+    line: "Portal is 100Bold's in-house video studio. We make brand films, ads, and social content without a film crew or a six-week timeline.",
     points: ['Brand films', 'Ad creative', 'Social series'],
     suits: 'Any service brand that needs video',
     proof: { big: 'Dang-Man', label: "a law firm's own AI superhero", who: 'Dang Law Group' },

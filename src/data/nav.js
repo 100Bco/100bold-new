@@ -13,8 +13,3 @@ export const industryLinks = [
   { path: '/industries/construction-trades', name: 'Construction and trades' },
   { path: '/industries/local-services', name: 'Local services' },
 ]
-
-export const aboutLinks = [
-  { path: '/insights', name: 'Insights' },
-  { path: '/contact', name: 'Contact' },
-]
