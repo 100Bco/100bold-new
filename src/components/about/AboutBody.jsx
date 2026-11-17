@@ -22,7 +22,7 @@ export function Founder() {
     <section className="abf" ref={ref}>
       <div className="mx abf-grid">
         <div className="abf-photo">
-          <img src={f.photo} alt={f.name + ', ' + f.role} loading="lazy" width="1254" height="1254" />
+          <img src={f.photo} alt={f.name + ", " + f.role} loading="lazy" width="928" height="1152" />
           <div className="abf-name"><b>{f.name}</b><span>{f.role}</span></div>
         </div>
         <div className="abf-copy">
