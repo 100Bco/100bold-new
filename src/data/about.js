@@ -11,7 +11,7 @@ export const about = {
     h2: 'The founder',
     name: 'Minh Mac',
     role: 'Founder, 100Bold',
-    photo: '/founder/minh-mac-glass.webp',
+    photo: '/founder/minh-mac-bw.webp',
     story: 'Minh started in finance, then spent the next decade building companies of his own. He started 100Bold to bring an owner’s view of growth to service businesses: every dollar of marketing should come back as clients, cases, and jobs.',
     path: [
       { k: 'Private equity', v: 'Four years at Neuberger Berman' },
