@@ -20,9 +20,9 @@ export const metadata = {
     url: 'https://100bold.co',
     siteName: '100Bold',
     type: 'website',
-    images: [{ url: '/og/home.png?v=2', width: 1200, height: 630, alt: '100Bold: SEO, AI search, ads, video and LinkedIn in one growth system' }],
+    images: [{ url: '/og/home.png?v=3', width: 1200, height: 630, alt: '100Bold: SEO, AI search, ads, video and LinkedIn in one growth system' }],
   },
-  twitter: { card: 'summary_large_image', images: ['/og/home.png?v=2'] },
+  twitter: { card: 'summary_large_image', images: ['/og/home.png?v=3'] },
 }
 
 const faqSchema = {
