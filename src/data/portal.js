@@ -15,7 +15,7 @@ export const portalPage = {
 const P = '/portal/'
 /* Videos stream from Wistia (wid = Wistia media id); posters stay on the site */
 const W = {"paperwork": "29oyagspnu", "bills-stacking": "bcb5jimxoh", "low-offer": "81wko7xvvp", "actor-to-client": "64gji135oj", "santa": "ir9zpj91ii", "halloween": "ob713ko3eu", "night-in": "pqxh1z0h28", "golden-hour": "ot3rnxtdd2", "clinic": "u5k7ksohvs"}
-const piece = (id, file, o) => ({ id, wid: W[id], src: 'https://fast.wistia.net/embed/iframe/' + W[id], poster: P + file + '-poster.jpg', transcript: null, turnaround: null, ...o })
+const piece = (id, file, o) => ({ id, wid: W[id], src: 'https://fast.wistia.net/embed/iframe/' + W[id], poster: P + file + '-poster.jpg', transcript: null, turnaround: null, uploadDate: '2026-11-14T09:00:00-06:00', ...o })
 
 /* Every piece, in the order shown. ratio is the video's own shape (used by the pop-up player). */
 export const pieces = [
