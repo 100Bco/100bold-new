@@ -1,6 +1,6 @@
 ---
 name: website-launch-checklist
-description: Checklist bắt buộc khi thiết kế, xây dựng, redesign hoặc launch bất kỳ website nào cho 100Bold hoặc khách hàng của 100Bold (DLG, T98, LTCG, Bee Construction, MinAI, Rocha's...). Dùng ngay từ đầu dự án và trước mỗi lần đẩy lên production, để không bỏ sót: thumbnail gửi link (Open Graph) riêng cho từng trang, banner cookie và các trang pháp lý (Privacy, Cookie, Terms, Disclaimer, Sitemap) theo luật nơi khách kinh doanh, hero section có hiệu ứng, SEO và schema, tốc độ, mobile, form và tracking. Trigger khi người dùng nói "làm web", "build website", "redesign", "landing page", "launch web", "web mới cho khách", "kiểm tra web trước khi lên", "website checklist", hoặc bắt đầu một repo website mới.
+description: Checklist bắt buộc khi thiết kế, xây dựng, redesign hoặc launch bất kỳ website nào cho 100Bold hoặc khách hàng của 100Bold (DLG, T98, LTCG, Bee Construction, MinAI, Rocha's...). Dùng ngay từ đầu dự án và trước mỗi lần đẩy lên production, để không bỏ sót: thumbnail gửi link (Open Graph) riêng cho từng trang, banner cookie và các trang pháp lý (Privacy, Cookie, Terms, Disclaimer, Sitemap) theo luật nơi khách kinh doanh, hero section có hiệu ứng, SEO và schema, tốc độ, mobile, form và tracking, và dòng "Powered by 100Bold" ở footer. Trigger khi người dùng nói "làm web", "build website", "redesign", "landing page", "launch web", "web mới cho khách", "kiểm tra web trước khi lên", "website checklist", hoặc bắt đầu một repo website mới.
 ---
 
 # Website launch checklist (100Bold)
@@ -146,6 +146,15 @@ Tối thiểu cho mọi site:
 
 ---
 
+## 11. Footer: "Powered by 100Bold"
+
+- **Mọi website 100Bold làm cho khách đều có dòng "Powered by 100Bold"** ở hàng cuối footer (cạnh dòng copyright hoặc các link pháp lý). Không áp dụng cho chính website 100bold.co.
+- Chữ "100Bold" là link tới `https://100bold.co`, mở tab mới: `<a href="https://100bold.co" target="_blank" rel="noopener">100Bold</a>`.
+- Chữ nhỏ, cùng màu và cỡ với dòng copyright; không dùng logo to, không làm lệch thiết kế của khách.
+- Nếu hợp đồng của khách yêu cầu không ghi credit thì hỏi người dùng trước khi bỏ.
+
+---
+
 ## Kiểm tra trước khi lên production
 
 Chạy và báo kết quả thật (pass/fail kèm bằng chứng):
@@ -159,4 +168,5 @@ Chạy và báo kết quả thật (pass/fail kèm bằng chứng):
 7. Hero vừa 1 màn hình ở 6 kích thước; không cuộn ngang trên mobile ở mọi trang.
 8. Lighthouse mobile ≥ 90 cho trang chủ và 1 trang dịch vụ.
 9. Form gửi thử thành công vào CRM.
-10. Nhắc người dùng: Search Console + Bing, làm mới cache OG, luật sư xem trang pháp lý.
+10. Footer có "Powered by 100Bold" link đúng tới https://100bold.co (trừ site 100bold.co).
+11. Nhắc người dùng: Search Console + Bing, làm mới cache OG, luật sư xem trang pháp lý.
