@@ -1,4 +1,5 @@
 import Script from 'next/script'
+import CookieBanner from '@/components/CookieBanner'
 import { Analytics } from '@vercel/analytics/next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -12,6 +13,7 @@ import '@/styles/hero-stream.css'
 import '@/styles/run-answer.css'
 import '@/styles/process-gauge.css'
 import '@/styles/sections.css'
+import '@/styles/cookie.css'
 
 const POSITIONING = '100Bold is a growth agency for $5M+ service businesses. We get you found on Google and in AI search, turn ad spend into signed clients and booked jobs, and make your CEO the best-known name in your market.'
 
@@ -124,11 +126,8 @@ export default function RootLayout({ children }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
 
-        {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-LJ53QH6QEZ" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LJ53QH6QEZ');`}
-        </Script>
+        {/* Cookie notice; loads Google Analytics only after consent */}
+        <CookieBanner />
 
         {/* Wistia Video */}
         <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { serviceLinks, industryLinks } from '@/data/nav'
+import CookieSettingsLink from './CookieSettingsLink'
 
 const social = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/company/100bold', path: <><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></> },
@@ -39,7 +40,6 @@ export default function Footer() {
                 <li><Link href="/work">Work</Link></li>
                 <li><Link href="/insights">Insights</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
-                <li><Link href="/privacy">Privacy</Link></li>
               </ul>
             </div>
             <div className="nk-f-col">
@@ -64,6 +64,7 @@ export default function Footer() {
 
         <div className="nk-f-bottom">
           <span>&copy; 2026 100Bold Agency. Start Brave. Stay Bold.</span>
+          <nav className="nk-f-legal" aria-label="Legal"><Link href="/privacy">Privacy &amp; Cookies</Link><Link href="/terms">Terms &amp; Disclaimer</Link><Link href="/sitemap">Sitemap</Link><CookieSettingsLink /></nav>
           <span>Automation and CRM powered by <a href="https://www.minai.biz/" target="_blank" rel="noopener noreferrer">MinAI</a></span>
         </div>
       </div>

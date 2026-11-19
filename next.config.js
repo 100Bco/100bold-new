@@ -8,6 +8,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/privacy-policy', destination: '/privacy', permanent: true },
+      { source: '/cookie-policy', destination: '/privacy#cookies', permanent: true },
+      { source: '/cookies', destination: '/privacy#cookies', permanent: true },
+      { source: '/terms-of-use', destination: '/terms', permanent: true },
+      { source: '/terms-and-conditions', destination: '/terms', permanent: true },
+      { source: '/disclaimer', destination: '/terms#disclaimer', permanent: true },
       { source: '/industries/law-firms', destination: '/industries/personal-injury-law-firms', permanent: true },
       { source: '/industries/rehab-chiro', destination: '/industries/pi-medical-providers', permanent: true },
       { source: '/industries/construction', destination: '/industries/construction-trades', permanent: true },

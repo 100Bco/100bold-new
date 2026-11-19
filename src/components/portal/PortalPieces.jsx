@@ -1,5 +1,6 @@
 'use client'
 
+import { useConsent, openCookieSettings } from '@/lib/consent'
 import { useEffect, useRef, useState } from 'react'
 import { useGsap, gsap, MQ } from '@/lib/motion'
 import { pieces, pieceGroups, tiktoks } from '@/data/portal'
@@ -27,6 +28,7 @@ function Player({ p, onClose }) {
 function TikTokPosts() {
   const ref = useRef(null)
   const [on, setOn] = useState(false)
+  const consent = useConsent()
   useEffect(() => {
     const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setOn(true); io.disconnect() } }, { rootMargin: '600px 0px' })
     io.observe(ref.current)
@@ -36,9 +38,9 @@ function TikTokPosts() {
     <div className="pttk" ref={ref}>
       {tiktoks.map((t) => (
         <div className="pttk-cell" key={t.id}>
-          {on
+          {on && consent?.marketing
             ? <div className="pttk-frame"><iframe src={'https://www.tiktok.com/embed/v2/' + t.id + '?lang=en-US'} title="TikTok post by @bond.gift247" allow="encrypted-media; fullscreen; picture-in-picture" allowFullScreen loading="lazy" /></div>
-            : <a href={t.url} target="_blank" rel="noopener noreferrer" className="pttk-ph">Watch on TikTok</a>}
+            : <button type="button" className="pttk-ph" onClick={openCookieSettings}>TikTok posts are off until you allow marketing cookies. Tap to change your cookie settings.</button>}
           <a href={t.url} target="_blank" rel="noopener noreferrer" className="pttk-link">Open on TikTok ↗</a>
         </div>
       ))}
